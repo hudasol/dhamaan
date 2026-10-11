@@ -1,0 +1,11 @@
+__pycache__/
+.pytest_cache/
+*.pyc
+.env
+.env.*
+*.pdf
+*.zip
+raw/
+downloads/
+cache/
+.secrets.baseline.local
