@@ -1,0 +1,16 @@
+- **Machinery Regulation application date:** 20 January 2027 in the EU Commission, EU-OSHA and EUR-Lex consolidated pages and in the corrigendum; 14 January 2027 on one Parliament Observatory page, which matches the uncorrected print (see section 9, items M02, M03, M21).
+- **EASA amendment label:** the annex PDF header says Amendment 3; the EASA web page for the decision says Amendment 4.
+- **ISO/TS 15066:** ISO's catalogue says it is not withdrawn and will be replaced by a future ISO 15066 part; vendor pages say its content moved into ISO 10218:2025.
+- **UL 3300:** listed as 2025 with a 2024 publication date; edition not confirmed.
+- **EN 18286 (AI Act quality management standard):** approval described as "June" by CEN-CENELEC and "12 July" by a vendor; Official Journal citation expected later in 2026 (CEN-CENELEC) versus 2027 at the earliest (another source).
+- **Machinery Regulation harmonised standards:** whether the EN versions of ISO 12100, 10218, 13849 and 3691-4 are cited under the new Regulation was not checked; the harmonised list evidence seen was a 2021 list under Directive 2006/42/EC.
+- **Part 108 BVLOS final rule:** retrieved primary sources cover the proposed rule and a reopened comment period; the report that a final rule is at White House review rests on blogs.
+- **u.ae drone portal versus CAR-UAR Issue 04:** differing app names and airport distance rule; the portal may be outdated.
+- **Cabinet Resolution 110/2023 title and MOIAT terms:** the names of the conformity document differ across sources.
+- **GSN and SACM dates:** GSN update page dated 2020 versus 2021; SACM 2.3 beta (2022) versus formal (2023).
+- **UNECE ADS instrument naming:** regulation versus global technical regulation and UN Regulation; secondary sources only.
+- **NASA-STD-7009B:** date ambiguous; the 2008 version was described through slides.
+- **AI Act Art. 40 paragraph numbering:** differs between a law firm note and the unofficial explorer (check AI17).
+- **Dubai delivery robot pilot reports:** different communities and malls named in different news articles.
+- **SORA 2.0 authorisation validity (EASA note):** Member States define validity (Sec. 2.3); two years appears only as anticipated impact (Sec. 3).
+- **New GCAA Safety Decision 2026-03 (temporary drone suspension):** known from press only; the decision itself was not read (check GCAA-10).

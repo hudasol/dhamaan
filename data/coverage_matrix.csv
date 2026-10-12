@@ -1,0 +1,25 @@
+instrument_family,rows,E00,E01,E02,E03,E04,E05,E06,E07,E08,E09,E10,E11,E12,E13,E14,E15
+EU Machinery Regulation 2023/1230,26,M,M,C,M,C,C,,C,,M,M,,M,,M,C
+ISO 12100,1,,C,,,,,,,,,,,,,,
+ISO 10218 / TS 15066,5,,C,,,C,C,C,,,,,,,,,
+ISO 13482,3,G,V,,,,,,,,,,,,,,
+ISO 3691-4,2,V,V,V,,V,V,,,,,,,,,,
+IEC 61508,3,,,,,V,V,,,,,,,,,,
+ISO 13849,2,,,,,C,C,,,,,,,,,,
+UL 3300,4,V,V,V,,,,,,,V,,,,,,
+SOTIF / road-vehicle AI-safety (ISO 21448 family),6,V,V,,,V,V,V,,,,,,,,,
+UL 4600,8,,,V,,V,V,V,,V,V,,,,V,,
+"EU AI Act (+Omnibus, standards)",25,M,C,C,C,C,C,,C,,C,C,C,C,C,C,C
+ISO/IEC AI standards (TR 5469 etc.),5,V,,,,,,,,,,,,,,V,
+Learning-enabled assurance guidance & research,21,G,G,G,,,G,G,G,G,,,,V,,,
+EU drone regs 2019/947 & 945,14,C,M,M,M,C,C,,,,C,M,M,M,,,M
+JARUS SORA 2.5,18,G,G,G,,G,G,G,,G,G,G,G,,,,
+EASA AMC/GM (SORA),11,G,G,,G,G,G,,,,G,G,G,,,,G
+FAA (Part 107/89/108),10,G,G,G,,G,G,,,,G,M,G,,M,G,M
+"UAE rules (GCAA, MOIAT, Dubai RTA)",28,V,M,,,C,M,,,,M,M,M,M,M,,M
+Safety-case notations & guidance,5,,,,,,,,,V,,,G,,,G,
+ODD standards,5,,,V,,,,,,V,,,,,,,
+Simulation credit / ADS test standards,8,,,,,C,C,C,C,C,,,C,C,C,C,
+"Incident reporting regimes (EU, US)",2,,,,,,,,,,,,,,M,,
+GNSS interference guidance,7,,,,,G,C,,,,,,G,G,G,,
+Environmental test standards (IEC 60529/60068/61496-3),3,,,,,,V,,,,,,,,,,
