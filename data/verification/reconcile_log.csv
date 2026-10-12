@@ -1,0 +1,270 @@
+id,field,action,old,new
+A01,requirement_paraphrase,changed,"Regulation on machinery that repeals Directive 2006/42/EC and Directive 73/361/EEC; adopted 14 Jun 2023, published 29 Jun 2023 (OJ L 165), in force 19 Jul 2023, applies from 20 Jan 2027 (the original print said 14 Jan 2027; corrected by corrigendum OJ L 169, 4.7.2023, p. 35).","Regulation (EU) 2023/1230 of 14 June 2023 on machinery, repealing Directive 2006/42/EC and Directive 73/361/EEC, published OJ L 165, 29.6.2023, in force 19 Jul 2023; the application date, corrigendum and any 2026 amending act were not visible in retrieved text."
+A01,clause_or_section_seen,changed,Title / metadata,(moved to clause_reported_unverified)
+A02,access_level,changed,summary seen,full text seen
+A14,clause_or_section_seen,changed,Art. 6(7),(moved to clause_reported_unverified)
+A15,clause_or_section_seen,changed,Recitals 54 and 55,(moved to clause_reported_unverified)
+A16,clause_or_section_seen,changed,Annex I Part A (item number not verified; text not returned); Art. 6(1) and Art. 25(2) seen,(moved to clause_reported_unverified)
+A17,access_level,changed,summary seen,title only (downgrade)
+A17,requirement_paraphrase,changed,"Annex III section 1.1.9 exists and is cited by Art. 20(9) as covering protection against corruption (official, extraction). Its wording was not read. The five year log after upload is not confirmed anywhere in official text I could read; one unofficial reproduction places a five year tracing log in section 1.2.1 (point f), not 1.1.9, so the 1.1.9 attribution is doubtful.","Annex III 1.1.9 is titled protection against corruption in a CEN summary of changes; its content, and any five year log, was not shown by this source."
+A17,clause_or_section_seen,changed,Annex III 1.1.9 (existence confirmed by Art. 20(9) cross reference; Annex text not seen),(moved to clause_reported_unverified)
+A18,requirement_paraphrase,changed,"Secondary source (MAAK) says 1.2.1 requires safety functions and settings not to be easily modifiable beyond the manufacturer's risk analysis limits, including by user changes and machine learning adjustments. Retention periods were not found in any official text read. One unofficial reproduction places a one year retention of safety related decision data in 1.2.1 (second list, point b, self evolving or autonomous machinery) and a five year tracing log of interventions and safety software versions in 1.2.1 point f. Unverified against the Official Journal.","Secondary source says safety functions and settings must not be easily modifiable beyond the manufacturer's risk analysis limits, including by ML adjustment, and that safety decision data of self-learning machines is kept at least one year; the five year tracing log was not seen."
+A18,clause_or_section_seen,changed,Annex III 1.2.1 (existence and subject confirmed by Art. 20(9) cross reference; sub point locators for retention unverified),(moved to clause_reported_unverified)
+A19,requirement_paraphrase,changed,"New definitions (autonomous mobile machinery, supervisor, supervisory function); control system must perform the safety functions by itself even with remote supervisory function; movement must account for risks related to the intended operating area; additions on travelling function and control-circuit failure; new section 3.6.3.3 on autonomous mobile machinery (content not given in source).","CEN-CENELEC overview says new definitions (autonomous mobile machinery, supervisor, supervisory function), a new supervisory function section, control system performing safety functions itself despite remote supervision, movement accounting for area risks, additions in 3.3.3 and 3.3.5 (no wording), and a new 3.6.3.3 on autonomous mobile machinery (no content)."
+A19,clause_or_section_seen,changed,"Annex III 3.1.1, 3.2.4, 3.3, 3.3.2, 3.3.3, 3.3.5, 3.6.3.3 (headings per CEN-CENELEC)",(moved to clause_reported_unverified)
+A20,requirement_paraphrase,changed,"Technical file shows machine meets EHSRs: risk assessment, protective measures, residual risks, test/calculation reports; safety software source code or logic; for autonomous or sensor-fed machines, system characteristics, limits, data and validation processes.","Secondary source says the technical file must show conformity with applicable EHSRs, including protective measures, residual risks, drawings, calculation and test reports and safety software logic or code, kept at least 10 years; autonomous machine data and validation content was not seen."
+A20,clause_or_section_seen,changed,Annex IV Part A (content not seen); Art. 10(2) and 10(3) seen; Annex IV Part B referenced in Art. 14(7),(moved to clause_reported_unverified)
+A21,requirement_paraphrase,changed,"Asks CEN/CENELEC for standards on machinery with self-evolving behaviour or ML safety functions, protection of safety functions against corruption, autonomous mobile machinery, and robotics incl. collaborative and service robots. Deadlines: Phase 1 20 Jan 2026, Phase 2 20 Jan 2034.","Commission standardisation request C(2025) 129 asks CEN/CENELEC for standards on self-evolving or ML based safety functions, protection of safety functions against corruption, autonomous mobile machinery and robotics (collaborative, service, exoskeletons). Deadlines are 20 Jan 2026 and 20 Jan 2034."
+A21,clause_or_section_seen,changed,"Annex I Tables 1 and 2 (items 2, 3, 4, 5, 15, 16); Annex II",(moved to clause_reported_unverified)
+A22,clause_or_section_seen,changed,Scope/abstract,(moved to clause_reported_unverified)
+A23,clause_or_section_seen,changed,Scope/abstract,(moved to clause_reported_unverified)
+A24,clause_or_section_seen,changed,Secondary summary only,(moved to clause_reported_unverified)
+A25,clause_or_section_seen,changed,Scope/abstract,(moved to clause_reported_unverified)
+A26,clause_or_section_seen,changed,n/a,(moved to clause_reported_unverified)
+A27,clause_or_section_seen,changed,Abstract,(moved to clause_reported_unverified)
+A28,requirement_paraphrase,changed,"Safety requirements for personal care robots (mobile servant, physical assistant, person carrier): inherently safe design, protective measures, user information. Earthbound only; excludes >20 km/h, toys, flying, industrial and medical robots.","Safety requirements for personal care robots (mobile servant, physical assistant, person carrier): safe design, protective measures, user information. Voluntary standard; not shown as legally binding."
+A28,clause_or_section_seen,changed,Scope/abstract,(moved to clause_reported_unverified)
+A29,requirement_paraphrase,changed,"Abstract notes that, at publication, no exhaustive internationally recognised data (e.g. pain or injury limits) existed for impact hazards such as collisions with personal care robots.","At publication, ISO 13482 noted no exhaustive internationally recognised data such as pain or injury limits existed for collision hazards with personal care robots. Voluntary standard."
+A29,clause_or_section_seen,changed,Abstract note,(moved to clause_reported_unverified)
+A30,clause_or_section_seen,changed,Description,(moved to clause_reported_unverified)
+A31,clause_or_section_seen,changed,Scope/abstract; Annexes A and B named,(moved to clause_reported_unverified)
+A32,clause_or_section_seen,changed,Abstract,(moved to clause_reported_unverified)
+A33,clause_or_section_seen,changed,Abstract,(moved to clause_reported_unverified)
+A34,clause_or_section_seen,changed,Abstract,(moved to clause_reported_unverified)
+A35,binding_status,changed,voluntary,conditional
+A35,clause_or_section_seen,changed,Abstract,(moved to clause_reported_unverified)
+A36,clause_or_section_seen,changed,Abstract,(moved to clause_reported_unverified)
+A37,clause_or_section_seen,changed,Scope summary,(moved to clause_reported_unverified)
+A38,clause_or_section_seen,changed,Article summary,(moved to clause_reported_unverified)
+B03,clause_or_section_seen,changed,"Clause 6.5 (acceptance criterion), clause 10 (known hazardous scenarios), clause 11 (unknown scenarios), Annex C.2.2, C.3 (as cited by authors)",(moved to clause_reported_unverified)
+B08,clause_or_section_seen,changed,Sections 10.6.6 and 10.6.7 (per UL news page),(moved to clause_reported_unverified)
+B09,clause_or_section_seen,changed,"Slides 4-8 (presentation, not standard clauses)",(moved to clause_reported_unverified)
+B10,clause_or_section_seen,changed,Prompt element 6.1.1.3.a (per authors),(moved to clause_reported_unverified)
+B11,clause_or_section_seen,changed,None cited,(moved to clause_reported_unverified)
+B12,requirement_paraphrase,changed,"UL says UL 3115 assesses AI-based products on robustness, reliability, transparency, accountability, privacy, fairness, safety, security and freedom from bias; UL service page says it is meant to be used with a product standard such as UL 3300 for SCIEE robots.","UL describes UL 3115 as an Outline of Investigation for safety of AI-based products, assessing technical (robustness, reliability, functional safety), ethical (fairness, bias, privacy) and governance pillars, to be used with a product standard such as UL 3300 for SCIEE robots; the page states no date or edition."
+B13,clause_or_section_seen,changed,Art. 6(1)(a)-(b),(moved to clause_reported_unverified)
+B14,clause_or_section_seen,changed,"Art. 6(1a), 6(1b), 6(1c)",(moved to clause_reported_unverified)
+B15,requirement_paraphrase,changed,Machinery Regulation (EU) 2023/1230 is listed in Annex I Section B (not Section A) after amendment.,Annex I page lists Regulation (EU) 2023/1230 in Section B item 21; recital 42 of Reg 2026/1744 describes moving the machinery regulation from Section A to Section B; deletion of Section A item 1 and the amending text itself were not seen.
+B15,clause_or_section_seen,changed,Annex I Section A item 1 (deleted); Section B item 21,(moved to clause_reported_unverified)
+B16,clause_or_section_seen,changed,Art. 2(2),(moved to clause_reported_unverified)
+B17,requirement_paraphrase,changed,Chapter III Sections 1-3 (high-risk): Annex III systems from 2 Dec 2027; Annex I (Art. 6(1)) systems from 2 Aug 2028; certain new Art. 5 bans from 2 Dec 2026; Arts. 102-110 from 27 July 2026.,Commission news page states high-risk rules for Annex III systems apply from 2 December 2027 and for Annex I systems from 2 August 2028; dates for new Art. 5 bans and Arts. 102-110 are not given there.
+B17,clause_or_section_seen,changed,Art. 113 (amending article in 2026/1744 not seen); Recital (40) seen,(moved to clause_reported_unverified)
+B18,clause_or_section_seen,changed,"Title and metadata only (EUR-Lex fetch gave metadata, not body)",(moved to clause_reported_unverified)
+B19,clause_or_section_seen,changed,"Art. 8 (new third and fourth paragraphs), Art. 20(10), Art. 47(2) (consolidated text, markers M2)",(moved to clause_reported_unverified)
+B20,clause_or_section_seen,changed,Art. 9(1)-(10),(moved to clause_reported_unverified)
+B21,clause_or_section_seen,changed,"Art. 10(2)-(4), (6)",(moved to clause_reported_unverified)
+B22,requirement_paraphrase,changed,"Technical documentation must be prepared before placement and kept current; Annex IV elements include design specifications and rationale, training data provenance, human oversight assessment, validation/testing procedures with dated signed test logs, cybersecurity, risk management, lifecycle changes, standards applied, EU declaration of conformity, post-market plan. For Annex I Section A products, one combined document set. Art. 11(1) second subparagraph replaced by 2026/1744 point (10): SMEs and small mid caps may give Annex IV information in a simplified Commission form that notified bodies must accept. Only one version of this wording was seen officially. 'Paragraphs 1 to 3' not verified.","Annex IV lists technical documentation content: general description, development and design detail including data, oversight, validation/testing logs and cybersecurity, monitoring and limits, metrics, risk management, lifecycle changes, standards applied, declaration of conformity, post-market plan."
+B22,clause_or_section_seen,changed,Art. 11(1)-(3); Annex IV points 1-9,(moved to clause_reported_unverified)
+B23,clause_or_section_seen,changed,Art. 12(1)-(3),(moved to clause_reported_unverified)
+B24,clause_or_section_seen,changed,Art. 13(3),(moved to clause_reported_unverified)
+B25,clause_or_section_seen,changed,Art. 14(1)-(4),(moved to clause_reported_unverified)
+B26,clause_or_section_seen,changed,Art. 15(1)-(5),(moved to clause_reported_unverified)
+B27,clause_or_section_seen,changed,Art. 17,(moved to clause_reported_unverified)
+B28,requirement_paraphrase,changed,"For Annex I Section A products (Art 43(3)), the provider follows the conformity assessment procedure of that product legislation with the Section 2 requirements folded in, plus the Art 17 quality management system assessment and specified Annex VII points; where that legislation lets the manufacturer avoid third-party assessment, this is allowed only if harmonised standards or common specifications covering all Section 2 requirements were applied. Art. 43(3) was replaced by 2026/1744 point (19); notified bodies under Section A law may assess Section 2 requirements and must apply for designation by 28 Jan 2028; the paraphrase follows the older text.","For Annex I Section A products, the provider follows that legislation's conformity procedure with Section 2 requirements included, plus Art. 17 QMS assessment and listed Annex VII points; Section A notified bodies may assess Section 2 and must apply for designation by 28 Jan 2028."
+B28,clause_or_section_seen,changed,Art. 43 (Section A and Section B paragraphs),(moved to clause_reported_unverified)
+B29,clause_or_section_seen,changed,Art. 72,(moved to clause_reported_unverified)
+B30,clause_or_section_seen,changed,Art. 73,(moved to clause_reported_unverified)
+B31,clause_or_section_seen,changed,"Art. 26 (oversight, monitoring, logs)",(moved to clause_reported_unverified)
+B32,requirement_paraphrase,changed,"High-risk systems following harmonised standards cited in the OJ are presumed to meet the matching Chapter III Section 2 requirements, only for what the standards cover.","Presumption of conformity with Section 2 requirements for systems following harmonised standards cited in the OJ, to the extent covered, is in Art. 40(1); Art. 40(2) concerns Commission standardisation requests; page marks para 3 as new."
+B32,clause_or_section_seen,changed,Art. 40(2) new subparagraph (2026/1744 point (17)); base Art. 40(1)-(3) not seen officially,(moved to clause_reported_unverified)
+B33,requirement_paraphrase,changed,"CEN-CENELEC says EN 18286 was approved and the Commission is expected to cite it in the OJ later in 2026. Secondary pages say risk management (prEN 18228), cybersecurity (18282), dataset quality (18284) and trustworthiness framework (18229) remained drafts.","CEN and CENELEC approved EN 18286 (AI management system standard) in June 2026, and the Commission is expected to cite it in the Official Journal later in 2026. This page does not discuss the other draft standards."
+B34,clause_or_section_seen,changed,Sections III (Annex I route) and IV,(moved to clause_reported_unverified)
+B36,clause_or_section_seen,changed,Annex I Part A (category numbers 5 and 6 not verified); Art. 25(2) route seen,(moved to clause_reported_unverified)
+B37,clause_or_section_seen,changed,Annex III (1.2.1 per Art. 20(9); retention sub point unverified),(moved to clause_reported_unverified)
+B39,requirement_paraphrase,changed,"Titles only: Part 1 'Requirements', Part 3 'Examples of application'.","Part 1 'Requirements' is a committee draft (ISO/IEC CD TS 22440-1) at stage 30.60, comment period closed 2026-04-11, registered 2026-02-09; the page gives no Part 3 information."
+B44,access_level,changed,full text seen,summary seen
+B44,clause_or_section_seen,changed,Stages 1-5 (Activities 1-14),(moved to clause_reported_unverified)
+B45,access_level,changed,full text seen,summary seen
+B45,requirement_paraphrase,changed,"Deployment stage: integrate model, record and monitor development assumptions, monitor inputs against training distribution, log erroneous behaviour, test integration (simulation, HIL, shadow, controlled real-world, with evidence simulator represents reality), and argue an integration claim and an operation claim.","Stage 6 covers integrating the ML model, testing the integration and instantiating the deployment argument (Activities 15-17); the specific monitoring, test types, integration claim and operation claim details were not confirmed."
+B45,clause_or_section_seen,changed,"Stage 6, Activities 15-17",(moved to clause_reported_unverified)
+B46,access_level,changed,full text seen,summary seen
+B46,clause_or_section_seen,changed,Stages 1-8,(moved to clause_reported_unverified)
+B47,clause_or_section_seen,changed,"Sections 3.1.3-3.1.4, 5, 6, 6.4.1, 7-10",(moved to clause_reported_unverified)
+B48,clause_or_section_seen,changed,None,(moved to clause_reported_unverified)
+B49,clause_or_section_seen,changed,None,(moved to clause_reported_unverified)
+B50,clause_or_section_seen,changed,None,(moved to clause_reported_unverified)
+B51,clause_or_section_seen,changed,None,(moved to clause_reported_unverified)
+C01,clause_or_section_seen,changed,Art. 3,(moved to clause_reported_unverified)
+C02,clause_or_section_seen,changed,Art. 4,(moved to clause_reported_unverified)
+C03,clause_or_section_seen,changed,Art. 5,(moved to clause_reported_unverified)
+C04,clause_or_section_seen,changed,Art. 11,(moved to clause_reported_unverified)
+C05,clause_or_section_seen,changed,Art. 12,(moved to clause_reported_unverified)
+C06,clause_or_section_seen,changed,Art. 14,(moved to clause_reported_unverified)
+C07,clause_or_section_seen,changed,Art. 15,(moved to clause_reported_unverified)
+C08,clause_or_section_seen,changed,UAS.OPEN.020-040,(moved to clause_reported_unverified)
+C09,clause_or_section_seen,changed,UAS.SPEC.020,(moved to clause_reported_unverified)
+C10,clause_or_section_seen,changed,"UAS.SPEC.030, .050",(moved to clause_reported_unverified)
+C11,clause_or_section_seen,changed,"Annex Parts 1-2 (C0, C1)",(moved to clause_reported_unverified)
+C12,clause_or_section_seen,changed,Annex Part 2 (geo-awareness),(moved to clause_reported_unverified)
+C13,clause_or_section_seen,changed,"Arts. 13, 14, 16",(moved to clause_reported_unverified)
+C14,clause_or_section_seen,changed,Art. 40 and Art. 41,(moved to clause_reported_unverified)
+C17,requirement_paraphrase,changed,"Documentation of the operation: maps and data for ground/air risk, flight profiles incl. nominal, contingency and emergency phases, mitigations, contingency volume and ground risk buffer and how they were determined.","Step 1 requires documenting the operation (operational, technical and organisational information) with maps of the operational volume, buffers and adjacent areas."
+C18,requirement_paraphrase,changed,"Intrinsic GRC from max UA characteristic dimension/speed and highest population density in the footprint (operational volume plus ground risk buffer). UA of 250 g or less and 25 m/s or less gets iGRC 1; combinations without an iGRC are outside SORA (certified category). Guidance (4.2.4) says the operational volume should account for navigation solution accuracy, flight technical error, path definition (map) error and latencies.","Table 2 gives iGRC from UA dimension, speed and population density, with 250 g or less and 25 m/s or less giving iGRC 1; 4.2.4 guidance as seen concerns maximum speed as the designer-defined commanded airspeed."
+C18,clause_or_section_seen,changed,"Sec. 4.2 Step #2, Table 2; 4.2.4",(moved to clause_reported_unverified)
+C27,requirement_paraphrase,changed,Current SORA package is v2.5 (13/5/2024); Annexes C and D remain at v1.0 in the v2.5 package; PDRA-5 is stated to be based on SORA 2.0 and may need rework (page does not state this for PDRA-4).,Current package is v2.5 (13/5/2024) with Annexes C and D still v1.0; PDRA-5 is stated as based on SORA 2.0 and the page warns future changes to that version may alter its provisions; PDRA-4 has no stated SORA basis.
+C27,clause_or_section_seen,changed,Publications listing,(moved to clause_reported_unverified)
+C30,access_level,changed,full text seen,title only
+C30,access_level,changed,full text seen,title only (downgrade)
+C30,requirement_paraphrase,changed,Where OSO/mitigation robustness is low (or medium with a declaration based on an EASA-published MoC) the authority may authorise on the applicant's declaration; for VLOS operations up to SAIL II the authority may validate only the compliance matrix without seeing evidence such as the operations manual.,"EASA AMC and GM to Reg (EU) 2019/947, Issue 1 Amendment 3 (ED Decision 2025/018/R); SORA main body and annexes."
+C30,clause_or_section_seen,changed,AMC1 Art. 12(2)(a),(moved to clause_reported_unverified)
+C31,access_level,changed,full text seen,summary seen
+C31,clause_or_section_seen,changed,OSO #04,(moved to clause_reported_unverified)
+C32,access_level,changed,full text seen,summary seen
+C32,clause_or_section_seen,changed,OSO #05,(moved to clause_reported_unverified)
+C33,access_level,changed,full text seen,summary seen
+C33,clause_or_section_seen,changed,OSO #06,(moved to clause_reported_unverified)
+C34,access_level,changed,full text seen,title only
+C34,access_level,changed,full text seen,title only (downgrade)
+C34,requirement_paraphrase,changed,"Procedures must cover deterioration of external systems; EASA recommends identifying external systems (explicitly GNSS), their deterioration modes (complete GNSS loss, GDOP/PDOP, latency), means to detect them and procedures when detected (e.g. emergency recovery, manual control). OSO #13 lists GNSS navigation services among external services needing adequate performance, the interface with the provider possibly taking the form of an SLA or similar document.","EASA AMC and GM to Reg (EU) 2019/947 (Issue 1, Amendment 3): OSO #08 covers defined, validated operational procedures; OSO #13 covers adequacy of external services supporting the operation. GNSS-specific text not confirmed."
+C34,clause_or_section_seen,changed,OSO #08 (footnote on external systems) and OSO #13,(moved to clause_reported_unverified)
+C35,access_level,changed,full text seen,summary seen
+C35,clause_or_section_seen,changed,OSO #23 and OSO #24,(moved to clause_reported_unverified)
+C36,access_level,changed,full text seen,title only
+C36,access_level,changed,full text seen,title only (downgrade)
+C36,requirement_paraphrase,changed,"Illustrative contingency-volume assumptions: GNSS accuracy 3 m, position holding error 3 m, map error 1 m, reaction time 1 s; reaction time may be shorter for fully automatic systems such as a geofence; GNSS altitude may be unreliable near large buildings.","EASA AMC and GM to Reg (EU) 2019/947, Annex A (ground and air risk buffers); example values not verified."
+C36,clause_or_section_seen,changed,Annex A.5.2.3 (contingency volume example),(moved to clause_reported_unverified)
+C37,clause_or_section_seen,changed,Sec. 2.3 overview (as summarised),(moved to clause_reported_unverified)
+C38,clause_or_section_seen,changed,Document library entry,(moved to clause_reported_unverified)
+C39,clause_or_section_seen,changed,14 CFR 107.31,(moved to clause_reported_unverified)
+C40,clause_or_section_seen,changed,14 CFR 107.51,(moved to clause_reported_unverified)
+C41,clause_or_section_seen,changed,"107.31 BVLOS waiver section; 107.25, 107.51",(moved to clause_reported_unverified)
+C42,requirement_paraphrase,changed,"Aircraft must comply with standard remote ID (89.110) or alternative remote ID (89.115): a remote ID broadcast module broadcasting 89.315 message elements from takeoff to shutdown with pilot in sight, land as soon as practicable if broadcast stops, or fly only inside an FAA-recognized identification area.","Section 89.115 allows alternative remote ID by a broadcast module (serial on an FAA-accepted declaration of compliance) sending 89.315 elements takeoff to shutdown with the aircraft in sight and landing as soon as practicable if broadcast stops, or flight only inside an FAA-recognized identification area. Page shows only the 1 Oct 2026 eCFR edition and gives no amendment or compliance dates."
+C42,clause_or_section_seen,changed,"14 CFR 89.105, 89.115",(moved to clause_reported_unverified)
+C43,clause_or_section_seen,changed,Message elements; declaration of compliance,(moved to clause_reported_unverified)
+C44,clause_or_section_seen,changed,Subparts D/E/G/H as listed in fetch,(moved to clause_reported_unverified)
+C45,requirement_paraphrase,changed,"FAA reopened comments on electronic conspicuity and right-of-way because of disagreement over ADS-B Out/alternate devices and cost/practicality of detect-and-avoid; roughly 3,100 comments, over half on right-of-way.","FAA reopened the BVLOS NPRM comment period for 14 days to 11 Feb 2026, limited to electronic conspicuity and right-of-way, citing substantial public interest in ADS-B Out, alternate EC and detect-and-avoid; about 3,100 comments received, over half touching right-of-way."
+C45,clause_or_section_seen,changed,Reopening notice,(moved to clause_reported_unverified)
+C46,clause_or_section_seen,changed,n/a,(moved to clause_reported_unverified)
+C47,requirement_paraphrase,changed,"Applies to all drones in the UAE incl. free zones except security-agency drones; GCAA and local authorities keep the registry and issue permits and certificates; owners must register drones before flight; many acts need authorisation (restricted-zone flights, cameras, modifications, trade/import/design/maintenance); a safety certificate is required before use; fines AED 50,000-500,000 for operating unregistered, reckless flying, no safety certificate, unapproved modification; AED 100,000-2,000,000 for unlicensed design/manufacture/trade/import; prison and fines for endangering airspace.","Federal Decree-Law 26 of 2022 (issued 26 Sep 2022, effective three months after Gazette publication) covers civil drones including in free zones, excluding security agency drones and others exempted by Cabinet decision; requires registration, permits and a safety certificate; fines AED 50,000-500,000 (Art 16), AED 100,000-2,000,000 (Art 17), and imprisonment of 6 months to 5 years and/or AED 50,000-1,000,000 for endangering airspace (Art 18)."
+C47,clause_or_section_seen,changed,"Arts. 3, 4, 7, 9-11, 16-20",(moved to clause_reported_unverified)
+C48,clause_or_section_seen,changed,Art. 3,(moved to clause_reported_unverified)
+C49,clause_or_section_seen,changed,Art. 5 (17 test items),(moved to clause_reported_unverified)
+C50,requirement_paraphrase,changed,"Article 12 makes Annex A standards binding for certification. Annex A lists ISO (e.g. ISO 21384-2/-3, ISO 23629-8:2023 remote ID), SAE AS 6513A, ASTM (F3298-19, F2910-14, F3116, F3227, F3231, F3411-22a) and IEC 61508, IEC 62133, IEC 62368-1.","Art. 12 makes the 24 Annex A reference standards binding for obtaining a conformity certificate, which is itself required; Annex A includes some draft ISO items besides those named."
+C50,clause_or_section_seen,changed,"Annex A (24 reference specifications), Art. 12",(moved to clause_reported_unverified)
+C51,access_level,changed,full text seen,title only
+C51,access_level,changed,full text seen,title only (downgrade)
+C51,requirement_paraphrase,changed,Applies to commercial and governmental UA operators (not military/law-enforcement UA or passenger carriage). No commercial UA operation without a valid UA Operator Authorisation (UOA); only UAE-based operators can hold one; a Letter of Conformity from MOIAT is needed for each UA before applying.,GCAA CAR-UAC UA Commercial and Governmental Operations Issue 02: UAE rules for commercial and governmental UA operations; contents not read
+C51,clause_or_section_seen,changed,"UAC.005, UAC.010",(moved to clause_reported_unverified)
+C52,access_level,changed,full text seen,title only
+C52,access_level,changed,full text seen,title only (downgrade)
+C52,requirement_paraphrase,changed,"Operator must appoint an accountable person, ensure all UA are registered and insured, keep UA instruments serviceable, keep operation records for at least 24 months, set safe-operation and emergency procedures, and not modify UA beyond the MOIAT LoC without permission. UOA valid one year. From Jan 2024 a GCAA/LAA-issued pilot licence (age 18+, approved training, UAE resident) is required.",GCAA CAR-UAC UA Commercial and Governmental Operations Issue 02: UAE rules for commercial and governmental UA operations; contents not read
+C52,clause_or_section_seen,changed,"UAC.015, UAC.040, UAC.020",(moved to clause_reported_unverified)
+C53,access_level,changed,full text seen,title only
+C53,access_level,changed,full text seen,title only (downgrade)
+C53,requirement_paraphrase,changed,"Default airspace approval limits (UAC.025(b)): daytime, VLOS, 400 ft AGL, max 25 kg MTOM, no goods delivery, no dangerous goods, unless GCAA/LAA issues a special operation approval. The AMC says the operator should submit a SORA to demonstrate an acceptable level of safety; GM says applications should be made at least two weeks before the flight.",GCAA CAR-UAC UA Commercial and Governmental Operations Issue 02: UAE rules for commercial and governmental UA operations; contents not read
+C53,clause_or_section_seen,changed,"UAC.025 and AMC to UAC.025(b), GM to UAC.025",(moved to clause_reported_unverified)
+C54,access_level,changed,full text seen,title only
+C54,access_level,changed,full text seen,title only (downgrade)
+C54,requirement_paraphrase,changed,"Operator must report accidents and serious incidents to GCAA (hotline/email, plus local police for accidents) within 3 hours and through the ROSI system; reportable occurrences include crashes, interference with signal or control of the UA, near misses, collisions, operations out of assigned area and UA lost.",GCAA CAR-UAC UA Commercial and Governmental Operations Issue 02: UAE rules for commercial and governmental UA operations; contents not read
+C54,clause_or_section_seen,changed,UAC.035 and AMC to UAC.035,(moved to clause_reported_unverified)
+C55,access_level,changed,full text seen,title only
+C55,access_level,changed,full text seen,title only (downgrade)
+C55,requirement_paraphrase,changed,"Operators must comply with security requirements, and aerial photographic apparatus on a UA needs prior authorisation from the Security Sector of GCAA/LAA.",GCAA CAR-UAC UA Commercial and Governmental Operations Issue 02: UAE rules for commercial and governmental UA operations; contents not read
+C55,clause_or_section_seen,changed,UAC.030,(moved to clause_reported_unverified)
+C56,access_level,changed,full text seen,title only
+C56,access_level,changed,full text seen,title only (downgrade)
+C56,requirement_paraphrase,changed,"Covers UA flown for research and development, new technology flights, equipment installation, scientific and academic research; excludes goods delivery and passenger carriage. Needs a UOA and MOIAT LoC per UA; default limits daytime, VLOS, 400 ft, 25 kg; beyond that a SORA for special approval. GM allows a long-term approval for a designated area such as university premises.",GCAA CAR-UAEX UA Experimentation Operations Issue 02 (Corrected): UAE rules for UA experimentation operations; contents not read
+C56,clause_or_section_seen,changed,"UAEX.001(b)(3), UAEX.005, UAEX.010, UAEX.025",(moved to clause_reported_unverified)
+C57,access_level,changed,summary seen,full text seen
+C58,access_level,changed,summary seen,full text seen
+C58,requirement_paraphrase,changed,"Early UAE framework: UOA required, 25 kg limit, VLOS/VMC unless specific approval, 50 m minimum safety distance, geo-fencing 'may be required' per GM, no lost-link or GNSS requirements, no pilot licence.","Issue 01 (issued 6 Feb 2018, applicable 4 Mar 2018) requires a UOA, with limits in UAS.030 (daytime, VLOS and VMC, 400 ft, 25 kg); UAS.020 sets a 50 m minimum safety distance; GM to UAS.045 mentions geo-fencing for segregated and non-segregated airspace; lost-link, GNSS and pilot licence are not addressed. UAS.025 is occurrence reporting (72 h), not operating limits."
+C58,clause_or_section_seen,changed,"UAS.001, UAS.015, UAS.020, UAS.025/.030, GM to UAS.045",(moved to clause_reported_unverified)
+C59,clause_or_section_seen,changed,Media Office summary,(moved to clause_reported_unverified)
+C60,clause_or_section_seen,changed,News description only,(moved to clause_reported_unverified)
+C61,requirement_paraphrase,changed,"States current UAE rules generally limit unmanned aircraft to daylight, VLOS and below 400 ft AGL, with other operations (night, BVLOS, above 400 ft, multiple UA) needing special approvals; hobbyist flights were largely kept out of controlled airspace while commercial operations have since been allowed to expand into it under approval; lists CAR-UAC, UAD, UAEV, UAX (experimental) and UAR under Federal Decree-Law 26/2022, and planned CAR-Airspace, CAR-UTMSP, CAR-UTM and CAR-USP/ASP. GNSS and remote ID not discussed.","The May 2023 UAE paper says rules permit daylight, VLOS flights below 400 ft AGL, with other operations needing special approval; operations are mostly kept outside controlled airspace, with a zone map supporting expanded commercial use; it lists CAR-UAC, UAD, UAEV, UAX, UAR under Federal Decree-Law 26/2022 and planned CAR-Airspace, UTMSP, UTM and USP/ASP (name inconsistent). GNSS and remote ID are not mentioned."
+C61,clause_or_section_seen,changed,Para on GCAA framework,(moved to clause_reported_unverified)
+C62,requirement_paraphrase,changed,"English page extraction says commercial operators need a UOA (operator registration letter, AED 1,200 fee) with Security Clearance issued as part of it, and extra Security Clearance Approval for cameras or recording; accident/loss of control goes immediately to GCAA hotline or aai@gcaa.gov.ae. The drones@gcaa.gov.ae address was not seen in the English extraction","Portal says commercial operators send an operator registration letter and pay a AED 1,200 fee, need a GCAA security permit for camera or recording operations, and report accidents or loss of control to the GCAA hotline or aai@gcaa.gov.ae."
+C62,clause_or_section_seen,changed,Page summary,(moved to clause_reported_unverified)
+C63,clause_or_section_seen,changed,Consultation page,(moved to clause_reported_unverified)
+C64,clause_or_section_seen,changed,"Arts. 2, 6, 8, 10, 11, 14",(moved to clause_reported_unverified)
+C65,clause_or_section_seen,changed,"Arts. 2, 3, 4, 14",(moved to clause_reported_unverified)
+C66,clause_or_section_seen,changed,News release,(moved to clause_reported_unverified)
+C67,binding_status,changed,guidance,voluntary
+C67,clause_or_section_seen,changed,"News articles (Gulf Today, Al Etihad)",(moved to clause_reported_unverified)
+D01,clause_or_section_seen,changed,Part 1 (normative syntax/semantics); Part 2 (guidance),(moved to clause_reported_unverified)
+D02,clause_or_section_seen,changed,Spec overview page,(moved to clause_reported_unverified)
+D03,clause_or_section_seen,changed,Clause 5 'Structure of assurance cases' (heading seen only),(moved to clause_reported_unverified)
+D04,requirement_paraphrase,changed,"Covers building and evaluating a safety argument for vehicles operating in autonomous mode without expected human intervention; scope includes foreseeable misuse and physical attacks, excludes detailed information security.","UL 4600 Ed. 3 (2023): safety argument for vehicles operating autonomously without expected human intervention; scope includes foreseeable misuse and physical attacks, and detailed information security is largely out of scope (catalogue summary; clause numbers not seen)."
+D04,clause_or_section_seen,changed,1.1-1.6 (scope),(moved to clause_reported_unverified)
+D05,requirement_paraphrase,changed,Says its requirements are necessary but possibly not sufficient for an acceptable item safety case; prompt element lists are non-exhaustive and teams must add items relevant to the item and its operational design domain.,"UL 4600 Ed. 3 (2023) describes its requirements as necessary but possibly not sufficient for a well formed safety case, with non exhaustive prompt lists (catalogue summary; clause 1.6 not seen)."
+D05,clause_or_section_seen,changed,1.6 (non-exhaustive prompt lists),(moved to clause_reported_unverified)
+D07,clause_or_section_seen,changed,Page-level description only,(moved to clause_reported_unverified)
+D08,clause_or_section_seen,changed,"Sections 5-10 (requirements, hazard analysis, safety monitor with ML, ML sensor, performance, adaptation)",(moved to clause_reported_unverified)
+D09,access_level,changed,full text seen,summary seen
+D09,clause_or_section_seen,changed,Whole paper,(moved to clause_reported_unverified)
+D10,clause_or_section_seen,changed,Document description,(moved to clause_reported_unverified)
+D13,clause_or_section_seen,changed,Scope/abstract,(moved to clause_reported_unverified)
+D14,clause_or_section_seen,changed,Section 3.21 (ODD definition),(moved to clause_reported_unverified)
+D15,clause_or_section_seen,changed,Overview page,(moved to clause_reported_unverified)
+D16,requirement_paraphrase,changed,Says existing ODD concepts do not comprehensively fit agricultural/off-road machinery; proposes ODD attributes including dust (e.g. a no-dust visibility condition) and lists GNSS in a digital-information layer.,"Paper says existing ODD concepts do not fit agriculture; Tables 1-2 list no-dust visibility attributes; GNSS appears in the digital-information layer in Sec 4.3 and Figure 4, not in the tables."
+D16,clause_or_section_seen,changed,Sections 4.2 and Tables 1-2 (as described by fetch),(moved to clause_reported_unverified)
+D17,access_level,changed,full text seen,summary seen
+D17,clause_or_section_seen,changed,"Six stages: scoping, ML safety requirements, data management, model learning, model verification, deployment",(moved to clause_reported_unverified)
+D18,access_level,changed,full text seen,summary seen
+D18,clause_or_section_seen,changed,Stage 3 Data Management,(moved to clause_reported_unverified)
+D19,access_level,changed,full text seen,summary seen
+D19,clause_or_section_seen,changed,Eight stages; Stage 1 Activity 2 (Operational Domain Model),(moved to clause_reported_unverified)
+D20,access_level,changed,full text seen,summary seen
+D20,requirement_paraphrase,changed,"SACE covers only the development phase before deployment; operational safety management is out of scope. Simulation is described as helping reviewers understand scenarios (Activity 3), as additional analysis to corroborate hazard validation (Activity 8), and as one option for validating the safe operating concept, including hardware-in-the-loop (Note 13); the guidance says justifying simulation representativeness is challenging.","SACE covers only pre deployment development; operational safety management is out of scope. Simulation helps reviewers understand scenarios (Activity 3), corroborates hazard analysis (Activity 8), and supports early validation of the safe operating concept, with hardware-in-the-loop to feed real sensor data (Note 13)."
+D20,clause_or_section_seen,changed,"Overview; Activities on simulation (Activity 3, 8; Note 13)",(moved to clause_reported_unverified)
+D21,access_level,changed,full text seen,summary seen
+D21,clause_or_section_seen,changed,"Exec. summary; data completeness, generalisation, robustness tasks",(moved to clause_reported_unverified)
+D22,access_level,changed,full text seen,summary seen
+D22,clause_or_section_seen,changed,Method and LIDAR case study,(moved to clause_reported_unverified)
+D23,access_level,changed,full text seen,summary seen
+D23,clause_or_section_seen,changed,"Review sections on ODD coverage, sensor limits, datasets",(moved to clause_reported_unverified)
+D24,access_level,changed,full text seen,summary seen
+D24,binding_status,changed,guidance,voluntary
+D24,clause_or_section_seen,changed,"Approach: assumption effect analysis, assumption monitors, composition",(moved to clause_reported_unverified)
+D26,clause_or_section_seen,changed,Description on NASA Standards page,(moved to clause_reported_unverified)
+D27,requirement_paraphrase,changed,"Requires assessing M&S results against 8 Credibility Assessment Scale factors (verification, validation, input pedigree, results uncertainty, results robustness, use history, M&S management, people qualifications) scored 0-4, and reporting caveats and uncertainty to decision makers.","The linked document is a 2010 workshop presentation describing NASA-STD-7009 (issued 11 July 2008, interim Dec 2006), not the standard itself; it describes the eight-factor 0-4 Credibility Assessment Scale and reporting of caveats and uncertainty."
+D27,clause_or_section_seen,changed,"Sections 4.7.1-4.7.3, 4.8 (as described)",(moved to clause_reported_unverified)
+D28,clause_or_section_seen,changed,Appendix 1 and credibility factor discussion (as described),(moved to clause_reported_unverified)
+D29,clause_or_section_seen,changed,Scope/abstract,(moved to clause_reported_unverified)
+D30,requirement_paraphrase,changed,"Manufacturers must reportedly submit a safety case showing the ADS presents no unreasonable risk (at least as safe as a competent and careful human driver) and maintain an audited lifecycle-wide SMS; compliance is reportedly shown via simulation, closed-track and real-world validation.","Reported UNECE framework (adopted 24 June 2026) with GTR No. 26 and companion UN Regulation 185 requires a documented safety case showing no unreasonable risk and an audited lifecycle safety management system, with compliance shown by simulation, closed-track and real-world validation; entry into force and national adoption are still pending."
+D30,clause_or_section_seen,changed,As reported by secondary sources (clause numbers not seen),(moved to clause_reported_unverified)
+D31,clause_or_section_seen,changed,As reported,(moved to clause_reported_unverified)
+D32,requirement_paraphrase,changed,"Reported to require ongoing post-deployment monitoring and reporting; a Data Storage System for Automated Driving; prompt reporting of critical events (collisions, operation outside ODD, cybersecurity incidents, emergency manoeuvres, unauthorized modifications) with follow-up reports within 30 days where required; annual safety-performance data.","Reported to require a data storage system, reporting of critical events with follow-up reports within 30 days where required, and annual safety data; the specific event categories were not seen in the source."
+D32,clause_or_section_seen,changed,As reported,(moved to clause_reported_unverified)
+D33,requirement_paraphrase,changed,"Reported to bar real-time in-vehicle self-learning that changes driving behaviour, and to require a software update process, remote termination capability and cybersecurity controls.","Reported to assume ADS software does not change driving behaviour through in-vehicle learning, and to require cybersecurity controls, software update processes and remote termination capability."
+D33,clause_or_section_seen,changed,As reported,(moved to clause_reported_unverified)
+D38,access_level,changed,full text seen,summary seen
+D38,clause_or_section_seen,changed,OSO#24 integrity/assurance table,(moved to clause_reported_unverified)
+D39,clause_or_section_seen,changed,Art 73(1)-(6),(moved to clause_reported_unverified)
+D40,requirement_paraphrase,changed,"Real-world testing of high-risk AI outside sandboxes requires a testing plan, market-surveillance approval (tacit after 30 days unless national law differs), registration, max about six months (one extension), informed consent, and reversibility of AI outputs; serious incidents go through Art 73.","Real-world testing outside sandboxes needs a testing plan submitted to and approved by the market surveillance authority; silence after 30 days counts as approval only where national law provides for tacit approval, otherwise authorisation is still required. Testing lasts up to six months, extendable once by six months, with informed consent, reversible outputs and Art 73 incident reporting."
+D40,clause_or_section_seen,changed,Art 60,(moved to clause_reported_unverified)
+D41,clause_or_section_seen,changed,Art 15,(moved to clause_reported_unverified)
+D42,clause_or_section_seen,changed,"Art 9(6), (7), (8)",(moved to clause_reported_unverified)
+D43,requirement_paraphrase,changed,"Recital (54): systems with self-evolving behaviour ensuring safety functions should be included in Annex I. Recital (55): ""should only apply to systems with a fully or partially self-evolving behaviour"". Wording on third-party assessment and non-learning software was not returned.","Recital 54 says self-evolving safety systems belong in Annex I; recital 55 limits third-party assessment of safety software to systems with fully or partially self-evolving, machine-learning behaviour. Art 3(3) only defines safety component and does not carry this content."
+D43,clause_or_section_seen,changed,Recitals (54) and (55); Art 3(3),(moved to clause_reported_unverified)
+D44,requirement_paraphrase,changed,"Mandatory reporting of occurrences posing significant risk by listed persons (pilot in command, designers/maintainers, ATS staff etc.) within 72 hours; organisations must have mandatory and voluntary reporting systems.","Regulation 376/2014 requires listed persons to report occurrences posing significant aviation safety risk within 72 hours, and organisations to run mandatory and voluntary reporting systems; this URL shows the original 2014 OJ text, not a 2018 consolidation. UAS coverage not shown."
+D46,clause_or_section_seen,changed,GCAA reporting webpage,(moved to clause_reported_unverified)
+D47,clause_or_section_seen,changed,Webpage summary,(moved to clause_reported_unverified)
+D48,requirement_paraphrase,changed,Remote pilot in command must report to FAA within 10 calendar days operations causing serious injury/loss of consciousness or property damage over $500.,"Remote pilot in command must report to the FAA within 10 calendar days an operation causing serious injury or loss of consciousness, or damage to property other than the UA unless repair cost and fair market value are both $500 or less."
+D49,binding_status,changed,conditional,guidance
+D49,requirement_paraphrase,changed,Proposes SMS for higher-risk certificate holders and reliance on FAA-accepted consensus standards with manufacturer Declaration of Compliance instead of type certification.,Proposed (not yet binding) FAA Part 108 would require an SMS for higher-risk certificate holders and rely on FAA-accepted consensus standards with a manufacturer Declaration of Compliance instead of type certification; final rule status to be checked.
+D49,clause_or_section_seen,changed,Law-firm summary,(moved to clause_reported_unverified)
+D50,clause_or_section_seen,changed,Press summary,(moved to clause_reported_unverified)
+D51,access_level,changed,full text seen,summary seen
+D51,clause_or_section_seen,changed,"Arts 3, 5, 6, 8, 9, 10",(moved to clause_reported_unverified)
+D52,access_level,changed,full text seen,summary seen
+D52,clause_or_section_seen,changed,Recommendations to operators,(moved to clause_reported_unverified)
+D53,access_level,changed,full text seen,summary seen
+D53,clause_or_section_seen,changed,Reporting requests,(moved to clause_reported_unverified)
+D55,clause_or_section_seen,changed,Web page,(moved to clause_reported_unverified)
+D56,clause_or_section_seen,changed,Press summary,(moved to clause_reported_unverified)
+D57,access_level,changed,full text seen,summary seen
+D57,clause_or_section_seen,changed,Working paper,(moved to clause_reported_unverified)
+D58,access_level,changed,full text seen,summary seen
+D58,clause_or_section_seen,changed,Section 3.1 actions,(moved to clause_reported_unverified)
+D59,access_level,changed,full text seen,summary seen
+D59,requirement_paraphrase,changed,"Asks ICAO to alert States to GNSS interference and urges States to apply Doc 9849 three-step mitigation (monitor threats, assess risk, deploy mitigations).","UAE paper A41-WP/196 asks ICAO to bring the operational impact of GNSS interference to States' attention and urges States to implement the mitigation measures in Doc 9849; the three-step process (monitor, assess, mitigate) is described in the body, not named in the requested actions."
+D59,clause_or_section_seen,changed,Actions requested,(moved to clause_reported_unverified)
+D60,access_level,changed,full text seen,summary seen
+D60,clause_or_section_seen,changed,Actions requested,(moved to clause_reported_unverified)
+D61,clause_or_section_seen,changed,Whole article,(moved to clause_reported_unverified)
+D62,access_level,changed,summary seen,full text seen
+D63,clause_or_section_seen,changed,Scope,(moved to clause_reported_unverified)
+D64,clause_or_section_seen,changed,Contents list: 4.1.2 Normal climatic conditions; 4.1.19 High temperatures,(moved to clause_reported_unverified)
+D65,clause_or_section_seen,changed,Clause 1 Scope; 4.3 Environmental requirements; 5.4 Environmental tests,(moved to clause_reported_unverified)
+D66,clause_or_section_seen,changed,Scope,(moved to clause_reported_unverified)
