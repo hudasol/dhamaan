@@ -1,0 +1,38 @@
+name: checks
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install free tools
+        run: |
+          python -m pip install --upgrade pip
+          pip install pyyaml pytest detect-secrets
+          sudo apt-get update -y && sudo apt-get install -y graphviz
+      - name: Repository guard (no standard text, paywalled PDFs or unlicensed raw downloads)
+        run: python tools/check_repo.py .
+      - name: Validate evidence table
+        run: python tools/validate_table.py data/evidence_table.csv
+      - name: Check assurance case
+        run: python tools/ac_check.py assurance/library_robot_case.yaml
+      - name: Tests
+        run: python -m pytest -q tests
+      - name: Secrets scan (regex)
+        run: python tools/secrets_scan.py .
+      - name: Secrets scan (detect-secrets)
+        run: |
+          detect-secrets scan --all-files --exclude-files '(^\.git/|__pycache__|\.pytest_cache|data/verification/outcome\.json$)' > /tmp/scan.json
+          python - <<'PY'
+          import json,sys
+          d=json.load(open('/tmp/scan.json'))['results']
+          for f,v in d.items(): print('HIT',f,[x['type'] for x in v])
+          sys.exit(1 if d else 0)
+          PY
