@@ -1,0 +1,20 @@
+{
+ "phase": 1,
+ "sample_n": 30,
+ "sample_verdicts": {
+  "partly_wrong": 4,
+  "correct": 26
+ },
+ "sample_content_error_rows": 4,
+ "sample_any_issue_rows": 21,
+ "full_audit_n": 192,
+ "full_audit_verdicts": {
+  "partly_wrong": 109,
+  "correct": 83
+ },
+ "full_audit_corrected_paraphrase": 41,
+ "full_audit_corrected_binding": 16,
+ "full_audit_corrected_access": 27,
+ "full_audit_corrected_codes": 61,
+ "note": "Phase 1 corrections were applied but never independently re-verified."
+}
