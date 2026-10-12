@@ -1,0 +1,7 @@
+tool,purpose_here,licence_spdx_or_name,licence_source_url,retrieved_on,free_account_needed,notes
+Python 3.13,scripts and tests,PSF licence (unconfirmed),,,no,licence page not read in this session
+PyYAML 6.0.3,read the assurance case file,MIT,local installed package metadata (License field and classifier),2026-10-12,no,confirmed from local metadata only
+pytest 9.1.1,tests,MIT,local installed package metadata (License-Expression field),2026-10-12,no,confirmed from local metadata only
+detect-secrets 1.5.0,secrets scan,Apache-2.0,local installed package metadata (classifier),2026-10-12,no,metadata does not state the licence version; confirm on the project page
+Graphviz 2.42.2 (Ubuntu package),render assurance diagram,EPL-1.0 (plus other licences for bundled parts),local file /usr/share/doc/graphviz/copyright,2026-10-12,no,confirmed from the Debian copyright file only
+GitHub Actions,run CI,GitHub terms for the free plan (unconfirmed),,,yes (free GitHub account),terms not read in this session
