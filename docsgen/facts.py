@@ -14,6 +14,7 @@ sys.path.insert(0, ROOT)
 
 import ac_check  # noqa: E402  (tools layer)
 from sim import acceptance as A  # noqa: E402  (sim layer)
+from sim import common as SC  # noqa: E402
 from sim.predictions import ACCEPTANCE, PREDICTIONS  # noqa: E402
 
 
@@ -113,6 +114,9 @@ def sim_facts() -> dict:
     for name, r in (("DU3", du3), ("GL3", gl3), ("GN", gn)):
         for k, v in r["config"].items():
             if isinstance(v, (int, float)) and not isinstance(v, bool): f[f"{name}_{k.upper()}"] = num(v, 0) if float(v).is_integer() else str(v)
+    st = SC.Stopping()
+    f.update({"STOP_T_REACT": num(st.t_react, 1), "STOP_DECEL": num(st.decel, 1), "STOP_MARGIN": num(st.margin, 1),
+              "STOP_REQ_NOMINAL": num(st.required(du3["config"]["v_nominal"]), 2)})
     f["DU3_LEVELS"] = ", ".join(num(x, 1) for x in du3["config"]["levels"])
     f["GL3_ELEVATIONS"] = ", ".join(str(x) for x in gl3["config"]["elevations"])
     f["GL3_AZIMUTHS"] = ", ".join(str(x) for x in gl3["config"]["azimuths"])
