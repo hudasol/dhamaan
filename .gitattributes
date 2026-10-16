@@ -1,3 +1,5 @@
 # Keep line endings identical on every platform so hashes and generated files match.
 * text=auto eol=lf
+# CSV files are stored byte for byte: the frozen tables are hashed in data/verification/outcome.json.
+*.csv -text
 *.png binary
