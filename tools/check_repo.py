@@ -23,11 +23,19 @@ MARKERS = [
 ]
 QUOTE = re.compile(r"(?:(?<=^)|(?<=[\s(\[]))[\"“](?=\S)([^\"”\n]{40,}?)(?<=\S)[\"”](?=[\s.,;:)\]!?]|$)", re.M)
 
+SQUOTE = re.compile(r"(?:(?<=^)|(?<=[\s(\[]))['‘](?=\S)([^'’\n]{40,}?)(?<=\S)['’](?=[\s.,;:)\]!?]|$)", re.M)
+EXCEPTIONS = "data/quote_exceptions.csv"   # quotes of 15 or more words inside frozen files, each with a reason
+
 def words(s): return len(s.split())
 
-def scan(root: str, max_quote: int = 25, warn_quote: int = 15) -> tuple[list[str], list[str]]:
-    """Return (errors, warnings) for the repository tree at root."""
+def scan(root: str, max_quote: int = 15) -> tuple[list[str], list[str]]:
+    """Return (errors, warnings) for the repository tree at root. A quoted passage (double or single quotes) of
+    max_quote words or more is an error unless it is a recorded exception, which is reported as a warning."""
     errors, warns = [], []
+    exc = set()
+    ep = os.path.join(root, EXCEPTIONS)
+    if os.path.exists(ep):
+        for r in csv.DictReader(open(ep, encoding="utf-8")): exc.add((r["path"], r["quote_start"]))
     manifest = set()
     mp = os.path.join(root, "data", "third_party_manifest.csv")
     if os.path.exists(mp):
@@ -68,10 +76,11 @@ def scan(root: str, max_quote: int = 25, warn_quote: int = 15) -> tuple[list[str
                 except csv.Error: chunks = [text]
             else: chunks = [text]
             for ch in chunks:
-                for m in QUOTE.finditer(ch):
+                for m in list(QUOTE.finditer(ch)) + list(SQUOTE.finditer(ch)):
                     n = words(m.group(1))
-                    if n >= max_quote: errors.append(f"{rel}: quoted passage of {n} words (limit {max_quote - 1})")
-                    elif n >= warn_quote: warns.append(f"{rel}: quoted passage of {n} words (protocol asks for under 15)")
+                    if n < max_quote: continue
+                    if (rel, m.group(1)[:40]) in exc: warns.append(f"{rel}: quoted passage of {n} words (recorded exception)")
+                    else: errors.append(f"{rel}: quoted passage of {n} words (limit {max_quote - 1})")
     return errors, warns
 
 if __name__ == "__main__":

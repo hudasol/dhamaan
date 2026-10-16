@@ -34,8 +34,9 @@ def test_watermark_marker():
 def test_long_quote_rejected_short_quote_ok():
     long_q = '"' + " ".join(["word"] * 30) + '"'
     e, _ = cr.scan(mk({"docs/n.md": long_q})); assert any("quoted passage" in x for x in e)
-    short_q = '"' + " ".join(["word"] * 8) + ' and some more text here to pass forty"'
+    short_q = '"' + " ".join(["word"] * 8) + ' and some more text here"'     # 14 words
     e, _ = cr.scan(mk({"docs/n.md": short_q})); assert e == []
+    e, _ = cr.scan(mk({"docs/n.md": '"' + " ".join(["word"] * 15) + '"'})); assert any("quoted passage of 15" in x for x in e)
 
 def test_csv_quoting_is_not_a_quote():
     cell = " ".join(["word"] * 40)
@@ -59,3 +60,22 @@ def test_png_only_in_figures():
 
 def test_this_repo_is_clean():
     e, _ = cr.scan(os.path.join(os.path.dirname(__file__), "..")); assert e == [], e[:5]
+
+
+def test_single_quoted_passage_rejected():
+    e, _ = cr.scan(mk({"docs/n.md": "As it says, '" + " ".join(["word"] * 16) + "' here."}))
+    assert any("quoted passage of 16" in x for x in e)
+
+def test_recorded_exception_is_a_warning():
+    inner = " ".join(["word"] * 16)
+    d = mk({"docs/x.md": f'Text "{inner}" here.',
+            "data/quote_exceptions.csv": f"path,quote_start,words,reason\ndocs/x.md,{inner[:40]},16,frozen\n"})
+    e, w = cr.scan(d); assert e == [] and any("recorded exception" in x for x in w)
+
+def test_quote_exceptions_only_for_frozen_files():
+    root = os.path.join(os.path.dirname(__file__), "..")
+    frozen = {l.split(None, 1)[1].strip() for l in open(os.path.join(root, "data/frozen_sha256.txt"), encoding="utf-8")
+              if l.strip() and not l.startswith("#")}
+    import csv
+    rows = list(csv.DictReader(open(os.path.join(root, "data/quote_exceptions.csv"), encoding="utf-8")))
+    assert rows and all(r["path"] in frozen for r in rows)
