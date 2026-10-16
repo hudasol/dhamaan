@@ -89,12 +89,22 @@ def test_duplicate_id():
     c = case(); c["goals"].append({"id": "G1", "text": "dup", "context": ["C1"]})
     assert ("ERROR", "DUPLICATE_ID", "G1") in codes(c)
 
-def test_real_case_has_no_errors_and_all_open():
+# The only items allowed out of "open": simulated, partial, with an artefact produced by sim/.
+NON_OPEN = {"EV-08": "sim/results/EV-08.json", "EV-12": "sim/results/EV-12.json"}
+
+def test_real_case_has_no_errors_and_only_simulated_partials():
     case_ = ac.load(os.path.join(ROOT, "assurance", "library_robot_case.yaml"))
     rows = ac.table_rows(os.path.join(ROOT, "data", "evidence_table.csv"))
     res = ac.check(case_, rows, ROOT)
     assert [r for r in res if r[0] == "ERROR"] == []
-    assert all(e["status"] == "open" for e in case_["evidence"])   # no invented evidence
+    for e in case_["evidence"]:   # no invented evidence
+        if e["id"] in NON_OPEN:
+            assert (e["status"], e["kind"], e["artefact"]) == ("partial", "simulated", NON_OPEN[e["id"]])
+        else:
+            assert e["status"] == "open", e["id"]
+    assert all(g["claim_about"] == "hardware" for g in case_["goals"] if g["id"] in ("G4", "G6"))
+    assert ("FLAG", "CLAIM_SIM_ONLY", "G4") in {r[:3] for r in res}
+    assert ("FLAG", "CLAIM_SIM_ONLY", "G6") in {r[:3] for r in res}
 
 def test_cli_exit_codes():
     p = os.path.join(ROOT, "assurance", "library_robot_case.yaml")
@@ -106,9 +116,6 @@ def test_render_contains_every_node():
     for n in ["G1", "G2", "S1", "C1", "AS1", "SN_EV01"]: assert n in dot
     assert "dashed" in dot
 
-def test_goal_without_claim_scope_is_schema_error():
-    c = case(); c["goals"][1].pop("claim_about")
-    assert ("ERROR", "SCHEMA", "G2") in codes(c)
 
 def with_artefact(status="partial", kind="simulated", good_hash=True):
     d = tempfile.mkdtemp(); open(os.path.join(d, "a.json"), "w", encoding="utf-8").write("{}")
@@ -148,3 +155,7 @@ def test_missing_hash_and_kind_are_errors():
     c, d = with_artefact(); e = c["evidence"][0]; e.pop("sha256"); e.pop("kind")
     k = codes(c, base=d)
     assert ("ERROR", "MISSING_HASH", "EV-01") in k and ("ERROR", "MISSING_KIND", "EV-01") in k
+
+def test_goal_without_claim_scope_is_schema_error():
+    c = case(); c["goals"][1].pop("claim_about")
+    assert ("ERROR", "SCHEMA", "G2") in codes(c)

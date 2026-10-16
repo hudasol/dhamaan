@@ -1,11 +1,12 @@
 # Machine checkable assurance case skeleton: university library service robot.
 # ILLUSTRATIVE ONLY. The scenario was assumed for research purposes; it is not a real project.
-# Every evidence item is OPEN. No evidence is claimed to exist. Nothing here is a certification claim.
+# Every evidence item is OPEN except EV-08 and EV-12, which are PARTIAL with SIMULATED evidence only (sim/results/).
+# Simulated evidence never closes a hardware claim. No other evidence is claimed to exist. Nothing here is a certification claim.
 # Source rows refer to data/evidence_table.csv (ids such as A22). A row supports vocabulary or method, not compliance.
 meta:
   title: University library service robot, assurance case skeleton
-  version: "0.2"
-  status: skeleton, all evidence open
+  version: "0.3"
+  status: skeleton; EV-08 and EV-12 partial (simulated only), all other evidence open
   evidence_table: data/evidence_table.csv
   note: "Rows listed under an evidence item are the sources that motivate it. They are not evidence that the robot meets anything."
 
@@ -101,11 +102,11 @@ evidence:
   - {id: EV-05, title: "Contact and collision evidence", status: open, decision_needed: true, rows: [A26, A29], note: "Decision needed: limits and their source."}
   - {id: EV-06, title: "Stopping distance and obstacle detection tests", status: open, rows: [A31, A36]}
   - {id: EV-07, title: "Perception evidence", status: open, rows: [B44, D18, D22, D21, B21]}
-  - {id: EV-08, title: "Planning and navigation safety, minimum risk behaviour", status: open, rows: [B46, B09, C34], note: "GNSS loss is a drone analogue only; see docs/GULF_TEST_PROTOCOL.md."}
+  - {id: EV-08, title: "Planning and navigation safety, minimum risk behaviour", status: partial, kind: simulated, artefact: sim/results/EV-08.json, sha256: a8d303a89b51180647e1e1653de11f098bc2510fc3266a5511ae6d02d9a8143f, rows: [B46, B09, C34], note: "Partial, simulated only: measurement level GNSS fault injection N2 to N4 (software, no RF), preregistered in sim/PREREGISTRATION.md. AC-N1 failed and AC-N2 held. Does not support any claim about the real robot. GNSS loss is a drone analogue only; see docs/GULF_TEST_PROTOCOL.md."}
   - {id: EV-09, title: "Simulation credibility", status: open, decision_needed: true, rows: [B07, B45, D20, D27, D38], note: "Decision needed: credibility method."}
   - {id: EV-10, title: "Human interaction evidence", status: open, rows: [A38, B24, B25]}
   - {id: EV-11, title: "Cybersecurity and update control", status: open, rows: [A24, A18, B07]}
-  - {id: EV-12, title: "Building condition evidence (heat, dust, glare)", status: open, decision_needed: true, rows: [D62, D63, D35, D38, D11, D12], note: "Decision needed: the envelope and severities. Nothing in the sources fixes them. See docs/GULF_TEST_PROTOCOL.md (proposal)."}
+  - {id: EV-12, title: "Building condition evidence (heat, dust, glare)", status: partial, kind: simulated, artefact: sim/results/EV-12.json, sha256: 1b183e597450a802f017cd0c558eb678434508e7d79e1b073d3adccc56c0f697, decision_needed: true, rows: [D62, D63, D35, D38, D11, D12], note: "Partial, simulated only: software dust sweep DU3 and sun sweep GL3, preregistered in sim/PREREGISTRATION.md. AC-DU1 and AC-DU2 held; AC-GL1 and AC-GL2 failed. No heat item and no hardware test was run. Decision needed: the real envelope and severities. Nothing in the sources fixes them. See docs/GULF_TEST_PROTOCOL.md (proposal)."}
   - {id: EV-13, title: "Operating procedures, training, supervision, maintenance", status: open, rows: [B24, C34, A38]}
   - {id: EV-14, title: "Logging and retention", status: open, decision_needed: true, rows: [B23, A05, A18, C52], note: "Decision needed: retention period and privacy review."}
   - {id: EV-15, title: "Incident reporting and field monitoring", status: open, rows: [B08, B09, B10, B29, B30, D44], note: "No UAE ground robot reporting rule was found in the sources."}

@@ -68,3 +68,16 @@ def test_evidence_bundles_are_current():
         stored = json.load(open(os.path.join(ROOT, "sim/results", item + ".json"), encoding="utf-8"))
         assert common.dump(b) == common.dump(stored), item
 
+
+def test_case_notes_agree_with_bundles():
+    import re, yaml
+    case = yaml.safe_load(open(os.path.join(ROOT, "assurance/library_robot_case.yaml"), encoding="utf-8"))
+    for e in case["evidence"]:
+        if e["status"] == "open": continue
+        b = json.load(open(os.path.join(ROOT, e["artefact"]), encoding="utf-8"))
+        held = {a["id"]: a["held"] for a in b["acceptance"]}
+        said = {}
+        for group, verb in re.findall(r"((?:AC-[A-Z0-9]+(?:,| and)? ?)+) (held|failed)", e["note"]):
+            for ac_id in re.findall(r"AC-[A-Z0-9]+", group): said[ac_id] = verb == "held"
+        assert said == held, (e["id"], said, held)
+        assert e["kind"] == b["evidence_kind"] and b["closes_hardware_claim"] is False
