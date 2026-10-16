@@ -120,8 +120,8 @@ t = fill(t, N_ROWS=str(len(rows)), COUNTS_BINDING=", ".join(f"{k} {bind[k]}" for
          COUNTS_VSTATUS=", ".join(f"{k} {v}" for k, v in sorted(vs.items())), BINDING_BY_FAMILY="\n".join(BF), TYPE_TABLE="\n".join(TT),
          MATRIX="\n".join(M), APPENDIX="\n".join(A), CONFLICTS=open(P("docs/templates/conflicts.md"), encoding="utf-8").read().strip(),
          CAVEAT_VERIF=CAV, EXEC_VERIFICATION=EXEC, VERIFICATION_SECTION=V, OFFICIAL_STATUS="\n".join(OS), DOWNLOADS="\n".join(DL))
-open(P("docs/REPORT.md"), "w", encoding="utf-8").write(t)
+open(P("docs/REPORT.md"), "w", encoding="utf-8", newline="\n").write(t)
 b = open(P("docs/templates/brief_template.md"), encoding="utf-8").read()
 b = fill(b, N_ROWS=str(len(rows)), COUNTS_BINDING=", ".join(f"{k} {bind[k]}" for k in ("mandatory", "conditional", "voluntary", "guidance")), BRIEF_VERIFICATION=BRIEF)
-open(P("docs/EXEC_BRIEF.md"), "w", encoding="utf-8").write(b)
+open(P("docs/EXEC_BRIEF.md"), "w", encoding="utf-8", newline="\n").write(b)
 print("built", len(t.split()), "words report;", len(b.split()), "words brief")
