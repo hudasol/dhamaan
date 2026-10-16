@@ -1,0 +1,165 @@
+{
+ "acceptance": [
+  {
+   "failing": [
+    "gnss:conditions/M|noise=5/detected_within_t_n/rate",
+    "gnss:conditions/M|drift=0.2/detected_within_t_n/rate"
+   ],
+   "held": false,
+   "id": "AC-N1",
+   "text": "Faults at or above E_N are detected within T_N = 10.0 s in at least Q_N = 0.9 of runs."
+  },
+  {
+   "failing": [],
+   "held": true,
+   "id": "AC-N2",
+   "text": "In every detected case the safe state is reached with navigation error at most L_N = 3.0 m."
+  }
+ ],
+ "closes_hardware_claim": false,
+ "evidence_item": "EV-08",
+ "evidence_kind": "simulated",
+ "goal": "G4",
+ "label": "SYNTHETIC: produced by a seeded software model in sim/. Not measured on any robot, sensor or receiver. The model and the method under test share an author. Evidence kind: simulated.",
+ "not_covered_ac_n3": [
+  {
+   "detected_rate": 0.933333,
+   "detected_within_t_n_rate": 0.0,
+   "fault": "drift=0.05",
+   "missed_seeds": [
+    16,
+    20
+   ]
+  },
+  {
+   "detected_rate": 1.0,
+   "detected_within_t_n_rate": 0.0,
+   "fault": "drift=0.1",
+   "missed_seeds": []
+  },
+  {
+   "detected_rate": 0.633333,
+   "detected_within_t_n_rate": 0.366667,
+   "fault": "jump=2",
+   "missed_seeds": [
+    1,
+    2,
+    9,
+    11,
+    15,
+    21,
+    22,
+    24,
+    25,
+    26,
+    28
+   ]
+  },
+  {
+   "detected_rate": 0.966667,
+   "detected_within_t_n_rate": 0.366667,
+   "fault": "noise=3",
+   "missed_seeds": [
+    6
+   ]
+  },
+  {
+   "detected_rate": 0.2,
+   "detected_within_t_n_rate": 0.1,
+   "fault": "replay=2",
+   "missed_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    13,
+    14,
+    15,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    26,
+    27,
+    29
+   ]
+  }
+ ],
+ "predictions": [
+  {
+   "id": "N-P1",
+   "verdict": "HIT"
+  },
+  {
+   "id": "N-P2",
+   "verdict": "HIT"
+  },
+  {
+   "id": "N-P3",
+   "verdict": "HIT"
+  },
+  {
+   "id": "N-P4",
+   "verdict": "MISS"
+  },
+  {
+   "id": "N-P5",
+   "verdict": "HIT"
+  },
+  {
+   "id": "N-P6",
+   "verdict": "HIT"
+  },
+  {
+   "id": "N-P7",
+   "verdict": "HIT"
+  },
+  {
+   "id": "N-P8",
+   "verdict": "MISS"
+  },
+  {
+   "id": "N-P9",
+   "verdict": "HIT"
+  },
+  {
+   "id": "N-P10",
+   "verdict": "HIT"
+  },
+  {
+   "id": "N-P11",
+   "verdict": "HIT"
+  },
+  {
+   "id": "N-P12",
+   "verdict": "HIT"
+  }
+ ],
+ "prereg_sha256": "f1e6fb576949358faf5dfe3d8233f1c4da2b2e4103d5281ec3029bce616e2095",
+ "protocol_items": [
+  "N2",
+  "N3",
+  "N4 (synthetic replay only)"
+ ],
+ "result_files": {
+  "sim/results/gnss.json": "9ceb97a263517c4c7e4a96d723517a3bb4c1fec94363f0cc213c73656e6c7273"
+ },
+ "status_supported": "partial",
+ "title": "Planning and navigation safety, minimum risk behaviour",
+ "what_this_does_not_show": [
+  "Nothing about a real robot, sensor, receiver or building: the worlds are software models written by the same authors as the methods.",
+  "No heat evidence (H1 to H6) and no hardware dust or glare test (DU4, GL2) was run.",
+  "No RF level GNSS evidence; fault models are measurement level only and are not checked against real interference.",
+  "The stopping model, sensor models and thresholds are proposal values, not measured values."
+ ]
+}

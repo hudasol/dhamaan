@@ -60,3 +60,11 @@ def test_every_prediction_metric_exists():
                     if node is None: break
                     assert k in node, m
                     node = node[k]
+
+
+def test_evidence_bundles_are_current():
+    from sim import evidence
+    for item, b in evidence.build().items():
+        stored = json.load(open(os.path.join(ROOT, "sim/results", item + ".json"), encoding="utf-8"))
+        assert common.dump(b) == common.dump(stored), item
+

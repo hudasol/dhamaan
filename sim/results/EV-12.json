@@ -1,0 +1,122 @@
+{
+ "acceptance": [
+  {
+   "failing": [],
+   "held": true,
+   "id": "AC-DU1",
+   "text": "Up to B_D = 0.4, the detector alone (B0) detects the obstacle in time in every run."
+  },
+  {
+   "failing": [],
+   "held": true,
+   "id": "AC-DU2",
+   "text": "Beyond B_D, the monitor (M) stops the robot in every run within T_D = 1.0 s of onset."
+  },
+  {
+   "failing": [
+    "gl3:conditions/M|e=5|a=0|rho=0.0/detected_in_time/rate",
+    "gl3:conditions/M|e=5|a=0|rho=0.5/detected_in_time/rate",
+    "gl3:conditions/M|e=15|a=0|rho=0.5/detected_in_time/rate"
+   ],
+   "held": false,
+   "id": "AC-GL1",
+   "text": "M detects in time at rate at least P_G = 0.95 at every sun condition (failures become restrictions, AC-GL3)."
+  },
+  {
+   "failing": [
+    "gl3:conditions/M|e=5|a=30|rho=0.5/slow_command_runs_where_s_exceeded/rate",
+    "gl3:conditions/M|e=5|a=30|rho=0.5/slow_command_delay/max"
+   ],
+   "held": false,
+   "id": "AC-GL2",
+   "text": "M commands the slow speed within T_G = 0.5 s of saturation exceeding S_G = 0.3, in every such run."
+  }
+ ],
+ "closes_hardware_claim": false,
+ "evidence_item": "EV-12",
+ "evidence_kind": "simulated",
+ "goal": "G6",
+ "label": "SYNTHETIC: produced by a seeded software model in sim/. Not measured on any robot, sensor or receiver. The model and the method under test share an author. Evidence kind: simulated.",
+ "predictions": [
+  {
+   "id": "DU3-P1",
+   "verdict": "HIT"
+  },
+  {
+   "id": "DU3-P2",
+   "verdict": "HIT"
+  },
+  {
+   "id": "DU3-P3",
+   "verdict": "HIT"
+  },
+  {
+   "id": "DU3-P4",
+   "verdict": "HIT"
+  },
+  {
+   "id": "DU3-P5",
+   "verdict": "HIT"
+  },
+  {
+   "id": "DU3-P6",
+   "verdict": "HIT"
+  },
+  {
+   "id": "DU3-P7",
+   "verdict": "HIT"
+  },
+  {
+   "id": "GL3-P1",
+   "verdict": "HIT"
+  },
+  {
+   "id": "GL3-P2",
+   "verdict": "HIT"
+  },
+  {
+   "id": "GL3-P3",
+   "verdict": "HIT"
+  },
+  {
+   "id": "GL3-P4",
+   "verdict": "HIT"
+  }
+ ],
+ "prereg_sha256": "f1e6fb576949358faf5dfe3d8233f1c4da2b2e4103d5281ec3029bce616e2095",
+ "protocol_items": [
+  "DU3",
+  "DU5 (software monitor only)",
+  "GL3",
+  "GL5 (software response only)"
+ ],
+ "restrictions_ac_gl3": [
+  {
+   "condition": "e=15|a=0|rho=0.5",
+   "detected_in_time_rate": 0.233333,
+   "saturation_model": 0.8125
+  },
+  {
+   "condition": "e=5|a=0|rho=0.0",
+   "detected_in_time_rate": 0.9,
+   "saturation_model": 0.625
+  },
+  {
+   "condition": "e=5|a=0|rho=0.5",
+   "detected_in_time_rate": 0.0,
+   "saturation_model": 1.0
+  }
+ ],
+ "result_files": {
+  "sim/results/du3.json": "11202004ec14d40e6acd9562868b9069008a1c87616d657b6f21c8896d37a78b",
+  "sim/results/gl3.json": "6a3a89af490964a668f83ad9396afda567962c21d71aca9a4267daa54d7c2f90"
+ },
+ "status_supported": "partial",
+ "title": "Building condition evidence (heat, dust, glare)",
+ "what_this_does_not_show": [
+  "Nothing about a real robot, sensor, receiver or building: the worlds are software models written by the same authors as the methods.",
+  "No heat evidence (H1 to H6) and no hardware dust or glare test (DU4, GL2) was run.",
+  "No RF level GNSS evidence; fault models are measurement level only and are not checked against real interference.",
+  "The stopping model, sensor models and thresholds are proposal values, not measured values."
+ ]
+}
