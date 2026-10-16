@@ -239,6 +239,17 @@ def warning_facts() -> dict:
                                     [[r["id"], r["access_level"], r["mentions"], "yes" if r["clause_reported_unverified"].strip() else "no"] for r in rev])}
 
 
+def review_facts() -> dict:
+    rows = _csv("docs/data/review_findings.csv")
+    open_rows = [r for r in rows if not r["status"].startswith("fixed")]
+    return {"N_REVIEW": str(len(rows)), "N_REVIEW_FIXED": str(sum(r["status"].startswith("fixed") for r in rows)),
+            "N_REVIEW_OTHER": str(len(open_rows)),
+            "REVIEW_TABLE": table(["Id", "Severity", "Finding", "Status", "Resolution"],
+                                  [[r["id"], r["severity"], r["finding"], r["status"], r["resolution"]] for r in rows]),
+            "REVIEW_NOT_FIXED": table(["Id", "Finding", "Status", "Reason"],
+                                      [[r["id"], r["finding"], r["status"], r["resolution"]] for r in open_rows])}
+
+
 def check_facts() -> dict:
     p = _p("docs/data/check_summary.json")
     if not os.path.exists(p): return {"TESTS_PASSED": "n/a", "CHECK_LINES": "not recorded"}
@@ -249,7 +260,7 @@ def check_facts() -> dict:
 
 def all_facts() -> dict:
     f = {}
-    for part in (evidence_table_facts(), case_facts(), context_facts(), warning_facts(), sim_facts(), check_facts()):
+    for part in (evidence_table_facts(), case_facts(), context_facts(), warning_facts(), review_facts(), sim_facts(), check_facts()):
         assert not set(part) & set(f), set(part) & set(f)
         f.update(part)
     return f

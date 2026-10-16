@@ -28,4 +28,6 @@ We list what the work does not show, where it would break on real data, and find
 
 ## Review findings not fixed
 
-Recorded after the adversarial review; see the end of `HANDOFF.md` for the list and the reason for each.
+An independent adversarial review produced {{N_REVIEW}} findings; {{N_REVIEW_FIXED}} were fixed. The others are documented, rejected or left as they are, each with a reason (full register: `docs/data/review_findings.csv`):
+
+{{REVIEW_NOT_FIXED}}

@@ -1,0 +1,21 @@
+id,severity,finding,status,resolution
+R01,high,An undeveloped hardware goal skipped the rule that simulated evidence cannot close it,fixed,Rule now runs for every hardware goal; test added (commit fix(checker))
+R02,high,Wording could read as an institutional affiliation of the author,fixed,Scenario host is now an unnamed host organisation in the case; report; brief; enquiry pack and tracking sheet
+R03,high,Tool specific provenance words in public text,fixed in editable files,Neutral provenance wording in report; protocol; notes and next steps; frozen files keep their original words (see R18)
+R04,medium,First person singular in public text,fixed in editable files,Plural or impersonal voice; a test now checks public documents; the enquiry letters stay first person because one person signs them
+R05,medium,HANDOFF.md referenced but missing; the build skipped missing templates,fixed,HANDOFF.md is generated; the build fails on a missing template; a test checks both directions
+R06,medium,AC-N2 scored at the stop instant while the protocol says before the stop,documented,Deviation D2; the error before the stop is now reported and stays below L_N
+R07,medium,A pre onset false alarm was listed as a missed seed,fixed,Reported separately; deviation D3; rates unchanged
+R08,medium,Quote guard allowed up to 24 words and ignored single quotes,fixed,Guard fails at 15 words with single quotes; three frozen quotes recorded as exceptions
+R09,medium,NEXT_STEPS.md was stale,fixed,Rewritten after the simulation phase
+R10,low,Loss timeout is checked at fix times so it fires later than the stated timeout,documented,Deviation D4; METHOD says how it works
+R11,low,AC-GL2 clock starts on one true frame while the monitor needs two measured frames,documented,Deviation D5; failure stands as scored
+R12,low,GL3-P2 scored HIT while its hypothesis failed,fixed,EVALUATION summary says so
+R13,low,Replay delay counted in fixes not seconds,fixed,Converted from seconds; results identical; deviation D6
+R14,low,Two tautological tests; DECISION_NEEDED untested; CI reran only subsets,fixed,Tests replaced; DECISION_NEEDED test added; CI reruns the whole simulation and diffs the results
+R15,low,Standard library network modules were not banned,fixed,Import contract refuses socket; http; urllib.request and similar
+R16,low,Emoji allowlist in the voice test,rejected,The brief allows four named emojis; the allowlist matches it and no emoji is used
+R17,low,Superlatives in PILOT; instruction log tone in ADR-0010; a body named in the warnings table,fixed,Reworded; the table now shows yes or no instead of the locator text
+R18,low,Frozen files contain tool words; first person and a 15 word quote,not fixed,The evidence table; baseline; verification plan and results are frozen by hash and must not change; recorded here and in data/quote_exceptions.csv
+R19,low,Hyphenated compounds in CONTEXT.md,not fixed,They come from frozen evidence table paraphrases rendered verbatim
+R20,low,Source institutions named in the reading list and report outside CONTEXT.md,not fixed,They name the publishers of cited sources with their URLs; this is citation; not a claim of contact or endorsement

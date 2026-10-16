@@ -29,4 +29,14 @@ We list what the work does not show, where it would break on real data, and find
 
 ## Review findings not fixed
 
-Recorded after the adversarial review; see the end of `HANDOFF.md` for the list and the reason for each.
+An independent adversarial review produced 20 findings; 13 were fixed. The others are documented, rejected or left as they are, each with a reason (full register: `docs/data/review_findings.csv`):
+
+| Id | Finding | Status | Reason |
+|---|---|---|---|
+| R06 | AC-N2 scored at the stop instant while the protocol says before the stop | documented | Deviation D2; the error before the stop is now reported and stays below L_N |
+| R10 | Loss timeout is checked at fix times so it fires later than the stated timeout | documented | Deviation D4; METHOD says how it works |
+| R11 | AC-GL2 clock starts on one true frame while the monitor needs two measured frames | documented | Deviation D5; failure stands as scored |
+| R16 | Emoji allowlist in the voice test | rejected | The brief allows four named emojis; the allowlist matches it and no emoji is used |
+| R18 | Frozen files contain tool words; first person and a 15 word quote | not fixed | The evidence table; baseline; verification plan and results are frozen by hash and must not change; recorded here and in data/quote_exceptions.csv |
+| R19 | Hyphenated compounds in CONTEXT.md | not fixed | They come from frozen evidence table paraphrases rendered verbatim |
+| R20 | Source institutions named in the reading list and report outside CONTEXT.md | not fixed | They name the publishers of cited sources with their URLs; this is citation; not a claim of contact or endorsement |
