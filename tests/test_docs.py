@@ -62,7 +62,8 @@ def public_texts():
 
 
 def test_voice_rules_in_public_documents():
-    banned = re.compile(r"—|\bClaude\b|\bAnthropic\b|ChatGPT|Co-Authored-By|claude\.ai", re.I)
+    banned = re.compile("—|" + r"\bClaude\b|\bAnthropic\b|ChatGPT|Co-Authored-By|claude\.ai|subagent|WebFetch|WebSearch"
+                        r"|fetch tool|permission layer", re.I)
     emoji = re.compile("[\U0001F300-\U0001FAFF☀-➿]")
     allowed_emoji = {"\U0001F337", "\U0001F338", "\U0001F34B", "\U0001F33F"}
     bad = []
@@ -81,3 +82,19 @@ def test_hand_written_row_counts_agree_with_table():
             got = m.group(1) or m.group(2)
             if got != n: bad.append(f"{rel}: {m.group(0)!r} but the table has {n} rows")
     assert bad == []
+
+
+# Sender letter templates are written to be signed by one person, so they may use the first person.
+FIRST_PERSON_EXEMPT = {os.path.join("docs", "UAE_ENQUIRY_PACK.md")}
+ROMAN_I = r"(?<!Annex )(?<!Part )(?<!Section )(?<!Category )(?<!Class )(?<!Phase )(?<!Level )(?<!Annexes )(?<!Stage )(?<!Classes )(?<!Communication, )"
+
+
+def test_no_first_person_singular_in_public_documents():
+    pat = re.compile(ROMAN_I + r"\b(I|my|me|myself)\b(?![/-]| \()")
+    extra = [("assurance/library_robot_case.yaml", open(os.path.join(ROOT, "assurance/library_robot_case.yaml"), encoding="utf-8").read())]
+    bad = []
+    for rel, t in list(public_texts()) + extra:
+        if rel in FIRST_PERSON_EXEMPT: continue
+        for m in pat.finditer(t):
+            bad.append(f"{rel}: ...{t[max(0, m.start() - 40):m.end() + 20]!r}")
+    assert bad == [], bad[:10]
