@@ -35,8 +35,15 @@ def test_seed_changes_world():
 
 
 def test_methods_share_the_world():
-    # common random numbers: the generator does not depend on the method
-    assert common.rng_for("DU3", "k=0.5", 3).random() == common.rng_for("DU3", "k=0.5", 3).random()
+    # common random numbers: the generator is keyed without the method, so in a clean world (no degradation,
+    # where the monitor cannot act) the detector alone and the method see the same scans and agree exactly.
+    import inspect
+    assert list(inspect.signature(common.rng_for).parameters) == ["experiment", "condition", "seed_index"]
+    cfg, stop = du3_lidar.Config(), common.Stopping()
+    for i in range(3):
+        a = du3_lidar.run_one(cfg, 0.0, "B0", common.rng_for("DU3", "k=0.0", i), stop)
+        b = du3_lidar.run_one(cfg, 0.0, "M", common.rng_for("DU3", "k=0.0", i), stop)
+        assert a == b
 
 
 def test_saturation_is_bounded():
