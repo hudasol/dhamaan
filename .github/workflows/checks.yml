@@ -27,6 +27,10 @@ jobs:
         run: python tools/gen_schema.py --check
       - name: Tests
         run: python -m pytest -q tests
+      - name: Full simulation rerun reproduces the committed results
+        run: |
+          python -m sim.run_all
+          git diff --exit-code -- sim/results
       - name: Render assurance case diagram
         run: python tools/ac_render.py assurance/library_robot_case.yaml figures/gsn_library_robot
       - name: Upload rendered diagram
