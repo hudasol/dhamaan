@@ -224,6 +224,15 @@ def sim_facts() -> dict:
     return f
 
 
+def warning_facts() -> dict:
+    rev = _csv("data/validator_warnings_reviewed.csv")
+    decisions = sorted({r["decision"] for r in rev})
+    return {"N_REVIEWED": str(len(rev)), "REVIEW_DATE": ", ".join(sorted({r["reviewed_on"] for r in rev})),
+            "REVIEW_DECISIONS": "\n".join(f"> {d}" for d in decisions),
+            "REVIEWED_TABLE": table(["Row", "Access", "Mentions in the paraphrase", "Recorded as unverified"],
+                                    [[r["id"], r["access_level"], r["mentions"], r["clause_reported_unverified"].replace("|", "/")] for r in rev])}
+
+
 def check_facts() -> dict:
     p = _p("docs/data/check_summary.json")
     if not os.path.exists(p): return {"TESTS_PASSED": "n/a", "CHECK_LINES": "not recorded"}
@@ -234,7 +243,7 @@ def check_facts() -> dict:
 
 def all_facts() -> dict:
     f = {}
-    for part in (evidence_table_facts(), case_facts(), context_facts(), sim_facts(), check_facts()):
+    for part in (evidence_table_facts(), case_facts(), context_facts(), warning_facts(), sim_facts(), check_facts()):
         assert not set(part) & set(f), set(part) & set(f)
         f.update(part)
     return f

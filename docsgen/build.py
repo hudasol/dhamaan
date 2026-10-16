@@ -22,6 +22,7 @@ OUTPUTS = {
     "docs/PILOT.md": "PILOT.tmpl.md",
     "docs/SECURITY.md": "SECURITY.tmpl.md",
     "docs/DATA_STATEMENT.md": "DATA_STATEMENT.tmpl.md",
+    "docs/VALIDATOR_WARNINGS.md": "VALIDATOR_WARNINGS.tmpl.md",
     "HANDOFF.md": "HANDOFF.tmpl.md",
 }
 PLACEHOLDER = re.compile(r"\{\{([A-Z0-9_]+)\}\}")

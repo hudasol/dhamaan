@@ -44,7 +44,6 @@ def test_every_template_is_built():
 
 
 def test_synthetic_numbers_carry_the_label():
-    facts = F.all_facts()
     sim_keys = set(F.sim_facts())
     for rel, text in BUILT.items():
         tmpl = open(B.template_path(B.OUTPUTS[rel]), encoding="utf-8").read()
