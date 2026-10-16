@@ -1,0 +1,35 @@
+# Pilot: from simulated evidence to a real test on a real robot
+
+**Status: proposal.** Nothing on this page has been done. It describes the shortest path from the current {{N_PARTIAL}} partial, simulated evidence items to evidence that could support a hardware claim. Every step uses free tools and free data; steps that need hardware need a robot that the pilot partner already owns or lends.
+
+## What exists today
+
+- Simulated, labelled results for DU3, GL3 and N2 to N4 (`docs/EVALUATION.md`), preregistered and reproducible.
+- An assurance case in which EV-08 and EV-12 are partial with evidence kind `simulated`, and a checker that will not let that evidence close a hardware claim.
+- A protocol (`docs/GULF_TEST_PROTOCOL.md`) that names the hardware items: H1 to H6, DU1, DU2, DU4, GL1, GL2, GL5 and a logged localisation stack for N2 to N4.
+
+## Stage A: real data, no robot
+
+- Weather and dust history for the site from an open source, once its licence is confirmed (`data/free_tools_licences.csv` lists what still needs checking). Output: the site envelope for H1 and DU1.
+- Building geometry and sun position for the glare map GL1. Output: the routes and times where the GL3 restrictions would apply.
+- A public GNSS log with a confirmed licence, replayed through the same fault checks (protocol N4, labelled `replayed`). This closes deviation D1 in `sim/DEVIATIONS.md`.
+
+## Stage B: bench evidence on a real sensor
+
+- Log the robot's own LiDAR, camera and localisation output in the building, and replay the logs through the DU3, GL3 and GNSS checks instead of the synthetic models. Output: evidence kind `bench`.
+- Apply a documented contamination to the sensor window and repeat the obstacle test (DU4). Compare the direction of the result with DU3 (AC-DU3). If they disagree, DU3 is not used as evidence.
+- Freeze the thresholds of the real monitors in a new preregistration before any run, as was done here.
+
+## Stage C: field test on a real robot
+
+- Run H4 (safety function at heat soak) on the hottest natural day if no chamber is available, labelled `field`.
+- Run GL2 along the glare risk routes at the times from GL1, and GL5 (slow down or stop when glare degrades sensing).
+- Record each result as an evidence item with kind `bench` or `field`, an artefact path and its SHA-256, so the checker can verify it.
+
+## What the pilot partner would provide
+
+A robot or sensor head to log, a building route that can be used at quiet times, and a named person who can confirm that the ODD in EV-01 matches the site. No funding, purchase or paid standard is assumed.
+
+## What would change in this repository
+
+Only data and evidence items. The checker, the contracts and the document build stay the same; a new kind of evidence enters through the same fields. A claim about hardware can become supported only when bench or field evidence with a matching hash is present.
