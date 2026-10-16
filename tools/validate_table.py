@@ -68,11 +68,39 @@ def validate(path: str, strict: bool = False) -> tuple[list[str], list[str]]:
     if strict: errors += warnings; warnings = []
     return errors, warnings
 
+def clause_mentions(text: str) -> str:
+    """The clause style references in a paraphrase, as one '; ' separated string."""
+    return "; ".join(m.group(0) for m in CLAUSE_IN_TEXT.finditer(text))
+
+def load_reviewed(path: str) -> dict[str, dict[str, str]]:
+    with open(path, newline="", encoding="utf-8") as f: return {r["id"]: r for r in csv.DictReader(f)}
+
+def validate_reviewed(path: str, reviewed_path: str, strict: bool = False) -> tuple[list[str], list[str], list[str]]:
+    """Like validate, but a clause style warning counts as reviewed when the reviewed file lists the row with the
+    same mentions and the row records its locator in clause_reported_unverified. Returns (errors, warnings, reviewed)."""
+    errors, warnings = validate(path)
+    rev = load_reviewed(reviewed_path)
+    with open(path, newline="", encoding="utf-8") as f: rows = {r["id"]: r for r in csv.DictReader(f)}
+    still, done = [], []
+    for w in warnings:
+        i = w.split(":", 1)[0]; r = rows.get(i); x = rev.get(i)
+        ok = (r is not None and x is not None and "clause style reference" in w
+              and x["mentions"] == clause_mentions(r["requirement_paraphrase"]) and r["clause_reported_unverified"].strip())
+        (done if ok else still).append(w)
+    for i in rev:
+        if i not in rows or not any(w.startswith(i + ":") for w in warnings):
+            errors.append(f"{i}: listed in {reviewed_path} but no longer warns (stale review)")
+    if strict: errors += still; still = []
+    return errors, still, done
+
 if __name__ == "__main__":
     ap = argparse.ArgumentParser(); ap.add_argument("path", nargs="?", default="data/evidence_table.csv")
-    ap.add_argument("--strict", action="store_true", help="treat warnings as errors")
-    a = ap.parse_args(); errs, warns = validate(a.path, a.strict)
+    ap.add_argument("--strict", action="store_true", help="treat warnings (unreviewed ones, with --reviewed) as errors")
+    ap.add_argument("--reviewed", help="CSV of reviewed clause style warnings (id, mentions, ...)")
+    a = ap.parse_args()
+    if a.reviewed: errs, warns, done = validate_reviewed(a.path, a.reviewed, a.strict)
+    else: (errs, warns), done = validate(a.path, a.strict), []
     for w in warns: print("WARN", w)
     for x in errs: print("ERROR", x)
-    print(f"{len(errs)} errors, {len(warns)} warnings")
+    print(f"{len(errs)} errors, {len(warns)} warnings" + (f", {len(done)} reviewed warnings" if a.reviewed else ""))
     sys.exit(1 if errs else 0)

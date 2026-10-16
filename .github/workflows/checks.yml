@@ -20,7 +20,7 @@ jobs:
       - name: Repository guard (no standard text, paywalled PDFs or unlicensed raw downloads)
         run: python tools/check_repo.py .
       - name: Validate evidence table
-        run: python tools/validate_table.py data/evidence_table.csv
+        run: python tools/validate_table.py data/evidence_table.csv --reviewed data/validator_warnings_reviewed.csv --strict
       - name: Check assurance case
         run: python tools/ac_check.py assurance/library_robot_case.yaml
       - name: Schemas match the contracts

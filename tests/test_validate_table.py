@@ -56,3 +56,45 @@ def test_paraphrase_clause_reference_is_warning_then_strict_error():
 def test_real_table_is_valid():
     p = os.path.join(os.path.dirname(__file__), "..", "data", "evidence_table.csv")
     e, _ = vt.validate(p); assert e == [], e[:5]
+
+ROOT = os.path.join(os.path.dirname(__file__), "..")
+TABLE = os.path.join(ROOT, "data", "evidence_table.csv")
+REVIEWED = os.path.join(ROOT, "data", "validator_warnings_reviewed.csv")
+
+def test_every_clause_locator_has_full_text_seen():
+    rows = list(csv.DictReader(open(TABLE, encoding="utf-8", newline="")))
+    bad = [r["id"] for r in rows if r["clause_or_section_seen"].strip() and r["access_level"] != "full text seen"]
+    assert bad == [] and any(r["clause_or_section_seen"].strip() for r in rows)
+
+def test_real_table_has_no_unreviewed_warnings():
+    errs, warns, done = vt.validate_reviewed(TABLE, REVIEWED, strict=True)
+    assert errs == [] and warns == [] and len(done) == len(vt.load_reviewed(REVIEWED))
+
+def test_review_requires_same_mentions_and_unverified_locator():
+    r = good() | {"requirement_paraphrase": "See Art. 5 of the act.", "clause_reported_unverified": "Art. 5"}
+    d = tempfile.mkdtemp(); rev = os.path.join(d, "rev.csv")
+    def write_rev(m):
+        with open(rev, "w", newline="", encoding="utf-8") as f:
+            w = csv.writer(f); w.writerow(["id", "mentions"]); w.writerow(["A01", m])
+    write_rev("Art. 5")
+    errs, warns, done = vt.validate_reviewed(run_path([r]), rev, strict=True)
+    assert errs == [] and len(done) == 1
+    write_rev("Art. 6")                                   # review no longer matches the text
+    errs, warns, done = vt.validate_reviewed(run_path([r]), rev, strict=True)
+    assert errs and not done
+    write_rev("Art. 5"); r["clause_reported_unverified"] = ""   # locator not recorded as unverified
+    errs, warns, done = vt.validate_reviewed(run_path([r]), rev, strict=True)
+    assert errs and not done
+
+def test_stale_review_is_an_error():
+    d = tempfile.mkdtemp(); rev = os.path.join(d, "rev.csv")
+    with open(rev, "w", newline="", encoding="utf-8") as f:
+        w = csv.writer(f); w.writerow(["id", "mentions"]); w.writerow(["A01", "Art. 5"])
+    errs, _, _ = vt.validate_reviewed(run_path([good()]), rev)
+    assert any("stale review" in e for e in errs)
+
+def run_path(rows):
+    d = tempfile.mkdtemp(); p = os.path.join(d, "t.csv")
+    with open(p, "w", newline="", encoding="utf-8") as f:
+        w = csv.DictWriter(f, fieldnames=vt.REQUIRED); w.writeheader(); w.writerows(rows)
+    return p

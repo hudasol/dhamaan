@@ -10,7 +10,8 @@ ROOT = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)),
 PY = sys.executable
 STEPS = [
     ("repository guard", [PY, "tools/check_repo.py", "."]),
-    ("evidence table", [PY, "tools/validate_table.py", "data/evidence_table.csv"]),
+    ("evidence table", [PY, "tools/validate_table.py", "data/evidence_table.csv",
+                        "--reviewed", "data/validator_warnings_reviewed.csv", "--strict"]),
     ("assurance case", [PY, "tools/ac_check.py", "assurance/library_robot_case.yaml", "--quiet"]),
     ("secrets scan", [PY, "tools/secrets_scan.py", "."]),
     ("tests", [PY, "-m", "pytest", "-q", "tests"]),
