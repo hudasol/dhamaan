@@ -91,7 +91,7 @@ def run_one(cfg: Config, kind: str, size: float, method: str, rng: np.random.Gen
             elif kind == "jump": z = genuine + size * u
             elif kind == "drift": z = genuine + size * age * u
             elif kind == "replay":
-                back = int(round(size)); z = truth_at_fix[j - 1 - back] + cfg.sigma_gnss * fix_noise[j - back]
+                back = int(round(size / (per * cfg.dt))); z = truth_at_fix[j - 1 - back] + cfg.sigma_gnss * fix_noise[j - back]
         if z is None:
             if method == "M" and t_alarm is None and tf - last_fix_t > cfg.timeout: t_alarm = tf
         else:
@@ -129,9 +129,11 @@ def run(seeds: int = common.SEEDS_PER_CONDITION, cfg: Config = Config(), conditi
                 "detection_delay": common.mean_ci(delays),
                 "error_at_detection": common.mean_ci([r["err_alarm"] for r in detected]),
                 "error_at_stop": common.mean_ci([r["err_stop"] for r in detected]),
+                "max_error_before_stop_detected": common.mean_ci([r["max_err"] for r in detected]),
                 "max_error_after_onset": common.mean_ci([r["max_err"] for r in runs]),
                 "error_exceeds_l_n": common.rate([r["max_err"] > acceptance.L_N for r in runs]),
-                "missed_seeds": [i for i, d in enumerate(delays) if d is None] if kind != "nominal" else [],
+                "missed_seeds": [i for i, (d, fa) in enumerate(zip(delays, false_alarm)) if d is None and not fa] if kind != "nominal" else [],
+                "pre_onset_alarm_seeds": [i for i, fa in enumerate(false_alarm) if fa] if kind != "nominal" else [],
             }
     summary = {m: {"false_alarm_nominal": conds[f"{m}|nominal=0"]["false_alarm"]["rate"]} for m in METHODS}
     return common.envelope(EXPERIMENT, ["N2", "N3", "N4 (synthetic replay only)"],
