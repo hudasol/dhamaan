@@ -27,6 +27,13 @@ jobs:
         run: python tools/gen_schema.py --check
       - name: Tests
         run: python -m pytest -q tests
+      - name: Render assurance case diagram
+        run: python tools/ac_render.py assurance/library_robot_case.yaml figures/gsn_library_robot
+      - name: Upload rendered diagram
+        uses: actions/upload-artifact@v4
+        with:
+          name: gsn-diagram
+          path: figures/gsn_library_robot.*
       - name: Secrets scan (regex)
         run: python tools/secrets_scan.py .
       - name: Secrets scan (detect-secrets)
