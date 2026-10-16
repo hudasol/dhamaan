@@ -15,34 +15,34 @@
 
 ## Reviewed rows
 
-| Row | Access | Mentions in the paraphrase | Recorded as unverified |
+| Row | Access | Mentions in the paraphrase | Locator recorded as unverified |
 |---|---|---|---|
-| A14 | summary seen | Annex I; Art. 6 | Art. 6(7) |
-| A15 | summary seen | Annex I | Recitals 54 and 55 |
-| A16 | summary seen | Art. 2; Annex I | Annex I Part A (item number not verified; text not returned); Art. 6(1) and Art. 25(2) seen |
-| A17 | title only | Annex I | Annex III 1.1.9 (existence confirmed by Art. 20(9) cross reference; Annex text not seen) |
-| B13 | summary seen | Annex I | Art. 6(1)(a)-(b) |
-| B15 | summary seen | Annex I | Annex I Section A item 1 (deleted); Section B item 21 |
-| B16 | summary seen | Annex I; Art. 6; Art. 6; Art. 2; Art. 6; Annex I | Art. 2(2) |
-| B17 | summary seen | Annex I; Annex I; Art. 5 | Art. 113 (amending article in 2026/1744 not seen); Recital (40) seen |
-| B19 | summary seen | Annex I; Art. 6; Sec. 2; Annex I | Art. 8 (new third and fourth paragraphs), Art. 20(10), Art. 47(2) (consolidated text, markers M2) |
-| B22 | summary seen | Annex I | Art. 11(1)-(3); Annex IV points 1-9 |
-| B23 | summary seen | Annex I | Art. 12(1)-(3) |
-| B27 | summary seen | Art. 1 | Art. 17 |
-| B28 | summary seen | Annex I; Section 2; Art. 1; Annex V; Section 2 | Art. 43 (Section A and Section B paragraphs) |
-| B29 | summary seen | Annex I; Annex I | Art. 72 |
-| B32 | summary seen | Art. 4; Section 2; Art. 4 | Art. 40(2) new subparagraph (2026/1744 point (17)); base Art. 40(1)-(3) not seen officially |
-| B34 | summary seen | Art. 6; Annex I; Annex I | Sections III (Annex I route) and IV |
-| C01 | summary seen | Art. 5 | Art. 3 |
-| C03 | summary seen | Art. 1 | Art. 5 |
-| C10 | summary seen | Art. 1 | UAS.SPEC.030, .050 |
-| C14 | summary seen | Art. 4; Art. 4 | Art. 40 and Art. 41 |
-| C37 | summary seen | Art. 1; Sec. 2; Sec. 3 | Sec. 2.3 overview (as summarised) |
-| C42 | summary seen | Section 8 | 14 CFR 89.105, 89.115 |
-| C50 | summary seen | Art. 1 | Annex A (24 reference specifications), Art. 12 |
-| C65 | summary seen | Art. 3; Art. 4; Art. 1 | Arts. 2, 3, 4, 14 |
-| D43 | summary seen | Annex I | Recitals (54) and (55); Art 3(3) |
-| D46 | summary seen | Annex 1 | GCAA reporting webpage |
+| A14 | summary seen | Annex I; Art. 6 | yes |
+| A15 | summary seen | Annex I | yes |
+| A16 | summary seen | Art. 2; Annex I | yes |
+| A17 | title only | Annex I | yes |
+| B13 | summary seen | Annex I | yes |
+| B15 | summary seen | Annex I | yes |
+| B16 | summary seen | Annex I; Art. 6; Art. 6; Art. 2; Art. 6; Annex I | yes |
+| B17 | summary seen | Annex I; Annex I; Art. 5 | yes |
+| B19 | summary seen | Annex I; Art. 6; Sec. 2; Annex I | yes |
+| B22 | summary seen | Annex I | yes |
+| B23 | summary seen | Annex I | yes |
+| B27 | summary seen | Art. 1 | yes |
+| B28 | summary seen | Annex I; Section 2; Art. 1; Annex V; Section 2 | yes |
+| B29 | summary seen | Annex I; Annex I | yes |
+| B32 | summary seen | Art. 4; Section 2; Art. 4 | yes |
+| B34 | summary seen | Art. 6; Annex I; Annex I | yes |
+| C01 | summary seen | Art. 5 | yes |
+| C03 | summary seen | Art. 1 | yes |
+| C10 | summary seen | Art. 1 | yes |
+| C14 | summary seen | Art. 4; Art. 4 | yes |
+| C37 | summary seen | Art. 1; Sec. 2; Sec. 3 | yes |
+| C42 | summary seen | Section 8 | yes |
+| C50 | summary seen | Art. 1 | yes |
+| C65 | summary seen | Art. 3; Art. 4; Art. 1 | yes |
+| D43 | summary seen | Annex I | yes |
+| D46 | summary seen | Annex 1 | yes |
 
 ## What this does not settle
 

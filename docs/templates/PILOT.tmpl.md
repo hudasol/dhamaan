@@ -1,6 +1,6 @@
 # Pilot: from simulated evidence to a real test on a real robot
 
-**Status: proposal.** Nothing on this page has been done. It describes the shortest path from the current {{N_PARTIAL}} partial, simulated evidence items to evidence that could support a hardware claim. Every step uses free tools and free data; steps that need hardware need a robot that the pilot partner already owns or lends.
+**Status: proposal.** Nothing on this page has been done. It describes a direct path from the current {{N_PARTIAL}} partial, simulated evidence items to evidence that could support a hardware claim. Every step uses free tools and free data; steps that need hardware need a robot that the pilot partner already owns or lends.
 
 ## What exists today
 
@@ -22,7 +22,7 @@
 
 ## Stage C: field test on a real robot
 
-- Run H4 (safety function at heat soak) on the hottest natural day if no chamber is available, labelled `field`.
+- Run H4 (safety function at heat soak) on a day near the seasonal temperature peak if no chamber is available, labelled `field`.
 - Run GL2 along the glare risk routes at the times from GL1, and GL5 (slow down or stop when glare degrades sensing).
 - Record each result as an evidence item with kind `bench` or `field`, an artefact path and its SHA-256, so the checker can verify it.
 

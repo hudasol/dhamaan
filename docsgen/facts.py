@@ -235,8 +235,8 @@ def warning_facts() -> dict:
     decisions = sorted({r["decision"] for r in rev})
     return {"N_REVIEWED": str(len(rev)), "REVIEW_DATE": ", ".join(sorted({r["reviewed_on"] for r in rev})),
             "REVIEW_DECISIONS": "\n".join(f"> {d}" for d in decisions),
-            "REVIEWED_TABLE": table(["Row", "Access", "Mentions in the paraphrase", "Recorded as unverified"],
-                                    [[r["id"], r["access_level"], r["mentions"], r["clause_reported_unverified"].replace("|", "/")] for r in rev])}
+            "REVIEWED_TABLE": table(["Row", "Access", "Mentions in the paraphrase", "Locator recorded as unverified"],
+                                    [[r["id"], r["access_level"], r["mentions"], "yes" if r["clause_reported_unverified"].strip() else "no"] for r in rev])}
 
 
 def check_facts() -> dict:
