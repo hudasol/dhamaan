@@ -1,0 +1,11 @@
+# SHA-256 at the preregistration commit, before any evaluation run (2026-10-16).
+# The first three are frozen by tests/test_prereg.py; model files may change only with an entry in sim/DEVIATIONS.md.
+f1e6fb576949358faf5dfe3d8233f1c4da2b2e4103d5281ec3029bce616e2095  sim/PREREGISTRATION.md
+9cdb317086a792cab77262bbbfadb34cb06864a5af3cc43c5fc9cbb12f54a96b  sim/predictions.py
+0354f2ce71d09b60e3675b2752a041b315b34e086aac391b4016554c08e0bc18  sim/acceptance.py
+08b4e8070670811eb595dc5a4be661e1ef2c59a0acd87c4a867506ad61975618  sim/score.py
+d4dd36d2a682a1a1555e2a6c6d9772ba585cc003e9e52d0b57960171627dfca2  sim/common.py
+90a2e0e3d5dedb4b422a7d41bc64ada80683e81ff3c5376d7fe217b5c66ca96e  sim/du3_lidar.py
+e88d3182093ce3b1a7aec3f0d4d0363cd6f9127f1ec9c2ff7d49a16ede2a4550  sim/gl3_glare.py
+1248ab52d8c5b5e3ea640d12581958a0dba4b65affdbe65b515684c69cc27561  sim/gnss_n2n4.py
+36f60f8bcb713c97e3ae00a2b5652ae47fd37865434f68d7e586a9fa077fb58b  sim/run_all.py
