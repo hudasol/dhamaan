@@ -113,20 +113,20 @@ def check(case: dict, rows: dict, base_dir: str = ".") -> list[tuple[str, str, s
             return s
         return set()
     for g in goals.values():
-        if g.get("undeveloped"):
-            add("FLAG", "UNDEVELOPED", g["id"], g.get("undeveloped_reason", "goal marked undeveloped"))
-            continue
         es = ev_of(g["id"])
-        if not es: add("FLAG", "NO_EVIDENCE", g["id"], "claim has no evidence item anywhere in its support tree")
-        elif all(ev[e].get("status") == "open" for e in es if e in ev):
-            add("FLAG", "CLAIM_ALL_OPEN", g["id"], "every evidence item supporting this claim is open, so the claim is unsupported today")
-        elif g.get("claim_about") == "hardware":
-            done = [ev[e] for e in es if e in ev and ev[e].get("status") != "open"]
+        done = [ev[e] for e in es if e in ev and ev[e].get("status") != "open"]
+        if g.get("claim_about") == "hardware":   # checked for every goal, undeveloped or not
             for x in done:
                 if x.get("kind") == "simulated" and x.get("status") == "provided":
                     add("ERROR", "SIM_CLOSES_HARDWARE", x["id"], f"simulated evidence marked provided supports hardware claim {g['id']}")
-            if done and all(x.get("kind") == "simulated" for x in done):
-                add("FLAG", "CLAIM_SIM_ONLY", g["id"], "only simulated evidence supports this hardware claim, so it stays open")
+        if g.get("undeveloped"):
+            add("FLAG", "UNDEVELOPED", g["id"], g.get("undeveloped_reason", "goal marked undeveloped"))
+            continue
+        if not es: add("FLAG", "NO_EVIDENCE", g["id"], "claim has no evidence item anywhere in its support tree")
+        elif all(ev[e].get("status") == "open" for e in es if e in ev):
+            add("FLAG", "CLAIM_ALL_OPEN", g["id"], "every evidence item supporting this claim is open, so the claim is unsupported today")
+        elif g.get("claim_about") == "hardware" and all(x.get("kind") == "simulated" for x in done):
+            add("FLAG", "CLAIM_SIM_ONLY", g["id"], "only simulated evidence supports this hardware claim, so it stays open")
     for s in strategies.values():
         if not (s.get("evidence") or links.get(s["id"])): add("FLAG", "NO_EVIDENCE", s["id"], "strategy has no evidence and supports no goal")
 

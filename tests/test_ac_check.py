@@ -169,3 +169,12 @@ def test_caption_follows_the_data():
     c = case(); assert "No evidence is claimed to exist." in ar.caption(c)
     c["evidence"][0].update({"status": "partial", "kind": "simulated"})
     cap = ar.caption(c); assert "Partial: EV-01 (simulated)." in cap and "supports no hardware claim" in cap
+
+def test_undeveloped_goal_does_not_bypass_simulation_rule():
+    c, d = with_artefact(status="provided")
+    for g in c["goals"]: g["undeveloped"] = True
+    assert ("ERROR", "SIM_CLOSES_HARDWARE", "EV-01") in codes(c, base=d)
+
+def test_decision_needed_is_flagged():
+    c = case(); c["evidence"][0]["decision_needed"] = True; c["evidence"][0]["note"] = "Decision needed: limits."
+    assert ("FLAG", "DECISION_NEEDED", "EV-01") in codes(c)
