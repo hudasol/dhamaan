@@ -1,0 +1,1774 @@
+{
+ "base_seed": 20261016,
+ "conditions": {
+  "B0|k=0.0": {
+   "detected_in_time": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "detection_distance": {
+    "ci95": [
+     9.373044,
+     9.713623
+    ],
+    "max": 9.85,
+    "mean": 9.543333,
+    "median": 9.77,
+    "n": 30
+   },
+   "k": 0.0,
+   "method": "B0",
+   "monitor_stop": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "required_distance": 0.76,
+   "speed": 0.8,
+   "stop_time_after_onset": {
+    "ci95": null,
+    "max": null,
+    "mean": null,
+    "median": null,
+    "n": 0
+   },
+   "unsafe": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "unsafe_seeds": []
+  },
+  "B0|k=0.1": {
+   "detected_in_time": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "detection_distance": {
+    "ci95": [
+     8.643134,
+     8.795532
+    ],
+    "max": 8.89,
+    "mean": 8.719333,
+    "median": 8.81,
+    "n": 30
+   },
+   "k": 0.1,
+   "method": "B0",
+   "monitor_stop": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "required_distance": 0.76,
+   "speed": 0.8,
+   "stop_time_after_onset": {
+    "ci95": null,
+    "max": null,
+    "mean": null,
+    "median": null,
+    "n": 0
+   },
+   "unsafe": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "unsafe_seeds": []
+  },
+  "B0|k=0.2": {
+   "detected_in_time": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "detection_distance": {
+    "ci95": [
+     7.679349,
+     7.823318
+    ],
+    "max": 7.93,
+    "mean": 7.751333,
+    "median": 7.85,
+    "n": 30
+   },
+   "k": 0.2,
+   "method": "B0",
+   "monitor_stop": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "required_distance": 0.76,
+   "speed": 0.8,
+   "stop_time_after_onset": {
+    "ci95": null,
+    "max": null,
+    "mean": null,
+    "median": null,
+    "n": 0
+   },
+   "unsafe": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "unsafe_seeds": []
+  },
+  "B0|k=0.3": {
+   "detected_in_time": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "detection_distance": {
+    "ci95": [
+     6.759894,
+     6.897439
+    ],
+    "max": 7.05,
+    "mean": 6.828667,
+    "median": 6.89,
+    "n": 30
+   },
+   "k": 0.3,
+   "method": "B0",
+   "monitor_stop": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "required_distance": 0.76,
+   "speed": 0.8,
+   "stop_time_after_onset": {
+    "ci95": null,
+    "max": null,
+    "mean": null,
+    "median": null,
+    "n": 0
+   },
+   "unsafe": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "unsafe_seeds": []
+  },
+  "B0|k=0.4": {
+   "detected_in_time": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "detection_distance": {
+    "ci95": [
+     5.700028,
+     5.898638
+    ],
+    "max": 6.09,
+    "mean": 5.799333,
+    "median": 5.85,
+    "n": 30
+   },
+   "k": 0.4,
+   "method": "B0",
+   "monitor_stop": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "required_distance": 0.76,
+   "speed": 0.8,
+   "stop_time_after_onset": {
+    "ci95": null,
+    "max": null,
+    "mean": null,
+    "median": null,
+    "n": 0
+   },
+   "unsafe": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "unsafe_seeds": []
+  },
+  "B0|k=0.5": {
+   "detected_in_time": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "detection_distance": {
+    "ci95": [
+     4.824543,
+     4.987457
+    ],
+    "max": 5.13,
+    "mean": 4.906,
+    "median": 4.97,
+    "n": 30
+   },
+   "k": 0.5,
+   "method": "B0",
+   "monitor_stop": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "required_distance": 0.76,
+   "speed": 0.8,
+   "stop_time_after_onset": {
+    "ci95": null,
+    "max": null,
+    "mean": null,
+    "median": null,
+    "n": 0
+   },
+   "unsafe": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "unsafe_seeds": []
+  },
+  "B0|k=0.6": {
+   "detected_in_time": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "detection_distance": {
+    "ci95": [
+     3.942211,
+     4.056456
+    ],
+    "max": 4.17,
+    "mean": 3.999333,
+    "median": 4.01,
+    "n": 30
+   },
+   "k": 0.6,
+   "method": "B0",
+   "monitor_stop": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "required_distance": 0.76,
+   "speed": 0.8,
+   "stop_time_after_onset": {
+    "ci95": null,
+    "max": null,
+    "mean": null,
+    "median": null,
+    "n": 0
+   },
+   "unsafe": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "unsafe_seeds": []
+  },
+  "B0|k=0.7": {
+   "detected_in_time": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "detection_distance": {
+    "ci95": [
+     3.095012,
+     3.159654
+    ],
+    "max": 3.21,
+    "mean": 3.127333,
+    "median": 3.13,
+    "n": 30
+   },
+   "k": 0.7,
+   "method": "B0",
+   "monitor_stop": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "required_distance": 0.76,
+   "speed": 0.8,
+   "stop_time_after_onset": {
+    "ci95": null,
+    "max": null,
+    "mean": null,
+    "median": null,
+    "n": 0
+   },
+   "unsafe": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "unsafe_seeds": []
+  },
+  "B0|k=0.8": {
+   "detected_in_time": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "detection_distance": {
+    "ci95": [
+     2.211969,
+     2.245365
+    ],
+    "max": 2.25,
+    "mean": 2.228667,
+    "median": 2.25,
+    "n": 30
+   },
+   "k": 0.8,
+   "method": "B0",
+   "monitor_stop": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "required_distance": 0.76,
+   "speed": 0.8,
+   "stop_time_after_onset": {
+    "ci95": null,
+    "max": null,
+    "mean": null,
+    "median": null,
+    "n": 0
+   },
+   "unsafe": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "unsafe_seeds": []
+  },
+  "B0|k=0.9": {
+   "detected_in_time": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "detection_distance": {
+    "ci95": [
+     1.270475,
+     1.293525
+    ],
+    "max": 1.29,
+    "mean": 1.282,
+    "median": 1.29,
+    "n": 30
+   },
+   "k": 0.9,
+   "method": "B0",
+   "monitor_stop": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "required_distance": 0.76,
+   "speed": 0.8,
+   "stop_time_after_onset": {
+    "ci95": null,
+    "max": null,
+    "mean": null,
+    "median": null,
+    "n": 0
+   },
+   "unsafe": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "unsafe_seeds": []
+  },
+  "B0|k=1.0": {
+   "detected_in_time": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "detection_distance": {
+    "ci95": null,
+    "max": null,
+    "mean": null,
+    "median": null,
+    "n": 0
+   },
+   "k": 1.0,
+   "method": "B0",
+   "monitor_stop": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "required_distance": 0.76,
+   "speed": 0.8,
+   "stop_time_after_onset": {
+    "ci95": null,
+    "max": null,
+    "mean": null,
+    "median": null,
+    "n": 0
+   },
+   "unsafe": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "unsafe_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29
+   ]
+  },
+  "B1|k=0.0": {
+   "detected_in_time": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "detection_distance": {
+    "ci95": [
+     9.425367,
+     9.762633
+    ],
+    "max": 9.89,
+    "mean": 9.594,
+    "median": 9.85,
+    "n": 30
+   },
+   "k": 0.0,
+   "method": "B1",
+   "monitor_stop": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "required_distance": 0.4,
+   "speed": 0.4,
+   "stop_time_after_onset": {
+    "ci95": null,
+    "max": null,
+    "mean": null,
+    "median": null,
+    "n": 0
+   },
+   "unsafe": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "unsafe_seeds": []
+  },
+  "B1|k=0.1": {
+   "detected_in_time": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "detection_distance": {
+    "ci95": [
+     8.728147,
+     8.87852
+    ],
+    "max": 8.97,
+    "mean": 8.803333,
+    "median": 8.89,
+    "n": 30
+   },
+   "k": 0.1,
+   "method": "B1",
+   "monitor_stop": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "required_distance": 0.4,
+   "speed": 0.4,
+   "stop_time_after_onset": {
+    "ci95": null,
+    "max": null,
+    "mean": null,
+    "median": null,
+    "n": 0
+   },
+   "unsafe": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "unsafe_seeds": []
+  },
+  "B1|k=0.2": {
+   "detected_in_time": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "detection_distance": {
+    "ci95": [
+     7.791775,
+     7.924225
+    ],
+    "max": 8.01,
+    "mean": 7.858,
+    "median": 7.93,
+    "n": 30
+   },
+   "k": 0.2,
+   "method": "B1",
+   "monitor_stop": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "required_distance": 0.4,
+   "speed": 0.4,
+   "stop_time_after_onset": {
+    "ci95": null,
+    "max": null,
+    "mean": null,
+    "median": null,
+    "n": 0
+   },
+   "unsafe": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "unsafe_seeds": []
+  },
+  "B1|k=0.3": {
+   "detected_in_time": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "detection_distance": {
+    "ci95": [
+     6.877283,
+     6.969383
+    ],
+    "max": 7.09,
+    "mean": 6.923333,
+    "median": 6.95,
+    "n": 30
+   },
+   "k": 0.3,
+   "method": "B1",
+   "monitor_stop": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "required_distance": 0.4,
+   "speed": 0.4,
+   "stop_time_after_onset": {
+    "ci95": null,
+    "max": null,
+    "mean": null,
+    "median": null,
+    "n": 0
+   },
+   "unsafe": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "unsafe_seeds": []
+  },
+  "B1|k=0.4": {
+   "detected_in_time": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "detection_distance": {
+    "ci95": [
+     5.920312,
+     6.017022
+    ],
+    "max": 6.13,
+    "mean": 5.968667,
+    "median": 5.99,
+    "n": 30
+   },
+   "k": 0.4,
+   "method": "B1",
+   "monitor_stop": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "required_distance": 0.4,
+   "speed": 0.4,
+   "stop_time_after_onset": {
+    "ci95": null,
+    "max": null,
+    "mean": null,
+    "median": null,
+    "n": 0
+   },
+   "unsafe": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "unsafe_seeds": []
+  },
+  "B1|k=0.5": {
+   "detected_in_time": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "detection_distance": {
+    "ci95": [
+     5.078686,
+     5.117314
+    ],
+    "max": 5.17,
+    "mean": 5.098,
+    "median": 5.09,
+    "n": 30
+   },
+   "k": 0.5,
+   "method": "B1",
+   "monitor_stop": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "required_distance": 0.4,
+   "speed": 0.4,
+   "stop_time_after_onset": {
+    "ci95": null,
+    "max": null,
+    "mean": null,
+    "median": null,
+    "n": 0
+   },
+   "unsafe": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "unsafe_seeds": []
+  },
+  "B1|k=0.6": {
+   "detected_in_time": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "detection_distance": {
+    "ci95": [
+     4.062345,
+     4.138988
+    ],
+    "max": 4.21,
+    "mean": 4.100667,
+    "median": 4.13,
+    "n": 30
+   },
+   "k": 0.6,
+   "method": "B1",
+   "monitor_stop": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "required_distance": 0.4,
+   "speed": 0.4,
+   "stop_time_after_onset": {
+    "ci95": null,
+    "max": null,
+    "mean": null,
+    "median": null,
+    "n": 0
+   },
+   "unsafe": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "unsafe_seeds": []
+  },
+  "B1|k=0.7": {
+   "detected_in_time": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "detection_distance": {
+    "ci95": [
+     3.143152,
+     3.204848
+    ],
+    "max": 3.29,
+    "mean": 3.174,
+    "median": 3.21,
+    "n": 30
+   },
+   "k": 0.7,
+   "method": "B1",
+   "monitor_stop": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "required_distance": 0.4,
+   "speed": 0.4,
+   "stop_time_after_onset": {
+    "ci95": null,
+    "max": null,
+    "mean": null,
+    "median": null,
+    "n": 0
+   },
+   "unsafe": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "unsafe_seeds": []
+  },
+  "B1|k=0.8": {
+   "detected_in_time": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "detection_distance": {
+    "ci95": [
+     2.293718,
+     2.315615
+    ],
+    "max": 2.33,
+    "mean": 2.304667,
+    "median": 2.31,
+    "n": 30
+   },
+   "k": 0.8,
+   "method": "B1",
+   "monitor_stop": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "required_distance": 0.4,
+   "speed": 0.4,
+   "stop_time_after_onset": {
+    "ci95": null,
+    "max": null,
+    "mean": null,
+    "median": null,
+    "n": 0
+   },
+   "unsafe": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "unsafe_seeds": []
+  },
+  "B1|k=0.9": {
+   "detected_in_time": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "detection_distance": {
+    "ci95": [
+     1.344385,
+     1.366282
+    ],
+    "max": 1.37,
+    "mean": 1.355333,
+    "median": 1.37,
+    "n": 30
+   },
+   "k": 0.9,
+   "method": "B1",
+   "monitor_stop": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "required_distance": 0.4,
+   "speed": 0.4,
+   "stop_time_after_onset": {
+    "ci95": null,
+    "max": null,
+    "mean": null,
+    "median": null,
+    "n": 0
+   },
+   "unsafe": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "unsafe_seeds": []
+  },
+  "B1|k=1.0": {
+   "detected_in_time": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "detection_distance": {
+    "ci95": [
+     0.420119,
+     0.434547
+    ],
+    "max": 0.45,
+    "mean": 0.427333,
+    "median": 0.41,
+    "n": 30
+   },
+   "k": 1.0,
+   "method": "B1",
+   "monitor_stop": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "required_distance": 0.4,
+   "speed": 0.4,
+   "stop_time_after_onset": {
+    "ci95": null,
+    "max": null,
+    "mean": null,
+    "median": null,
+    "n": 0
+   },
+   "unsafe": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "unsafe_seeds": []
+  },
+  "M|k=0.0": {
+   "detected_in_time": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "detection_distance": {
+    "ci95": [
+     9.373044,
+     9.713623
+    ],
+    "max": 9.85,
+    "mean": 9.543333,
+    "median": 9.77,
+    "n": 30
+   },
+   "k": 0.0,
+   "method": "M",
+   "monitor_stop": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "required_distance": 0.76,
+   "speed": 0.8,
+   "stop_time_after_onset": {
+    "ci95": null,
+    "max": null,
+    "mean": null,
+    "median": null,
+    "n": 0
+   },
+   "unsafe": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "unsafe_seeds": []
+  },
+  "M|k=0.1": {
+   "detected_in_time": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "detection_distance": {
+    "ci95": [
+     8.643134,
+     8.795532
+    ],
+    "max": 8.89,
+    "mean": 8.719333,
+    "median": 8.81,
+    "n": 30
+   },
+   "k": 0.1,
+   "method": "M",
+   "monitor_stop": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "required_distance": 0.76,
+   "speed": 0.8,
+   "stop_time_after_onset": {
+    "ci95": null,
+    "max": null,
+    "mean": null,
+    "median": null,
+    "n": 0
+   },
+   "unsafe": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "unsafe_seeds": []
+  },
+  "M|k=0.2": {
+   "detected_in_time": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "detection_distance": {
+    "ci95": [
+     7.679349,
+     7.823318
+    ],
+    "max": 7.93,
+    "mean": 7.751333,
+    "median": 7.85,
+    "n": 30
+   },
+   "k": 0.2,
+   "method": "M",
+   "monitor_stop": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "required_distance": 0.76,
+   "speed": 0.8,
+   "stop_time_after_onset": {
+    "ci95": null,
+    "max": null,
+    "mean": null,
+    "median": null,
+    "n": 0
+   },
+   "unsafe": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "unsafe_seeds": []
+  },
+  "M|k=0.3": {
+   "detected_in_time": {
+    "ci95": [
+     0.302324,
+     0.638577
+    ],
+    "k": 14,
+    "n": 30,
+    "rate": 0.466667
+   },
+   "detection_distance": {
+    "ci95": [
+     6.753787,
+     6.923356
+    ],
+    "max": 6.97,
+    "mean": 6.838571,
+    "median": 6.89,
+    "n": 14
+   },
+   "k": 0.3,
+   "method": "M",
+   "monitor_stop": {
+    "ci95": [
+     0.361423,
+     0.697676
+    ],
+    "k": 16,
+    "n": 30,
+    "rate": 0.533333
+   },
+   "required_distance": 0.76,
+   "speed": 0.8,
+   "stop_time_after_onset": {
+    "ci95": [
+     1.236205,
+     2.576295
+    ],
+    "max": 4.6,
+    "mean": 1.90625,
+    "median": 1.85,
+    "n": 16
+   },
+   "unsafe": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "unsafe_seeds": []
+  },
+  "M|k=0.4": {
+   "detected_in_time": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "detection_distance": {
+    "ci95": null,
+    "max": null,
+    "mean": null,
+    "median": null,
+    "n": 0
+   },
+   "k": 0.4,
+   "method": "M",
+   "monitor_stop": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "required_distance": 0.76,
+   "speed": 0.8,
+   "stop_time_after_onset": {
+    "ci95": [
+     0.219535,
+     0.340465
+    ],
+    "max": 0.9,
+    "mean": 0.28,
+    "median": 0.2,
+    "n": 30
+   },
+   "unsafe": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "unsafe_seeds": []
+  },
+  "M|k=0.5": {
+   "detected_in_time": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "detection_distance": {
+    "ci95": null,
+    "max": null,
+    "mean": null,
+    "median": null,
+    "n": 0
+   },
+   "k": 0.5,
+   "method": "M",
+   "monitor_stop": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "required_distance": 0.76,
+   "speed": 0.8,
+   "stop_time_after_onset": {
+    "ci95": [
+     0.2,
+     0.2
+    ],
+    "max": 0.2,
+    "mean": 0.2,
+    "median": 0.2,
+    "n": 30
+   },
+   "unsafe": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "unsafe_seeds": []
+  },
+  "M|k=0.6": {
+   "detected_in_time": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "detection_distance": {
+    "ci95": null,
+    "max": null,
+    "mean": null,
+    "median": null,
+    "n": 0
+   },
+   "k": 0.6,
+   "method": "M",
+   "monitor_stop": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "required_distance": 0.76,
+   "speed": 0.8,
+   "stop_time_after_onset": {
+    "ci95": [
+     0.2,
+     0.2
+    ],
+    "max": 0.2,
+    "mean": 0.2,
+    "median": 0.2,
+    "n": 30
+   },
+   "unsafe": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "unsafe_seeds": []
+  },
+  "M|k=0.7": {
+   "detected_in_time": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "detection_distance": {
+    "ci95": null,
+    "max": null,
+    "mean": null,
+    "median": null,
+    "n": 0
+   },
+   "k": 0.7,
+   "method": "M",
+   "monitor_stop": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "required_distance": 0.76,
+   "speed": 0.8,
+   "stop_time_after_onset": {
+    "ci95": [
+     0.2,
+     0.2
+    ],
+    "max": 0.2,
+    "mean": 0.2,
+    "median": 0.2,
+    "n": 30
+   },
+   "unsafe": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "unsafe_seeds": []
+  },
+  "M|k=0.8": {
+   "detected_in_time": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "detection_distance": {
+    "ci95": null,
+    "max": null,
+    "mean": null,
+    "median": null,
+    "n": 0
+   },
+   "k": 0.8,
+   "method": "M",
+   "monitor_stop": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "required_distance": 0.76,
+   "speed": 0.8,
+   "stop_time_after_onset": {
+    "ci95": [
+     0.2,
+     0.2
+    ],
+    "max": 0.2,
+    "mean": 0.2,
+    "median": 0.2,
+    "n": 30
+   },
+   "unsafe": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "unsafe_seeds": []
+  },
+  "M|k=0.9": {
+   "detected_in_time": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "detection_distance": {
+    "ci95": null,
+    "max": null,
+    "mean": null,
+    "median": null,
+    "n": 0
+   },
+   "k": 0.9,
+   "method": "M",
+   "monitor_stop": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "required_distance": 0.76,
+   "speed": 0.8,
+   "stop_time_after_onset": {
+    "ci95": [
+     0.2,
+     0.2
+    ],
+    "max": 0.2,
+    "mean": 0.2,
+    "median": 0.2,
+    "n": 30
+   },
+   "unsafe": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "unsafe_seeds": []
+  },
+  "M|k=1.0": {
+   "detected_in_time": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "detection_distance": {
+    "ci95": null,
+    "max": null,
+    "mean": null,
+    "median": null,
+    "n": 0
+   },
+   "k": 1.0,
+   "method": "M",
+   "monitor_stop": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "required_distance": 0.76,
+   "speed": 0.8,
+   "stop_time_after_onset": {
+    "ci95": [
+     0.2,
+     0.2
+    ],
+    "max": 0.2,
+    "mean": 0.2,
+    "median": 0.2,
+    "n": 30
+   },
+   "unsafe": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "unsafe_seeds": []
+  }
+ },
+ "config": {
+  "confirm_scans": 2,
+  "drop": 0.6,
+  "dt": 0.1,
+  "footprint": 0.4,
+  "fov_deg": 30.0,
+  "half_width": 1.2,
+  "lateral_offset": 0.2,
+  "levels": [
+   0.0,
+   0.1,
+   0.2,
+   0.3,
+   0.4,
+   0.5,
+   0.6,
+   0.7,
+   0.8,
+   0.9,
+   1.0
+  ],
+  "min_points": 2,
+  "noise_gain": 0.08,
+  "obstacle_radius": 0.15,
+  "r0": 10.0,
+  "range_loss": 0.95,
+  "sigma0": 0.01,
+  "start_distance": 12.0,
+  "step_deg": 1.0,
+  "t_onset": 0.5,
+  "v_nominal": 0.8,
+  "v_slow": 0.4,
+  "vrr_scans": 3,
+  "vrr_threshold": 0.6
+ },
+ "evidence_kind": "simulated",
+ "experiment": "DU3",
+ "label": "SYNTHETIC: produced by a seeded software model in sim/. Not measured on any robot, sensor or receiver. The model and the method under test share an author. Evidence kind: simulated.",
+ "prereg_sha256": "f1e6fb576949358faf5dfe3d8233f1c4da2b2e4103d5281ec3029bce616e2095",
+ "protocol_items": [
+  "DU3",
+  "DU5 (software monitor only)"
+ ],
+ "seeds_per_condition": 30,
+ "summary": {
+  "B0": {
+   "max_unsafe_rate": 1.0
+  },
+  "B1": {
+   "max_unsafe_rate": 0.0
+  },
+  "M": {
+   "max_unsafe_rate": 0.0
+  }
+ }
+}

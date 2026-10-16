@@ -1,0 +1,2267 @@
+{
+ "acceptance": [
+  {
+   "checks": [
+    {
+     "failing": [],
+     "op": "all>=",
+     "value": 1.0,
+     "values": [
+      {
+       "metric": "du3:conditions/B0|k=0.0/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "du3:conditions/B0|k=0.1/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "du3:conditions/B0|k=0.2/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "du3:conditions/B0|k=0.3/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "du3:conditions/B0|k=0.4/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      }
+     ]
+    }
+   ],
+   "expected_to_hold": true,
+   "held": true,
+   "id": "AC-DU1",
+   "text": "Up to B_D = 0.4, the detector alone (B0) detects the obstacle in time in every run.",
+   "verdict": "HIT"
+  },
+  {
+   "checks": [
+    {
+     "failing": [],
+     "op": "all>=",
+     "value": 1.0,
+     "values": [
+      {
+       "metric": "du3:conditions/M|k=0.5/monitor_stop/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "du3:conditions/M|k=0.6/monitor_stop/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "du3:conditions/M|k=0.7/monitor_stop/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "du3:conditions/M|k=0.8/monitor_stop/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "du3:conditions/M|k=0.9/monitor_stop/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "du3:conditions/M|k=1.0/monitor_stop/rate",
+       "pass": true,
+       "value": 1.0
+      }
+     ]
+    },
+    {
+     "failing": [],
+     "op": "all<=",
+     "value": 1.0,
+     "values": [
+      {
+       "metric": "du3:conditions/M|k=0.5/stop_time_after_onset/max",
+       "pass": true,
+       "value": 0.2
+      },
+      {
+       "metric": "du3:conditions/M|k=0.6/stop_time_after_onset/max",
+       "pass": true,
+       "value": 0.2
+      },
+      {
+       "metric": "du3:conditions/M|k=0.7/stop_time_after_onset/max",
+       "pass": true,
+       "value": 0.2
+      },
+      {
+       "metric": "du3:conditions/M|k=0.8/stop_time_after_onset/max",
+       "pass": true,
+       "value": 0.2
+      },
+      {
+       "metric": "du3:conditions/M|k=0.9/stop_time_after_onset/max",
+       "pass": true,
+       "value": 0.2
+      },
+      {
+       "metric": "du3:conditions/M|k=1.0/stop_time_after_onset/max",
+       "pass": true,
+       "value": 0.2
+      }
+     ]
+    }
+   ],
+   "expected_to_hold": true,
+   "held": true,
+   "id": "AC-DU2",
+   "text": "Beyond B_D, the monitor (M) stops the robot in every run within T_D = 1.0 s of onset.",
+   "verdict": "HIT"
+  },
+  {
+   "checks": [
+    {
+     "failing": [
+      "gl3:conditions/M|e=5|a=0|rho=0.0/detected_in_time/rate",
+      "gl3:conditions/M|e=5|a=0|rho=0.5/detected_in_time/rate",
+      "gl3:conditions/M|e=15|a=0|rho=0.5/detected_in_time/rate"
+     ],
+     "op": "all>=",
+     "value": 0.95,
+     "values": [
+      {
+       "metric": "gl3:conditions/M|e=5|a=0|rho=0.0/detected_in_time/rate",
+       "pass": false,
+       "value": 0.9
+      },
+      {
+       "metric": "gl3:conditions/M|e=5|a=0|rho=0.5/detected_in_time/rate",
+       "pass": false,
+       "value": 0.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=5|a=30|rho=0.0/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=5|a=30|rho=0.5/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=5|a=60|rho=0.0/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=5|a=60|rho=0.5/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=5|a=90|rho=0.0/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=5|a=90|rho=0.5/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=5|a=180|rho=0.0/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=5|a=180|rho=0.5/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=15|a=0|rho=0.0/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=15|a=0|rho=0.5/detected_in_time/rate",
+       "pass": false,
+       "value": 0.233333
+      },
+      {
+       "metric": "gl3:conditions/M|e=15|a=30|rho=0.0/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=15|a=30|rho=0.5/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=15|a=60|rho=0.0/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=15|a=60|rho=0.5/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=15|a=90|rho=0.0/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=15|a=90|rho=0.5/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=15|a=180|rho=0.0/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=15|a=180|rho=0.5/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=30|a=0|rho=0.0/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=30|a=0|rho=0.5/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=30|a=30|rho=0.0/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=30|a=30|rho=0.5/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=30|a=60|rho=0.0/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=30|a=60|rho=0.5/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=30|a=90|rho=0.0/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=30|a=90|rho=0.5/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=30|a=180|rho=0.0/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=30|a=180|rho=0.5/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=45|a=0|rho=0.0/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=45|a=0|rho=0.5/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=45|a=30|rho=0.0/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=45|a=30|rho=0.5/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=45|a=60|rho=0.0/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=45|a=60|rho=0.5/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=45|a=90|rho=0.0/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=45|a=90|rho=0.5/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=45|a=180|rho=0.0/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=45|a=180|rho=0.5/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=60|a=0|rho=0.0/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=60|a=0|rho=0.5/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=60|a=30|rho=0.0/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=60|a=30|rho=0.5/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=60|a=60|rho=0.0/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=60|a=60|rho=0.5/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=60|a=90|rho=0.0/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=60|a=90|rho=0.5/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=60|a=180|rho=0.0/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=60|a=180|rho=0.5/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      }
+     ]
+    }
+   ],
+   "expected_to_hold": false,
+   "held": false,
+   "id": "AC-GL1",
+   "text": "M detects in time at rate at least P_G = 0.95 at every sun condition (failures become restrictions, AC-GL3).",
+   "verdict": "HIT"
+  },
+  {
+   "checks": [
+    {
+     "failing": [
+      "gl3:conditions/M|e=5|a=30|rho=0.5/slow_command_runs_where_s_exceeded/rate"
+     ],
+     "op": "all>=",
+     "value": 1.0,
+     "values": [
+      {
+       "metric": "gl3:conditions/M|e=5|a=0|rho=0.0/slow_command_runs_where_s_exceeded/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=5|a=0|rho=0.5/slow_command_runs_where_s_exceeded/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=5|a=30|rho=0.0/slow_command_runs_where_s_exceeded/rate",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=5|a=30|rho=0.5/slow_command_runs_where_s_exceeded/rate",
+       "pass": false,
+       "value": 0.7
+      },
+      {
+       "metric": "gl3:conditions/M|e=5|a=60|rho=0.0/slow_command_runs_where_s_exceeded/rate",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=5|a=60|rho=0.5/slow_command_runs_where_s_exceeded/rate",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=5|a=90|rho=0.0/slow_command_runs_where_s_exceeded/rate",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=5|a=90|rho=0.5/slow_command_runs_where_s_exceeded/rate",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=5|a=180|rho=0.0/slow_command_runs_where_s_exceeded/rate",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=5|a=180|rho=0.5/slow_command_runs_where_s_exceeded/rate",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=15|a=0|rho=0.0/slow_command_runs_where_s_exceeded/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=15|a=0|rho=0.5/slow_command_runs_where_s_exceeded/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=15|a=30|rho=0.0/slow_command_runs_where_s_exceeded/rate",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=15|a=30|rho=0.5/slow_command_runs_where_s_exceeded/rate",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=15|a=60|rho=0.0/slow_command_runs_where_s_exceeded/rate",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=15|a=60|rho=0.5/slow_command_runs_where_s_exceeded/rate",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=15|a=90|rho=0.0/slow_command_runs_where_s_exceeded/rate",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=15|a=90|rho=0.5/slow_command_runs_where_s_exceeded/rate",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=15|a=180|rho=0.0/slow_command_runs_where_s_exceeded/rate",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=15|a=180|rho=0.5/slow_command_runs_where_s_exceeded/rate",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=30|a=0|rho=0.0/slow_command_runs_where_s_exceeded/rate",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=30|a=0|rho=0.5/slow_command_runs_where_s_exceeded/rate",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=30|a=30|rho=0.0/slow_command_runs_where_s_exceeded/rate",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=30|a=30|rho=0.5/slow_command_runs_where_s_exceeded/rate",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=30|a=60|rho=0.0/slow_command_runs_where_s_exceeded/rate",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=30|a=60|rho=0.5/slow_command_runs_where_s_exceeded/rate",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=30|a=90|rho=0.0/slow_command_runs_where_s_exceeded/rate",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=30|a=90|rho=0.5/slow_command_runs_where_s_exceeded/rate",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=30|a=180|rho=0.0/slow_command_runs_where_s_exceeded/rate",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=30|a=180|rho=0.5/slow_command_runs_where_s_exceeded/rate",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=45|a=0|rho=0.0/slow_command_runs_where_s_exceeded/rate",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=45|a=0|rho=0.5/slow_command_runs_where_s_exceeded/rate",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=45|a=30|rho=0.0/slow_command_runs_where_s_exceeded/rate",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=45|a=30|rho=0.5/slow_command_runs_where_s_exceeded/rate",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=45|a=60|rho=0.0/slow_command_runs_where_s_exceeded/rate",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=45|a=60|rho=0.5/slow_command_runs_where_s_exceeded/rate",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=45|a=90|rho=0.0/slow_command_runs_where_s_exceeded/rate",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=45|a=90|rho=0.5/slow_command_runs_where_s_exceeded/rate",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=45|a=180|rho=0.0/slow_command_runs_where_s_exceeded/rate",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=45|a=180|rho=0.5/slow_command_runs_where_s_exceeded/rate",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=60|a=0|rho=0.0/slow_command_runs_where_s_exceeded/rate",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=60|a=0|rho=0.5/slow_command_runs_where_s_exceeded/rate",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=60|a=30|rho=0.0/slow_command_runs_where_s_exceeded/rate",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=60|a=30|rho=0.5/slow_command_runs_where_s_exceeded/rate",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=60|a=60|rho=0.0/slow_command_runs_where_s_exceeded/rate",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=60|a=60|rho=0.5/slow_command_runs_where_s_exceeded/rate",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=60|a=90|rho=0.0/slow_command_runs_where_s_exceeded/rate",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=60|a=90|rho=0.5/slow_command_runs_where_s_exceeded/rate",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=60|a=180|rho=0.0/slow_command_runs_where_s_exceeded/rate",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=60|a=180|rho=0.5/slow_command_runs_where_s_exceeded/rate",
+       "pass": null,
+       "value": null
+      }
+     ]
+    },
+    {
+     "failing": [
+      "gl3:conditions/M|e=5|a=30|rho=0.5/slow_command_delay/max"
+     ],
+     "op": "all<=",
+     "value": 0.5,
+     "values": [
+      {
+       "metric": "gl3:conditions/M|e=5|a=0|rho=0.0/slow_command_delay/max",
+       "pass": true,
+       "value": 0.1
+      },
+      {
+       "metric": "gl3:conditions/M|e=5|a=0|rho=0.5/slow_command_delay/max",
+       "pass": true,
+       "value": 0.1
+      },
+      {
+       "metric": "gl3:conditions/M|e=5|a=30|rho=0.0/slow_command_delay/max",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=5|a=30|rho=0.5/slow_command_delay/max",
+       "pass": false,
+       "value": 2.1
+      },
+      {
+       "metric": "gl3:conditions/M|e=5|a=60|rho=0.0/slow_command_delay/max",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=5|a=60|rho=0.5/slow_command_delay/max",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=5|a=90|rho=0.0/slow_command_delay/max",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=5|a=90|rho=0.5/slow_command_delay/max",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=5|a=180|rho=0.0/slow_command_delay/max",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=5|a=180|rho=0.5/slow_command_delay/max",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=15|a=0|rho=0.0/slow_command_delay/max",
+       "pass": true,
+       "value": 0.3
+      },
+      {
+       "metric": "gl3:conditions/M|e=15|a=0|rho=0.5/slow_command_delay/max",
+       "pass": true,
+       "value": 0.1
+      },
+      {
+       "metric": "gl3:conditions/M|e=15|a=30|rho=0.0/slow_command_delay/max",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=15|a=30|rho=0.5/slow_command_delay/max",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=15|a=60|rho=0.0/slow_command_delay/max",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=15|a=60|rho=0.5/slow_command_delay/max",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=15|a=90|rho=0.0/slow_command_delay/max",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=15|a=90|rho=0.5/slow_command_delay/max",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=15|a=180|rho=0.0/slow_command_delay/max",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=15|a=180|rho=0.5/slow_command_delay/max",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=30|a=0|rho=0.0/slow_command_delay/max",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=30|a=0|rho=0.5/slow_command_delay/max",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=30|a=30|rho=0.0/slow_command_delay/max",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=30|a=30|rho=0.5/slow_command_delay/max",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=30|a=60|rho=0.0/slow_command_delay/max",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=30|a=60|rho=0.5/slow_command_delay/max",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=30|a=90|rho=0.0/slow_command_delay/max",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=30|a=90|rho=0.5/slow_command_delay/max",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=30|a=180|rho=0.0/slow_command_delay/max",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=30|a=180|rho=0.5/slow_command_delay/max",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=45|a=0|rho=0.0/slow_command_delay/max",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=45|a=0|rho=0.5/slow_command_delay/max",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=45|a=30|rho=0.0/slow_command_delay/max",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=45|a=30|rho=0.5/slow_command_delay/max",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=45|a=60|rho=0.0/slow_command_delay/max",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=45|a=60|rho=0.5/slow_command_delay/max",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=45|a=90|rho=0.0/slow_command_delay/max",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=45|a=90|rho=0.5/slow_command_delay/max",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=45|a=180|rho=0.0/slow_command_delay/max",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=45|a=180|rho=0.5/slow_command_delay/max",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=60|a=0|rho=0.0/slow_command_delay/max",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=60|a=0|rho=0.5/slow_command_delay/max",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=60|a=30|rho=0.0/slow_command_delay/max",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=60|a=30|rho=0.5/slow_command_delay/max",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=60|a=60|rho=0.0/slow_command_delay/max",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=60|a=60|rho=0.5/slow_command_delay/max",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=60|a=90|rho=0.0/slow_command_delay/max",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=60|a=90|rho=0.5/slow_command_delay/max",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=60|a=180|rho=0.0/slow_command_delay/max",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "gl3:conditions/M|e=60|a=180|rho=0.5/slow_command_delay/max",
+       "pass": null,
+       "value": null
+      }
+     ]
+    }
+   ],
+   "expected_to_hold": true,
+   "held": false,
+   "id": "AC-GL2",
+   "text": "M commands the slow speed within T_G = 0.5 s of saturation exceeding S_G = 0.3, in every such run.",
+   "verdict": "MISS"
+  },
+  {
+   "checks": [
+    {
+     "failing": [
+      "gnss:conditions/M|noise=5/detected_within_t_n/rate",
+      "gnss:conditions/M|drift=0.2/detected_within_t_n/rate"
+     ],
+     "op": "all>=",
+     "value": 0.9,
+     "values": [
+      {
+       "metric": "gnss:conditions/M|loss=0/detected_within_t_n/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gnss:conditions/M|noise=5/detected_within_t_n/rate",
+       "pass": false,
+       "value": 0.7
+      },
+      {
+       "metric": "gnss:conditions/M|noise=10/detected_within_t_n/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gnss:conditions/M|jump=5/detected_within_t_n/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gnss:conditions/M|jump=10/detected_within_t_n/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gnss:conditions/M|jump=20/detected_within_t_n/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gnss:conditions/M|drift=0.2/detected_within_t_n/rate",
+       "pass": false,
+       "value": 0.0
+      },
+      {
+       "metric": "gnss:conditions/M|drift=0.5/detected_within_t_n/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gnss:conditions/M|replay=5/detected_within_t_n/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gnss:conditions/M|replay=10/detected_within_t_n/rate",
+       "pass": true,
+       "value": 1.0
+      }
+     ]
+    }
+   ],
+   "expected_to_hold": false,
+   "held": false,
+   "id": "AC-N1",
+   "text": "Faults at or above E_N are detected within T_N = 10.0 s in at least Q_N = 0.9 of runs.",
+   "verdict": "HIT"
+  },
+  {
+   "checks": [
+    {
+     "failing": [],
+     "op": "all<=",
+     "value": 3.0,
+     "values": [
+      {
+       "metric": "gnss:conditions/M|loss=0/error_at_stop/max",
+       "pass": true,
+       "value": 0.725478
+      },
+      {
+       "metric": "gnss:conditions/M|noise=3/error_at_stop/max",
+       "pass": true,
+       "value": 0.652541
+      },
+      {
+       "metric": "gnss:conditions/M|noise=5/error_at_stop/max",
+       "pass": true,
+       "value": 0.829564
+      },
+      {
+       "metric": "gnss:conditions/M|noise=10/error_at_stop/max",
+       "pass": true,
+       "value": 0.58519
+      },
+      {
+       "metric": "gnss:conditions/M|jump=2/error_at_stop/max",
+       "pass": true,
+       "value": 1.026988
+      },
+      {
+       "metric": "gnss:conditions/M|jump=5/error_at_stop/max",
+       "pass": true,
+       "value": 0.56484
+      },
+      {
+       "metric": "gnss:conditions/M|jump=10/error_at_stop/max",
+       "pass": true,
+       "value": 0.484739
+      },
+      {
+       "metric": "gnss:conditions/M|jump=20/error_at_stop/max",
+       "pass": true,
+       "value": 0.42631
+      },
+      {
+       "metric": "gnss:conditions/M|drift=0.05/error_at_stop/max",
+       "pass": true,
+       "value": 2.829401
+      },
+      {
+       "metric": "gnss:conditions/M|drift=0.1/error_at_stop/max",
+       "pass": true,
+       "value": 2.685768
+      },
+      {
+       "metric": "gnss:conditions/M|drift=0.2/error_at_stop/max",
+       "pass": true,
+       "value": 1.449072
+      },
+      {
+       "metric": "gnss:conditions/M|drift=0.5/error_at_stop/max",
+       "pass": true,
+       "value": 0.905649
+      },
+      {
+       "metric": "gnss:conditions/M|replay=2/error_at_stop/max",
+       "pass": true,
+       "value": 0.795292
+      },
+      {
+       "metric": "gnss:conditions/M|replay=5/error_at_stop/max",
+       "pass": true,
+       "value": 0.871789
+      },
+      {
+       "metric": "gnss:conditions/M|replay=10/error_at_stop/max",
+       "pass": true,
+       "value": 0.630763
+      }
+     ]
+    }
+   ],
+   "expected_to_hold": true,
+   "held": true,
+   "id": "AC-N2",
+   "text": "In every detected case the safe state is reached with navigation error at most L_N = 3.0 m.",
+   "verdict": "HIT"
+  }
+ ],
+ "evidence_kind": "simulated",
+ "label": "SYNTHETIC: produced by a seeded software model in sim/. Not measured on any robot, sensor or receiver. The model and the method under test share an author. Evidence kind: simulated.",
+ "predictions": [
+  {
+   "checks": [
+    {
+     "failing": [],
+     "op": "all<=",
+     "value": 0.0,
+     "values": [
+      {
+       "metric": "du3:conditions/B0|k=0.0/unsafe/rate",
+       "pass": true,
+       "value": 0.0
+      },
+      {
+       "metric": "du3:conditions/B0|k=0.1/unsafe/rate",
+       "pass": true,
+       "value": 0.0
+      },
+      {
+       "metric": "du3:conditions/B0|k=0.2/unsafe/rate",
+       "pass": true,
+       "value": 0.0
+      },
+      {
+       "metric": "du3:conditions/B0|k=0.3/unsafe/rate",
+       "pass": true,
+       "value": 0.0
+      },
+      {
+       "metric": "du3:conditions/B0|k=0.4/unsafe/rate",
+       "pass": true,
+       "value": 0.0
+      },
+      {
+       "metric": "du3:conditions/B0|k=0.5/unsafe/rate",
+       "pass": true,
+       "value": 0.0
+      },
+      {
+       "metric": "du3:conditions/B0|k=0.6/unsafe/rate",
+       "pass": true,
+       "value": 0.0
+      },
+      {
+       "metric": "du3:conditions/B0|k=0.7/unsafe/rate",
+       "pass": true,
+       "value": 0.0
+      },
+      {
+       "metric": "du3:conditions/B0|k=0.8/unsafe/rate",
+       "pass": true,
+       "value": 0.0
+      },
+      {
+       "metric": "du3:conditions/B0|k=0.9/unsafe/rate",
+       "pass": true,
+       "value": 0.0
+      }
+     ]
+    }
+   ],
+   "expected_to_hold": true,
+   "held": true,
+   "id": "DU3-P1",
+   "text": "Detector alone (B0) is never unsafe for k up to 0.9.",
+   "verdict": "HIT"
+  },
+  {
+   "checks": [
+    {
+     "failing": [],
+     "op": "all>=",
+     "value": 0.9,
+     "values": [
+      {
+       "metric": "du3:conditions/B0|k=1.0/unsafe/rate",
+       "pass": true,
+       "value": 1.0
+      }
+     ]
+    }
+   ],
+   "expected_to_hold": true,
+   "held": true,
+   "id": "DU3-P2",
+   "text": "Detector alone (B0) is unsafe in at least 90 percent of runs at k = 1.0.",
+   "verdict": "HIT"
+  },
+  {
+   "checks": [
+    {
+     "failing": [],
+     "op": "all<=",
+     "value": 0.0,
+     "values": [
+      {
+       "metric": "du3:conditions/M|k=0.0/monitor_stop/rate",
+       "pass": true,
+       "value": 0.0
+      },
+      {
+       "metric": "du3:conditions/M|k=0.1/monitor_stop/rate",
+       "pass": true,
+       "value": 0.0
+      },
+      {
+       "metric": "du3:conditions/M|k=0.2/monitor_stop/rate",
+       "pass": true,
+       "value": 0.0
+      }
+     ]
+    }
+   ],
+   "expected_to_hold": true,
+   "held": true,
+   "id": "DU3-P3",
+   "text": "Monitor (M) never stops the robot for k up to 0.2.",
+   "verdict": "HIT"
+  },
+  {
+   "checks": [
+    {
+     "failing": [],
+     "op": "all>=",
+     "value": 0.9,
+     "values": [
+      {
+       "metric": "du3:conditions/M|k=0.4/monitor_stop/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "du3:conditions/M|k=0.5/monitor_stop/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "du3:conditions/M|k=0.6/monitor_stop/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "du3:conditions/M|k=0.7/monitor_stop/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "du3:conditions/M|k=0.8/monitor_stop/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "du3:conditions/M|k=0.9/monitor_stop/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "du3:conditions/M|k=1.0/monitor_stop/rate",
+       "pass": true,
+       "value": 1.0
+      }
+     ]
+    }
+   ],
+   "expected_to_hold": true,
+   "held": true,
+   "id": "DU3-P4",
+   "text": "Monitor (M) stops the robot in at least 90 percent of runs for k from 0.4.",
+   "verdict": "HIT"
+  },
+  {
+   "checks": [
+    {
+     "failing": [],
+     "op": "all<=",
+     "value": 0.0,
+     "values": [
+      {
+       "metric": "du3:conditions/M|k=0.0/unsafe/rate",
+       "pass": true,
+       "value": 0.0
+      },
+      {
+       "metric": "du3:conditions/M|k=0.1/unsafe/rate",
+       "pass": true,
+       "value": 0.0
+      },
+      {
+       "metric": "du3:conditions/M|k=0.2/unsafe/rate",
+       "pass": true,
+       "value": 0.0
+      },
+      {
+       "metric": "du3:conditions/M|k=0.3/unsafe/rate",
+       "pass": true,
+       "value": 0.0
+      },
+      {
+       "metric": "du3:conditions/M|k=0.4/unsafe/rate",
+       "pass": true,
+       "value": 0.0
+      },
+      {
+       "metric": "du3:conditions/M|k=0.5/unsafe/rate",
+       "pass": true,
+       "value": 0.0
+      },
+      {
+       "metric": "du3:conditions/M|k=0.6/unsafe/rate",
+       "pass": true,
+       "value": 0.0
+      },
+      {
+       "metric": "du3:conditions/M|k=0.7/unsafe/rate",
+       "pass": true,
+       "value": 0.0
+      },
+      {
+       "metric": "du3:conditions/M|k=0.8/unsafe/rate",
+       "pass": true,
+       "value": 0.0
+      },
+      {
+       "metric": "du3:conditions/M|k=0.9/unsafe/rate",
+       "pass": true,
+       "value": 0.0
+      },
+      {
+       "metric": "du3:conditions/M|k=1.0/unsafe/rate",
+       "pass": true,
+       "value": 0.0
+      }
+     ]
+    }
+   ],
+   "expected_to_hold": true,
+   "held": true,
+   "id": "DU3-P5",
+   "text": "M is never unsafe at any level.",
+   "verdict": "HIT"
+  },
+  {
+   "checks": [
+    {
+     "failing": [],
+     "op": "all<=",
+     "value": 0.5,
+     "values": [
+      {
+       "metric": "du3:conditions/B1|k=1.0/unsafe/rate",
+       "pass": true,
+       "value": 0.0
+      }
+     ]
+    }
+   ],
+   "expected_to_hold": true,
+   "held": true,
+   "id": "DU3-P6",
+   "text": "Always slow (B1) is unsafe in at most half the runs at k = 1.0.",
+   "verdict": "HIT"
+  },
+  {
+   "checks": [
+    {
+     "failing": [],
+     "op": "between",
+     "value": [
+      6.0,
+      10.0
+     ],
+     "values": [
+      {
+       "metric": "du3:conditions/B0|k=0.0/detection_distance/median",
+       "pass": true,
+       "value": 9.77
+      }
+     ]
+    }
+   ],
+   "expected_to_hold": true,
+   "held": true,
+   "id": "DU3-P7",
+   "text": "Clean median detection distance (B0, k = 0) lies between 6 and 10 m.",
+   "verdict": "HIT"
+  },
+  {
+   "checks": [
+    {
+     "failing": [],
+     "op": "between",
+     "value": [
+      2,
+      4
+     ],
+     "values": [
+      {
+       "metric": "gl3:summary/B0/conditions_below_p_g",
+       "pass": true,
+       "value": 3
+      }
+     ]
+    }
+   ],
+   "expected_to_hold": true,
+   "held": true,
+   "id": "GL3-P1",
+   "text": "B0 misses P_G in 2 to 4 of 50 sun conditions (expected 3: low sun ahead).",
+   "verdict": "HIT"
+  },
+  {
+   "checks": [
+    {
+     "failing": [],
+     "op": "between",
+     "value": [
+      1,
+      3
+     ],
+     "values": [
+      {
+       "metric": "gl3:summary/M/conditions_below_p_g",
+       "pass": true,
+       "value": 3
+      }
+     ]
+    }
+   ],
+   "expected_to_hold": true,
+   "held": true,
+   "id": "GL3-P2",
+   "text": "M misses P_G in 1 to 3 conditions (expected 2: low sun ahead with a reflecting floor).",
+   "verdict": "HIT"
+  },
+  {
+   "checks": [
+    {
+     "failing": [],
+     "op": "all>=",
+     "value": 0.95,
+     "values": [
+      {
+       "metric": "gl3:conditions/M|e=5|a=30|rho=0.0/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=5|a=30|rho=0.5/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=5|a=60|rho=0.0/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=5|a=60|rho=0.5/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=5|a=90|rho=0.0/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=5|a=90|rho=0.5/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=5|a=180|rho=0.0/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=5|a=180|rho=0.5/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=15|a=30|rho=0.0/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=15|a=30|rho=0.5/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=15|a=60|rho=0.0/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=15|a=60|rho=0.5/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=15|a=90|rho=0.0/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=15|a=90|rho=0.5/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=15|a=180|rho=0.0/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=15|a=180|rho=0.5/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=30|a=0|rho=0.0/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=30|a=0|rho=0.5/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=30|a=30|rho=0.0/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=30|a=30|rho=0.5/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=30|a=60|rho=0.0/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=30|a=60|rho=0.5/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=30|a=90|rho=0.0/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=30|a=90|rho=0.5/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=30|a=180|rho=0.0/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=30|a=180|rho=0.5/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=45|a=0|rho=0.0/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=45|a=0|rho=0.5/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=45|a=30|rho=0.0/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=45|a=30|rho=0.5/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=45|a=60|rho=0.0/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=45|a=60|rho=0.5/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=45|a=90|rho=0.0/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=45|a=90|rho=0.5/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=45|a=180|rho=0.0/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=45|a=180|rho=0.5/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=60|a=0|rho=0.0/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=60|a=0|rho=0.5/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=60|a=30|rho=0.0/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=60|a=30|rho=0.5/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=60|a=60|rho=0.0/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=60|a=60|rho=0.5/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=60|a=90|rho=0.0/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=60|a=90|rho=0.5/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=60|a=180|rho=0.0/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=60|a=180|rho=0.5/detected_in_time/rate",
+       "pass": true,
+       "value": 1.0
+      }
+     ]
+    }
+   ],
+   "expected_to_hold": true,
+   "held": true,
+   "id": "GL3-P3",
+   "text": "M meets P_G whenever azimuth is at least 30 degrees or elevation at least 30 degrees.",
+   "verdict": "HIT"
+  },
+  {
+   "checks": [
+    {
+     "failing": [],
+     "op": "all<=",
+     "value": 0.0,
+     "values": [
+      {
+       "metric": "gl3:conditions/M|e=5|a=30|rho=0.0/slow_command/rate",
+       "pass": true,
+       "value": 0.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=5|a=60|rho=0.0/slow_command/rate",
+       "pass": true,
+       "value": 0.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=5|a=60|rho=0.5/slow_command/rate",
+       "pass": true,
+       "value": 0.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=5|a=90|rho=0.0/slow_command/rate",
+       "pass": true,
+       "value": 0.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=5|a=90|rho=0.5/slow_command/rate",
+       "pass": true,
+       "value": 0.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=5|a=180|rho=0.0/slow_command/rate",
+       "pass": true,
+       "value": 0.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=5|a=180|rho=0.5/slow_command/rate",
+       "pass": true,
+       "value": 0.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=15|a=30|rho=0.0/slow_command/rate",
+       "pass": true,
+       "value": 0.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=15|a=30|rho=0.5/slow_command/rate",
+       "pass": true,
+       "value": 0.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=15|a=60|rho=0.0/slow_command/rate",
+       "pass": true,
+       "value": 0.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=15|a=60|rho=0.5/slow_command/rate",
+       "pass": true,
+       "value": 0.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=15|a=90|rho=0.0/slow_command/rate",
+       "pass": true,
+       "value": 0.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=15|a=90|rho=0.5/slow_command/rate",
+       "pass": true,
+       "value": 0.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=15|a=180|rho=0.0/slow_command/rate",
+       "pass": true,
+       "value": 0.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=15|a=180|rho=0.5/slow_command/rate",
+       "pass": true,
+       "value": 0.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=30|a=0|rho=0.0/slow_command/rate",
+       "pass": true,
+       "value": 0.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=30|a=30|rho=0.0/slow_command/rate",
+       "pass": true,
+       "value": 0.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=30|a=30|rho=0.5/slow_command/rate",
+       "pass": true,
+       "value": 0.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=30|a=60|rho=0.0/slow_command/rate",
+       "pass": true,
+       "value": 0.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=30|a=60|rho=0.5/slow_command/rate",
+       "pass": true,
+       "value": 0.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=30|a=90|rho=0.0/slow_command/rate",
+       "pass": true,
+       "value": 0.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=30|a=90|rho=0.5/slow_command/rate",
+       "pass": true,
+       "value": 0.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=30|a=180|rho=0.0/slow_command/rate",
+       "pass": true,
+       "value": 0.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=30|a=180|rho=0.5/slow_command/rate",
+       "pass": true,
+       "value": 0.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=45|a=0|rho=0.0/slow_command/rate",
+       "pass": true,
+       "value": 0.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=45|a=0|rho=0.5/slow_command/rate",
+       "pass": true,
+       "value": 0.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=45|a=30|rho=0.0/slow_command/rate",
+       "pass": true,
+       "value": 0.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=45|a=30|rho=0.5/slow_command/rate",
+       "pass": true,
+       "value": 0.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=45|a=60|rho=0.0/slow_command/rate",
+       "pass": true,
+       "value": 0.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=45|a=60|rho=0.5/slow_command/rate",
+       "pass": true,
+       "value": 0.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=45|a=90|rho=0.0/slow_command/rate",
+       "pass": true,
+       "value": 0.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=45|a=90|rho=0.5/slow_command/rate",
+       "pass": true,
+       "value": 0.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=45|a=180|rho=0.0/slow_command/rate",
+       "pass": true,
+       "value": 0.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=45|a=180|rho=0.5/slow_command/rate",
+       "pass": true,
+       "value": 0.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=60|a=0|rho=0.0/slow_command/rate",
+       "pass": true,
+       "value": 0.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=60|a=0|rho=0.5/slow_command/rate",
+       "pass": true,
+       "value": 0.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=60|a=30|rho=0.0/slow_command/rate",
+       "pass": true,
+       "value": 0.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=60|a=30|rho=0.5/slow_command/rate",
+       "pass": true,
+       "value": 0.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=60|a=60|rho=0.0/slow_command/rate",
+       "pass": true,
+       "value": 0.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=60|a=60|rho=0.5/slow_command/rate",
+       "pass": true,
+       "value": 0.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=60|a=90|rho=0.0/slow_command/rate",
+       "pass": true,
+       "value": 0.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=60|a=90|rho=0.5/slow_command/rate",
+       "pass": true,
+       "value": 0.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=60|a=180|rho=0.0/slow_command/rate",
+       "pass": true,
+       "value": 0.0
+      },
+      {
+       "metric": "gl3:conditions/M|e=60|a=180|rho=0.5/slow_command/rate",
+       "pass": true,
+       "value": 0.0
+      }
+     ]
+    }
+   ],
+   "expected_to_hold": true,
+   "held": true,
+   "id": "GL3-P4",
+   "text": "M issues no slow command where modelled saturation is below 0.2.",
+   "verdict": "HIT"
+  },
+  {
+   "checks": [
+    {
+     "failing": [],
+     "op": "all<=",
+     "value": 0.033333,
+     "values": [
+      {
+       "metric": "gnss:conditions/M|nominal=0/false_alarm/rate",
+       "pass": true,
+       "value": 0.0
+      }
+     ]
+    }
+   ],
+   "expected_to_hold": true,
+   "held": true,
+   "id": "N-P1",
+   "text": "M false alarm rate in nominal runs is at most 1 in 30.",
+   "verdict": "HIT"
+  },
+  {
+   "checks": [
+    {
+     "failing": [],
+     "op": "all>=",
+     "value": 1.0,
+     "values": [
+      {
+       "metric": "gnss:conditions/M|loss=0/detected/rate",
+       "pass": true,
+       "value": 1.0
+      }
+     ]
+    },
+    {
+     "failing": [],
+     "op": "all<=",
+     "value": 3.5,
+     "values": [
+      {
+       "metric": "gnss:conditions/M|loss=0/detection_delay/max",
+       "pass": true,
+       "value": 3.0
+      }
+     ]
+    }
+   ],
+   "expected_to_hold": true,
+   "held": true,
+   "id": "N-P2",
+   "text": "M detects GNSS loss in every run, within 3.5 s.",
+   "verdict": "HIT"
+  },
+  {
+   "checks": [
+    {
+     "failing": [],
+     "op": "all>=",
+     "value": 1.0,
+     "values": [
+      {
+       "metric": "gnss:conditions/M|jump=5/detected_within_t_n/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gnss:conditions/M|jump=10/detected_within_t_n/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gnss:conditions/M|jump=20/detected_within_t_n/rate",
+       "pass": true,
+       "value": 1.0
+      }
+     ]
+    },
+    {
+     "failing": [],
+     "op": "all<=",
+     "value": 3.0,
+     "values": [
+      {
+       "metric": "gnss:conditions/M|jump=5/detection_delay/mean",
+       "pass": true,
+       "value": 0.633333
+      },
+      {
+       "metric": "gnss:conditions/M|jump=10/detection_delay/mean",
+       "pass": true,
+       "value": 0.0
+      },
+      {
+       "metric": "gnss:conditions/M|jump=20/detection_delay/mean",
+       "pass": true,
+       "value": 0.0
+      }
+     ]
+    }
+   ],
+   "expected_to_hold": true,
+   "held": true,
+   "id": "N-P3",
+   "text": "M detects jumps of 5 m or more in every run, mean delay at most 3 s.",
+   "verdict": "HIT"
+  },
+  {
+   "checks": [
+    {
+     "failing": [
+      "gnss:conditions/M|jump=2/detected/rate"
+     ],
+     "op": "all>=",
+     "value": 0.8,
+     "values": [
+      {
+       "metric": "gnss:conditions/M|jump=2/detected/rate",
+       "pass": false,
+       "value": 0.633333
+      }
+     ]
+    }
+   ],
+   "expected_to_hold": true,
+   "held": false,
+   "id": "N-P4",
+   "text": "M detects a 2 m jump in at least 80 percent of runs (at any time).",
+   "verdict": "MISS"
+  },
+  {
+   "checks": [
+    {
+     "failing": [],
+     "op": "all>=",
+     "value": 0.9,
+     "values": [
+      {
+       "metric": "gnss:conditions/M|drift=0.5/detected_within_t_n/rate",
+       "pass": true,
+       "value": 1.0
+      }
+     ]
+    }
+   ],
+   "expected_to_hold": true,
+   "held": true,
+   "id": "N-P5",
+   "text": "M detects drift of 0.5 m/s within T_N in at least 90 percent of runs.",
+   "verdict": "HIT"
+  },
+  {
+   "checks": [
+    {
+     "failing": [],
+     "op": "all<=",
+     "value": 0.5,
+     "values": [
+      {
+       "metric": "gnss:conditions/M|drift=0.2/detected_within_t_n/rate",
+       "pass": true,
+       "value": 0.0
+      }
+     ]
+    }
+   ],
+   "expected_to_hold": true,
+   "held": true,
+   "id": "N-P6",
+   "text": "M detects drift of 0.2 m/s within T_N in at most half the runs (expected AC-N1 failure).",
+   "verdict": "HIT"
+  },
+  {
+   "checks": [
+    {
+     "failing": [],
+     "op": "all>=",
+     "value": 0.9,
+     "values": [
+      {
+       "metric": "gnss:conditions/M|drift=0.1/detected/rate",
+       "pass": true,
+       "value": 1.0
+      }
+     ]
+    },
+    {
+     "failing": [],
+     "op": "between",
+     "value": [
+      15.0,
+      30.0
+     ],
+     "values": [
+      {
+       "metric": "gnss:conditions/M|drift=0.1/detection_delay/mean",
+       "pass": true,
+       "value": 28.166667
+      }
+     ]
+    }
+   ],
+   "expected_to_hold": true,
+   "held": true,
+   "id": "N-P7",
+   "text": "M detects drift of 0.1 m/s in at least 90 percent of runs, mean delay 15 to 30 s.",
+   "verdict": "HIT"
+  },
+  {
+   "checks": [
+    {
+     "failing": [
+      "gnss:conditions/M|noise=5/detected_within_t_n/rate"
+     ],
+     "op": "all>=",
+     "value": 0.9,
+     "values": [
+      {
+       "metric": "gnss:conditions/M|noise=5/detected_within_t_n/rate",
+       "pass": false,
+       "value": 0.7
+      },
+      {
+       "metric": "gnss:conditions/M|noise=10/detected_within_t_n/rate",
+       "pass": true,
+       "value": 1.0
+      }
+     ]
+    }
+   ],
+   "expected_to_hold": true,
+   "held": false,
+   "id": "N-P8",
+   "text": "M detects noise growth to 5 m and 10 m within T_N in at least 90 percent of runs.",
+   "verdict": "MISS"
+  },
+  {
+   "checks": [
+    {
+     "failing": [],
+     "op": "all>=",
+     "value": 0.9,
+     "values": [
+      {
+       "metric": "gnss:conditions/M|replay=5/detected_within_t_n/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gnss:conditions/M|replay=10/detected_within_t_n/rate",
+       "pass": true,
+       "value": 1.0
+      }
+     ]
+    }
+   ],
+   "expected_to_hold": true,
+   "held": true,
+   "id": "N-P9",
+   "text": "M detects replay with 5 s and 10 s delay within T_N in at least 90 percent of runs.",
+   "verdict": "HIT"
+  },
+  {
+   "checks": [
+    {
+     "failing": [],
+     "op": "all>=",
+     "value": 0.9,
+     "values": [
+      {
+       "metric": "gnss:conditions/B0|jump=5/error_exceeds_l_n/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gnss:conditions/B0|jump=10/error_exceeds_l_n/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gnss:conditions/B0|jump=20/error_exceeds_l_n/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gnss:conditions/B0|drift=0.1/error_exceeds_l_n/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gnss:conditions/B0|drift=0.2/error_exceeds_l_n/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "gnss:conditions/B0|drift=0.5/error_exceeds_l_n/rate",
+       "pass": true,
+       "value": 1.0
+      }
+     ]
+    }
+   ],
+   "expected_to_hold": true,
+   "held": true,
+   "id": "N-P10",
+   "text": "Accept all (B0) exceeds L_N in at least 90 percent of runs for jumps of 5 m or more and drift of 0.1 m/s or more.",
+   "verdict": "HIT"
+  },
+  {
+   "checks": [
+    {
+     "failing": [],
+     "op": "all<=",
+     "value": 0.1,
+     "values": [
+      {
+       "metric": "gnss:conditions/B1|jump=10/error_exceeds_l_n/rate",
+       "pass": true,
+       "value": 0.0
+      },
+      {
+       "metric": "gnss:conditions/B1|jump=20/error_exceeds_l_n/rate",
+       "pass": true,
+       "value": 0.0
+      }
+     ]
+    }
+   ],
+   "expected_to_hold": true,
+   "held": true,
+   "id": "N-P11",
+   "text": "Gate only (B1) stays within L_N in at least 90 percent of runs for jumps of 10 m or more.",
+   "verdict": "HIT"
+  },
+  {
+   "checks": [
+    {
+     "failing": [],
+     "op": "all>=",
+     "value": 0.5,
+     "values": [
+      {
+       "metric": "gnss:conditions/B1|drift=0.1/error_exceeds_l_n/rate",
+       "pass": true,
+       "value": 0.9
+      }
+     ]
+    }
+   ],
+   "expected_to_hold": true,
+   "held": true,
+   "id": "N-P12",
+   "text": "Gate only (B1) exceeds L_N in at least half the runs for drift of 0.1 m/s.",
+   "verdict": "HIT"
+  }
+ ],
+ "prereg_sha256": "f1e6fb576949358faf5dfe3d8233f1c4da2b2e4103d5281ec3029bce616e2095",
+ "totals": {
+  "acceptance_failed": 3,
+  "acceptance_held": 3,
+  "hit": 21,
+  "miss": 2,
+  "predictions": 23
+ }
+}
