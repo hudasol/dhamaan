@@ -3,7 +3,7 @@ digraph GSN {
   node [fontname="Helvetica", fontsize=10, style="filled", color="#c2547a", fontcolor="#4a2433", margin="0.10,0.06"];
   edge [color="#c2547a"];
   label="Illustrative skeleton. Dashed evidence is open. Partial: EV-08 (simulated), EV-12 (simulated). Simulated evidence supports no hardware claim."; labelloc=t; fontname="Helvetica"; fontsize=11;
-  G1 [shape=box, style="filled", fillcolor="#fde8ef", label="G1\nThe library service robot is\nacceptably safe to operate in the\ndefined university library ODD."];
+  G1 [shape=box, style="filled", fillcolor="#fde8ef", label="G1\nThe library service robot is\nacceptably safe to operate in the\ndefined library ODD."];
   G2 [shape=box, style="filled", fillcolor="#fde8ef", label="G2\nCollision and contact harm to\npeople is controlled."];
   G3 [shape=box, style="filled", fillcolor="#fde8ef", label="G3\nLearning based perception is\nadequate within the ODD."];
   G4 [shape=box, style="filled", fillcolor="#fde8ef", label="G4\nNavigation and planning failures\nend in a safe state or minimum\nrisk behaviour."];
@@ -17,8 +17,8 @@ digraph GSN {
   S1 [shape=parallelogram, fillcolor="#f9d5e2", label="S1\nArgue over hazard classes\ntaken from the risk\nassessment."];
   C1 [shape=box, style="rounded,filled,dashed", fillcolor="#fff6f9", label="C1\nOperational design domain (ODD)\nof the library. Layout,\noccupancy range, floors,\nlighting, network and\nlocalisation sources, and what\nis out of scope are to be\ndefined."];
   C2 [shape=box, style="rounded,filled,dashed", fillcolor="#fff6f9", label="C2\nSystem definition and user\nclasses (children, elderly\npeople, people with\ndisabilities, staff)."];
-  C3 [shape=box, style="rounded,filled,dashed", fillcolor="#fff6f9", label="C3\nApplicable regime for this\ndeployment (UAE federal,\nemirate, university policy,\ninsurer). Not yet determined."];
-  AS1 [shape=ellipse, style="filled", fillcolor="#fff6f9", label="AS1 (assumption)\nThe scenario (a mobile service\nrobot with learning based\nperception that fetches and\nreturns books and guides\nvisitors in a university library\nin the UAE) is assumed for\nillustration."];
+  C3 [shape=box, style="rounded,filled,dashed", fillcolor="#fff6f9", label="C3\nApplicable regime for this\ndeployment (UAE federal,\nemirate, host organisation\npolicy, insurer). Not yet\ndetermined."];
+  AS1 [shape=ellipse, style="filled", fillcolor="#fff6f9", label="AS1 (assumption)\nThe scenario (a mobile service\nrobot with learning based\nperception that fetches and\nreturns books and guides\nvisitors in a library in the\nUAE) is assumed for\nillustration."];
   AS2 [shape=ellipse, style="filled", fillcolor="#fff6f9", label="AS2 (assumption)\nAn arm is optional. If no arm is\nfitted, goal G9 is removed."];
   AS3 [shape=ellipse, style="filled", fillcolor="#fff6f9", label="AS3 (assumption)\nThe library is an indoor, air\nconditioned space with daylight\nthrough glazing. This is my\naddition and has not been\nchecked against any real\nbuilding."];
   AS4 [shape=ellipse, style="filled", fillcolor="#fff6f9", label="AS4 (assumption)\nNo UAE rule specific to indoor\nground service robots was found\nin the sources retrieved. This\nis a statement about the search,\nnot about the law."];

@@ -11,9 +11,9 @@ The sources retrieved for this study cover drones (GCAA rules, Cabinet Resolutio
 | Candidate | Why it might be relevant | Basis in this study |
 |---|---|---|
 | The federal ministry or body responsible for industrial product conformity and standards | A robot is a manufactured product. A drone product status process is run by a ministry (MOIAT) and appears in a consultation page. | C63 (summary seen). Whether it covers ground robots is not known. |
-| The emirate level authority responsible for the building or the free zone where the university sits | Local rules may cover robots operating in public or semi public indoor spaces. | No row. The authority depends on the emirate and has to be confirmed. |
+| The emirate level authority responsible for the building or the free zone where the host organisation sits | Local rules may cover robots operating in public or semi public indoor spaces. | No row. The authority depends on the emirate and has to be confirmed. |
 | The general civil aviation authority | To confirm the answer is "outside our scope" for a ground robot with no flight function. | C47 to C58 cover unmanned aircraft only. |
-| The university (health and safety office, estates or facilities, legal or compliance office, insurer contact) | The deploying organisation sets site rules and insurance conditions even where no law is specific. | None. Enquiry B below. |
+| The host organisation (health and safety office, estates or facilities, legal or compliance office, insurer contact) | The deploying organisation sets site rules and insurance conditions even where no law is specific. | None. Enquiry B below. |
 
 Before sending, confirm the correct recipient and channel from the authority's own website. Do not guess addresses.
 
@@ -23,9 +23,9 @@ Before sending, confirm the correct recipient and channel from the authority's o
 >
 > Dear Sir or Madam,
 >
-> I am [YOUR NAME], [ROLE, for example student researcher] at [UNIVERSITY / ORGANISATION]. I am studying safety evidence for autonomous service robots and would be grateful for general guidance on one point.
+> I am [YOUR NAME], [ROLE, for example student researcher] at [ORGANISATION]. I am studying safety evidence for autonomous service robots and would be grateful for general guidance on one point.
 >
-> **Scenario.** A wheeled mobile robot, with no flight function, operates indoors in a [university library / public building] in [EMIRATE]. It moves among staff and visitors, including children and people with disabilities, and uses camera and lidar based perception, some of it learning based. It may later carry a small manipulator arm. It is not a vehicle for the public road. It is not sold in this scenario; it is deployed by the building operator.
+> **Scenario.** A wheeled mobile robot, with no flight function, operates indoors in a [library / public building] in [EMIRATE]. It moves among staff and visitors, including children and people with disabilities, and uses camera and lidar based perception, some of it learning based. It may later carry a small manipulator arm. It is not a vehicle for the public road. It is not sold in this scenario; it is deployed by the building operator.
 >
 > **Questions.**
 > 1. Which UAE federal or [EMIRATE] regime, if any, governs the safe deployment of such a robot (product safety, workplace safety, public space operation, data or other)?
@@ -39,17 +39,17 @@ Before sending, confirm the correct recipient and channel from the authority's o
 >
 > [YOUR NAME] | [ROLE] | [CONTACT DETAILS]
 
-## 4. Enquiry B: to the university (draft)
+## 4. Enquiry B: to the host organisation (draft)
 
 > **Subject:** Safety rules for a service robot in [BUILDING] (information request)
 >
 > Dear [DEPARTMENT],
 >
-> I am [YOUR NAME], [ROLE] at [UNIVERSITY]. For a study of safety evidence for service robots I am using a scenario in which a mobile robot, with no flight function, moves among staff and visitors in a library. I would like to ask, in general terms:
+> I am [YOUR NAME], [ROLE] at [ORGANISATION]. For a study of safety evidence for service robots I am using a scenario in which a mobile robot, with no flight function, moves among staff and visitors in a library. I would like to ask, in general terms:
 >
-> 1. Which university policies, committees or approvals would apply to testing or operating such a robot in a university building?
-> 2. Does the university or its insurer set conditions (risk assessment, supervision, incident reporting, data protection review, liability cover)?
-> 3. Which external rules does the university consider itself bound by for such equipment, and who owns that question?
+> 1. Which policies, committees or approvals of the organisation would apply to testing or operating such a robot in its building?
+> 2. Does the organisation or its insurer set conditions (risk assessment, supervision, incident reporting, data protection review, liability cover)?
+> 3. Which external rules does the organisation consider itself bound by for such equipment, and who owns that question?
 > 4. Is there a template for risk assessment or a safety review I should use?
 >
 > I would value a short reply or a pointer to the right office. This is a research enquiry and not a request for approval of any project.

@@ -1,10 +1,10 @@
-# Machine checkable assurance case skeleton: university library service robot.
+# Machine checkable assurance case skeleton: library service robot.
 # ILLUSTRATIVE ONLY. The scenario was assumed for research purposes; it is not a real project.
 # Every evidence item is OPEN except EV-08 and EV-12, which are PARTIAL with SIMULATED evidence only (sim/results/).
 # Simulated evidence never closes a hardware claim. No other evidence is claimed to exist. Nothing here is a certification claim.
 # Source rows refer to data/evidence_table.csv (ids such as A22). A row supports vocabulary or method, not compliance.
 meta:
-  title: University library service robot, assurance case skeleton
+  title: Library service robot, assurance case skeleton
   version: "0.3"
   status: skeleton; EV-08 and EV-12 partial (simulated only), all other evidence open
   evidence_table: data/evidence_table.csv
@@ -12,7 +12,7 @@ meta:
 
 assumptions:
   - id: AS1
-    text: The scenario (a mobile service robot with learning based perception that fetches and returns books and guides visitors in a university library in the UAE) is assumed for illustration.
+    text: The scenario (a mobile service robot with learning based perception that fetches and returns books and guides visitors in a library in the UAE) is assumed for illustration.
   - id: AS2
     text: An arm is optional. If no arm is fitted, goal G9 is removed.
   - id: AS3
@@ -28,7 +28,7 @@ contexts:
     text: System definition and user classes (children, elderly people, people with disabilities, staff).
     evidence: [EV-01]
   - id: C3
-    text: Applicable regime for this deployment (UAE federal, emirate, university policy, insurer). Not yet determined.
+    text: Applicable regime for this deployment (UAE federal, emirate, host organisation policy, insurer). Not yet determined.
     evidence: [EV-03]
 
 strategies:
@@ -38,7 +38,7 @@ strategies:
 
 goals:
   - id: G1
-    text: The library service robot is acceptably safe to operate in the defined university library ODD.
+    text: The library service robot is acceptably safe to operate in the defined library ODD.
     claim_about: hardware
     context: [C1, C2, C3]
     assumptions: [AS1]
@@ -97,7 +97,7 @@ strategy_links:
 evidence:
   - {id: EV-01, title: "ODD and system definition", status: open, decision_needed: true, rows: [D11, D13, B46, B44, D05, C17], note: "Decision needed: the library layout, occupancy, user classes and lighting."}
   - {id: EV-02, title: "Hazard and risk assessment", status: open, rows: [A22, A28, A31, A37, B20]}
-  - {id: EV-03, title: "Regime determination for an indoor robot in this university", status: open, decision_needed: true, rows: [C47, C48, C49, C50, C51, C52, C53, C54, C55, C56, C64, C65, A01, B35, B17], note: "Not answerable from the sources found. See docs/UAE_ENQUIRY_PACK.md."}
+  - {id: EV-03, title: "Regime determination for an indoor robot in the assumed building", status: open, decision_needed: true, rows: [C47, C48, C49, C50, C51, C52, C53, C54, C55, C56, C64, C65, A01, B35, B17], note: "Not answerable from the sources found. See docs/UAE_ENQUIRY_PACK.md."}
   - {id: EV-04, title: "Safety requirements and safety function specification", status: open, decision_needed: true, rows: [A35, A32, A33, A34, A31], note: "Decision needed: target integrity level."}
   - {id: EV-05, title: "Contact and collision evidence", status: open, decision_needed: true, rows: [A26, A29], note: "Decision needed: limits and their source."}
   - {id: EV-06, title: "Stopping distance and obstacle detection tests", status: open, rows: [A31, A36]}

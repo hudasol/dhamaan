@@ -2,6 +2,6 @@ id,recipient_type,recipient_name_to_confirm,basis,channel_to_confirm,date_sent,r
 Q1,federal product conformity body,,C63 (summary seen),,,,,,,,not sent
 Q2,emirate authority for the building or free zone,,no row; depends on emirate,,,,,,,,not sent
 Q3,civil aviation authority (scope check),,C47 to C58 (drones only),,,,,,,,not sent
-Q4,university health and safety office,,none,,,,,,,,not sent
-Q5,university estates or facilities,,none,,,,,,,,not sent
-Q6,university legal or compliance office and insurer contact,,none,,,,,,,,not sent
+Q4,host organisation health and safety office,,none,,,,,,,,not sent
+Q5,host organisation estates or facilities,,none,,,,,,,,not sent
+Q6,host organisation legal or compliance office and insurer contact,,none,,,,,,,,not sent

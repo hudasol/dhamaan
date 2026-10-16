@@ -3,7 +3,7 @@ title: "Executive brief: what evidence do robots and drones need before deployme
 author: "For non specialists. Research draft, second edition, 12 October 2026. Not legal or certification advice."
 ---
 
-**The question.** Before a company or university puts an autonomous robot or drone to work around people, what must it be able to show, who says so, and what is left unsettled? We read 222 provisions from robot, drone, AI and autonomy standards and regulations (EU, US, UAE, international), each traced to a source we retrieved.
+**The question.** Before a company or public institution puts an autonomous robot or drone to work around people, what must it be able to show, who says so, and what is left unsettled? We read 222 provisions from robot, drone, AI and autonomy standards and regulations (EU, US, UAE, international), each traced to a source we retrieved.
 
 **What we found**
 
