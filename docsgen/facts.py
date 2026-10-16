@@ -61,6 +61,27 @@ def evidence_table_facts() -> dict:
     }
 
 
+CONTEXT_ROWS = {
+    "UAE drone regime": ["C47", "C48", "C49", "C52", "C60"],
+    "UAE ground autonomy (roads)": ["C64", "C65", "D50", "C66"],
+    "GNSS interference in the UAE region": ["D57", "D58", "D59", "D52"],
+    "Instruments that apply if a product is placed on the EU market": ["A01", "B17", "C01"],
+}
+
+
+def context_facts() -> dict:
+    rows = {r["id"]: r for r in _csv("data/evidence_table.csv")}
+    out = []
+    for group, ids in CONTEXT_ROWS.items():
+        out.append(f"### {group}\n")
+        out.append(table(["Row", "Instrument or source", "What the source says (paraphrase)", "Binding", "Access", "Source"],
+                         [[i, rows[i]["instrument"], rows[i]["requirement_paraphrase"].replace("|", "/"), rows[i]["binding_status"],
+                           rows[i]["access_level"], rows[i]["source_url"]] for i in ids]))
+        out.append("")
+    return {"CONTEXT_TABLES": "\n".join(out).strip(),
+            "CONTEXT_N_ROWS": str(sum(len(v) for v in CONTEXT_ROWS.values()))}
+
+
 def case_facts() -> dict:
     case = ac_check.load(_p("assurance/library_robot_case.yaml"))
     res = ac_check.check(case, ac_check.table_rows(_p("data/evidence_table.csv")), ROOT)
@@ -213,7 +234,7 @@ def check_facts() -> dict:
 
 def all_facts() -> dict:
     f = {}
-    for part in (evidence_table_facts(), case_facts(), sim_facts(), check_facts()):
+    for part in (evidence_table_facts(), case_facts(), context_facts(), sim_facts(), check_facts()):
         assert not set(part) & set(f), set(part) & set(f)
         f.update(part)
     return f
