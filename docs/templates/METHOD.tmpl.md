@@ -46,7 +46,7 @@ A forward camera pitched down {{GL3_PITCH_DEG}} degrees. Saturation is a determi
 No RF signal is generated or simulated. A robot drives a straight outdoor approach at {{GN_SPEED}} m/s for {{GN_DURATION}} s. Odometry every {{GN_DT}} s has a per run scale error (standard deviation {{GN_ODO_SCALE_SD}}), speed noise {{GN_ODO_SPEED_SD}} m/s and a heading random walk of {{GN_HEADING_RW}} rad per square root second. A position fix arrives every {{GN_FIX_PERIOD_STEPS}} odometry steps with white noise of {{GN_SIGMA_GNSS}} m per axis. A Kalman filter with process noise {{GN_Q_STEP}} m per step fuses the two. From {{GN_T_ONSET}} s one fault is applied to the fix stream: loss, noise growth over {{GN_NOISE_RAMP}} s, a jump, a drift or a replay of the receiver's own fixes from earlier.
 
 - B0 accepts every fix. B1 rejects a fix whose normalised innovation exceeds {{GN_GATE}} (chi square, two degrees of freedom).
-- M adds fault declaration: {{GN_REJECT_RUN}} consecutive rejections, a CUSUM of the normalised innovation minus {{GN_CUSUM_BIAS}} above {{GN_CUSUM_LIMIT}}, or no fix for {{GN_TIMEOUT}} s. After declaration the robot stops using fixes and brakes at {{GN_DECEL}} m/s2 to a stop, the declared safe state.
+- M adds fault declaration: {{GN_REJECT_RUN}} consecutive rejections, a CUSUM of the normalised innovation minus {{GN_CUSUM_BIAS}} above {{GN_CUSUM_LIMIT}}, or no fix for more than {{GN_TIMEOUT}} s, checked at the expected fix times (`sim/DEVIATIONS.md`, D4). After declaration the robot stops using fixes and brakes at {{GN_DECEL}} m/s2 to a stop, the declared safe state.
 
 ### Acceptance values (fixed before the runs)
 

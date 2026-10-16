@@ -217,9 +217,15 @@ def sim_facts() -> dict:
     b12, b08 = _json("sim/results/EV-12.json"), _json("sim/results/EV-08.json")
     f["RESTRICTIONS"] = table(["Sun condition", "Model saturation", "M in time detection"],
                               [[r["condition"].replace("|", ", "), num(r["saturation_model"], 2), pct(r["detected_in_time_rate"])] for r in b12["restrictions_ac_gl3"]])
-    f["NOT_COVERED"] = table(["Fault below E_N", "M detected", "M within T_N", "Missed seeds"],
+    f["NOT_COVERED"] = table(["Fault below E_N", "M detected", "M within T_N", "Missed seeds", "Seeds with an alarm before onset"],
                              [[r["fault"], pct(r["detected_rate"]), pct(r["detected_within_t_n_rate"]),
-                               ", ".join(str(s) for s in r["missed_seeds"]) or "none"] for r in b08["not_covered_ac_n3"]])
+                               ", ".join(str(s) for s in r["missed_seeds"]) or "none",
+                               ", ".join(str(s) for s in gn["conditions"]["M|" + r["fault"]]["pre_onset_alarm_seeds"]) or "none"]
+                              for r in b08["not_covered_ac_n3"]])
+    mx = [c["max_error_before_stop_detected"]["max"] for c in gn["conditions"].values()
+          if c["method"] == "M" and c["max_error_before_stop_detected"]["max"] is not None]
+    f["N_MAX_ERR_BEFORE_STOP"] = num(max(mx), 2)
+    f["N_DRIFT005_NEVER"] = str(len(c("M|drift=0.05")["missed_seeds"]))
     f["N_RESTRICTIONS"] = str(len(b12["restrictions_ac_gl3"]))
     return f
 

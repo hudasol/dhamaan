@@ -9,6 +9,7 @@ Every number on this page is read from `sim/results/*.json` by `docsgen/facts.py
 
 - Predictions: 21 of 23 hit, 2 missed (N-P4, N-P8).
 - Acceptance criteria: 3 of 6 held (AC-DU1, AC-DU2, AC-N2); 3 failed (AC-GL1, AC-GL2, AC-N1). We had expected AC-GL1 and AC-N1 to fail; the failure of AC-GL2 was not expected.
+- GL3-P2 is scored HIT because the count of failing conditions fell in the predicted band, but the hypothesis behind it, that slowing down recovers some glare failures, was not supported: the method failed the same conditions as both baselines.
 - In the assurance case, these results make EV-08 and EV-12 partial with evidence kind `simulated`. They support no claim about a real robot.
 
 ## Predictions and results
@@ -94,7 +95,7 @@ Restrictions recorded under AC-GL3 (conditions where the method stays below the 
 | e=5, a=0, rho=0.0 | 0.62 | 90 percent |
 | e=5, a=0, rho=0.5 | 1.00 | 0 percent |
 
-Reading. All failures are low sun straight ahead, as predicted. Slowing down did not rescue them in this model: B1, which is always slow, failed the same conditions as M. AC-GL2 failed at one condition (elevation 5, azimuth 30, reflection 0.5) whose modelled saturation, 0.29, sits just under the threshold; flicker pushed single frames above it, the monitor needs two noisy frames, and the slow command followed in only 70 percent of those runs, with a worst delay of 2.1 s. A threshold placed at the edge of the operating conditions produces exactly this behaviour; the criterion as written is not met, and we report it as a failure.
+Reading. All failures are low sun straight ahead, as predicted. Slowing down did not rescue them in this model: B1, which is always slow, failed the same conditions as M. AC-GL2 failed at one condition (elevation 5, azimuth 30, reflection 0.5) whose modelled saturation, 0.29, sits just under the threshold; flicker pushed single frames above it, the monitor needs two noisy frames, and the slow command followed in only 70 percent of those runs, with a worst delay of 2.1 s. A threshold placed at the edge of the operating conditions produces this behaviour, and the criterion starts its clock on one true frame while the monitor needs two measured ones (`sim/DEVIATIONS.md`, D5). The criterion as written is not met, and we report it as a failure.
 
 ## N2 to N4: GNSS fault injection
 
@@ -121,15 +122,15 @@ Conditions: nominal=0, loss=0, noise=3, noise=5, noise=10, jump=2, jump=5, jump=
 
 Faults below the coverage sizes E_N (AC-N3):
 
-| Fault below E_N | M detected | M within T_N | Missed seeds |
-|---|---|---|---|
-| drift=0.05 | 93 percent | 0 percent | 16, 20 |
-| drift=0.1 | 100 percent | 0 percent | none |
-| jump=2 | 63 percent | 37 percent | 1, 2, 9, 11, 15, 21, 22, 24, 25, 26, 28 |
-| noise=3 | 97 percent | 37 percent | 6 |
-| replay=2 | 20 percent | 10 percent | 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 13, 14, 15, 17, 18, 19, 20, 21, 22, 23, 24, 26, 27, 29 |
+| Fault below E_N | M detected | M within T_N | Missed seeds | Seeds with an alarm before onset |
+|---|---|---|---|---|
+| drift=0.05 | 93 percent | 0 percent | 16, 20 | none |
+| drift=0.1 | 100 percent | 0 percent | none | none |
+| jump=2 | 63 percent | 37 percent | 1, 2, 9, 11, 15, 21, 22, 24, 25, 26, 28 | none |
+| noise=3 | 97 percent | 37 percent | none | 6 |
+| replay=2 | 20 percent | 10 percent | 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 13, 14, 15, 17, 18, 19, 20, 21, 22, 23, 24, 26, 27, 29 | none |
 
-Reading. Loss, large jumps, long delay replay and strong noise growth were found within seconds. Slow drift was found late (mean 15.6 s at the coverage size and 28.2 s below it), which fails AC-N1, as predicted. Because the filter trusts odometry, the navigation error at the stop stayed below L_N in every detected case (AC-N2 held). Two predictions missed. N-P4: the smallest jump was detected in 63 percent of runs against a predicted 80 percent or more; the filter absorbs part of the jump before the CUSUM accumulates. N-P8: noise growth to the coverage size was detected within T_N in 70 percent of runs (mean delay 8.4 s) against a predicted 90 percent or more; this miss also makes AC-N1 fail for a second reason. Replay with a short delay was mostly not detected (20 percent), but its error stays small. Without a monitor, noise growth to the largest size pushed the error above L_N in 60 percent of runs; the gate alone let slow drift through (90 percent above L_N at the smaller drift). The method raised false alarms in 0 percent of nominal runs; counting the fault free period before onset in every condition, it raised 1 false alarm in 480 runs. For the slowest drift, 7 percent of runs exceeded L_N before any detection.
+Reading. Loss, large jumps, long delay replay and strong noise growth were found within seconds. Slow drift was found late (mean 15.6 s at the coverage size and 28.2 s below it), which fails AC-N1, as predicted. Because the filter trusts odometry, the navigation error at the stop stayed below L_N in every detected case (AC-N2 held). Read as the protocol words it, with the largest error between onset and the stop, the worst detected run reached 2.83 m, also below L_N (`sim/DEVIATIONS.md`, D2). Two predictions missed. N-P4: the smallest jump was detected in 63 percent of runs against a predicted 80 percent or more; the filter absorbs part of the jump before the CUSUM accumulates. N-P8: noise growth to the coverage size was detected within T_N in 70 percent of runs (mean delay 8.4 s) against a predicted 90 percent or more; this miss also makes AC-N1 fail for a second reason. Replay with a short delay was mostly not detected (20 percent), but its error stays small. Without a monitor, noise growth to the largest size pushed the error above L_N in 60 percent of runs; the gate alone let slow drift through (90 percent above L_N at the smaller drift). The method raised false alarms in 0 percent of nominal runs; counting the fault free period before onset in every condition, it raised 1 false alarm in 480 runs. For the slowest drift, 2 runs were never detected, and 7 percent of runs exceeded L_N.
 
 ## What these results do not show
 

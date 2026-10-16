@@ -47,7 +47,7 @@ A forward camera pitched down 10 degrees. Saturation is a deterministic function
 No RF signal is generated or simulated. A robot drives a straight outdoor approach at 0.8 m/s for 120 s. Odometry every 0.1 s has a per run scale error (standard deviation 0.01), speed noise 0.02 m/s and a heading random walk of 0.001 rad per square root second. A position fix arrives every 10 odometry steps with white noise of 1 m per axis. A Kalman filter with process noise 0.01 m per step fuses the two. From 30 s one fault is applied to the fix stream: loss, noise growth over 20 s, a jump, a drift or a replay of the receiver's own fixes from earlier.
 
 - B0 accepts every fix. B1 rejects a fix whose normalised innovation exceeds 13.82 (chi square, two degrees of freedom).
-- M adds fault declaration: 3 consecutive rejections, a CUSUM of the normalised innovation minus 3 above 25, or no fix for 3 s. After declaration the robot stops using fixes and brakes at 1 m/s2 to a stop, the declared safe state.
+- M adds fault declaration: 3 consecutive rejections, a CUSUM of the normalised innovation minus 3 above 25, or no fix for more than 3 s, checked at the expected fix times (`sim/DEVIATIONS.md`, D4). After declaration the robot stops using fixes and brakes at 1 m/s2 to a stop, the declared safe state.
 
 ### Acceptance values (fixed before the runs)
 
