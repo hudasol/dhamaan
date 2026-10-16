@@ -38,9 +38,10 @@ def test_templates_have_no_hand_typed_numbers():
     assert bad == [], bad[:10]
 
 
-def test_every_template_is_built():
+def test_every_template_is_built_and_every_output_has_a_template():
     tmpls = {os.path.basename(p) for p in glob.glob(os.path.join(ROOT, "docs", "templates", "*.tmpl.md"))}
-    assert tmpls <= set(B.OUTPUTS.values())
+    assert tmpls == set(B.OUTPUTS.values())
+    assert set(BUILT) == set(B.OUTPUTS)
 
 
 def test_synthetic_numbers_carry_the_label():

@@ -45,7 +45,8 @@ def build(facts: dict | None = None) -> dict[str, str]:
     out = {}
     for rel, tmpl in OUTPUTS.items():
         p = template_path(tmpl)
-        if os.path.exists(p): out[rel] = render(open(p, encoding="utf-8").read(), facts, tmpl)
+        if not os.path.exists(p): raise FileNotFoundError(f"template missing for {rel}: docs/templates/{tmpl}")
+        out[rel] = render(open(p, encoding="utf-8").read(), facts, tmpl)
     return out
 
 
