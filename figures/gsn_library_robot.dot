@@ -2,7 +2,7 @@ digraph GSN {
   rankdir=TB; nodesep=0.25; ranksep=0.55; bgcolor="white";
   node [fontname="Helvetica", fontsize=10, style="filled", color="#c2547a", fontcolor="#4a2433", margin="0.10,0.06"];
   edge [color="#c2547a"];
-  label="Illustrative skeleton. All evidence items are OPEN (dashed). No evidence is claimed to exist."; labelloc=t; fontname="Helvetica"; fontsize=11;
+  label="Illustrative skeleton. Dashed evidence is open. Partial: EV-08 (simulated), EV-12 (simulated). Simulated evidence supports no hardware claim."; labelloc=t; fontname="Helvetica"; fontsize=11;
   G1 [shape=box, style="filled", fillcolor="#fde8ef", label="G1\nThe library service robot is\nacceptably safe to operate in the\ndefined university library ODD."];
   G2 [shape=box, style="filled", fillcolor="#fde8ef", label="G2\nCollision and contact harm to\npeople is controlled."];
   G3 [shape=box, style="filled", fillcolor="#fde8ef", label="G3\nLearning based perception is\nadequate within the ODD."];
@@ -52,11 +52,11 @@ digraph GSN {
   SN_EV05 [shape=circle, style="filled,dashed", fixedsize=true, width=0.8, fontsize=9, fillcolor="#ffffff", label="EV-05\nopen"];
   SN_EV06 [shape=circle, style="filled,dashed", fixedsize=true, width=0.8, fontsize=9, fillcolor="#ffffff", label="EV-06\nopen"];
   SN_EV07 [shape=circle, style="filled,dashed", fixedsize=true, width=0.8, fontsize=9, fillcolor="#ffffff", label="EV-07\nopen"];
-  SN_EV08 [shape=circle, style="filled,dashed", fixedsize=true, width=0.8, fontsize=9, fillcolor="#ffffff", label="EV-08\nopen"];
+  SN_EV08 [shape=circle, style="filled", fixedsize=true, width=0.8, fontsize=9, fillcolor="#fbe3ec", label="EV-08\npartial\nsimulated"];
   SN_EV09 [shape=circle, style="filled,dashed", fixedsize=true, width=0.8, fontsize=9, fillcolor="#ffffff", label="EV-09\nopen"];
   SN_EV10 [shape=circle, style="filled,dashed", fixedsize=true, width=0.8, fontsize=9, fillcolor="#ffffff", label="EV-10\nopen"];
   SN_EV11 [shape=circle, style="filled,dashed", fixedsize=true, width=0.8, fontsize=9, fillcolor="#ffffff", label="EV-11\nopen"];
-  SN_EV12 [shape=circle, style="filled,dashed", fixedsize=true, width=0.8, fontsize=9, fillcolor="#ffffff", label="EV-12\nopen"];
+  SN_EV12 [shape=circle, style="filled", fixedsize=true, width=0.8, fontsize=9, fillcolor="#fbe3ec", label="EV-12\npartial\nsimulated"];
   SN_EV13 [shape=circle, style="filled,dashed", fixedsize=true, width=0.8, fontsize=9, fillcolor="#ffffff", label="EV-13\nopen"];
   SN_EV14 [shape=circle, style="filled,dashed", fixedsize=true, width=0.8, fontsize=9, fillcolor="#ffffff", label="EV-14\nopen"];
   SN_EV15 [shape=circle, style="filled,dashed", fixedsize=true, width=0.8, fontsize=9, fillcolor="#ffffff", label="EV-15\nopen"];

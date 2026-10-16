@@ -159,3 +159,13 @@ def test_missing_hash_and_kind_are_errors():
 def test_goal_without_claim_scope_is_schema_error():
     c = case(); c["goals"][1].pop("claim_about")
     assert ("ERROR", "SCHEMA", "G2") in codes(c)
+
+def test_committed_diagram_source_is_current():
+    case_ = ac.load(os.path.join(ROOT, "assurance", "library_robot_case.yaml"))
+    dot = open(os.path.join(ROOT, "figures", "gsn_library_robot.dot"), encoding="utf-8").read()
+    assert dot == ar.to_dot(case_) + "\n", "run: python tools/ac_render.py assurance/library_robot_case.yaml figures/gsn_library_robot"
+
+def test_caption_follows_the_data():
+    c = case(); assert "No evidence is claimed to exist." in ar.caption(c)
+    c["evidence"][0].update({"status": "partial", "kind": "simulated"})
+    cap = ar.caption(c); assert "Partial: EV-01 (simulated)." in cap and "supports no hardware claim" in cap
