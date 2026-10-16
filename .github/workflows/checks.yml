@@ -38,7 +38,8 @@ jobs:
         run: python tools/secrets_scan.py .
       - name: Secrets scan (detect-secrets)
         run: |
-          detect-secrets scan --all-files --exclude-files '(^\.git/|__pycache__|\.pytest_cache|data/verification/outcome\.json$)' > /tmp/scan.json
+          # SHA-256 digests of artefacts are recorded on purpose; only exact 64 character hex values are ignored.
+          detect-secrets scan --all-files --exclude-files '(^\.git/|__pycache__|\.pytest_cache|data/verification/outcome\.json$)' --exclude-secrets '^[0-9a-f]{64}$' > /tmp/scan.json
           python - <<'PY'
           import json,sys
           d=json.load(open('/tmp/scan.json'))['results']
