@@ -2,7 +2,7 @@
 
 Ordered by value. Everything here uses free tools, free data and free accounts. Nothing needs a purchase, a subscription, a paid interface or a paid standard.
 
-## Actions for the owner (cannot be done by Claude)
+## Actions for the owner (cannot be done from inside this repository)
 
 1. **Fetch by hand the documents the fetch tools could not read.** The list with exact URLs is Appendix C of `docs/REPORT.md` (built from `data/official_checks.csv`, column `download_if_blocked`). The highest value ones: EUR-Lex Regulation (EU) 2023/1230 (Art. 54, Art. 10, Annexes I, III, IV), Regulation (EU) 2026/1744 (the article amending Art. 113 of the AI Act), the GCAA CAR-UAC and CAR-UAEX PDFs (current issue and limits), and the GCAA Safety Decision 2026-03.
 2. **Unlock fetches by pasting URLs.** The fetch tool's permission layer only reads a URL that appears in one of your messages. Pasting the EUR-Lex, AI Act Service Desk, GCAA and tool licence pages into a message lets the next session read them. No workaround was used.
