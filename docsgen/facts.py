@@ -137,8 +137,11 @@ def sim_facts() -> dict:
         rows.append([num(k, 1), pct(c["B0"]["unsafe"]["rate"]), pct(c["B1"]["unsafe"]["rate"]), pct(c["M"]["unsafe"]["rate"]),
                      pct(c["M"]["monitor_stop"]["rate"]), num(c["B0"]["detection_distance"]["median"], 2)])
     f["DU3_TABLE"] = table(["k", "B0 unsafe", "B1 unsafe", "M unsafe", "M monitor stop", "B0 median detection distance (m)"], rows)
-    m3 = du3["conditions"]["M|k=0.3"]
-    f["DU3_M_STOP_AT_03"] = pct(m3["monitor_stop"]["rate"])
+    early = [k for k in du3["config"]["levels"] if k <= A.B_D and du3["conditions"][f"M|k={k:.1f}"]["monitor_stop"]["rate"]
+             and du3["conditions"][f"B0|k={k:.1f}"]["unsafe"]["rate"] == 0 and k < A.B_D]
+    k_early = early[-1] if early else None
+    f["DU3_EARLY_STOP_K"] = num(k_early, 1)
+    f["DU3_M_EARLY_STOP"] = pct(du3["conditions"][f"M|k={k_early:.1f}"]["monitor_stop"]["rate"]) if early else "n/a"
     f["DU3_B0_UNSAFE_AT_1"] = pct(du3["conditions"]["B0|k=1.0"]["unsafe"]["rate"])
     # GL3 tables
     fail_rows = []
@@ -148,7 +151,12 @@ def sim_facts() -> dict:
                               num(c["saturation_model"], 2), pct(c["detected_in_time"]["rate"])])
     f["GL3_FAIL_TABLE"] = table(["Method", "Elevation (deg)", "Azimuth (deg)", "rho", "Model saturation", "In time detection"], fail_rows)
     for m in ("B0", "B1", "M"): f[f"GL3_{m}_FAILS"] = str(gl3["summary"][m]["conditions_below_p_g"])
-    g2 = gl3["conditions"]["M|e=5|a=30|rho=0.5"]
+    ac2 = next(a for a in S["acceptance"] if a["id"] == "AC-GL2")
+    fails = sorted({m.split("/")[1] for c in ac2["checks"] for m in c["failing"]})
+    g2 = gl3["conditions"][fails[0]] if fails else None
+    f["GL3_AC2_COND"] = (f'elevation {num(g2["elevation_deg"], 0)}, azimuth {num(g2["azimuth_deg"], 0)}, reflection {num(g2["rho"], 1)}'
+                         + (f" and {len(fails) - 1} more" if len(fails) > 1 else "")) if g2 else "none"
+    g2 = g2 or {"saturation_model": None, "slow_command_runs_where_s_exceeded": {"rate": None}, "slow_command_delay": {"max": None}}
     f["GL3_AC2_COND_SAT"] = num(g2["saturation_model"], 2)
     f["GL3_AC2_COND_CMD"] = pct(g2["slow_command_runs_where_s_exceeded"]["rate"])
     f["GL3_AC2_COND_DELAY_MAX"] = num(g2["slow_command_delay"]["max"], 1)
@@ -175,6 +183,8 @@ def sim_facts() -> dict:
     f["N_B0_NOISE10_EXCEED"] = pct(c("B0|noise=10")["error_exceeds_l_n"]["rate"])
     f["N_B1_DRIFT01_EXCEED"] = pct(c("B1|drift=0.1")["error_exceeds_l_n"]["rate"])
     f["N_M_NOMINAL_FA"] = pct(c("M|nominal=0")["false_alarm"]["rate"])
+    fa = [v["false_alarm"] for k, v in gn["conditions"].items() if v["method"] == "M"]
+    f["N_M_ALL_FA_K"] = str(sum(x["k"] for x in fa)); f["N_M_ALL_FA_N"] = str(sum(x["n"] for x in fa))
     # prediction thresholds quoted in prose
     pv = {p["id"]: p["checks"][0]["value"] for p in PREDICTIONS}
     f["PV_N_P4"] = pct(pv["N-P4"]); f["PV_N_P8"] = pct(pv["N-P8"])
