@@ -1,8 +1,8 @@
 # Machinery Regulation (EU) 2023/1230 annexes: official source check (2026-10-12)
 
 ## What could and could not be read
-- WebFetch of the EUR-Lex HTML (CELEX:32023R1230) returned an extraction that ends partway through Art. 37 (168,475 characters). The PDF view ends around Art. 35, and the OJ:L:2023:165:FULL view around Art. 28 to 37. The ELI URL returned metadata only. No Annex I, III or IV text was returned by any official URL. I tried each canonical variant once and did not use mirrors.
-- All EUR-Lex content below is a tool extraction with short verbatim snippets, not raw text. I therefore record `summary seen`, not `full text seen`, for everything.
+- The automated fetch of the EUR-Lex HTML (CELEX:32023R1230) returned an extraction that ends partway through Art. 37 (168,475 characters). The PDF view ends around Art. 35, and the OJ:L:2023:165:FULL view around Art. 28 to 37. The ELI URL returned metadata only. No Annex I, III or IV text was returned by any official URL. I tried each canonical variant once and did not use mirrors.
+- All EUR-Lex content below is a tool extraction with short verbatim snippets, not raw text. We therefore record `summary seen`, not `full text seen`, for everything.
 - Regulation (EU) 2026/1744 (CELEX:32026R1744) text was returned up to AI Act Art. 75d (about 135,000 of 149,656 characters); the final operative articles, including whatever amends 2023/1230, were not returned.
 
 ## Findings
@@ -17,7 +17,7 @@
 - https://eur-lex.europa.eu/eli/reg/2023/1230/oj/eng (Annex I Part A, Annex III 1.1.9, 1.2.1 incl. points (b) and (f), section 3, Annex IV)
 - https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng (articles after AI Act Art. 75d)
 
-## Other observations (not my rows)
+## Other observations (rows outside this check)
 - A09 (Art. 20(9)) is supported by the extraction: certification under Regulation (EU) 2019/881 gives a presumption for Annex III 1.1.9 and 1.2.1.
 - A11 and A12 (Art. 25(2) and (3)) match the extraction; Art. 25(3) was cut off at point (c).
 - D43 access level looks overclaimed (proposed downgrade to summary seen).

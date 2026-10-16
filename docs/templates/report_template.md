@@ -6,7 +6,7 @@ date: "12 October 2026"
 
 # 0. Read this first
 
-**What this is.** A structured, source traced study of what robot, drone and autonomy standards and regulations ask a developer to *produce as evidence* before deployment, which of those asks are binding, and where they are silent. It is built from {{N_ROWS}} evidence table rows (`data/evidence_table.csv`), each tied to a URL a research subagent or I retrieved on 11 or 12 October 2026. This second edition adds a fresh verification of every row and official source checks (section 2.3 and section 9).
+**What this is.** A structured, source traced study of what robot, drone and autonomy standards and regulations ask a developer to *produce as evidence* before deployment, which of those asks are binding, and where they are silent. It is built from {{N_ROWS}} evidence table rows (`data/evidence_table.csv`), each tied to a URL retrieved during the research on 11 or 12 October 2026. This second edition adds a fresh verification of every row and official source checks (section 2.3 and section 9).
 
 **What this is not.** It is not certification advice and not legal advice. Several instruments are paywalled; for those the table says "title and scope only" or "summary seen" and no clause content is claimed.
 
@@ -14,7 +14,7 @@ date: "12 October 2026"
 
 **Three caveats that matter before you share anything.**
 
-1. The web fetch tool used for most retrieval returns *model written extractions* of pages, not raw text. "Full text seen" therefore means the specific passage was returned and read, not that a human read the original PDF. Verifiers downloaded some PDFs directly (SORA 2.5, the EASA annex, GCAA CARs, SACE, the Federal Register NPRM), but the EUR-Lex text of Regulation 2023/1230 and the AI Act articles were read only through extractions or an unofficial reproduction.
+1. The web fetch step used for most retrieval returns *model written extractions* of pages, not raw text. "Full text seen" therefore means the specific passage was returned and read, not that a human read the original PDF. Verifiers downloaded some PDFs directly (SORA 2.5, the EASA annex, GCAA CARs, SACE, the Federal Register NPRM), but the EUR-Lex text of Regulation 2023/1230 and the AI Act articles were read only through extractions or an unofficial reproduction.
 2. The AI Act article rows come from artificialintelligenceact.eu, an unofficial reproduction. Rows relying on it were downgraded to "summary seen" and should be checked against the Official Journal.
 3. Verification (section 2.3) found real errors, and the final check after correction still flagged a substantial share of rows. {{CAVEAT_VERIF}}
 
@@ -27,7 +27,7 @@ date: "12 October 2026"
 1. **Very little robot specific evidence is mandatory, and what is mandatory is mostly legal process rather than technical acceptance criteria.** The binding rows are mainly the EU Machinery Regulation (technical file, conformity assessment, declaration and marking, retention for 10 years) (A03 to A05), the EU drone regulations (authorisation, declaration, registration) (C01 to C10), and UAE drone rules (product conformity in C48; the GCAA operator rules, C51 to C54, are now recorded as title and scope only because their text could not be re read in the second edition). The robot safety standards themselves (ISO 12100, ISO 10218, ISO 13482, ISO 3691-4, IEC 61508, ISO 13849, UL 3300) are voluntary in law; they become relevant through the harmonised standard route to a presumption of conformity (A07) or through contracts and market expectations.
 2. **A single evidence skeleton recurs everywhere:** a defined operating context, a documented hazard and risk assessment, verification and validation records, a technical file, a declaration or independent assessment, operating procedures, logging, and incident reporting. What differs is who checks it and how rigorously.
 3. **Learning based autonomy is the least standardised area.** The EU Machinery Regulation makes machine learning safety functions a category needing third party assessment (A16, secondary source for the annex wording), the AI Act sets high level duties on risk management, data governance and robustness (B20, B21, B26), but the technical standards that would make these testable were still being written (A21, B33), and the road vehicle standards (ISO 21448 and relatives) do not by their scope cover robots (B01, B02). The most concrete guidance (AMLAS, SACE, MLEAP) is non binding (B44, B46, D21).
-4. **No instrument I could retrieve asks a developer to test against Gulf heat, dust, sun glare or GNSS jamming/spoofing.** The closest hooks are generic: SORA operational safety objectives on environmental qualification (D35, D38), Dubai's autonomous vehicle rules requiring tests under local climatic conditions (secondary source, no numbers) (D50, C65), generic IEC test methods (D62, D63), and GNSS interference operational guidance (D52 and others). This is an absence finding within the scope searched, not proof that nothing exists.
+4. **No instrument we could retrieve asks a developer to test against Gulf heat, dust, sun glare or GNSS jamming/spoofing.** The closest hooks are generic: SORA operational safety objectives on environmental qualification (D35, D38), Dubai's autonomous vehicle rules requiring tests under local climatic conditions (secondary source, no numbers) (D50, C65), generic IEC test methods (D62, D63), and GNSS interference operational guidance (D52 and others). This is an absence finding within the scope searched, not proof that nothing exists.
 5. **UAE position.** For drones the UAE has a findable, structured regime (Federal Decree-Law 26/2022, Cabinet Resolution 110/2023 on products, GCAA CAR-UAC/CAR-UAEX for operators) (C47 to C56). For ground robots, no UAE rule specific to service or delivery robots was found; Dubai's autonomous vehicle law and RTA resolution cover vehicles on roads (C64, C65). What governs an indoor library robot in the UAE is therefore **unresolved by the sources found** and is the first open item in the worked example.
 6. **Simulation is accepted as evidence in several places but never as a free standing credit.** SORA guidance allows it if the target environment is justified (D38), UL 4600 expects a mix of analysis, simulation, closed course and road testing (B07), NASA-STD-7009 offers a credibility scale (D27, secondary), and AMLAS asks for evidence that the simulator represents reality (B45). No source gave a quantitative rule for how much simulation can replace physical testing.
 
@@ -38,7 +38,7 @@ date: "12 October 2026"
 ## 2.1 Protocol (written before research; `docs/PROTOCOL.md`)
 
 - **Inclusion.** Instruments named in the brief; a row is admitted only if it is a testable requirement or evidence expectation visible in a retrieved source.
-- **Search.** Four independent streams, run in parallel by research subagents: (A) machinery and robot safety, (B) autonomy and AI, (C) drones and the UAE, (D) assurance practice and Gulf conditions. For each instrument: official catalogue or status page first, then regulator or open text, then public summaries; record what could not be accessed. UAE searches were run in English and Arabic.
+- **Search.** Four independent streams, run in parallel as separate research passes: (A) machinery and robot safety, (B) autonomy and AI, (C) drones and the UAE, (D) assurance practice and Gulf conditions. For each instrument: official catalogue or status page first, then regulator or open text, then public summaries; record what could not be accessed. UAE searches were run in English and Arabic.
 - **How "required" is decided.** *Mandatory*: binding legal text on the developer or operator, seen in legal text or an official regulator page. *Conditional*: binding only if a trigger holds (risk class, category, harmonised standard route, approval pathway). *Voluntary*: not referenced by law in the relevant jurisdiction. *Guidance*: regulator or body guidance, non binding. A standard that is voluntary in law but gives a presumption of conformity under a regulation is recorded as conditional, with the route stated.
 - **Access levels.** *Full text seen* (the cited passage was read), *summary seen* (abstract, official summary, secondary or unofficial reproduction), *title only* (catalogue entry and scope; no requirement content asserted).
 - **Paywalls.** Never reproduced or reconstructed. Clause numbers recorded only if seen in a retrieved source.
@@ -49,13 +49,13 @@ date: "12 October 2026"
 
 The original columns (instrument, edition or version, status note, clause seen, paraphrased requirement, binding status, applies to, evidence type, who verifies, source URL, retrieval date, access level, notes) are in the CSV together with derived columns: `family`, `evidence_codes` (section 5), and from the second edition `clause_reported_unverified` (a locator a source reported but that no verifier could confirm in full text), `binding_checked`, `verification_status` and `last_checked`. A clause locator sits in `clause_or_section_seen` only when the access level is full text seen and a verifier saw it. Appendix A shows a compact version; the CSV is authoritative.
 
-**Row duplication.** Some provisions appear in more than one stream (for example Machinery Regulation rows in streams A, B and D, and EASA's AI concept paper in streams B and C). I did not delete them because the verifiers checked them independently, but counts by instrument overstate the number of distinct requirements.
+**Row duplication.** Some provisions appear in more than one stream (for example Machinery Regulation rows in streams A, B and D, and EASA's AI concept paper in streams B and C). We did not delete them because the verifiers checked them independently, but counts by instrument overstate the number of distinct requirements.
 
 {{VERIFICATION_SECTION}}
 
 # 3. The landscape: what each instrument is, and how binding it is
 
-Statuses are as seen in retrieved sources on 11 October 2026; "unverified" means I could not retrieve a source that settles it.
+Statuses are as seen in retrieved sources on 11 October 2026; "unverified" means we could not retrieve a source that settles it.
 
 | Instrument | Edition / status seen | Binding for a developer | Notes |
 |---|---|---|---|
@@ -102,7 +102,7 @@ Reading the rows together, the same artefacts recur across instruments:
 
 # 5. Taxonomy of assurance evidence types (bottom up)
 
-**How it was built.** Each row's `evidence_type` field was written by the researcher who read the source, in free text (for example "Third party testing/assessment leading to UL Mark", "Contingency volume calculation", "Triggering condition analysis (SOTIF style)"). I grouped those descriptions into 15 types by what the artefact is and what it is used for, merged near duplicates, and kept a separate bucket for rows that describe context rather than an artefact. The grouping used keyword rules, and verifiers then checked and corrected the codes of all {{N_ROWS}} rows. A row can carry several codes. The taxonomy is therefore *derived from the table* but its boundaries are my judgement, not a standard.
+**How it was built.** Each row's `evidence_type` field was written by the researcher who read the source, in free text (for example "Third party testing/assessment leading to UL Mark", "Contingency volume calculation", "Triggering condition analysis (SOTIF style)"). We grouped those descriptions into 15 types by what the artefact is and what it is used for, merged near duplicates, and kept a separate bucket for rows that describe context rather than an artefact. The grouping used keyword rules, and verifiers then checked and corrected the codes of all {{N_ROWS}} rows. A row can carry several codes. The taxonomy is therefore *derived from the table* but its boundaries are our judgement, not a standard.
 
 {{TYPE_TABLE}}
 
@@ -131,7 +131,7 @@ Cell letters give the strongest binding status among the instrument family's row
 
 {{MATRIX}}
 
-**How to read it.** The matrix shows what the rows record, not a legal test of what each instrument can require. Families are groupings I created, and a family's letter can be driven by a single row. In particular, "M" in the UAE family comes from drone rules and from Dubai's road vehicle rules; it does not indicate a mandatory evidence requirement for a robot.
+**How to read it.** The matrix shows what the rows record, not a legal test of what each instrument can require. Families are groupings we created, and a family's letter can be driven by a single row. In particular, "M" in the UAE family comes from drone rules and from Dubai's road vehicle rules; it does not indicate a mandatory evidence requirement for a robot.
 
 **Reading (interpretation).**
 
@@ -142,7 +142,7 @@ Cell letters give the strongest binding status among the instrument family's row
 
 # 7. Gap analysis
 
-Each gap states what documents say, then my interpretation. UAE claims appear only where a retrieved source supports them.
+Each gap states what documents say, then our interpretation. UAE claims appear only where a retrieved source supports them.
 
 ## 7.1 Learning based perception and planning
 
@@ -184,7 +184,7 @@ A proposal (not a result) for what a developer could test, argue and simulate fo
 - AI Act Article 14 requires oversight design so humans can understand limits, detect automation bias, override and stop (B25), and Article 13 requires instructions covering accuracy, oversight and maintenance (B24).
 - For UAE ground robots in public spaces, no rule specific to delivery or service robots was found; Dubai pilots appear only in news (C67), and the autonomous vehicle instruments are about vehicles on roads (C64, C65).
 
-**Reading (interpretation).** The standards were written for factories, vehicles and personal care contexts; a robot moving among unsupervised members of the public, including children and people with disabilities, sits on the boundaries of several scopes at once. The least binding but most relevant sources are UL 3300 and ISO 13482 as design references, and AI Act oversight articles as a vocabulary for human oversight evidence. What counts as an acceptable injury risk limit for a service robot is not settled in the sources I could read.
+**Reading (interpretation).** The standards were written for factories, vehicles and personal care contexts; a robot moving among unsupervised members of the public, including children and people with disabilities, sits on the boundaries of several scopes at once. The least binding but most relevant sources are UL 3300 and ISO 13482 as design references, and AI Act oversight articles as a vocabulary for human oversight evidence. What counts as an acceptable injury risk limit for a service robot is not settled in the sources we could read.
 
 ## 7.4 Simulation as evidence
 
@@ -198,15 +198,15 @@ A proposal (not a result) for what a developer could test, argue and simulate fo
 
 # 8. Worked example: assurance case skeleton for a library assistant service robot
 
-**Scenario (assumed for illustration).** A mobile service robot with learning based perception and an optional arm that fetches and returns books and guides visitors in a library in the UAE. I made these assumptions; they are not facts about any particular project. **Every evidence item below is OPEN: no evidence is claimed to exist.** A machine checkable version of this case is `assurance/library_robot_case.yaml`; `tools/ac_check.py` flags open evidence, unsupported claims and untraced items, and `tools/ac_render.py` draws the diagram from the file. Items marked "decision needed" depend on choices the team has not recorded here.
+**Scenario (assumed for illustration).** A mobile service robot with learning based perception and an optional arm that fetches and returns books and guides visitors in a library in the UAE. We made these assumptions; they are not facts about any particular project. **Every evidence item below is OPEN: no evidence is claimed to exist.** A machine checkable version of this case is `assurance/library_robot_case.yaml`; `tools/ac_check.py` flags open evidence, unsupported claims and untraced items, and `tools/ac_render.py` draws the diagram from the file. Items marked "decision needed" depend on choices the team has not recorded here.
 
 ![GSN style assurance case skeleton. Rectangle: goal; parallelogram: strategy; rounded box: context; circle: solution (evidence item EV xx, see checklist); diamond: undeveloped. Dashed outlines mean open: no evidence is claimed to exist.](../figures/gsn_library_robot.svg)
 
-**Evidence checklist.** "Motivating sources" are table row IDs that motivate asking for the item; they show *why the item is on the list*, not that any instrument requires it for this robot. Where I add an expectation not found in a source, it is marked "(my addition)".
+**Evidence checklist.** "Motivating sources" are table row IDs that motivate asking for the item; they show *why the item is on the list*, not that any instrument requires it for this robot. Where we add an expectation not found in a source, it is marked "(our addition)".
 
 | ID | Evidence item | Motivating sources | Status |
 |---|---|---|---|
-| EV-01 | ODD and system definition: library layout, occupancy ranges, user classes (children, elderly, people with disabilities, staff), floors and obstacles, lighting including daylight through glazing (my addition), network and localisation sources, what is out of scope | PAS 1883 and ISO 34503 taxonomies (D11, D13); SACE stage 1 (B46); AMLAS scoping (B44); UL 4600 completeness tied to ODD (D05); SORA ConOps (C17) | OPEN. Decision needed |
+| EV-01 | ODD and system definition: library layout, occupancy ranges, user classes (children, elderly, people with disabilities, staff), floors and obstacles, lighting including daylight through glazing (our addition), network and localisation sources, what is out of scope | PAS 1883 and ISO 34503 taxonomies (D11, D13); SACE stage 1 (B46); AMLAS scoping (B44); UL 4600 completeness tied to ODD (D05); SORA ConOps (C17) | OPEN. Decision needed |
 | EV-02 | Hazard and risk assessment, identifying hazardous situations for people, objects, and the robot's own failures | ISO 12100 method (A22); ISO 13482 scope for mobile servant robots (A28); ISO 3691-4 hazard annex as an analogue for mobile platforms (A31); UL 3300 scope (A37); AI Act Art. 9 as vocabulary (B20) | OPEN |
 | EV-03 | Regime determination: which laws and authorities govern an indoor robot in the assumed building (UAE federal, emirate, host organisation policy, insurer); whether EU rules apply if exported | UAE sources found cover drones and road vehicles only (C47 to C56, C64, C65); Machinery Regulation scope (A01, B35); AI Act dates (B17) | OPEN. Not answerable from the sources found. Ask the relevant UAE authority and the host organisation |
 | EV-04 | Safety requirements and safety function specification: speed and force limits, protective stop, emergency stop, safe states, with the integrity level (performance level or SIL) chosen and justified | ISO 13849 performance level evidence (A35); IEC 61508 lifecycle (A32 to A34); ISO 3691-4 control system verification (A31) | OPEN. Decision needed: target integrity level |
@@ -219,13 +219,13 @@ A proposal (not a result) for what a developer could test, argue and simulate fo
 | EV-11 | Cybersecurity and update control: who can change safety settings, how updates are re argued | ISO 10218-1:2025 cybersecurity to the-extent it affects-safety (A24, secondary); Machinery Regulation annex on protecting safety functions from alteration (A18, secondary); UL 4600 per update reargument (B07) | OPEN |
 | EV-12 | Building condition evidence: temperature range of the space including HVAC failure, dust ingress, glare and daylight effects on sensors; enclosure protection level chosen and tested | IEC 60529 and IEC 60068-2-2 test methods (D62, D63); SORA environmental objectives as analogue (D35, D38); PAS 1883 environment attributes (D11, D12) | OPEN. Decision needed: the envelope and severities (nothing in the sources fixes them) |
 | EV-13 | Operating procedures, staff training, supervision model, maintenance and instructions for use | AI Act Art. 13 as vocabulary (B24); SORA procedures objective as analogue (C34); UL 3300 evaluation inputs (A38) | OPEN |
-| EV-14 | Logging and retention: what the robot records (near misses, stops, detection confidence), how long, privacy implications | AI Act Art. 12 as vocabulary (B23); retention of technical file and decision data (A05, A18); GCAA record keeping for drone operators as an analogue only (C52, title and scope only, not confirmed) | OPEN. Decision needed: retention period; privacy review (my addition) |
+| EV-14 | Logging and retention: what the robot records (near misses, stops, detection confidence), how long, privacy implications | AI Act Art. 12 as vocabulary (B23); retention of technical file and decision data (A05, A18); GCAA record keeping for drone operators as an analogue only (C52, title and scope only, not confirmed) | OPEN. Decision needed: retention period; privacy review (our addition) |
 | EV-15 | Incident reporting and field monitoring: definitions, safety performance indicators, root cause process, reporting path to the host organisation and to any authority identified in EV-03 | UL 4600 SPIs and field feedback (B08 to B10); AI Act Arts. 72 and 73 (B29, B30); EU occurrence reporting (D44); no UAE ground robot reporting rule found | OPEN |
 | EV-16 | The safety case document itself, in GSN or equivalent, with assumptions, confidence arguments and defeater analysis | GSN community standard (D01); UL 4600 safety case (B06); safety case templates (B47); defeaters (D09) | OPEN |
 | EV-17 | Independent review: internal safety review at minimum; optional external evaluation (for example against UL 3300) | UL 3300 third party evaluation (A37); SORA third party verification as an analogue (C16) | OPEN. Optional |
 | EV-18 | Change management: criteria for when a model, map or software change reopens the case | UL 4600 per update reargument (B07); "substantial modification" concept (A06) | OPEN |
 
-**What is deliberately not in the skeleton.** I did not assert that any listed instrument *requires* these items for this robot. The Machinery Regulation, ISO 10218 and ISO 3691-4 contain exclusions or scope limits that may place such a robot outside them (A23, A31). What the skeleton does is assemble the evidence the different instruments *ask for in neighbouring contexts*, so the team can choose, justify and fill it.
+**What is deliberately not in the skeleton.** We did not assert that any listed instrument *requires* these items for this robot. The Machinery Regulation, ISO 10218 and ISO 3691-4 contain exclusions or scope limits that may place such a robot outside them (A23, A31). What the skeleton does is assemble the evidence the different instruments *ask for in neighbouring contexts*, so the team can choose, justify and fill it.
 
 # 9. Limitations
 
@@ -236,7 +236,7 @@ A proposal (not a result) for what a developer could test, argue and simulate fo
 5. **Language.** UAE sources were reached mostly in English, with Arabic official texts reached through portal pages (Decree-Law 26/2022); no Arabic GCAA CAR pages were found. OCR noise affected some Arabic extractions.
 6. **UAE gaps.** Not found or not read: any UAE rule for ground delivery or service robots; GCAA U-space rule text (news only); GCAA CAR-OCR text; Abu Dhabi regulation text beyond a press release; other emirates' drone rules; the official gazette text of Dubai Law 4/2020; whether UAE regulators have adopted a specific SORA version. These are absence of evidence findings within the searches run.
 7. **Source conflicts left unresolved.** Machinery Regulation application date (20 versus 14 January 2027); EASA amendment label (3 versus 4); ISO/TS 15066 status; UL 3300 edition and date labels; EN 18286 approval and Official Journal citation timing; NASA-STD-7009B date; GSN and SACM version dates; whether Part 108 final rule status is as reported by blogs. Appendix B lists these.
-8. **Verification limits.** Verifiers used the same fetch tools and share their blind spots. Error rates measure disagreement between independent readings, not ground truth. Some rows were corrected from a single final reading and are labelled single checked. Evidence codes and families are my own scheme and affect the matrix.
+8. **Verification limits.** Verifiers used the same retrieval tools and share their blind spots. Error rates measure disagreement between independent readings, not ground truth. Some rows were corrected from a single final reading and are labelled single checked. Evidence codes and families are our own scheme and affect the matrix.
 9. **Currency.** The status of PDRAs under SORA 2.5, any new UAE rules after the retrieval date, and the EU harmonised standards list under Regulation 2023/1230 were not established.
 10. **Duplication.** Some provisions appear in more than one row (section 2.2).
 
@@ -258,6 +258,6 @@ Full table with all fields: `docs/data/evidence_table.csv`. Requirements are tru
 
 # Appendix C. Documents to fetch by hand (free sources only)
 
-These are the documents the fetch tools could not return. Each is a free public page or file. Nothing here needs a purchase, subscription or paid standard: for ISO, IEC and UL standards the free catalogue and preview pages are the level this study records, and no clause content is asserted from them.
+These are the documents the retrieval tools could not return. Each is a free public page or file. Nothing here needs a purchase, subscription or paid standard: for ISO, IEC and UL standards the free catalogue and preview pages are the level this study records, and no clause content is asserted from them.
 
 {{DOWNLOADS}}

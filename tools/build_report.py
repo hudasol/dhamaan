@@ -68,7 +68,7 @@ for k in KEY:
     r = byid[k]; sh = lambda s, n: esc(s if len(s) <= n else s[: n - 3].rstrip() + "...")
     OS.append(f"| {k} | {sh(r['item'], 70)} | {sh(r['value'] or '(none)', 60)} | {sh(r['locator_seen'] or '(none)', 80)} | {r['source_type']} | {r['retrieved_on']} | {r['status']} |")
 cs = collections.Counter(r["status"] for r in checks)
-OS += ["", f"All {len(checks)} official check items: " + ", ".join(f"{k} {v}" for k, v in sorted(cs.items())) + ". Statuses follow the rule stated above; most stay open because the fetch tool returned extractions and not the provision's own wording."]
+OS += ["", f"All {len(checks)} official check items: " + ", ".join(f"{k} {v}" for k, v in sorted(cs.items())) + ". Statuses follow the rule stated above; most stay open because the fetch step returned extractions and not the provision's own wording."]
 # downloads
 dl = collections.OrderedDict()
 for r in checks:
@@ -76,20 +76,20 @@ for r in checks:
         u = u.rstrip(".")
         dl.setdefault(u, []).append(r["check_id"])
 DL = [f"- {u} (checks {', '.join(ids)})" for u, ids in dl.items()]
-DL += ["- Free pages the fetch tool refused or could not read in full are also listed in `docs/NEXT_STEPS.md` (to paste into a message so the fetch tool can read them)."]
+DL += ["- Free pages the fetch step refused or could not read in full are also listed in `docs/NEXT_STEPS.md` (to open by hand, since the automated fetch step could not read them)."]
 # verification text
 single = vs["corrected after final check, single checked"]
 EXEC = (f"A fresh, independent check of all {len(rows)} rows by two separate sets of new verifiers (passes A and B) flagged at least one problem in a key column (paraphrase, binding status or access level) in {pc(ab['row']['either'])} of rows when either verifier objected, and {pc(ab['row']['both'])} when both did. Phase 1 had reported 13 percent content errors in a 30 row sample. "
-        f"After correction, a third set of verifiers (pass C) still flagged {pc(c['changed']['row'])} of the changed rows ({c['changed']['row_excl_unverifiable']['pct']} percent when rows the fetch tool could not read are excluded) and {pc(c['unchanged_sample']['row'])} of a 30 row sample of unchanged rows. The prediction written beforehand (under 10 and under 8 percent) was not met. "
+        f"After correction, a third set of verifiers (pass C) still flagged {pc(c['changed']['row'])} of the changed rows ({c['changed']['row_excl_unverifiable']['pct']} percent when rows the fetch step could not read are excluded) and {pc(c['unchanged_sample']['row'])} of a 30 row sample of unchanged rows. The prediction written beforehand (under 10 and under 8 percent) was not met. "
         f"{single} rows were corrected from the final reading alone and are labelled single checked. Details in section 2.3.")
 CAV = f"{single} rows carry text taken from one final reading only (labelled `single checked` in the table)."
 BRIEF = (f"Every row was independently re checked by two verifiers before correction: {ab['row']['either']['pct']} percent of rows had a problem that at least one of them flagged. After correction a third check still flagged about {c['changed']['row_excl_unverifiable']['pct']} percent of corrected rows. Treat any single row as a lead to be confirmed in the source, not as settled.")
 pa = ab
 V = f"""## 2.3 Verification (second edition)
 
-**Why.** The first edition found 13 percent content errors in a 30 row sample (21 of 30 rows had an issue of any kind) and the corrections were never re checked. The second edition repeats verification on all {len(rows)} rows with different subagents, and measures the rate before and after correction. The plan, the reconciliation rules and the predictions were written before the runs (`data/verification/PLAN.md`); the frozen inputs are hashed in `data/verification/outcome.json`.
+**Why.** The first edition found 13 percent content errors in a 30 row sample (21 of 30 rows had an issue of any kind) and the corrections were never re checked. The second edition repeats verification on all {len(rows)} rows with different automated verifiers, and measures the rate before and after correction. The plan, the reconciliation rules and the predictions were written before the runs (`data/verification/PLAN.md`); the frozen inputs are hashed in `data/verification/outcome.json`.
 
-**Design.** Official source updates were applied first (91 field changes, `data/official/applied_changes.csv`) and the table was frozen. Pass A and pass B each checked every row with new subagents, blind to each other, to earlier verdicts and to the notes column, with different batch boundaries. For each row a verifier recorded, from its own retrieval: whether the paraphrase is supported, the locator it actually saw, the binding status it would assign, and the access level its reading supports. Reconciliation was mechanical: access level takes the lower of the two readings; a binding status changes only if both agree on a new value; a paraphrase is replaced by the flagging verifier's text; a clause locator stays in `clause_or_section_seen` only if the final access level is full text seen and a verifier saw it, otherwise it moves to `clause_reported_unverified`. Pass C then checked all {c['changed']['n']} rows that changed in a key column plus 30 unchanged rows (seed 20261012).
+**Design.** Official source updates were applied first (91 field changes, `data/official/applied_changes.csv`) and the table was frozen. Pass A and pass B each checked every row with new automated verifiers, blind to each other, to earlier verdicts and to the notes column, with different batch boundaries. For each row a verifier recorded, from its own retrieval: whether the paraphrase is supported, the locator it actually saw, the binding status it would assign, and the access level its reading supports. Reconciliation was mechanical: access level takes the lower of the two readings; a binding status changes only if both agree on a new value; a paraphrase is replaced by the flagging verifier's text; a clause locator stays in `clause_or_section_seen` only if the final access level is full text seen and a verifier saw it, otherwise it moves to `clause_reported_unverified`. Pass C then checked all {c['changed']['n']} rows that changed in a key column plus 30 unchanged rows (seed 20261012).
 
 **Error rates before correction (passes A and B on the frozen table, n = {pa['n']}).**
 
@@ -104,7 +104,7 @@ Agreement between A and B: binding status {pa['agree_binding']['raw_pct']} perce
 
 **Error rates after correction (pass C).**
 
-| Group | Rows | Row error | Excluding rows the fetch tool could not read | Paraphrase issue | Binding differs |
+| Group | Rows | Row error | Excluding rows the fetch step could not read | Paraphrase issue | Binding differs |
 |---|---|---|---|---|---|
 | Changed rows | {c['changed']['n']} | {c['changed']['row']['pct']}% | {c['changed']['row_excl_unverifiable']['pct']}% | {c['changed']['para']['pct']}% | {c['changed']['binding']['pct']}% |
 | Unchanged sample | {c['unchanged_sample']['n']} | {c['unchanged_sample']['row']['pct']}% | {c['unchanged_sample']['row_excl_unverifiable']['pct']}% | {c['unchanged_sample']['para']['pct']}% | {c['unchanged_sample']['binding']['pct']}% |
@@ -113,7 +113,7 @@ Agreement between A and B: binding status {pa['agree_binding']['raw_pct']} perce
 
 **What the rows look like now.** Access level: {', '.join(f'{k} {acc[k]}' for k in ('full text seen','summary seen','title only'))} (the first edition had 70 full text seen). No row was removed; rows that could not be supported by a retrieved source were set to title only with title and scope text. Verification status: {', '.join(f'{k} {v}' for k, v in sorted(vs.items()))}. Every change is in `data/verification_changelog_v2.csv` with its stage and reason.
 
-**How to read these numbers.** The third check flagged more detail problems (recital versus operative text, scope claims in status notes, truncated extractions) than the first two, so the corrected table is better but not clean. The after correction figure is not lower than the before figure and I do not claim it is. All verifiers used the same fetch tools, so agreement is not ground truth. Rows corrected from the final reading alone ({single}) have not been checked twice. The most useful next step is a human read of the rows you intend to quote, against the source."""
+**How to read these numbers.** The third check flagged more detail problems (recital versus operative text, scope claims in status notes, truncated extractions) than the first two, so the corrected table is better but not clean. The after correction figure is not lower than the before figure and we do not claim it is. All verifiers used the same retrieval tools, so agreement is not ground truth. Rows corrected from the final reading alone ({single}) have not been checked twice. The most useful next step is a human read of the rows you intend to quote, against the source."""
 t = open(P("docs/templates/report_template.md"), encoding="utf-8").read()
 t = fill(t, N_ROWS=str(len(rows)), COUNTS_BINDING=", ".join(f"{k} {bind[k]}" for k in ("mandatory", "conditional", "voluntary", "guidance")),
          COUNTS_ACCESS=", ".join(f"{k} {acc[k]}" for k in ("full text seen", "summary seen", "title only")),

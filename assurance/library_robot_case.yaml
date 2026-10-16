@@ -16,7 +16,7 @@ assumptions:
   - id: AS2
     text: An arm is optional. If no arm is fitted, goal G9 is removed.
   - id: AS3
-    text: The library is an indoor, air conditioned space with daylight through glazing. This is my addition and has not been checked against any real building.
+    text: The library is an indoor, air conditioned space with daylight through glazing. This is our addition and has not been checked against any real building.
   - id: AS4
     text: No UAE rule specific to indoor ground service robots was found in the sources retrieved. This is a statement about the search, not about the law.
 

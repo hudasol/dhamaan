@@ -29,7 +29,9 @@ Paywalled standards are never reproduced or reconstructed from memory. Their row
 Cite only retrieved sources; no invented clause numbers, dates, editions, quotes; quotes under 15 words and attributed; documents-say vs interpretation visibly separated; research, not certification or legal advice.
 
 ## Verification
-After merge, an independent subagent re-fetches sources for a random sample of >= 25 rows (seeded random), classifies each as correct / partly wrong / unsupported, reports error rate; errors are fixed and the rate reported honestly.
+After merge, an independent verifier re-fetches sources for a random sample of >= 25 rows (seeded random), classifies each as correct / partly wrong / unsupported, reports error rate; errors are fixed and the rate reported honestly.
 
 ## Table schema (CSV)
 id, instrument, edition_or_version, status_note, clause_or_section_seen, requirement_paraphrase, binding_status, applies_to, evidence_type, who_verifies, source_url, retrieval_date, access_level, notes
+
+Wording note (2026-10-16): one tool specific word in the verification step was replaced by "verifier". The procedure is unchanged.

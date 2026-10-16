@@ -20,7 +20,7 @@ digraph GSN {
   C3 [shape=box, style="rounded,filled,dashed", fillcolor="#fff6f9", label="C3\nApplicable regime for this\ndeployment (UAE federal,\nemirate, host organisation\npolicy, insurer). Not yet\ndetermined."];
   AS1 [shape=ellipse, style="filled", fillcolor="#fff6f9", label="AS1 (assumption)\nThe scenario (a mobile service\nrobot with learning based\nperception that fetches and\nreturns books and guides\nvisitors in a library in the\nUAE) is assumed for\nillustration."];
   AS2 [shape=ellipse, style="filled", fillcolor="#fff6f9", label="AS2 (assumption)\nAn arm is optional. If no arm is\nfitted, goal G9 is removed."];
-  AS3 [shape=ellipse, style="filled", fillcolor="#fff6f9", label="AS3 (assumption)\nThe library is an indoor, air\nconditioned space with daylight\nthrough glazing. This is my\naddition and has not been\nchecked against any real\nbuilding."];
+  AS3 [shape=ellipse, style="filled", fillcolor="#fff6f9", label="AS3 (assumption)\nThe library is an indoor, air\nconditioned space with daylight\nthrough glazing. This is our\naddition and has not been\nchecked against any real\nbuilding."];
   AS4 [shape=ellipse, style="filled", fillcolor="#fff6f9", label="AS4 (assumption)\nNo UAE rule specific to indoor\nground service robots was found\nin the sources retrieved. This\nis a statement about the search,\nnot about the law."];
   G1 -> S1;
   G1 -> G10;

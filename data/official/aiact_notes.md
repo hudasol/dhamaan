@@ -1,6 +1,6 @@
 # EU AI Act official source check (retrieved 2026-10-12)
 
-Tools: WebFetch and WebSearch only. The fetch tool returns a model-made extraction of the page, not raw text, so nothing here is better than "summary seen" apart from document header fields. The EUR-Lex text of 2026/1744 is cut off by the tool at about 150,000 characters, inside the amendment to Art. 75d (Article 1 point 32). The original 2024/1689 page is cut off inside recital 104, so no article of the original Act was reachable. AI Act Service Desk, data.europa.eu and publications.europa.eu fetches were refused for lack of permission (no answer) and were not retried.
+Tools: an automated web fetch step and web search only. The fetch step returns a machine made extraction of the page, not raw text, so nothing here is better than "summary seen" apart from document header fields. The EUR-Lex text of 2026/1744 is cut off by the tool at about 150,000 characters, inside the amendment to Art. 75d (Article 1 point 32). The original 2024/1689 page is cut off inside recital 104, so no article of the original Act was reachable. AI Act Service Desk, data.europa.eu and publications.europa.eu fetches were refused for lack of permission (no answer) and were not retried.
 
 ## Confirmed
 - Regulation (EU) 2026/1744 is dated 8 July 2026 (EUR-Lex title, metadata, header).

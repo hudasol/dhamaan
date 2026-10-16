@@ -1,4 +1,4 @@
-Official source check output spec (used by the phase 2 official source subagents).
+Official source check output spec (used by the phase 2 official source checks).
 
 Write two CSV files with Python's csv module (never hand typed) and confirm they parse:
 

@@ -14,7 +14,7 @@ Every item below is labelled **proposal** (specific enough to run once criteria 
 
 This study follows `data/verification/PLAN.md`: rules are written before runs, access levels are recorded, and disagreement is reported, not hidden. Three consequences here.
 
-1. **Documents versus interpretation.** Statements about what a source says cite table row IDs (for example D35) and the access level recorded there. My own reading starts with "Interpretation:".
+1. **Documents versus interpretation.** Statements about what a source says cite table row IDs (for example D35) and the access level recorded there. Our own reading starts with "Interpretation:".
 2. **Pre registration.** Acceptance criteria are written as criteria with named parameters. The values are fixed in a dated, hashed file committed before the first run of each test. Changing a value after results arrive is recorded as a deviation.
 3. **Labelling results later.** Each future result carries a label for what produced it: `simulated`, `replayed`, `bench` or `field`. The Dhill evidence levels L0 to L3 may be reused for model based items (see section 8). A `simulated` result never supports a claim about hardware.
 
@@ -84,7 +84,7 @@ Each condition uses the same shape, attached under G6.
 - **Supporting items:** DU1 to DU5.
 - **Assumptions to state:** the software degradation model resembles real fouling (this is checked only by DU4); cleaning is performed as scheduled; the window contamination in DU4 is representative.
 - **Documents say:** PAS 1883 includes airborne dust and sand under particulates in its ODD environmental attributes, and excludes test procedures (D11, full text seen). IEC 60529 lists IEC 60068-2-68 (dust and sand) as a normative reference (D62, summary seen). IEC 61496-3 preview says outdoor application is not addressed (D65, summary seen).
-- Interpretation: D11 gives a way to name dust as an ODD attribute but not to test it. That dust is outside the tested envelope of IEC 61496-3 is my reading, not text seen (as the table records for D65).
+- Interpretation: D11 gives a way to name dust as an ODD attribute but not to test it. That dust is outside the tested envelope of IEC 61496-3 is our reading, not text seen (as the table records for D65).
 
 ### 5.3 Free in simulation versus hardware
 
@@ -196,7 +196,7 @@ Linked, not copied. Statements follow each README only.
 
 ## 10. Free tools: licence status
 
-`data/free_tools_licences.csv` lists only tools whose licence was read from a local package file or an official page: so far the tools this repository itself uses (PyYAML, pytest, detect-secrets, Graphviz). **None of the simulation or data tools below is confirmed.** Every attempt to fetch an official licence page was refused by the permission layer on 2026-10-12, and I did not work around it. I name them as proposed free tools only. Each URL below is the page to check by hand.
+`data/free_tools_licences.csv` lists only tools whose licence was read from a local package file or an official page: so far the tools this repository itself uses (PyYAML, pytest, detect-secrets, Graphviz). **None of the simulation or data tools below is confirmed.** Every attempt to fetch an official licence page was refused by the access controls of the retrieval setup on 2026-10-12, and we did not work around them. We name them as proposed free tools only. Each URL below is the page to check by hand.
 
 **Unconfirmed**
 
