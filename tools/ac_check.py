@@ -8,8 +8,9 @@ Findings have a severity:
 """
 import argparse, csv, os, re, sys
 import yaml
+import contracts
 
-STATUSES = {"open", "partial", "provided"}
+STATUSES = set(contracts.EVIDENCE_STATUS)
 SAFE_WORDS = re.compile(r"\b(safe|safely|safer|safest)\b", re.I)
 ABSOLUTE_WORDS = re.compile(r"\b(guarantee[sd]?|certified|compliant|proven|always|never|risk[- ]free|fully secure|zero risk)\b", re.I)
 
@@ -22,6 +23,7 @@ def table_rows(path):
 def check(case, rows, base_dir="."):
     out = []  # (severity, code, id, message)
     add = lambda s, c, i, m: out.append((s, c, i, m))
+    for msg in contracts.case_conformance(case): add("ERROR", "SCHEMA", msg.split(":")[0], msg)
     ids = {}
     for kind in ("assumptions", "contexts", "strategies", "goals", "evidence"):
         for it in case.get(kind) or []:

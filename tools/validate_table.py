@@ -3,16 +3,14 @@
 import csv, re, sys, argparse
 from urllib.parse import urlparse
 
-REQUIRED = ["id","family","instrument","edition_or_version","status_note","clause_or_section_seen",
-            "requirement_paraphrase","binding_status","applies_to","evidence_type","evidence_codes",
-            "who_verifies","source_url","retrieval_date","access_level","notes",
-            "clause_reported_unverified","binding_checked","verification_status","last_checked"]
-BINDING = {"mandatory","conditional","voluntary","guidance"}
-ACCESS = {"full text seen","summary seen","title only"}
-BINDING_CHECKED = {"agreed","agreed (3 of 3)","majority of 3","split","disputed"}
-STATUS = {"verified twice, no change","verified three times","confirmed by final check",
-          "corrected after final check, single checked","corrected after A/B, not re-checked",
-          "flagged by final check, no replacement text","source not fully retrieved by verifier"}
+import contracts
+
+# Column names and value sets come from the typed contract (tools/contracts.py).
+REQUIRED = [c.name for c in contracts.EVIDENCE_TABLE]
+BINDING = set(contracts.BINDING)
+ACCESS = set(contracts.ACCESS)
+BINDING_CHECKED = set(contracts.BINDING_CHECKED)
+STATUS = set(contracts.VERIFICATION_STATUS)
 CODE = re.compile(r"^E(0\d|1[0-5])$")
 ID = re.compile(r"^[A-D]\d{2}$")
 DATE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
