@@ -109,3 +109,42 @@ def test_render_contains_every_node():
 def test_goal_without_claim_scope_is_schema_error():
     c = case(); c["goals"][1].pop("claim_about")
     assert ("ERROR", "SCHEMA", "G2") in codes(c)
+
+def with_artefact(status="partial", kind="simulated", good_hash=True):
+    d = tempfile.mkdtemp(); open(os.path.join(d, "a.json"), "w", encoding="utf-8").write("{}")
+    c = case(); e = c["evidence"][0]
+    e.update({"status": status, "kind": kind, "artefact": "a.json",
+              "sha256": ac.sha256_file(os.path.join(d, "a.json")) if good_hash else "0" * 64})
+    return c, d
+
+def test_partial_with_artefact_and_hash_is_clean():
+    c, d = with_artefact()
+    k = codes(c, base=d)
+    assert not any(s == "ERROR" for s, _, _ in k) and ("FLAG", "EVIDENCE_PARTIAL", "EV-01") in k
+
+def test_simulated_cannot_close_hardware_claim():
+    c, d = with_artefact(status="provided")
+    assert ("ERROR", "SIM_CLOSES_HARDWARE", "EV-01") in codes(c, base=d)
+
+def test_simulated_provided_allowed_for_software_claim():
+    c, d = with_artefact(status="provided")
+    for g in c["goals"]: g["claim_about"] = "software"
+    assert not any(code == "SIM_CLOSES_HARDWARE" for _, code, _ in codes(c, base=d))
+
+def test_bench_evidence_may_close_hardware_claim():
+    c, d = with_artefact(status="provided", kind="bench")
+    k = codes(c, base=d)
+    assert not any(s == "ERROR" for s, _, _ in k) and ("FLAG", "CLAIM_SIM_ONLY", "G2") not in k
+
+def test_hardware_claim_with_only_simulation_is_flagged():
+    c, d = with_artefact()
+    assert ("FLAG", "CLAIM_SIM_ONLY", "G2") in codes(c, base=d)
+
+def test_hash_mismatch_is_error():
+    c, d = with_artefact(good_hash=False)
+    assert ("ERROR", "HASH_MISMATCH", "EV-01") in codes(c, base=d)
+
+def test_missing_hash_and_kind_are_errors():
+    c, d = with_artefact(); e = c["evidence"][0]; e.pop("sha256"); e.pop("kind")
+    k = codes(c, base=d)
+    assert ("ERROR", "MISSING_HASH", "EV-01") in k and ("ERROR", "MISSING_KIND", "EV-01") in k

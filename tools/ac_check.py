@@ -2,12 +2,15 @@
 """Checker for the structured assurance case (YAML). Free tools only: Python and PyYAML.
 
 Findings have a severity:
-  ERROR  structural or integrity problem (dangling id, untraced evidence, unsupported word, invented evidence). Exit code 1.
+  ERROR  structural or integrity problem (dangling id, untraced evidence, unsupported word, invented evidence,
+         schema violation, missing evidence kind, missing or mismatched artefact hash, simulated evidence
+         marked provided under a hardware claim). Exit code 1.
   FLAG   an honest gap that the case is expected to show while work is open (claim without evidence, evidence still open,
-         undeveloped goal, weak source row). Exit code 0 unless --strict.
+         undeveloped goal, weak source row, partial evidence, hardware claim backed only by simulation).
+         Exit code 0 unless --strict.
 """
 from __future__ import annotations
-import argparse, csv, os, re, sys
+import argparse, csv, hashlib, os, re, sys
 import yaml
 import contracts
 
@@ -17,6 +20,9 @@ ABSOLUTE_WORDS = re.compile(r"\b(guarantee[sd]?|certified|compliant|proven|alway
 
 def load(path: str) -> dict:
     with open(path, encoding="utf-8") as f: return yaml.safe_load(f)
+
+def sha256_file(path: str) -> str:
+    with open(path, "rb") as f: return hashlib.sha256(f.read()).hexdigest()
 
 def table_rows(path: str) -> dict[str, dict[str, str]]:
     with open(path, newline="", encoding="utf-8") as f: return {r["id"]: r for r in csv.DictReader(f)}
@@ -76,8 +82,14 @@ def check(case: dict, rows: dict, base_dir: str = ".") -> list[tuple[str, str, s
         if e.get("status") == "open": add("FLAG", "EVIDENCE_OPEN", i, f"evidence still open: {e.get('title','')}")
         if e.get("status") in ("partial", "provided"):
             art = e.get("artefact")
+            if e.get("status") == "partial":
+                add("FLAG", "EVIDENCE_PARTIAL", i, f"evidence partial ({e.get('kind', 'kind not stated')}): {e.get('title','')}")
+            if not e.get("kind"): add("ERROR", "MISSING_KIND", i, f"status {e['status']} without an evidence kind (simulated, bench, field)")
             if not art: add("ERROR", "INVENTED_EVIDENCE", i, f"status {e['status']} without an artefact path")
-            elif not os.path.exists(os.path.join(base_dir, art)): add("ERROR", "INVENTED_EVIDENCE", i, f"artefact not found: {art}")
+            elif not os.path.isfile(os.path.join(base_dir, art)): add("ERROR", "INVENTED_EVIDENCE", i, f"artefact not found: {art}")
+            elif not e.get("sha256"): add("ERROR", "MISSING_HASH", i, f"status {e['status']} without the artefact sha256")
+            elif sha256_file(os.path.join(base_dir, art)) != e["sha256"]:
+                add("ERROR", "HASH_MISMATCH", i, f"artefact {art} does not match the recorded sha256")
         rs = e.get("rows") or []
         if not rs: add("ERROR", "UNTRACED", i, "evidence item has no evidence table rows")
         for r in rs:
@@ -108,6 +120,13 @@ def check(case: dict, rows: dict, base_dir: str = ".") -> list[tuple[str, str, s
         if not es: add("FLAG", "NO_EVIDENCE", g["id"], "claim has no evidence item anywhere in its support tree")
         elif all(ev[e].get("status") == "open" for e in es if e in ev):
             add("FLAG", "CLAIM_ALL_OPEN", g["id"], "every evidence item supporting this claim is open, so the claim is unsupported today")
+        elif g.get("claim_about") == "hardware":
+            done = [ev[e] for e in es if e in ev and ev[e].get("status") != "open"]
+            for x in done:
+                if x.get("kind") == "simulated" and x.get("status") == "provided":
+                    add("ERROR", "SIM_CLOSES_HARDWARE", x["id"], f"simulated evidence marked provided supports hardware claim {g['id']}")
+            if done and all(x.get("kind") == "simulated" for x in done):
+                add("FLAG", "CLAIM_SIM_ONLY", g["id"], "only simulated evidence supports this hardware claim, so it stays open")
     for s in strategies.values():
         if not (s.get("evidence") or links.get(s["id"])): add("FLAG", "NO_EVIDENCE", s["id"], "strategy has no evidence and supports no goal")
 
