@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Render the assurance case YAML to Graphviz DOT (and SVG/PNG if `dot` is installed). Pastel pink theme.
 Usage: python3 tools/ac_render.py assurance/library_robot_case.yaml figures/gsn_library_robot"""
+from __future__ import annotations
 import sys, subprocess, shutil, textwrap
 import yaml
 
@@ -9,7 +10,7 @@ PINK = {"goal": "#fde8ef", "strategy": "#f9d5e2", "context": "#fff6f9", "evidenc
 def wrap(s, w=34): return "\\n".join(textwrap.wrap(s, w)) or s
 def esc(s): return s.replace('"', "'")
 
-def to_dot(case):
+def to_dot(case: dict) -> str:
     ev = {e["id"]: e for e in case["evidence"]}
     L = ['digraph GSN {', '  rankdir=TB; nodesep=0.25; ranksep=0.55; bgcolor="white";',
          f'  node [fontname="Helvetica", fontsize=10, style="filled", color="{PINK["line"]}", fontcolor="{PINK["text"]}", margin="0.10,0.06"];',

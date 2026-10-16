@@ -6,6 +6,7 @@ Findings have a severity:
   FLAG   an honest gap that the case is expected to show while work is open (claim without evidence, evidence still open,
          undeveloped goal, weak source row). Exit code 0 unless --strict.
 """
+from __future__ import annotations
 import argparse, csv, os, re, sys
 import yaml
 import contracts
@@ -14,13 +15,14 @@ STATUSES = set(contracts.EVIDENCE_STATUS)
 SAFE_WORDS = re.compile(r"\b(safe|safely|safer|safest)\b", re.I)
 ABSOLUTE_WORDS = re.compile(r"\b(guarantee[sd]?|certified|compliant|proven|always|never|risk[- ]free|fully secure|zero risk)\b", re.I)
 
-def load(path):
+def load(path: str) -> dict:
     with open(path, encoding="utf-8") as f: return yaml.safe_load(f)
 
-def table_rows(path):
+def table_rows(path: str) -> dict[str, dict[str, str]]:
     with open(path, newline="", encoding="utf-8") as f: return {r["id"]: r for r in csv.DictReader(f)}
 
-def check(case, rows, base_dir="."):
+def check(case: dict, rows: dict, base_dir: str = ".") -> list[tuple[str, str, str, str]]:
+    """Return findings as (severity, code, id, message); severity is ERROR or FLAG."""
     out = []  # (severity, code, id, message)
     add = lambda s, c, i, m: out.append((s, c, i, m))
     for msg in contracts.case_conformance(case): add("ERROR", "SCHEMA", msg.split(":")[0], msg)

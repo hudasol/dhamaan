@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Validate the evidence table. Exit code 1 on any error. Free tools only (standard library)."""
+from __future__ import annotations
 import csv, re, sys, argparse
 from urllib.parse import urlparse
 
@@ -23,10 +24,11 @@ SECONDARY = ("bennettjones.com","dlapiper.com","maak-law.com","droneranker.com",
              "rics.org","artificialintelligenceact.eu","ca-times.brightspotcdn.com")
 CLAUSE_IN_TEXT = re.compile(r"\b(Art\.|Articles?|Clause|Annex|Section|Sec\.|§)\s*[\dIVX]")
 
-def host(url): return (urlparse(url).netloc or "").lower()
+def host(url: str) -> str: return (urlparse(url).netloc or "").lower()
 def in_class(h, cls): return any(h == c or h.endswith("." + c) for c in cls)
 
-def validate(path, strict=False):
+def validate(path: str, strict: bool = False) -> tuple[list[str], list[str]]:
+    """Return (errors, warnings) for the evidence table at path."""
     errors, warnings = [], []
     with open(path, newline="", encoding="utf-8") as f:
         rd = csv.DictReader(f)

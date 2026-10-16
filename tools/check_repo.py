@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Repository guard: fail if standard text, paywalled PDFs or unlicensed raw downloads are committed.
 Heuristics only. A pass is not proof of compliance; see LICENSES.md and README.md. Standard library only."""
+from __future__ import annotations
 import os, re, sys, csv, argparse
 
 ALLOWED_EXT = {".md",".csv",".json",".yaml",".yml",".py",".txt",".dot",".svg",".toml",".cfg",".ini",".gitignore",""}
@@ -24,7 +25,8 @@ QUOTE = re.compile(r"(?:(?<=^)|(?<=[\s(\[]))[\"“](?=\S)([^\"”\n]{40,}?)(?<=\
 
 def words(s): return len(s.split())
 
-def scan(root, max_quote=25, warn_quote=15):
+def scan(root: str, max_quote: int = 25, warn_quote: int = 15) -> tuple[list[str], list[str]]:
+    """Return (errors, warnings) for the repository tree at root."""
     errors, warns = [], []
     manifest = set()
     mp = os.path.join(root, "data", "third_party_manifest.csv")

@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Small regex secrets scan (standard library). CI also runs detect-secrets. Exit 1 on any hit."""
+from __future__ import annotations
 import os, re, sys
 PATTERNS = {
  "private key block": r"-----BEGIN (RSA |EC |OPENSSH |DSA |PGP )?PRIVATE KEY-----",
@@ -13,7 +14,8 @@ PATTERNS = {
  "email address (check it is meant to be public)": r"\b[A-Za-z0-9._%+-]+@(gmail|outlook|hotmail|yahoo)\.[a-z]{2,}\b",
 }
 SKIP_DIRS = {".git", "__pycache__", ".pytest_cache"}
-def scan(root):
+def scan(root: str) -> list[tuple[str, str, int]]:
+    """Return (path, pattern name, line) for each hit under root."""
     hits = []
     for dp, dn, fn in os.walk(root):
         dn[:] = [d for d in dn if d not in SKIP_DIRS]
