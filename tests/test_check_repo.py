@@ -6,7 +6,8 @@ def mk(files):
     d = tempfile.mkdtemp()
     for rel, content in files.items():
         p = os.path.join(d, rel); os.makedirs(os.path.dirname(p), exist_ok=True)
-        open(p, "wb" if isinstance(content, bytes) else "w").write(content)
+        if isinstance(content, bytes): open(p, "wb").write(content)
+        else: open(p, "w", encoding="utf-8").write(content)
     return d
 
 def test_clean_repo():
