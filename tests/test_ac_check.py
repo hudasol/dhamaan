@@ -12,8 +12,8 @@ def case():
         "contexts": [{"id": "C1", "text": "ODD", "evidence": ["EV-01"]}],
         "strategies": [{"id": "S1", "text": "argue over hazards", "evidence": ["EV-01"]}],
         "goals": [
-            {"id": "G1", "text": "The robot is acceptably safe in the ODD.", "context": ["C1"], "supported_by": ["S1"]},
-            {"id": "G2", "text": "Contact harm is controlled.", "context": ["C1"], "evidence": ["EV-01"]},
+            {"id": "G1", "text": "The robot is acceptably safe in the ODD.", "context": ["C1"], "supported_by": ["S1"], "claim_about": "hardware"},
+            {"id": "G2", "text": "Contact harm is controlled.", "context": ["C1"], "evidence": ["EV-01"], "claim_about": "hardware"},
         ],
         "strategy_links": {"S1": ["G2"]},
         "evidence": [{"id": "EV-01", "title": "ODD", "status": "open", "rows": ["A01"]}],
@@ -105,3 +105,7 @@ def test_render_contains_every_node():
     c = case(); dot = ar.to_dot(c)
     for n in ["G1", "G2", "S1", "C1", "AS1", "SN_EV01"]: assert n in dot
     assert "dashed" in dot
+
+def test_goal_without_claim_scope_is_schema_error():
+    c = case(); c["goals"][1].pop("claim_about")
+    assert ("ERROR", "SCHEMA", "G2") in codes(c)

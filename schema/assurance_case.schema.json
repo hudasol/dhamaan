@@ -53,7 +53,7 @@
       "description": "Evidence items (solutions).",
       "properties": {
         "artefact": {
-          "description": "Path of the artefact, relative to the repository root.",
+          "description": "Path of the artefact, relative to the repository root; required unless open.",
           "type": "string"
         },
         "decision_needed": {
@@ -63,6 +63,15 @@
         "id": {
           "description": "Unique id.",
           "pattern": "^EV-\\d{2}$",
+          "type": "string"
+        },
+        "kind": {
+          "description": "How the evidence was produced; required unless open.",
+          "enum": [
+            "simulated",
+            "bench",
+            "field"
+          ],
           "type": "string"
         },
         "note": {
@@ -79,6 +88,11 @@
             "type": "string"
           },
           "type": "array"
+        },
+        "sha256": {
+          "description": "SHA-256 of the artefact file; required unless open.",
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
         },
         "status": {
           "description": "open, partial or provided.",
@@ -112,6 +126,16 @@
             "type": "string"
           },
           "type": "array"
+        },
+        "claim_about": {
+          "description": "What the claim is about.",
+          "enum": [
+            "hardware",
+            "software",
+            "process",
+            "argument"
+          ],
+          "type": "string"
         },
         "context": {
           "description": "Context ids.",
@@ -154,7 +178,8 @@
       },
       "required": [
         "id",
-        "text"
+        "text",
+        "claim_about"
       ],
       "type": "object"
     },

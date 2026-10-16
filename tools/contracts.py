@@ -16,7 +16,7 @@ from dataclasses import dataclass, field
 from typing import Any
 
 __all__ = ["Column", "Field", "NodeKind", "EVIDENCE_TABLE", "CASE", "CASE_TOP_LEVEL",
-           "BINDING", "ACCESS", "BINDING_CHECKED", "VERIFICATION_STATUS", "EVIDENCE_STATUS",
+           "BINDING", "ACCESS", "BINDING_CHECKED", "VERIFICATION_STATUS", "EVIDENCE_STATUS", "EVIDENCE_KIND", "CLAIM_ABOUT",
            "case_conformance"]
 
 # ---- evidence table -------------------------------------------------------------------------
@@ -68,6 +68,10 @@ EVIDENCE_TABLE: tuple[Column, ...] = (
 # ---- assurance case -------------------------------------------------------------------------
 
 EVIDENCE_STATUS: tuple[str, ...] = ("open", "partial", "provided")
+# How a piece of evidence was produced. Simulated evidence never closes a hardware claim.
+EVIDENCE_KIND: tuple[str, ...] = ("simulated", "bench", "field")
+# What a claim is about. A hardware claim is about the physical robot in its building.
+CLAIM_ABOUT: tuple[str, ...] = ("hardware", "software", "process", "argument")
 
 
 @dataclass(frozen=True)
@@ -108,7 +112,8 @@ CASE: tuple[NodeKind, ...] = (
         Field("supported_by", "ids", "Child goals or strategies."),
         Field("evidence", "ids", "Evidence item ids."),
         Field("undeveloped", "boolean", "True when the goal is deliberately not developed."),
-        Field("undeveloped_reason", "string", "Why the goal is undeveloped."))),
+        Field("undeveloped_reason", "string", "Why the goal is undeveloped."),
+        Field("claim_about", "string", "What the claim is about.", True, enum=CLAIM_ABOUT))),
     NodeKind("evidence", r"^EV-\d{2}$", "Evidence items (solutions).", (
         _id(r"^EV-\d{2}$"),
         Field("title", "string", "What the evidence is.", True),
@@ -117,7 +122,9 @@ CASE: tuple[NodeKind, ...] = (
         Field("decision_needed", "boolean", "A decision by the owner is needed first."),
         Field("optional", "boolean", "Item is optional for this case."),
         Field("note", "string", "Free note."),
-        Field("artefact", "string", "Path of the artefact, relative to the repository root."))),
+        Field("kind", "string", "How the evidence was produced; required unless open.", enum=EVIDENCE_KIND),
+        Field("artefact", "string", "Path of the artefact, relative to the repository root; required unless open."),
+        Field("sha256", "string", "SHA-256 of the artefact file; required unless open.", pattern=r"^[0-9a-f]{64}$"))),
 )
 CASE_TOP_LEVEL: tuple[str, ...] = ("meta", "strategy_links") + tuple(k.key for k in CASE)
 META_FIELDS: tuple[str, ...] = ("title", "version", "status", "evidence_table", "note")

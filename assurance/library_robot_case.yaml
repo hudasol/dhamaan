@@ -38,46 +38,56 @@ strategies:
 goals:
   - id: G1
     text: The library service robot is acceptably safe to operate in the defined university library ODD.
+    claim_about: hardware
     context: [C1, C2, C3]
     assumptions: [AS1]
     supported_by: [S1, G10]
   - id: G2
     text: Collision and contact harm to people is controlled.
+    claim_about: hardware
     context: [C1]
     evidence: [EV-04, EV-05, EV-06]
   - id: G3
     text: Learning based perception is adequate within the ODD.
+    claim_about: hardware
     context: [C1]
     evidence: [EV-07, EV-09]
   - id: G4
     text: Navigation and planning failures end in a safe state or minimum risk behaviour.
+    claim_about: hardware
     context: [C1]
     evidence: [EV-08, EV-09]
   - id: G5
     text: People, including vulnerable users, can predict, oversee and stop the robot.
+    claim_about: hardware
     context: [C2]
     evidence: [EV-10, EV-13]
   - id: G6
     text: Building conditions (temperature, dust, glare) do not invalidate the evidence.
+    claim_about: hardware
     context: [C1]
     assumptions: [AS3]
     evidence: [EV-12]
   - id: G7
     text: Software updates and cyber events do not undermine the safety claims.
+    claim_about: hardware
     context: [C1]
     evidence: [EV-11, EV-18]
   - id: G8
     text: Field operation is monitored, and incidents are reported and learned from.
+    claim_about: hardware
     context: [C3]
     evidence: [EV-14, EV-15]
   - id: G9
     text: Manipulator hazards are controlled, if an arm is fitted.
+    claim_about: hardware
     context: [C1]
     assumptions: [AS2]
     undeveloped: true
     undeveloped_reason: Depends on the design. No manipulator is defined.
   - id: G10
     text: The argument itself is sound, with review, defeaters considered and confidence stated.
+    claim_about: argument
     evidence: [EV-16, EV-17]
   # strategy S1 supports G2..G9
 strategy_links:
