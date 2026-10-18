@@ -1,0 +1,79 @@
+{
+ "candidates": [
+  {
+   "frames": 1,
+   "margin": 0.0,
+   "monitor": "m0.0_f1",
+   "ok": false,
+   "violations": 2
+  },
+  {
+   "frames": 2,
+   "margin": 0.0,
+   "monitor": "m0.0_f2",
+   "ok": false,
+   "violations": 17
+  },
+  {
+   "frames": 1,
+   "margin": 0.03,
+   "monitor": "m0.03_f1",
+   "ok": true,
+   "violations": 0
+  },
+  {
+   "frames": 2,
+   "margin": 0.03,
+   "monitor": "m0.03_f2",
+   "ok": false,
+   "violations": 2
+  },
+  {
+   "frames": 1,
+   "margin": 0.05,
+   "monitor": "m0.05_f1",
+   "ok": false,
+   "violations": 1
+  },
+  {
+   "frames": 2,
+   "margin": 0.05,
+   "monitor": "m0.05_f2",
+   "ok": true,
+   "violations": 0
+  },
+  {
+   "frames": 1,
+   "margin": 0.08,
+   "monitor": "m0.08_f1",
+   "ok": false,
+   "violations": 26
+  },
+  {
+   "frames": 2,
+   "margin": 0.08,
+   "monitor": "m0.08_f2",
+   "ok": true,
+   "violations": 0
+  }
+ ],
+ "chosen": {
+  "feasible": true,
+  "frames": 1,
+  "margin": 0.03
+ },
+ "conditions": {},
+ "config": {},
+ "evidence_kind": "simulated",
+ "experiment": "DESIGN_GL3",
+ "label": "SYNTHETIC: produced by a seeded software model in sim/. Not measured on any robot, sensor or receiver. The model and the method under test share an author. Evidence kind: simulated.",
+ "prereg_sha256": "0d391addddbd7ff14eab2d828364a5339db8f1b4002c25cf18282f3d1d3fb925",
+ "protocol_items": [
+  "GL3"
+ ],
+ "round": 2,
+ "seed_base": 770001,
+ "seed_set": "development",
+ "seeds_per_condition": 30,
+ "summary": {}
+}

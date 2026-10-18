@@ -1,0 +1,75 @@
+{
+ "best_per_threshold": [
+  {
+   "above": 14,
+   "below": 0,
+   "bound": 0.4,
+   "scans": 3,
+   "threshold": 0.4,
+   "total": 14
+  },
+  {
+   "above": 2,
+   "below": 4,
+   "bound": 0.4,
+   "scans": 3,
+   "threshold": 0.45,
+   "total": 6
+  },
+  {
+   "above": 0,
+   "below": 3,
+   "bound": 0.4,
+   "scans": 5,
+   "threshold": 0.5,
+   "total": 3
+  },
+  {
+   "above": 3,
+   "below": 0,
+   "bound": 0.3,
+   "scans": 3,
+   "threshold": 0.55,
+   "total": 3
+  },
+  {
+   "above": 3,
+   "below": 1,
+   "bound": 0.3,
+   "scans": 5,
+   "threshold": 0.6,
+   "total": 4
+  },
+  {
+   "above": 6,
+   "below": 0,
+   "bound": 0.2,
+   "scans": 3,
+   "threshold": 0.65,
+   "total": 6
+  }
+ ],
+ "chosen": {
+  "bound": 0.4,
+  "dev_violations": 3,
+  "feasible": false,
+  "scans": 5,
+  "threshold": 0.5
+ },
+ "conditions": {},
+ "config": {},
+ "evidence_kind": "simulated",
+ "experiment": "DESIGN_DU3",
+ "feasible_count": 0,
+ "grid_size": 96,
+ "label": "SYNTHETIC: produced by a seeded software model in sim/. Not measured on any robot, sensor or receiver. The model and the method under test share an author. Evidence kind: simulated.",
+ "prereg_sha256": "0d391addddbd7ff14eab2d828364a5339db8f1b4002c25cf18282f3d1d3fb925",
+ "protocol_items": [
+  "DU3"
+ ],
+ "round": 2,
+ "seed_base": 770001,
+ "seed_set": "development",
+ "seeds_per_condition": 30,
+ "summary": {}
+}
