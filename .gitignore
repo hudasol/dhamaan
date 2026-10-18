@@ -11,3 +11,4 @@ cache/
 .secrets.baseline.local
 *.egg-info/
 build/
+site/

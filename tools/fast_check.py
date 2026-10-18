@@ -21,6 +21,7 @@ STEPS = [
 def main(argv=None):
     """With --record, also write docs/data/check_summary.json (step summaries, no timings) for HANDOFF."""
     record = "--record" in (argv if argv is not None else sys.argv[1:])
+    if hasattr(sys.stdout, "reconfigure"): sys.stdout.reconfigure(errors="replace")   # Windows consoles lack some scripts
     t0, steps = time.time(), []
     for name, cmd in STEPS:
         r = subprocess.run(cmd, cwd=ROOT, capture_output=True, text=True, encoding="utf-8", errors="replace")
