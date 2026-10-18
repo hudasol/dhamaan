@@ -4,7 +4,7 @@ Heuristics only. A pass is not proof of compliance; see LICENSES.md and README.m
 from __future__ import annotations
 import os, re, sys, csv, argparse
 
-ALLOWED_EXT = {".md",".csv",".json",".yaml",".yml",".py",".txt",".dot",".svg",".toml",".cfg",".ini",".gitignore",""}
+ALLOWED_EXT = {".md",".csv",".json",".yaml",".yml",".py",".txt",".dot",".svg",".toml",".cfg",".cff",".ini",".gitignore",""}
 IMAGE_EXT = {".png",".svg"}              # only under figures/
 FORBIDDEN_EXT = {".pdf",".epub",".docx",".doc",".xlsx",".pptx",".zip",".tar",".gz",".tgz",".7z",".rar",
                  ".html",".htm",".xml",".mhtml",".warc",".mobi",".djvu"}
