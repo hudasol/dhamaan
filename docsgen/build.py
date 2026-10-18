@@ -18,6 +18,7 @@ OUTPUTS = {
     "docs/CONTEXT.md": "CONTEXT.tmpl.md",
     "docs/METHOD.md": "METHOD.tmpl.md",
     "docs/EVALUATION.md": "EVALUATION.tmpl.md",
+    "docs/EVALUATION_R2.md": "EVALUATION_R2.tmpl.md",
     "docs/LIMITATIONS.md": "LIMITATIONS.tmpl.md",
     "docs/PILOT.md": "PILOT.tmpl.md",
     "docs/SECURITY.md": "SECURITY.tmpl.md",

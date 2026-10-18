@@ -250,6 +250,68 @@ def review_facts() -> dict:
                                       [[r["id"], r["finding"], r["status"], r["resolution"]] for r in open_rows])}
 
 
+def _observed(e: dict) -> str:
+    vals = [v for c in e["checks"] for v in c["values"]]
+    bad = [v for v in vals if v["pass"] is False]
+    show = bad or vals
+    def label(m):
+        k = m.split(":", 1)[1]
+        return k.split("/")[1].replace("|", " ") if k.startswith("conditions/") else k.replace("summary/", "")
+    txt = "; ".join(f'{label(v["metric"])}: {num(v["value"], 2)}' for v in show[:3])
+    return txt + (f"; and {len(show) - 3} more" if len(show) > 3 else "")
+
+
+def r2_facts() -> dict:
+    R = {n: _json(f"sim/results_r2/{n}.json") for n in ("design_gl3", "design_du3", "gl3r2", "du3r2", "heat", "n4r2")}
+    S = _json("sim/results_r2/scored_r2.json"); t = S["totals"]
+    f = {"R2_PREREG_SHA": S["prereg_sha256"], "R2_SEEDS": str(R["heat"]["seeds_per_condition"]),
+         "R2_DEV_SEED": str(R["design_gl3"]["seed_base"]), "R2_HELDOUT_SEED": str(R["heat"]["seed_base"]),
+         "R2_PRED_TOTAL": str(t["predictions"]), "R2_PRED_HIT": str(t["hit"]), "R2_PRED_MISS": str(t["miss"]),
+         "R2_PRED_MISS_LIST": ", ".join(p["id"] for p in S["predictions"] if p["verdict"] == "MISS") or "none",
+         "R2_AC_TOTAL": str(len(S["acceptance"])), "R2_AC_HELD": str(t["acceptance_held"]), "R2_AC_FAILED": str(t["acceptance_failed"]),
+         "R2_AC_HELD_LIST": ", ".join(a["id"] for a in S["acceptance"] if a["held"]) or "none",
+         "R2_AC_FAILED_LIST": ", ".join(a["id"] for a in S["acceptance"] if a["held"] is False) or "none",
+         "R2_AC_EXPECTATION_MISS_LIST": ", ".join(a["id"] for a in S["acceptance"] if a["verdict"] == "MISS") or "none",
+         "R2_N_RUNS": str(sum((c.get("unsafe") or c.get("detector_in_time") or c.get("exceed") or c.get("false_alarm") or c.get("within_t_h_battery"))["n"]
+                              for n in ("gl3r2", "du3r2", "heat", "n4r2") for c in R[n]["conditions"].values()))}
+    f["R2_PRED_TABLE"] = table(["Id", "Prediction", "Observed (failing values first)", "Verdict"],
+                               [[p["id"], p["text"], _observed(p), p["verdict"]] for p in S["predictions"]])
+    f["R2_AC_TABLE"] = table(["Criterion", "Statement", "Held", "Expected to hold", "Failing metrics"],
+                             [[a["id"], a["text"], "yes" if a["held"] else "no", "yes" if a["expected_to_hold"] else "no",
+                               _observed(a) if a["held"] is False else "none"] for a in S["acceptance"]])
+    g = R["design_gl3"]["chosen"]; gs = R["gl3r2"]["summary"]
+    f.update({"R2_GL_MARGIN": num(g["margin"], 2), "R2_GL_FRAMES": str(g["frames"]),
+              "R2_GL_CANDIDATES": str(len(R["design_gl3"]["candidates"])),
+              "R2_GL_OK": str(sum(c["ok"] for c in R["design_gl3"]["candidates"])),
+              "R2_GL_M_VIOL": str(gs["M"]["ac_gl2_violating_runs"]), "R2_GL_M2_VIOL": str(gs["M2"]["ac_gl2_violating_runs"]),
+              "R2_GL_M2_BELOW": str(gs["M2"]["conditions_below_p_g"])})
+    d = R["design_du3"]; ds = R["du3r2"]["summary"]
+    f.update({"R2_DU_THRESHOLD": num(d["chosen"]["threshold"], 2), "R2_DU_SCANS": str(d["chosen"]["scans"]),
+              "R2_DU_BOUND": num(d["chosen"]["bound"], 1), "R2_DU_FEASIBLE": str(d["feasible_count"]),
+              "R2_DU_GRID": str(d["grid_size"]), "R2_DU_DEV_VIOL": str(d["chosen"]["dev_violations"]),
+              "R2_DU_M_TOTAL": str(ds["M"]["total"]), "R2_DU_M_BELOW": str(ds["M"]["below"]),
+              "R2_DU_M2_TOTAL": str(ds["M2"]["total"]), "R2_DU_M2_BELOW": str(ds["M2"]["below"]), "R2_DU_M2_ABOVE": str(ds["M2"]["above"])})
+    H = R["heat"]["conditions"]; rows = []
+    for key, c in H.items():
+        if c["method"] != "M": continue
+        cond = key.split("|", 1)[1]
+        b0, b1 = H[f"B0|{cond}"], H[f"B1|{cond}"]
+        rows.append([cond.replace("|", ", ").replace("peak=", "peak "), pct(b0["exceed"]["rate"]), pct(b1["exceed"]["rate"]), num(b1["productivity"]["mean"], 2),
+                     pct(c["exceed"]["rate"]), num(c["productivity"]["mean"], 2), pct(c["never_moved"]["rate"])])
+    f["R2_HEAT_TABLE"] = table(["Condition", "B0 exceeds", "B1 exceeds", "B1 mean scale", "M exceeds", "M mean scale", "M never moved"], rows)
+    f["R2_HEAT_RATED"] = num(R["heat"]["config"]["rated_ambient_example_degc"], 0)
+    f["R2_HEAT_MARGIN"] = num(_json("sim/results_r2/heat.json")["config"]["components"]["battery"]["limit_degc"], 0)
+    soakx = [c for k, c in H.items() if c["method"] == "M" and c["start"] == "soak"]
+    f["R2_HEAT_SOAK_EXCEED_CONDS"] = str(sum(c["exceed"]["k"] > 0 for c in soakx)); f["R2_HEAT_SOAK_CONDS"] = str(len(soakx))
+    N = R["n4r2"]["conditions"]; rows = []
+    for key, c in N.items():
+        rows.append([c["fault"] + "=" + num(c["size"], 2).rstrip("0").rstrip("."), pct(c["detected"]["rate"]) if c["detected"] else "n/a",
+                     pct(c["detected_within_t_n"]["rate"]) if c["detected_within_t_n"] else "n/a", num(c["detection_delay"]["mean"], 1),
+                     num(c["error_at_alarm"]["max"], 2), pct(c["false_alarm"]["rate"])])
+    f["R2_N4_TABLE"] = table(["Fault", "Detected", "Within T_N", "Mean delay (s)", "Max error at alarm (m)", "False alarm"], rows)
+    return f
+
+
 def check_facts() -> dict:
     p = _p("docs/data/check_summary.json")
     if not os.path.exists(p): return {"TESTS_PASSED": "n/a", "CHECK_LINES": "not recorded"}
@@ -260,7 +322,7 @@ def check_facts() -> dict:
 
 def all_facts() -> dict:
     f = {}
-    for part in (evidence_table_facts(), case_facts(), context_facts(), warning_facts(), review_facts(), sim_facts(), check_facts()):
+    for part in (evidence_table_facts(), case_facts(), context_facts(), warning_facts(), review_facts(), sim_facts(), r2_facts(), check_facts()):
         assert not set(part) & set(f), set(part) & set(f)
         f.update(part)
     return f
