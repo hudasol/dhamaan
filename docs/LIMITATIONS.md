@@ -12,8 +12,9 @@ We list what the work does not show, where it would break on real data, and find
 - **Thresholds are proposals.** B_D, T_D, P_G, S_G, T_G, E_N, T_N, Q_N and L_N were chosen by us for this study. Nothing in the evidence table fixes them.
 - **Resolution.** GNSS detection delays are measured at the fix period, so a delay of zero means detection at the first fix after onset. Rates come from 30 seeds per condition; the Wilson intervals in the result files are wide.
 - **Failures stand.** Acceptance criteria that failed: AC-GL1, AC-GL2, AC-N1. 3 sun conditions are recorded as restrictions. The monitor in DU3 also stops the robot below the degradation bound in 53 percent of runs at k = 0.3, a cost the preregistration did not measure as a criterion.
-- **No public log replay.** N4 used the synthetic receiver's own fixes, not a public log (`sim/DEVIATIONS.md`, D1).
-- **No heat.** Protocol items H1 to H6 were not simulated or run.
+- **No public log replay.** N4 used the synthetic receiver's own fixes, and the second round replay harness ran only on synthetic stand in logs (`sim/DEVIATIONS.md`, D1; `docs/FETCH_LIST.md`).
+- **Heat is a model with assumed parameters.** Items H1 to H6 were simulated in the second round with assumed, proposal values; no component was measured and no heat item was run on hardware.
+- **Second round failures stand.** Acceptance criteria that failed in the second round: AC-GL1R2, AC-DU1R2, AC-DU2R2, AC-H1, AC-H3, AC-N1R2, AC-N2R2 (`docs/EVALUATION_R2.md`).
 
 ## Assurance case
 
