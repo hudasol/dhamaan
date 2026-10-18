@@ -1,0 +1,7 @@
+stream,file,min_rate_hz,purpose,protocol_items,provenance
+gnss,gnss.csv,1,Position fixes in a local frame for the GNSS fault checks,N1 N2 N3 N4,"assumed, proposal"
+odometry,odometry.csv,10,Wheel speed and heading that drive prediction between fixes,N2 N3 N4,"assumed, proposal"
+lidar_health,lidar_health.csv,10,Share of expected returns per scan for the dust monitor,DU2 DU3 DU4 DU5,"assumed, proposal"
+camera,camera.csv,10,Image saturation per frame and any slow command for the glare monitor,GL2 GL3 GL5,"assumed, proposal"
+thermal,thermal.csv,1,Component and ambient temperatures and the commanded scale,H1 H3 H4 H5 H6,"assumed, proposal"
+events,events.csv,0,Every stop; park; derate; fault declaration; start and end of a run,all,"assumed, proposal"

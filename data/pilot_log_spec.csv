@@ -1,0 +1,29 @@
+stream,column,type,unit,required,description
+gnss,t_s,number,s,yes,Time since the start of the run
+gnss,x_m,number,m,yes,East position in a local frame
+gnss,y_m,number,m,yes,North position in a local frame
+gnss,fix_ok,integer,flag,yes,1 when the receiver reports a valid fix; 0 otherwise
+gnss,x_ref_m,number,m,no,Reference east position from an independent source when available
+gnss,y_ref_m,number,m,no,Reference north position from an independent source when available
+odometry,t_s,number,s,yes,Time since the start of the run
+odometry,v_mps,number,m/s,yes,Measured forward speed
+odometry,yaw_rad,number,rad,yes,Heading in the same local frame as the fixes
+lidar_health,t_s,number,s,yes,Time since the start of the run
+lidar_health,valid_return_ratio,number,fraction,yes,Returns received over returns expected from the site map for this scan
+lidar_health,expected_beams,integer,count,yes,Beams the map says should return
+lidar_health,window_state,text,label,no,Documented window state such as clean or a named contamination
+camera,t_s,number,s,yes,Time since the start of the run
+camera,saturation_fraction,number,fraction,yes,Share of saturated pixels in the frame
+camera,slow_command,integer,flag,yes,1 when the monitor has commanded the slow speed
+camera,sun_elevation_deg,number,deg,no,Computed sun elevation at the time and place
+camera,sun_azimuth_rel_deg,number,deg,no,Computed sun azimuth relative to the heading
+thermal,t_s,number,s,yes,Time since the start of the run
+thermal,ambient_c,number,degC,yes,Air temperature near the robot
+thermal,compute_c,number,degC,yes,Compute module temperature
+thermal,battery_c,number,degC,yes,Battery temperature
+thermal,sensor_c,number,degC,yes,Primary range sensor temperature
+thermal,scale,number,fraction,yes,Commanded speed and power scale from 0 (parked) to 1 (full)
+thermal,shade,integer,flag,no,1 when the robot is in shade
+events,t_s,number,s,yes,Time since the start of the run
+events,event,text,label,yes,One of start; end; stop; estop; park; derate; slow; fault_declared
+events,note,text,label,no,Free note by the test lead
