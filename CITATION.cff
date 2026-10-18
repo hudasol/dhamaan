@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite it as below. It is a student proposal seed, not a certification or an endorsed standard."
+title: "dhamaan: source traced safety evidence, a checkable assurance case and preregistered simulation for robots and drones in Gulf conditions"
+type: software
+authors:
+  - family-names: Mueen
+    given-names: Huda
+version: 1.8.0
+repository-code: "https://github.com/hudasol/dhamaan"
+keywords:
+  - assurance case
+  - safety case
+  - robotics
+  - drones
+  - GNSS
+  - preregistration
+abstract: >-
+  A source traced evidence table of robot and drone safety instruments, a machine checkable assurance case with
+  templates, a Gulf conditions test protocol, preregistered seeded simulations whose outputs are labelled synthetic,
+  a local command line tool, a static site and a pilot kit. Licences are proposed until the owner confirms them.
