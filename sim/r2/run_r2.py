@@ -7,7 +7,7 @@ from __future__ import annotations
 
 import json, os, sys
 
-from sim.r2 import base, du3_r2, gl3_r2, heat, n4_r2, score_r2
+from sim.r2 import base, du3_r2, evidence_r2, gl3_r2, heat, n4_r2, score_r2
 
 
 def design() -> int:
@@ -27,6 +27,7 @@ def score() -> int:
     for n in ("gl3r2", "du3r2", "heat", "n4r2"): print("wrote", base.write(n + ".json", results[n]))
     s = score_r2.score_r2(results)
     print("wrote", base.write("scored_r2.json", s))
+    evidence_r2.main()
     g, o = n4_r2.example_log()
     os.makedirs(os.path.join(base.RESULTS, "standin_log"), exist_ok=True)
     for name, text in (("gnss.csv", g), ("odometry.csv", o)):

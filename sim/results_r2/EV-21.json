@@ -1,0 +1,59 @@
+{
+ "acceptance": [
+  {
+   "failing": [
+    "n4r2:conditions/H|drift=0.2/detected_within_t_n/rate"
+   ],
+   "held": false,
+   "id": "AC-N1R2",
+   "text": "On stand in logs, faults at or above E_N are detected within T_N = 10.0 s in at least Q_N = 0.9 of logs."
+  },
+  {
+   "failing": [
+    "n4r2:conditions/H|drift=0.05/error_at_alarm/max"
+   ],
+   "held": false,
+   "id": "AC-N2R2",
+   "text": "On stand in logs, the navigation error at the alarm is at most L_N = 3.0 m in every detected case."
+  }
+ ],
+ "closes_hardware_claim": false,
+ "evidence_item": "EV-21",
+ "evidence_kind": "simulated",
+ "goal": "G4",
+ "label": "SYNTHETIC: produced by a seeded software model in sim/. Not measured on any robot, sensor or receiver. The model and the method under test share an author. Evidence kind: simulated.",
+ "predictions": [
+  {
+   "id": "N4-P1",
+   "verdict": "HIT"
+  },
+  {
+   "id": "N4-P2",
+   "verdict": "HIT"
+  },
+  {
+   "id": "N4-P3",
+   "verdict": "HIT"
+  },
+  {
+   "id": "N4-P4",
+   "verdict": "HIT"
+  }
+ ],
+ "prereg_sha256": "0d391addddbd7ff14eab2d828364a5339db8f1b4002c25cf18282f3d1d3fb925",
+ "protocol_items": [
+  "N4"
+ ],
+ "result_files": {
+  "sim/results_r2/n4r2.json": "5f487918bbfcf40b123067c5c9845029f396e5e04ab89e77d796fd2985428da8"
+ },
+ "round": 2,
+ "status_supported": "partial",
+ "title": "GNSS log replay harness (synthetic stand in logs)",
+ "what_this_does_not_show": [
+  "Nothing about a real robot, sensor, receiver or building: worlds and methods share an author.",
+  "Heat parameters are assumed, proposal values; no component was measured.",
+  "The replay harness ran on synthetic stand in logs only; no public or field log was replayed.",
+  "No RF level GNSS evidence; faults are injected into the position stream only."
+ ]
+}

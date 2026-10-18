@@ -1,0 +1,103 @@
+{
+ "acceptance": [
+  {
+   "failing": [],
+   "held": true,
+   "id": "AC-GL2R2",
+   "text": "M2 commands the slow speed within T_G = 0.5 s of saturation exceeding S_G in every such held out run."
+  },
+  {
+   "failing": [],
+   "held": true,
+   "id": "AC-GL4R2",
+   "text": "M2 issues no slow command where modelled saturation is below 0.2."
+  },
+  {
+   "failing": [
+    "gl3r2:summary/M2/conditions_below_p_g"
+   ],
+   "held": false,
+   "id": "AC-GL1R2",
+   "text": "M2 detects in time at rate at least P_G = 0.95 at every sun condition."
+  },
+  {
+   "failing": [
+    "du3r2:summary/M2/below"
+   ],
+   "held": false,
+   "id": "AC-DU1R2",
+   "text": "Up to the chosen bound, the detector detects in time in every held out run and the chosen monitor never stops the robot."
+  },
+  {
+   "failing": [
+    "du3r2:summary/M2/above"
+   ],
+   "held": false,
+   "id": "AC-DU2R2",
+   "text": "Beyond the chosen bound, the chosen monitor stops the robot within T_D = 1.0 s of onset in every held out run."
+  }
+ ],
+ "closes_hardware_claim": false,
+ "evidence_item": "EV-19",
+ "evidence_kind": "simulated",
+ "goal": "G6",
+ "label": "SYNTHETIC: produced by a seeded software model in sim/. Not measured on any robot, sensor or receiver. The model and the method under test share an author. Evidence kind: simulated.",
+ "predictions": [
+  {
+   "id": "GL3R2-P1",
+   "verdict": "MISS"
+  },
+  {
+   "id": "GL3R2-P2",
+   "verdict": "HIT"
+  },
+  {
+   "id": "GL3R2-P3",
+   "verdict": "HIT"
+  },
+  {
+   "id": "GL3R2-P4",
+   "verdict": "HIT"
+  },
+  {
+   "id": "GL3R2-P5",
+   "verdict": "HIT"
+  },
+  {
+   "id": "DU3R2-P1",
+   "verdict": "HIT"
+  },
+  {
+   "id": "DU3R2-P2",
+   "verdict": "HIT"
+  },
+  {
+   "id": "DU3R2-P3",
+   "verdict": "HIT"
+  },
+  {
+   "id": "DU3R2-P4",
+   "verdict": "HIT"
+  }
+ ],
+ "prereg_sha256": "0d391addddbd7ff14eab2d828364a5339db8f1b4002c25cf18282f3d1d3fb925",
+ "protocol_items": [
+  "DU3",
+  "GL3"
+ ],
+ "result_files": {
+  "sim/results_r2/design_du3.json": "2101e1f808ef94824ce8fd62a5ff7ce9b33d72c59a6fb23ad741b3804851ab42",
+  "sim/results_r2/design_gl3.json": "518e8a822e202f6ecbc6a8528a06c3bc5df3440f20d752e29d35f09799956701",
+  "sim/results_r2/du3r2.json": "e949f36dc286d43bc5c68ed725cdc842e9bc09b17c2f289ddb45f3cb8254bb2c",
+  "sim/results_r2/gl3r2.json": "0189999dac366ab85337236c72fe95648b54d480cd500610f8b56b754563ec04"
+ },
+ "round": 2,
+ "status_supported": "partial",
+ "title": "Round 2 dust and glare monitor evidence",
+ "what_this_does_not_show": [
+  "Nothing about a real robot, sensor, receiver or building: worlds and methods share an author.",
+  "Heat parameters are assumed, proposal values; no component was measured.",
+  "The replay harness ran on synthetic stand in logs only; no public or field log was replayed.",
+  "No RF level GNSS evidence; faults are injected into the position stream only."
+ ]
+}

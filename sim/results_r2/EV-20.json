@@ -1,0 +1,130 @@
+{
+ "acceptance": [
+  {
+   "failing": [
+    "heat:conditions/model|peak=35|shade|normal/within_t_h_compute/rate",
+    "heat:conditions/model|peak=35|shade|soak/within_t_h_compute/rate",
+    "heat:conditions/model|peak=35|shade|soak/within_t_h_battery/rate",
+    "heat:conditions/model|peak=35|shade|soak/within_t_h_lidar/rate",
+    "heat:conditions/model|peak=35|sun|normal/within_t_h_compute/rate",
+    "heat:conditions/model|peak=35|sun|normal/within_t_h_battery/rate",
+    "heat:conditions/model|peak=35|sun|normal/within_t_h_lidar/rate",
+    "heat:conditions/model|peak=35|sun|soak/within_t_h_compute/rate",
+    "heat:conditions/model|peak=35|sun|soak/within_t_h_battery/rate",
+    "heat:conditions/model|peak=35|sun|soak/within_t_h_lidar/rate",
+    "heat:conditions/model|peak=40|shade|normal/within_t_h_compute/rate",
+    "heat:conditions/model|peak=40|shade|normal/within_t_h_battery/rate",
+    "heat:conditions/model|peak=40|shade|soak/within_t_h_compute/rate",
+    "heat:conditions/model|peak=40|shade|soak/within_t_h_battery/rate",
+    "heat:conditions/model|peak=40|shade|soak/within_t_h_lidar/rate",
+    "heat:conditions/model|peak=40|sun|normal/within_t_h_compute/rate",
+    "heat:conditions/model|peak=40|sun|normal/within_t_h_battery/rate",
+    "heat:conditions/model|peak=40|sun|normal/within_t_h_lidar/rate",
+    "heat:conditions/model|peak=40|sun|soak/within_t_h_compute/rate",
+    "heat:conditions/model|peak=40|sun|soak/within_t_h_battery/rate",
+    "heat:conditions/model|peak=40|sun|soak/within_t_h_lidar/rate",
+    "heat:conditions/model|peak=45|shade|normal/within_t_h_compute/rate",
+    "heat:conditions/model|peak=45|shade|normal/within_t_h_battery/rate",
+    "heat:conditions/model|peak=45|shade|soak/within_t_h_compute/rate",
+    "heat:conditions/model|peak=45|shade|soak/within_t_h_battery/rate",
+    "heat:conditions/model|peak=45|shade|soak/within_t_h_lidar/rate",
+    "heat:conditions/model|peak=45|sun|normal/within_t_h_compute/rate",
+    "heat:conditions/model|peak=45|sun|normal/within_t_h_battery/rate",
+    "heat:conditions/model|peak=45|sun|normal/within_t_h_lidar/rate",
+    "heat:conditions/model|peak=45|sun|soak/within_t_h_compute/rate",
+    "heat:conditions/model|peak=45|sun|soak/within_t_h_battery/rate",
+    "heat:conditions/model|peak=45|sun|soak/within_t_h_lidar/rate",
+    "heat:conditions/model|peak=50|shade|normal/within_t_h_compute/rate",
+    "heat:conditions/model|peak=50|shade|normal/within_t_h_battery/rate",
+    "heat:conditions/model|peak=50|shade|soak/within_t_h_compute/rate",
+    "heat:conditions/model|peak=50|shade|soak/within_t_h_battery/rate",
+    "heat:conditions/model|peak=50|shade|soak/within_t_h_lidar/rate",
+    "heat:conditions/model|peak=50|sun|normal/within_t_h_compute/rate",
+    "heat:conditions/model|peak=50|sun|normal/within_t_h_battery/rate",
+    "heat:conditions/model|peak=50|sun|soak/within_t_h_compute/rate",
+    "heat:conditions/model|peak=50|sun|soak/within_t_h_battery/rate",
+    "heat:conditions/model|peak=50|sun|soak/within_t_h_lidar/rate"
+   ],
+   "held": false,
+   "id": "AC-H1",
+   "text": "The open loop model predicts each component's mission maximum within T_H = 5.0 K in at least 0.9 of runs, in every condition."
+  },
+  {
+   "failing": [],
+   "held": true,
+   "id": "AC-H2",
+   "text": "With M, the required stopping distance at heat grows by a factor of at most F_H = 1.2 in every run."
+  },
+  {
+   "failing": [
+    "heat:conditions/M|peak=35|shade|soak/exceed/rate",
+    "heat:conditions/M|peak=35|sun|normal/exceed/rate",
+    "heat:conditions/M|peak=35|sun|soak/exceed/rate",
+    "heat:conditions/M|peak=40|shade|soak/exceed/rate",
+    "heat:conditions/M|peak=40|sun|normal/exceed/rate",
+    "heat:conditions/M|peak=40|sun|soak/exceed/rate",
+    "heat:conditions/M|peak=45|shade|soak/exceed/rate",
+    "heat:conditions/M|peak=45|sun|normal/exceed/rate",
+    "heat:conditions/M|peak=45|sun|soak/exceed/rate",
+    "heat:conditions/M|peak=50|shade|soak/exceed/rate",
+    "heat:conditions/M|peak=50|sun|normal/exceed/rate",
+    "heat:conditions/M|peak=50|sun|soak/exceed/rate"
+   ],
+   "held": false,
+   "id": "AC-H3",
+   "text": "With M, no component exceeds its hard limit in any run."
+  }
+ ],
+ "closes_hardware_claim": false,
+ "evidence_item": "EV-20",
+ "evidence_kind": "simulated",
+ "goal": "G6",
+ "label": "SYNTHETIC: produced by a seeded software model in sim/. Not measured on any robot, sensor or receiver. The model and the method under test share an author. Evidence kind: simulated.",
+ "predictions": [
+  {
+   "id": "H-P1",
+   "verdict": "HIT"
+  },
+  {
+   "id": "H-P2",
+   "verdict": "MISS"
+  },
+  {
+   "id": "H-P3",
+   "verdict": "HIT"
+  },
+  {
+   "id": "H-P4",
+   "verdict": "HIT"
+  },
+  {
+   "id": "H-P5",
+   "verdict": "HIT"
+  },
+  {
+   "id": "H-P6",
+   "verdict": "HIT"
+  }
+ ],
+ "prereg_sha256": "0d391addddbd7ff14eab2d828364a5339db8f1b4002c25cf18282f3d1d3fb925",
+ "protocol_items": [
+  "H1",
+  "H2",
+  "H3",
+  "H4",
+  "H5",
+  "H6"
+ ],
+ "result_files": {
+  "sim/results_r2/heat.json": "9a10a819804fd88a8b9c4c49efa877864b75ea64b05280e2164c4923aff2ca6f"
+ },
+ "round": 2,
+ "status_supported": "partial",
+ "title": "Heat derating evidence (H1 to H6)",
+ "what_this_does_not_show": [
+  "Nothing about a real robot, sensor, receiver or building: worlds and methods share an author.",
+  "Heat parameters are assumed, proposal values; no component was measured.",
+  "The replay harness ran on synthetic stand in logs only; no public or field log was replayed.",
+  "No RF level GNSS evidence; faults are injected into the position stream only."
+ ]
+}
