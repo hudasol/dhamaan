@@ -1,0 +1,14 @@
+# SHA-256 at the round 2 preregistration commit, before any round 2 run (2026-10-18).
+# The first three are frozen by tests/test_prereg_r2.py; model files may change only with an entry in sim/DEVIATIONS.md.
+0d391addddbd7ff14eab2d828364a5339db8f1b4002c25cf18282f3d1d3fb925  sim/PREREGISTRATION_R2.md
+22f42abf9b420f0a1e0ea561d04559498ad66fd21fffc3c221042191c874c16a  sim/r2/predictions_r2.py
+9748894e23079497901221126e7b0d48e4ff09f7a5a17b0d55b9572579848a3f  sim/r2/acceptance_r2.py
+5cc30b5455a3c7603cadd1ef15aff0f3fec7f0b92a574a2a4e66a89aa3166862  sim/r2/__init__.py
+4e69648c6d6bc83bd0510e9fd0459e81b2bc303c1def5e7958c9a8a6817a76a8  sim/r2/base.py
+ca523dcf70eb9d5a9ee37f6323ae5ada3ac82d72d663f88f10127a597b8f05d6  sim/r2/du3_r2.py
+780ac64f809117d5e31b705989afe787d9612db0f253cdd3ebd94d19a8a3c92e  sim/r2/gl3_r2.py
+71a8a0e343814eb09b8e9f53fef9f0c7b71f0c79d530d11d48af9a648236ae45  sim/r2/heat.py
+e2376b176dc69c508c664c36ad6511f25580d2cbec8331bccfe3b8fe675f6072  sim/r2/n4_r2.py
+9af4d2550e8602191d7c97fe3ab0171758110d84aeeef437bafc35919706f3b7  sim/r2/replay.py
+02a6fa57c6d08260986e4db7278bba85637deb040aae0615bf87a702a2694b80  sim/r2/run_r2.py
+24d588a39c5fcdcf73038725c1b72998a8f5b82be480d934e9efc9b23aafb46c  sim/r2/score_r2.py
