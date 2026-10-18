@@ -6,7 +6,7 @@ A proposal seed for {{AUD_LABEL}}.
 
 ## The problem
 
-Robot and drone safety instruments ask a developer for evidence before deployment, but they rarely say how much of it is mandatory, and they are mostly silent on learning based autonomy and on Gulf conditions: heat, dust, glare and GNSS degradation. A developer in the UAE therefore has no clear list of what to produce, and no worked example of how Gulf condition evidence would enter a safety case.
+Robot and drone safety instruments ask a developer for evidence before deployment, but they rarely say how much of it is mandatory, and they are mostly silent on learning based autonomy and on Gulf conditions: heat, dust, glare and GNSS degradation. In the sources reviewed, a developer in the UAE finds no clear list of what to produce, and no worked example of how Gulf condition evidence would enter a safety case.
 
 ## Why this may matter to {{AUD_LABEL}}
 
@@ -18,10 +18,10 @@ Robot and drone safety instruments ask a developer for evidence before deploymen
 |---|---|---|
 | Documented | Paraphrases of retrieved sources with URL, date and access level | {{N_ROWS}} rows; full text seen {{ACC_FULL}}, summary seen {{ACC_SUMMARY}}, title only {{ACC_TITLE}} |
 | Interpreted | Binding status scheme, evidence taxonomy, gap statements, always marked | {{N_FAMILIES}} instrument families |
-| Simulated | Preregistered, seeded software models; SYNTHETIC | First round {{PRED_HIT}} of {{PRED_TOTAL}} predictions hit; second round {{R2_PRED_HIT}} of {{R2_PRED_TOTAL}} |
+| Simulated | Preregistered, seeded software models; SYNTHETIC; evidence kind simulated; preregistration SHA-256 `{{PREREG_SHA}}` (first round) and `{{R2_PREREG_SHA}}` (second round) | First round {{PRED_HIT}} of {{PRED_TOTAL}} predictions hit; second round {{R2_PRED_HIT}} of {{R2_PRED_TOTAL}} |
 | Open | Evidence not yet produced | {{N_OPEN}} of {{N_EVIDENCE_ITEMS}} assurance case items open; {{N_PARTIAL}} partial with simulated evidence only |
 
-Also in the repository: a checkable assurance case and its checker, case templates for three robot types, the `dhamaan` command (local, no network), a static site built from the data, and a pilot kit.
+Also in the repository: a checkable assurance case and its checker, case templates for {{N_TEMPLATES}} robot types, the `dhamaan` command (local, no network), a static site built from the data, and a pilot kit.
 
 ## What is not claimed
 
@@ -30,13 +30,13 @@ Also in the repository: a checkable assurance case and its checker, case templat
 - No reproduction of any standard; no paywalled material.
 - No GNSS signal of any kind is generated, simulated at signal level or described.
 - Acceptance criteria that failed stay failed: first round {{AC_FAILED_LIST}}; second round {{R2_AC_FAILED_LIST}}.
-- The evidence table carries a measured error rate: before correction an independent check flagged {{ROW_ERR_EITHER}} of rows; rows are leads to confirm in the source.
+- The evidence table carries a measured error rate: before correction a separate blind check flagged {{ROW_ERR_EITHER}} of rows, and after correction the final check still flagged {{PASSC_CHANGED}} of changed rows; rows are leads to confirm in the source.
 
 ## The ask
 
 {{AUD_ASK}}
 
-## What would be delivered
+## What the repository provides for this
 
 {{AUD_DELIVER}}
 

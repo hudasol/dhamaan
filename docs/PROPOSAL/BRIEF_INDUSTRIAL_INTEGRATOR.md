@@ -7,11 +7,11 @@ A proposal seed for an industrial integrator.
 
 ## The problem
 
-Robot and drone safety instruments ask a developer for evidence before deployment, but they rarely say how much of it is mandatory, and they are mostly silent on learning based autonomy and on Gulf conditions: heat, dust, glare and GNSS degradation. A developer in the UAE therefore has no clear list of what to produce, and no worked example of how Gulf condition evidence would enter a safety case.
+Robot and drone safety instruments ask a developer for evidence before deployment, but they rarely say how much of it is mandatory, and they are mostly silent on learning based autonomy and on Gulf conditions: heat, dust, glare and GNSS degradation. In the sources reviewed, a developer in the UAE finds no clear list of what to produce, and no worked example of how Gulf condition evidence would enter a safety case.
 
 ## Why this may matter to an industrial integrator
 
-A team that deploys robots or drones in the Gulf has to show safety evidence that buyers, insurers and regulators will accept, while the instruments rarely say how heat, dust, glare or GNSS degradation should be tested. The repository offers a checkable assurance case, case templates for three robot types, a command that checks cases and scores logs locally, and a pilot kit with log formats, bench sheets and a stop list.
+A team that deploys robots or drones in the Gulf has to show safety evidence that buyers, insurers and regulators may ask for, while the instruments rarely say how heat, dust, glare or GNSS degradation should be tested. The repository offers a checkable assurance case, case templates for several robot types, a command that checks cases and scores logs locally, and a pilot kit with log formats, bench sheets and a stop list.
 
 ## What exists today, by label
 
@@ -19,10 +19,10 @@ A team that deploys robots or drones in the Gulf has to show safety evidence tha
 |---|---|---|
 | Documented | Paraphrases of retrieved sources with URL, date and access level | 222 rows; full text seen 41, summary seen 167, title only 14 |
 | Interpreted | Binding status scheme, evidence taxonomy, gap statements, always marked | 24 instrument families |
-| Simulated | Preregistered, seeded software models; SYNTHETIC | First round 21 of 23 predictions hit; second round 17 of 19 |
+| Simulated | Preregistered, seeded software models; SYNTHETIC; evidence kind simulated; preregistration SHA-256 `f1e6fb576949358faf5dfe3d8233f1c4da2b2e4103d5281ec3029bce616e2095` (first round) and `0d391addddbd7ff14eab2d828364a5339db8f1b4002c25cf18282f3d1d3fb925` (second round) | First round 21 of 23 predictions hit; second round 17 of 19 |
 | Open | Evidence not yet produced | 16 of 21 assurance case items open; 5 partial with simulated evidence only |
 
-Also in the repository: a checkable assurance case and its checker, case templates for three robot types, the `dhamaan` command (local, no network), a static site built from the data, and a pilot kit.
+Also in the repository: a checkable assurance case and its checker, case templates for 3 robot types, the `dhamaan` command (local, no network), a static site built from the data, and a pilot kit.
 
 ## What is not claimed
 
@@ -31,13 +31,13 @@ Also in the repository: a checkable assurance case and its checker, case templat
 - No reproduction of any standard; no paywalled material.
 - No GNSS signal of any kind is generated, simulated at signal level or described.
 - Acceptance criteria that failed stay failed: first round AC-GL1, AC-GL2, AC-N1; second round AC-GL1R2, AC-DU1R2, AC-DU2R2, AC-H1, AC-H3, AC-N1R2, AC-N2R2.
-- The evidence table carries a measured error rate: before correction an independent check flagged 32.0 percent of rows; rows are leads to confirm in the source.
+- The evidence table carries a measured error rate: before correction a separate blind check flagged 32.0 percent of rows, and after correction the final check still flagged 32.9 percent of changed rows; rows are leads to confirm in the source.
 
 ## The ask
 
 A short conversation about a pilot on a robot the team already operates: logging a few runs in the kit's format, scoring them locally with the open source command, and seeing which evidence items could move from simulated to bench or field.
 
-## What would be delivered
+## What the repository provides for this
 
 - The pilot kit and the dhamaan command, run by the team on its own equipment.
 - A case started from the closest template, with every item open until evidence exists.

@@ -22,8 +22,8 @@ audiences:
     label: an industrial integrator
     why: >-
       A team that deploys robots or drones in the Gulf has to show safety evidence that buyers, insurers and
-      regulators will accept, while the instruments rarely say how heat, dust, glare or GNSS degradation should be
-      tested. The repository offers a checkable assurance case, case templates for three robot types, a command that
+      regulators may ask for, while the instruments rarely say how heat, dust, glare or GNSS degradation should be
+      tested. The repository offers a checkable assurance case, case templates for several robot types, a command that
       checks cases and scores logs locally, and a pilot kit with log formats, bench sheets and a stop list.
     ask: >-
       A short conversation about a pilot on a robot the team already operates: logging a few runs in the kit's

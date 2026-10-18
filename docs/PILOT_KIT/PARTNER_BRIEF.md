@@ -10,13 +10,13 @@ A source traced evidence base on what robot and drone safety instruments ask a d
 
 Bench and field evidence from a robot the partner already owns: logged runs in a fixed format, scored by the same checks, entered into an assurance case with their hashes. The checker keeps a claim about hardware open until such evidence exists.
 
-## What the partner would provide
+## What a pilot would need
 
 - A robot or sensor head that can log position, odometry, range sensor health, camera saturation and component temperatures.
 - A test area that can be closed during runs, and a named safety observer.
 - A person who can confirm the operating domain and the component limits.
 
-## What the partner would receive
+## What is available to a partner
 
 - The log specification, schemas, bench sheets and stop list in this kit.
 - Scoring of the partner's logs with the open source command in the repository, run locally by the partner.

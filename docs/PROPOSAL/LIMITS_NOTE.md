@@ -5,11 +5,12 @@
 
 This note goes with every brief in `docs/PROPOSAL/`. It states plainly what the work does not show.
 
+- **Labels.** Every simulated figure is SYNTHETIC, evidence kind simulated, preregistered with SHA-256 `f1e6fb576949358faf5dfe3d8233f1c4da2b2e4103d5281ec3029bce616e2095` (first round) and `0d391addddbd7ff14eab2d828364a5339db8f1b4002c25cf18282f3d1d3fb925` (second round).
 - **No hardware.** No robot, sensor, receiver or building was measured. 5 assurance case items are partial with simulated evidence only, and every hardware claim they touch stays open (G1, G4, G6).
-- **Shared authorship.** The simulated worlds and the methods tested in them were written by the same people. A HIT shows that a model behaved as predicted, nothing more.
+- **Shared authorship.** The simulated worlds and the methods tested in them share an author. A HIT shows that a model behaved as predicted, nothing more.
 - **Assumed values.** Thresholds and all heat parameters are assumed, proposal values; nothing in the sources fixes them.
 - **Failures.** First round criteria that failed: AC-GL1, AC-GL2, AC-N1. Second round criteria that failed: AC-GL1R2, AC-DU1R2, AC-DU2R2, AC-H1, AC-H3, AC-N1R2, AC-N2R2. Predictions that missed: first round N-P4, N-P8; second round GL3R2-P1, H-P2.
-- **Source quality.** Before correction, an independent check flagged a key column problem in 32.0 percent of rows (95 percent interval 26.2 to 38.4 percent); after correction the final check still flagged 32.9 percent of changed rows. Rows are leads, not citations to rely on.
-- **Retrieval gaps.** Some official documents and any public flight log could not be retrieved by the automated retrieval; they are listed in `docs/FETCH_LIST.md`.
+- **Source quality.** Before correction, a separate blind check flagged a key column problem in 32.0 percent of rows (95 percent interval 26.2 to 38.4 percent); after correction the final check still flagged 32.9 percent of changed rows. Rows are leads, not citations to rely on.
+- **Retrieval gaps.** Some official documents and any public flight log could not be retrieved; they are listed in `docs/FETCH_LIST.md`.
 - **Regime.** No rule specific to indoor or off road service robots in the UAE was found in the sources retrieved; an enquiry was drafted and not sent.
 - **Status.** A student proposal seed. No contact, request, review or endorsement by any body. Licences are proposed until the owner confirms them.
