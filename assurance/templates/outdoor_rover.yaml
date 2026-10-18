@@ -1,0 +1,72 @@
+# TEMPLATE (proposal): assurance case skeleton for an outdoor ground rover.
+# Unnamed system and site. Every evidence item is OPEN. No evidence is claimed to exist. Nothing here is a certification claim.
+# Rows refer to data/evidence_table.csv; a row motivates an item, it is not evidence that the rover meets anything.
+# Start a case from this file with: dhamaan new-case outdoor_rover --out my_case.yaml
+meta:
+  title: Outdoor ground rover, assurance case template
+  version: "0.1"
+  status: template, all evidence open
+  evidence_table: data/evidence_table.csv
+  note: "Template. Replace the assumptions with the real rover, site and duty cycle before use."
+
+assumptions:
+  - id: AS1
+    text: A wheeled rover patrols or inspects an outdoor site off public roads, in direct sun, heat and airborne dust.
+  - id: AS2
+    text: People on the site are trained staff; public access is out of scope until added.
+  - id: AS3
+    text: Whether road vehicle rules apply depends on whether the rover uses a road; this is to be determined, not assumed.
+
+contexts:
+  - id: C1
+    text: Operational design domain for the site, including terrain, heat, dust, sun and GNSS conditions, to be defined.
+    evidence: [EV-01]
+  - id: C2
+    text: Applicable regime for the site and route, to be determined.
+    evidence: [EV-02]
+
+strategies:
+  - id: S1
+    text: Argue over the hazard classes from the risk assessment, then over site conditions.
+    evidence: [EV-03]
+
+goals:
+  - id: G1
+    text: The rover is acceptably safe to operate in the defined site ODD.
+    claim_about: hardware
+    context: [C1, C2]
+    assumptions: [AS1, AS2]
+    supported_by: [S1]
+  - id: G2
+    text: Collision with people and vehicles on site is controlled.
+    claim_about: hardware
+    context: [C1]
+    evidence: [EV-04]
+  - id: G3
+    text: Heat, dust and glare on site do not invalidate the evidence.
+    claim_about: hardware
+    context: [C1]
+    evidence: [EV-05, EV-06]
+  - id: G4
+    text: Localisation failures, including GNSS degradation, end in a stop or another minimum risk behaviour.
+    claim_about: hardware
+    context: [C1]
+    evidence: [EV-07]
+  - id: G5
+    text: Field operation is monitored and incidents are reported and learned from.
+    claim_about: process
+    context: [C2]
+    assumptions: [AS3]
+    evidence: [EV-08]
+strategy_links:
+  S1: [G2, G3, G4, G5]
+
+evidence:
+  - {id: EV-01, title: "Site ODD definition", status: open, decision_needed: true, rows: [D11, D12, D13, D16], note: "Decision needed: the heat, dust and sun envelope of the site."}
+  - {id: EV-02, title: "Regime determination for an off road rover", status: open, decision_needed: true, rows: [C64, C65, D50, D51], note: "The road vehicle rows apply only if the rover uses a road."}
+  - {id: EV-03, title: "Hazard and risk assessment", status: open, rows: [A22, A31, B01]}
+  - {id: EV-04, title: "Obstacle detection and stopping tests", status: open, rows: [A31, A36, D29]}
+  - {id: EV-05, title: "Heat evidence (component limits, derating, safety function at soak)", status: open, decision_needed: true, rows: [D63, D35, D38], note: "Decision needed: component limits; the repository's heat model is simulated with assumed parameters and does not close this item."}
+  - {id: EV-06, title: "Dust and glare evidence", status: open, rows: [D62, D65, D12]}
+  - {id: EV-07, title: "Localisation degradation and GNSS fault evidence", status: open, rows: [D52, D57, D58, D59]}
+  - {id: EV-08, title: "Field monitoring and incident reporting", status: open, rows: [B09, D32, D50]}
