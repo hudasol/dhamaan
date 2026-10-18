@@ -66,7 +66,7 @@ These steps need a person and cannot be done from inside the repository.
 
 ## Adversarial review
 
-20 findings, 13 fixed, 7 documented, rejected or left with a reason.
+42 findings, 29 fixed, 13 documented, rejected or left with a reason.
 
 | Id | Severity | Finding | Status | Resolution |
 |---|---|---|---|---|
@@ -90,3 +90,25 @@ These steps need a person and cannot be done from inside the repository.
 | R18 | low | Frozen files contain tool words; first person and a 15 word quote | not fixed | The evidence table; baseline; verification plan and results are frozen by hash and must not change; recorded here and in data/quote_exceptions.csv |
 | R19 | low | Hyphenated compounds in CONTEXT.md | not fixed | They come from frozen evidence table paraphrases rendered verbatim |
 | R20 | low | Source institutions named in the reading list and report outside CONTEXT.md | not fixed | They name the publishers of cited sources with their URLs; this is citation; not a claim of contact or endorsement |
+| R21 | high | Phase 3 review: HANDOFF described phase 2 only and its recorded test count was stale | fixed | HANDOFF regenerated for phase 3 from a fresh fast check record |
+| R22 | high | Phase 3 review: heat reading in the second round evaluation contradicted the result files | fixed | Readings now computed from the heat results; the method independence of AC-H2 is stated |
+| R23 | high | Phase 3 review: Arabic summary omitted failed criteria; kind; hashes and contact status and had agreement errors | fixed | Rewritten with failure counts; kind; both hashes; no contact; agreement avoided by count phrasing; still a draft for owner review |
+| R24 | high | Phase 3 review: replay harness missed fix gaps without rows and had no error value at timeout alarms | fixed | Timeout checked at every odometry step; error recorded; deviation D10; round 2 scoring rerun with unchanged verdicts |
+| R25 | medium | Phase 3 review: README and several documents covered the first round only and hard coded the partial items | fixed | README; PILOT; DATA_STATEMENT; METHOD; LIMITATIONS and NEXT_STEPS updated; partial items come from the case |
+| R26 | medium | Phase 3 review: synthetic figures lacked the evidence kind and preregistration hash | fixed | Kind and both hashes stated beside synthetic figures in README; briefs; limits note; walk through and site |
+| R27 | medium | Phase 3 review: wording pointed to an unattended automated process | fixed in editable files | Plan; decisions; fetch list and limits note reworded (P3-06); the frozen round 2 preregistration keeps its wording |
+| R28 | medium | Phase 3 review: the word independent overstated the blind verification passes | fixed | Now a separate blind check; briefs also give the rate after correction |
+| R29 | medium | Phase 3 review: proposal pack read as an offer of service and stated more than the search supports | fixed | Headings reworded; unsourced acceptance claim removed; problem statement limited to the sources reviewed |
+| R30 | medium | Phase 3 review: the command failed when installed as a wheel and raised tracebacks on bad input | fixed | Editable install enforced with a clear message; errors reported as messages; tests added |
+| R31 | medium | Phase 3 review: the obligation rule missed wording; negation; strategies and judged by any row in the subtree | fixed | Wider pattern; negation handled; strategies checked; a node's own rows are used; tests added |
+| R32 | medium | Phase 3 review: AC-H2 and part of AC-H3 do not depend on the controller | documented | Stated in EVALUATION_R2; changing the model needs a new preregistration |
+| R33 | medium | Phase 3 review: freeze did not cover the metric code; design separation weakly enforced | fixed | Code hashes recorded at scoring and tested; design guarded against the held out seed set in a test and rerun in CI |
+| R34 | low | Phase 3 review: an undocumented runner change after preregistration | documented | Deviation D9 |
+| R35 | low | Phase 3 review: hard coded verdicts and template count in prose | fixed | Generated from the scored file and the template folder |
+| R36 | low | Phase 3 review: the cited 45 degC figure is secondary and from the author's own repository | documented | Stated as a secondary figure treated as assumed; proposal in EVALUATION_R2 |
+| R37 | low | Phase 3 review: artefact paths could be absolute or leave the repository | fixed | Checker rejects them; test added |
+| R38 | low | Phase 3 review: site control borders and diagram focus had low contrast; diagram container had no role | fixed | Borders use the muted ink; dark focus outline on the diagram; role group added |
+| R39 | low | Phase 3 review: GL3R2-P4 checks the count only; H-P6 averages over runs that moved; DU3 tie order differs from the first round | documented | Predictions are frozen; the reviewer confirmed the same cases and unchanged totals; noted here |
+| R40 | low | Phase 3 review: scoring treats a missing metric as not applicable | documented | Kept for the frozen first round scoring; second round AC-N2R2 now has a value for every fault and a test checks it |
+| R41 | low | Phase 3 review: replay could wrap to the end of a log and failed on a one fix log | fixed | Guarded; test added |
+| R42 | low | Phase 3 review: Graphviz rendering path of the command is untested on Windows | not fixed | Graphviz is rendered in CI for the case diagram; the command path is the same call |

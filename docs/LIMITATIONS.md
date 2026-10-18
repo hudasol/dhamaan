@@ -30,7 +30,7 @@ We list what the work does not show, where it would break on real data, and find
 
 ## Review findings not fixed
 
-An independent adversarial review produced 20 findings; 13 were fixed. The others are documented, rejected or left as they are, each with a reason (full register: `docs/data/review_findings.csv`):
+An independent adversarial review produced 42 findings; 29 were fixed. The others are documented, rejected or left as they are, each with a reason (full register: `docs/data/review_findings.csv`):
 
 | Id | Finding | Status | Reason |
 |---|---|---|---|
@@ -41,3 +41,9 @@ An independent adversarial review produced 20 findings; 13 were fixed. The other
 | R18 | Frozen files contain tool words; first person and a 15 word quote | not fixed | The evidence table; baseline; verification plan and results are frozen by hash and must not change; recorded here and in data/quote_exceptions.csv |
 | R19 | Hyphenated compounds in CONTEXT.md | not fixed | They come from frozen evidence table paraphrases rendered verbatim |
 | R20 | Source institutions named in the reading list and report outside CONTEXT.md | not fixed | They name the publishers of cited sources with their URLs; this is citation; not a claim of contact or endorsement |
+| R32 | Phase 3 review: AC-H2 and part of AC-H3 do not depend on the controller | documented | Stated in EVALUATION_R2; changing the model needs a new preregistration |
+| R34 | Phase 3 review: an undocumented runner change after preregistration | documented | Deviation D9 |
+| R36 | Phase 3 review: the cited 45 degC figure is secondary and from the author's own repository | documented | Stated as a secondary figure treated as assumed; proposal in EVALUATION_R2 |
+| R39 | Phase 3 review: GL3R2-P4 checks the count only; H-P6 averages over runs that moved; DU3 tie order differs from the first round | documented | Predictions are frozen; the reviewer confirmed the same cases and unchanged totals; noted here |
+| R40 | Phase 3 review: scoring treats a missing metric as not applicable | documented | Kept for the frozen first round scoring; second round AC-N2R2 now has a value for every fault and a test checks it |
+| R42 | Phase 3 review: Graphviz rendering path of the command is untested on Windows | not fixed | Graphviz is rendered in CI for the case diagram; the command path is the same call |
