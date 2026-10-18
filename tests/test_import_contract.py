@@ -21,11 +21,17 @@ STDLIB = set(sys.stdlib_module_names)
 
 
 def modules(layer):
+    """Every module of a layer, subpackages included, as paths relative to the layer without '.py'."""
     d = os.path.join(ROOT, layer)
-    return sorted(f[:-3] for f in os.listdir(d) if f.endswith(".py")) if os.path.isdir(d) else []
+    out = []
+    for dp, dn, fn in os.walk(d):
+        dn[:] = [x for x in dn if x != "__pycache__"]
+        rel = os.path.relpath(dp, d).replace(os.sep, "/")
+        out += [(f[:-3] if rel == "." else f"{rel}/{f[:-3]}") for f in fn if f.endswith(".py")]
+    return sorted(out)
 
 
-OWNER = {m: layer for layer in LAYERS for m in modules(layer) if m != "__init__"}
+OWNER = {m: layer for layer in LAYERS for m in modules(layer) if m != "__init__" and "/" not in m}
 OWNER.update({layer: layer for layer in LAYERS})
 
 
