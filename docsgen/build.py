@@ -26,8 +26,10 @@ OUTPUTS = {
     "docs/VALIDATOR_WARNINGS.md": "VALIDATOR_WARNINGS.tmpl.md",
     "docs/PILOT_KIT/LOGGING_SPEC.md": "PILOT_KIT_LOGGING.tmpl.md",
     "docs/PILOT_KIT/WALKTHROUGH.md": "PILOT_KIT_WALKTHROUGH.tmpl.md",
+    "docs/PROPOSAL/LIMITS_NOTE.md": "PROPOSAL_LIMITS.tmpl.md",
     "HANDOFF.md": "HANDOFF.tmpl.md",
 }
+BRIEF_TEMPLATE = "PROPOSAL_BRIEF.tmpl.md"   # rendered once per audience in data/proposal_pack.yaml
 PLACEHOLDER = re.compile(r"\{\{([A-Z0-9_]+)\}\}")
 
 
@@ -50,7 +52,17 @@ def build(facts: dict | None = None) -> dict[str, str]:
         p = template_path(tmpl)
         if not os.path.exists(p): raise FileNotFoundError(f"template missing for {rel}: docs/templates/{tmpl}")
         out[rel] = render(open(p, encoding="utf-8").read(), facts, tmpl)
+    brief = open(template_path(BRIEF_TEMPLATE), encoding="utf-8").read()
+    for aud in audiences():
+        extra = {"AUD_LABEL": aud["label"], "AUD_WHY": aud["why"], "AUD_ASK": aud["ask"],
+                 "AUD_DELIVER": "\n".join(f"- {d}" for d in aud["deliver"])}
+        out[f"docs/PROPOSAL/{aud['file']}"] = render(brief, facts | extra, BRIEF_TEMPLATE)
     return out
+
+
+def audiences() -> list[dict]:
+    import yaml
+    return yaml.safe_load(open(os.path.join(ROOT, "data", "proposal_pack.yaml"), encoding="utf-8"))["audiences"]
 
 
 def stale(built: dict[str, str] | None = None) -> list[str]:
@@ -71,6 +83,7 @@ def main(argv=None) -> int:
         for rel in s: print("STALE", rel)
         print(f"{len(s)} stale documents"); return 1 if s else 0
     for rel, text in built.items():
+        os.makedirs(os.path.dirname(os.path.join(ROOT, rel)), exist_ok=True)
         with open(os.path.join(ROOT, rel), "w", encoding="utf-8", newline="\n") as f: f.write(text)
         print("wrote", rel)
     return 0

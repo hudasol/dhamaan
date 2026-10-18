@@ -40,20 +40,20 @@ def test_templates_have_no_hand_typed_numbers():
 
 def test_every_template_is_built_and_every_output_has_a_template():
     tmpls = {os.path.basename(p) for p in glob.glob(os.path.join(ROOT, "docs", "templates", "*.tmpl.md"))}
-    assert tmpls == set(B.OUTPUTS.values())
-    assert set(BUILT) == set(B.OUTPUTS)
+    assert tmpls == set(B.OUTPUTS.values()) | {B.BRIEF_TEMPLATE}
+    assert set(BUILT) == set(B.OUTPUTS) | {f"docs/PROPOSAL/{a['file']}" for a in B.audiences()}
 
 
 def test_synthetic_numbers_carry_the_label():
     sim_keys = set(F.sim_facts())
     for rel, text in BUILT.items():
-        tmpl = open(B.template_path(B.OUTPUTS[rel]), encoding="utf-8").read()
+        tmpl = open(B.template_path(B.OUTPUTS.get(rel, B.BRIEF_TEMPLATE)), encoding="utf-8").read()
         if set(B.PLACEHOLDER.findall(tmpl)) & sim_keys:
             assert "SYNTHETIC" in text, rel
 
 
 PUBLIC = ["README.md", "HANDOFF.md"] + [p for p in glob.glob(os.path.join(ROOT, "docs", "*.md"))] \
-    + glob.glob(os.path.join(ROOT, "docs", "adr", "*.md")) + ["sim/PREREGISTRATION.md", "sim/DEVIATIONS.md", "sim/PREREGISTRATION_R2.md"]     + glob.glob(os.path.join(ROOT, "assurance", "templates", "*.yaml")) + glob.glob(os.path.join(ROOT, "docs", "PILOT_KIT", "*.md"))
+    + glob.glob(os.path.join(ROOT, "docs", "adr", "*.md")) + ["sim/PREREGISTRATION.md", "sim/DEVIATIONS.md", "sim/PREREGISTRATION_R2.md"]     + glob.glob(os.path.join(ROOT, "assurance", "templates", "*.yaml")) + glob.glob(os.path.join(ROOT, "docs", "PILOT_KIT", "*.md")) + glob.glob(os.path.join(ROOT, "docs", "PROPOSAL", "*.md"))
 
 
 def public_texts():

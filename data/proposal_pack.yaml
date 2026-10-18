@@ -1,0 +1,51 @@
+# Audience framing for the proposal pack (docs/PROPOSAL/). Prose only; every number comes from docsgen/facts.py.
+# No institution is named. Nothing here claims contact, request, review or endorsement.
+audiences:
+  - key: research
+    file: BRIEF_RESEARCH_INSTITUTE.md
+    label: a research institute
+    why: >-
+      The open questions are research questions: how much simulated evidence can stand in for physical tests,
+      how learning based perception is argued in a safety case, and how Gulf heat, dust, glare and GNSS degradation
+      enter evidence that standards leave to the developer. The repository offers a reproducible base for that work:
+      preregistered predictions, fixed seeds, results that rerun byte for byte, and misses reported beside hits.
+    ask: >-
+      A short scoping conversation about whether a joint study is of interest: for example a simulation credibility
+      comparison on one perception behaviour, or replacing the synthetic worlds with logged sensor data under a new
+      preregistration.
+    deliver:
+      - A preregistration for the agreed study, committed before any run.
+      - Open code and data for every result, with the labels kept.
+      - A written account of what held and what failed.
+  - key: integrator
+    file: BRIEF_INDUSTRIAL_INTEGRATOR.md
+    label: an industrial integrator
+    why: >-
+      A team that deploys robots or drones in the Gulf has to show safety evidence that buyers, insurers and
+      regulators will accept, while the instruments rarely say how heat, dust, glare or GNSS degradation should be
+      tested. The repository offers a checkable assurance case, case templates for three robot types, a command that
+      checks cases and scores logs locally, and a pilot kit with log formats, bench sheets and a stop list.
+    ask: >-
+      A short conversation about a pilot on a robot the team already operates: logging a few runs in the kit's
+      format, scoring them locally with the open source command, and seeing which evidence items could move from
+      simulated to bench or field.
+    deliver:
+      - The pilot kit and the dhamaan command, run by the team on its own equipment.
+      - A case started from the closest template, with every item open until evidence exists.
+      - A record of results as found, including failures.
+  - key: government
+    file: BRIEF_GOVERNMENT_OFFICE.md
+    label: a government office
+    why: >-
+      The sources found cover drones and road vehicles in the UAE, but no rule specific to indoor or off road service
+      robots was found; this is a statement about the search, not about the law. The repository records which
+      instruments are mandatory, conditional, voluntary or guidance as seen in retrieved sources, and keeps every
+      reading labelled. It may help a discussion of what evidence could reasonably be asked for in Gulf conditions.
+    ask: >-
+      Guidance on where the regulatory question for indoor and off road service robots sits, if the office considers
+      it appropriate to give, and on any public source the evidence table has missed. A draft enquiry exists in the
+      repository and has not been sent.
+    deliver:
+      - The evidence table and its verification record, with every source URL and access level.
+      - A plain statement of what is documented, interpreted, simulated and open.
+      - Corrections recorded openly if a source is found to be misread.
