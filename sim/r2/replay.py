@@ -119,3 +119,11 @@ def to_csv(rows: list[dict], columns: tuple[str, ...]) -> str:
     buf = io.StringIO(); w = csv.writer(buf, lineterminator="\n"); w.writerow(columns)
     for r in rows: w.writerow([f"{r[c]:.6f}" if isinstance(r[c], float) else r[c] for c in columns])
     return buf.getvalue()
+
+
+def faulty_copy(text: str, kind: str = "jump", size: float = 20.0, onset: float = 30.0) -> str:
+    """A copy of a gnss.csv log with one injected fault and a fixed seed (pilot kit walk through). SYNTHETIC."""
+    from sim.r2 import base
+    rows = read_csv(text, GNSS_COLUMNS)
+    cols = GNSS_COLUMNS + tuple(c for c in REF_COLUMNS if rows[0].get(c) is not None)
+    return to_csv(inject(rows, kind, size, onset, base.rng(base.DEV_SEED, "WALK", kind, 0)), cols)

@@ -41,3 +41,6 @@ is byte identical before and after them.
   total grow to the stated size over the round 1 ramp, a test checks that every fault kind changes the fix
   stream, and round 2 scoring was rerun once. No threshold, seed or prediction changed; the first results stay
   in the history at commit 796003f.
+- **D8. A helper was added to the replay harness after round 2 scoring.** `sim/r2/replay.py` gained
+  `faulty_copy()`, used only by the pilot kit walk through to write a practice log with one injected fault. It
+  calls the same `inject()` with a fixed seed and changes no round 2 result; the CI rerun of round 2 checks this.
