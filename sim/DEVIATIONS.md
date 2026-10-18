@@ -31,3 +31,13 @@ is byte identical before and after them.
 - **D6. Replay delay is converted from seconds to fixes.** The code counted the delay in fixes, which is
   only correct at one fix per second. It now divides by the fix period; at the configured period the
   results are identical.
+
+## 2026-10-18, round 2 (`sim/PREREGISTRATION_R2.md`)
+
+- **D7. The replay harness did not inject noise growth.** In the first held out run of round 2 (commit
+  796003f), `sim/r2/replay.py` handled loss, jump, drift and replay but not noise growth, so the noise
+  conditions of the N4 stand in logs ran without any fault. This was a defect, not a design choice: the
+  preregistration lists noise growth among the faults. The harness now adds the extra noise that makes the
+  total grow to the stated size over the round 1 ramp, a test checks that every fault kind changes the fix
+  stream, and round 2 scoring was rerun once. No threshold, seed or prediction changed; the first results stay
+  in the history at commit 796003f.

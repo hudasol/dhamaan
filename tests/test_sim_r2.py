@@ -72,3 +72,10 @@ def test_injected_loss_marks_fixes_without_a_position_change():
 def test_n4_score_structure():
     r = n4_r2.score(seeds=2)
     assert {c["fault"] for c in r["conditions"].values()} == {k for k, _ in G.CONDITIONS}
+
+
+def test_every_fault_kind_changes_the_fix_stream():
+    g, _ = replay.standin(base.rng(base.DEV_SEED, "N4LOG", "t", 0))
+    for kind, size in [k for k in G.CONDITIONS if k[0] != "nominal"]:
+        out = replay.inject(g, kind, size, 30.0, base.rng(base.DEV_SEED, "x", kind, 0))
+        assert any(a != b for a, b in zip(out, g) if a["t_s"] >= 40.0), kind

@@ -101,6 +101,11 @@ def inject(gnss: list[dict], kind: str, size: float, onset: float, rng) -> list[
         f = dict(f); age = f["t_s"] - onset
         if age >= 0 and kind != "nominal":
             if kind == "loss": f["fix_ok"] = 0.0
+            elif kind == "noise":   # extra noise so the total grows to `size` over the round 1 ramp
+                base_sd = G.Config().sigma_gnss
+                sd = base_sd + (size - base_sd) * min(age / G.Config().noise_ramp, 1.0)
+                extra = math.sqrt(max(sd * sd - base_sd * base_sd, 0.0))
+                f["x_m"] += extra * rng.standard_normal(); f["y_m"] += extra * rng.standard_normal()
             elif kind == "jump": f["x_m"] += size * u[0]; f["y_m"] += size * u[1]
             elif kind == "drift": f["x_m"] += size * age * u[0]; f["y_m"] += size * age * u[1]
             elif kind == "replay":
