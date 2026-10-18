@@ -16,6 +16,8 @@ import contracts
 
 STATUSES = set(contracts.EVIDENCE_STATUS)
 SAFE_WORDS = re.compile(r"\b(safe|safely|safer|safest)\b", re.I)
+OBLIGATION_WORDS = re.compile(r"\b(must|shall|is required|are required|required to|mandatory|obligatory|is obliged|are obliged)\b", re.I)
+BINDING_STATUSES = {"mandatory", "conditional"}   # statuses that can carry an obligation (conditional: under its condition)
 ABSOLUTE_WORDS = re.compile(r"\b(guarantee[sd]?|certified|compliant|proven|always|never|risk[- ]free|fully secure|zero risk)\b", re.I)
 
 def load(path: str) -> dict:
@@ -141,6 +143,16 @@ def check(case: dict, rows: dict, base_dir: str = ".") -> list[tuple[str, str, s
     for e in ev.values():
         m = ABSOLUTE_WORDS.search(e.get("title", "") + " " + e.get("note", ""))
         if m: add("ERROR", "UNSUPPORTED_WORD", e["id"], f"absolute or certification word {m.group(0)!r}")
+
+    # obligation strength: a goal worded as an obligation needs a cited row whose binding status is binding
+    for g in goals.values():
+        m = OBLIGATION_WORDS.search(g.get("text", ""))
+        if not m: continue
+        cited = [r for e in ev_of(g["id"]) if e in ev for r in ev[e].get("rows") or [] if r in rows]
+        strengths = {rows[r].get("binding_status", "") for r in cited}
+        if not strengths & BINDING_STATUSES:
+            add("ERROR", "OVERSTATED_OBLIGATION", g["id"],
+                f"worded as an obligation ({m.group(0)!r}) but its cited rows are only {sorted(strengths) or 'none'}")
     return out
 
 def main(argv=None):
@@ -149,8 +161,9 @@ def main(argv=None):
     ap.add_argument("--table", default="data/evidence_table.csv")
     ap.add_argument("--strict", action="store_true", help="exit 1 on FLAG findings as well")
     ap.add_argument("--quiet", action="store_true")
+    ap.add_argument("--root", help="directory that artefact paths are relative to (default: the case file's parent's parent)")
     a = ap.parse_args(argv)
-    res = check(load(a.case), table_rows(a.table), os.path.dirname(os.path.abspath(a.case)) + "/..")
+    res = check(load(a.case), table_rows(a.table), a.root or os.path.dirname(os.path.abspath(a.case)) + "/..")
     from collections import Counter
     c = Counter(code for s, code, i, m in res)
     if not a.quiet:

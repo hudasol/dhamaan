@@ -179,3 +179,20 @@ def test_undeveloped_goal_does_not_bypass_simulation_rule():
 def test_decision_needed_is_flagged():
     c = case(); c["evidence"][0]["decision_needed"] = True; c["evidence"][0]["note"] = "Decision needed: limits."
     assert ("FLAG", "DECISION_NEEDED", "EV-01") in codes(c)
+
+def obligation_case(binding, text):
+    c = case(); c["goals"][1]["text"] = text
+    rows = {"A01": {"access_level": "summary seen", "binding_status": binding}}
+    return {(s, code, i) for s, code, i, m in ac.check(c, rows)}
+
+def test_voluntary_or_guidance_cannot_be_written_as_mandatory():
+    for b in ("voluntary", "guidance"):
+        assert ("ERROR", "OVERSTATED_OBLIGATION", "G2") in obligation_case(b, "Contact limits must be met.")
+        assert ("ERROR", "OVERSTATED_OBLIGATION", "G2") in obligation_case(b, "A risk assessment is required.")
+
+def test_binding_rows_may_carry_an_obligation():
+    for b in ("mandatory", "conditional"):
+        assert ("ERROR", "OVERSTATED_OBLIGATION", "G2") not in obligation_case(b, "Contact limits shall be met.")
+
+def test_plain_claims_are_not_obligations():
+    assert ("ERROR", "OVERSTATED_OBLIGATION", "G2") not in obligation_case("guidance", "Contact harm is controlled.")
