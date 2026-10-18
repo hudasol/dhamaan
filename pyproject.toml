@@ -18,6 +18,7 @@ test = ["pytest"]
 [project.scripts]
 dhamaan = "dhamaan.cli:main"
 
+# Editable install only (python -m pip install -e .): the command reads tools/, data/ and assurance/ from the clone.
 [tool.setuptools.packages.find]
 include = ["dhamaan*", "sim*", "docsgen*"]
 

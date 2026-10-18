@@ -1,7 +1,8 @@
 """dhamaan command line.
 
   dhamaan check-table [TABLE] [--reviewed FILE] [--strict]     validate an evidence table
-  dhamaan check-case  [CASE] [--table TABLE] [--root DIR] [--strict]   check an assurance case
+  dhamaan check-case  [CASE] [--table TABLE] [--root DIR] [--strict]   check an assurance case (artefact paths are
+                                                               relative to the repository unless --root is given)
   dhamaan render      [CASE] [--out BASE]                      write the case diagram (DOT; SVG and PNG if Graphviz is installed)
   dhamaan new-case    TEMPLATE --out FILE [--title TEXT]       start a case from a template and check it
   dhamaan new-case    --list                                   list the templates
@@ -14,6 +15,9 @@ from __future__ import annotations
 import argparse, json, os, shutil, subprocess, sys
 
 ROOT = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
+if not os.path.isdir(os.path.join(ROOT, "tools")):
+    raise SystemExit("dhamaan needs the repository next to it: clone the repository and install with "
+                     "'python -m pip install -e .' (an editable install); a plain wheel install is not supported.")
 sys.path.insert(0, os.path.join(ROOT, "tools"))
 sys.path.insert(0, ROOT)
 
@@ -41,7 +45,7 @@ def cmd_check_table(a) -> int:
 
 
 def cmd_check_case(a) -> int:
-    argv = [a.case, "--table", a.table] + (["--root", a.root] if a.root else []) + (["--strict"] if a.strict else []) + (["--quiet"] if a.quiet else [])
+    argv = [a.case, "--table", a.table, "--root", a.root or ROOT] + (["--strict"] if a.strict else []) + (["--quiet"] if a.quiet else [])
     return ac_check.main(argv)
 
 
@@ -76,6 +80,7 @@ def cmd_new_case(a) -> int:
         for i, line in enumerate(lines):
             if line.startswith("  title: "): lines[i] = "  title: " + json.dumps(a.title); break
         text = "\n".join(lines)
+    os.makedirs(os.path.dirname(os.path.abspath(a.out)), exist_ok=True)
     with open(a.out, "w", encoding="utf-8", newline="\n") as f: f.write(text)
     print("wrote", a.out)
     return ac_check.main([a.out, "--table", a.table, "--root", ROOT, "--quiet"])
@@ -85,7 +90,7 @@ def cmd_score_log(a) -> int:
     try:
         g = replay.read_csv(open(a.gnss, encoding="utf-8").read(), replay.GNSS_COLUMNS)
         o = replay.read_csv(open(a.odometry, encoding="utf-8").read(), replay.ODO_COLUMNS)
-    except (OSError, replay.LogError) as e:
+    except (OSError, UnicodeDecodeError, replay.LogError) as e:
         print(f"log rejected: {e}"); return 1
     res = replay.score_log(g, o) | {"note": SCORE_NOTE}
     if a.json: print(json.dumps(res, indent=1, sort_keys=True))
@@ -121,7 +126,11 @@ def parser() -> argparse.ArgumentParser:
 
 def main(argv: list[str] | None = None) -> int:
     a = parser().parse_args(argv)
-    return a.fn(a)
+    try:
+        return a.fn(a)
+    except (OSError, UnicodeDecodeError, ValueError) as e:     # missing or unreadable input: a message, not a traceback
+        print(f"error: {e}")
+        return 1
 
 
 if __name__ == "__main__":

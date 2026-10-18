@@ -72,3 +72,20 @@ def test_score_log_rejects_a_bad_log(capsys, tmp_path):
 def test_usage_error_exits_with_two():
     with pytest.raises(SystemExit) as e: cli.main([])
     assert e.value.code == 2
+
+
+def test_missing_or_unreadable_input_gives_a_message_not_a_traceback(capsys, tmp_path):
+    code, out = run(capsys, "check-case", str(tmp_path / "nope.yaml"))
+    assert code == 1 and out.startswith("error:")
+    code, out = run(capsys, "render", str(tmp_path / "nope.yaml"), "--out", str(tmp_path / "d"))
+    assert code == 1 and out.startswith("error:")
+    (tmp_path / "g.csv").write_bytes(b"t_s,x_m,y_m,fix_ok\n0,\xff\xfe,0,1\n")
+    (tmp_path / "o.csv").write_text("t_s,v_mps,yaw_rad\n0,0,0\n", encoding="utf-8")
+    code, out = run(capsys, "score-log", "--gnss", str(tmp_path / "g.csv"), "--odometry", str(tmp_path / "o.csv"))
+    assert code == 1 and "log rejected" in out
+
+
+def test_new_case_creates_missing_folders_and_needs_a_template(capsys, tmp_path):
+    out_file = tmp_path / "a" / "b" / "case.yaml"
+    assert run(capsys, "new-case", "survey_drone", "--out", str(out_file))[0] == 0 and out_file.exists()
+    assert run(capsys, "new-case")[0] == 2
