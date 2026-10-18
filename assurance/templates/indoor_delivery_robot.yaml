@@ -1,0 +1,71 @@
+# TEMPLATE (proposal): assurance case skeleton for an indoor campus delivery robot.
+# Unnamed system and site. Every evidence item is OPEN. No evidence is claimed to exist. Nothing here is a certification claim.
+# Rows refer to data/evidence_table.csv; a row motivates an item, it is not evidence that the robot meets anything.
+# Start a case from this file with: dhamaan new-case indoor_delivery_robot --out my_case.yaml
+meta:
+  title: Indoor campus delivery robot, assurance case template
+  version: "0.1"
+  status: template, all evidence open
+  evidence_table: data/evidence_table.csv
+  note: "Template. Replace the assumptions with the real system, site and users before use."
+
+assumptions:
+  - id: AS1
+    text: A wheeled robot carries parcels between rooms of one or more buildings, using corridors, doors and lifts, among staff and visitors.
+  - id: AS2
+    text: The buildings are indoor and air conditioned; outdoor crossings between buildings are out of scope until added.
+  - id: AS3
+    text: No rule specific to indoor delivery robots was found in the sources retrieved; this is a statement about the search, not about the law.
+
+contexts:
+  - id: C1
+    text: Operational design domain (ODD) to be defined, including floors, lifts, doors, occupancy, lighting and network.
+    evidence: [EV-01]
+  - id: C2
+    text: Applicable regime for the deployment, to be determined.
+    evidence: [EV-02]
+
+strategies:
+  - id: S1
+    text: Argue over the hazard classes taken from the risk assessment.
+    evidence: [EV-03]
+
+goals:
+  - id: G1
+    text: The delivery robot is acceptably safe to operate in the defined ODD.
+    claim_about: hardware
+    context: [C1, C2]
+    assumptions: [AS1]
+    supported_by: [S1]
+  - id: G2
+    text: Collision and contact harm to people in corridors, doors and lifts is controlled.
+    claim_about: hardware
+    context: [C1]
+    evidence: [EV-04, EV-05]
+  - id: G3
+    text: Perception and navigation failures end in a stop or another minimum risk behaviour.
+    claim_about: hardware
+    context: [C1]
+    evidence: [EV-06]
+  - id: G4
+    text: People can predict, oversee and stop the robot.
+    claim_about: process
+    context: [C1]
+    evidence: [EV-07]
+  - id: G5
+    text: Incidents are logged, reported and learned from.
+    claim_about: process
+    context: [C2]
+    evidence: [EV-08]
+strategy_links:
+  S1: [G2, G3, G4, G5]
+
+evidence:
+  - {id: EV-01, title: "ODD definition for the buildings", status: open, decision_needed: true, rows: [D11, D13, D05], note: "Decision needed: floors, lifts, occupancy and lighting."}
+  - {id: EV-02, title: "Regime determination for an indoor delivery robot", status: open, decision_needed: true, rows: [A01, B35, C64, C65], note: "No indoor robot rule was found in the sources; see docs/UAE_ENQUIRY_PACK.md."}
+  - {id: EV-03, title: "Hazard and risk assessment", status: open, rows: [A22, A28, A31]}
+  - {id: EV-04, title: "Stopping distance and obstacle detection tests", status: open, rows: [A31, A35, A36]}
+  - {id: EV-05, title: "Contact and collision evidence", status: open, decision_needed: true, rows: [A26, A29], note: "Decision needed: contact limits and their source."}
+  - {id: EV-06, title: "Perception and navigation evidence", status: open, rows: [B44, D18, D22, D24]}
+  - {id: EV-07, title: "Human interaction and oversight evidence", status: open, rows: [A38, B24, B25]}
+  - {id: EV-08, title: "Logging and incident reporting", status: open, rows: [B23, B29, B09]}
