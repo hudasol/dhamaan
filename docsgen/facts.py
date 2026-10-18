@@ -312,6 +312,29 @@ def r2_facts() -> dict:
     return f
 
 
+def kit_facts() -> dict:
+    from sim.r2 import replay
+    streams, cols = _csv("data/pilot_streams.csv"), _csv("data/pilot_log_spec.csv")
+    f = {"KIT_STREAMS_TABLE": table(["Stream", "File", "Minimum rate (Hz)", "Purpose", "Protocol items", "Provenance"],
+                                    [[s["stream"], f'`{s["file"]}`', num(float(s["min_rate_hz"]), 0) if float(s["min_rate_hz"]) else "on event",
+                                      s["purpose"], s["protocol_items"], s["provenance"]] for s in streams])}
+    f["KIT_COLUMNS_TABLES"] = "\n\n".join(
+        f'### `{s["file"]}`\n\n' + table(["Column", "Type", "Unit", "Required", "Meaning"],
+                                         [[f'`{c["column"]}`', c["type"], c["unit"], c["required"], c["description"]]
+                                          for c in cols if c["stream"] == s["stream"]]) for s in streams)
+    g_text = open(_p("sim/results_r2/standin_log/gnss.csv"), encoding="utf-8").read()
+    o_text = open(_p("sim/results_r2/standin_log/odometry.csv"), encoding="utf-8").read()
+    g, o = replay.read_csv(g_text, replay.GNSS_COLUMNS), replay.read_csv(o_text, replay.ODO_COLUMNS)
+    clean = replay.score_log(g, o)
+    faulty = replay.score_log(replay.read_csv(replay.faulty_copy(g_text), replay.GNSS_COLUMNS), o)
+    f.update({"KIT_FIXES": str(clean["fixes"]), "KIT_ODO_ROWS": str(clean["odometry_rows"]),
+              "KIT_CLEAN_RESULT": "no fault declared" if clean["t_alarm"] is None else f'fault declared at t = {clean["t_alarm"]:.1f} s ({clean["reason"]})',
+              "KIT_CLEAN_MAXERR": num(clean["max_error_m"], 2),
+              "KIT_FAULT_RESULT": "no fault declared" if faulty["t_alarm"] is None else f'fault declared at t = {faulty["t_alarm"]:.1f} s ({faulty["reason"]})',
+              "KIT_FAULT_MAXERR": num(faulty["max_error_m"], 2)})
+    return f
+
+
 def check_facts() -> dict:
     p = _p("docs/data/check_summary.json")
     if not os.path.exists(p): return {"TESTS_PASSED": "n/a", "CHECK_LINES": "not recorded"}
@@ -322,7 +345,7 @@ def check_facts() -> dict:
 
 def all_facts() -> dict:
     f = {}
-    for part in (evidence_table_facts(), case_facts(), context_facts(), warning_facts(), review_facts(), sim_facts(), r2_facts(), check_facts()):
+    for part in (evidence_table_facts(), case_facts(), context_facts(), warning_facts(), review_facts(), sim_facts(), r2_facts(), kit_facts(), check_facts()):
         assert not set(part) & set(f), set(part) & set(f)
         f.update(part)
     return f

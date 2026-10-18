@@ -11,8 +11,8 @@ BUILT = B.build()
 # Digits in templates are allowed only inside these (everything else must be a {{FACT}}).
 ALLOWED = [
     r"\{\{[A-Z0-9_]+\}\}",                     # placeholders
-    r"`[^`\n]*`",                              # code spans
     r"```.*?```",                              # code blocks
+    r"`[^`\n]*`",                              # code spans
     r"\]\([^)]*\)",                            # link targets
     r"https?://\S+",                           # URLs
     r"\b\d{4}-\d{2}-\d{2}\b",                  # ISO dates
@@ -53,7 +53,7 @@ def test_synthetic_numbers_carry_the_label():
 
 
 PUBLIC = ["README.md", "HANDOFF.md"] + [p for p in glob.glob(os.path.join(ROOT, "docs", "*.md"))] \
-    + glob.glob(os.path.join(ROOT, "docs", "adr", "*.md")) + ["sim/PREREGISTRATION.md", "sim/DEVIATIONS.md", "sim/PREREGISTRATION_R2.md"]     + glob.glob(os.path.join(ROOT, "assurance", "templates", "*.yaml"))
+    + glob.glob(os.path.join(ROOT, "docs", "adr", "*.md")) + ["sim/PREREGISTRATION.md", "sim/DEVIATIONS.md", "sim/PREREGISTRATION_R2.md"]     + glob.glob(os.path.join(ROOT, "assurance", "templates", "*.yaml")) + glob.glob(os.path.join(ROOT, "docs", "PILOT_KIT", "*.md"))
 
 
 def public_texts():
