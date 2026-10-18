@@ -34,8 +34,11 @@ def read_csv(text: str, required: tuple[str, ...]) -> list[dict]:
     if missing: raise LogError(f"missing columns {missing}")
     out = []
     for n, r in enumerate(rows, 2):
-        try: out.append({k: (float(v) if v not in ("", None) else None) for k, v in r.items()})
+        try: row = {k: (float(v) if v not in ("", None) else None) for k, v in r.items()}
         except ValueError as e: raise LogError(f"line {n}: {e}") from None
+        if any(v is not None and not math.isfinite(v) for v in row.values()): raise LogError(f"line {n}: value is not a finite number")
+        if any(row.get(c) is None for c in required): raise LogError(f"line {n}: a required column is empty")
+        out.append(row)
     ts = [r["t_s"] for r in out]
     if any(b < a for a, b in zip(ts, ts[1:])): raise LogError("t_s is not increasing")
     return out
@@ -47,7 +50,9 @@ def score_log(gnss: list[dict], odo: list[dict], cfg: G.Config = G.Config()) -> 
     xh = np.array([gnss[0]["x_m"], gnss[0]["y_m"]], dtype=float); P = 0.5
     g, rejects, last_fix_t, t_alarm, reason, gi = 0.0, 0, gnss[0]["t_s"], None, None, 1
     has_ref = all(gnss[0].get(c) is not None for c in REF_COLUMNS)
-    max_err, err_alarm = 0.0, None
+    max_err, err_alarm, ref = 0.0, None, None
+    def err_now():
+        return math.hypot(xh[0] - ref[0], xh[1] - ref[1]) if ref is not None else None
     for k in range(1, len(odo)):
         dt = odo[k]["t_s"] - odo[k - 1]["t_s"]
         v, yaw = odo[k - 1]["v_mps"], odo[k - 1]["yaw_rad"]
@@ -55,10 +60,9 @@ def score_log(gnss: list[dict], odo: list[dict], cfg: G.Config = G.Config()) -> 
         t = odo[k]["t_s"]
         while gi < len(gnss) and gnss[gi]["t_s"] <= t + 1e-9:
             f = gnss[gi]; gi += 1
+            if has_ref and f.get("x_ref_m") is not None: ref = (f["x_ref_m"], f["y_ref_m"])
             if t_alarm is not None: continue
-            if not f["fix_ok"]:
-                if f["t_s"] - last_fix_t > cfg.timeout: t_alarm, reason = f["t_s"], "timeout"
-                continue
+            if not f["fix_ok"]: continue
             last_fix_t = f["t_s"]
             z = np.array([f["x_m"], f["y_m"]]); nu = z - xh; S = P + R; nis = float(nu @ nu) / S
             if nis <= cfg.gate: K = P / S; xh = xh + K * nu; P = (1 - K) * P; rejects = 0
@@ -67,9 +71,12 @@ def score_log(gnss: list[dict], odo: list[dict], cfg: G.Config = G.Config()) -> 
             if rejects >= cfg.reject_run: t_alarm, reason = f["t_s"], "gate"
             elif g > cfg.cusum_limit: t_alarm, reason = f["t_s"], "cusum"
             if has_ref:
-                e = math.hypot(xh[0] - f["x_ref_m"], xh[1] - f["y_ref_m"])
-                max_err = max(max_err, e)
+                e = err_now(); max_err = max(max_err, e)
                 if t_alarm is not None and err_alarm is None: err_alarm = e
+        # fix timeout checked at every odometry step, so a gap with no rows at all is detected too (deviation D10)
+        if t_alarm is None and t - last_fix_t > cfg.timeout:
+            t_alarm, reason = t, "timeout"
+            if has_ref: err_alarm = err_now(); max_err = max(max_err, err_alarm)
     return {"t_alarm": t_alarm, "reason": reason, "max_error_m": max_err if has_ref else None,
             "error_at_alarm_m": err_alarm, "fixes": len(gnss), "odometry_rows": len(odo)}
 
@@ -96,7 +103,7 @@ def standin(rng, cfg: G.Config = G.Config()) -> tuple[list[dict], list[dict]]:
 def inject(gnss: list[dict], kind: str, size: float, onset: float, rng) -> list[dict]:
     """Measurement level fault on a logged fix stream (no RF of any kind)."""
     phi = rng.uniform(0, 2 * math.pi); u = (math.cos(phi), math.sin(phi))
-    out, period = [], gnss[1]["t_s"] - gnss[0]["t_s"]
+    out, period = [], (gnss[1]["t_s"] - gnss[0]["t_s"]) if len(gnss) > 1 else 1.0
     for j, f in enumerate(gnss):
         f = dict(f); age = f["t_s"] - onset
         if age >= 0 and kind != "nominal":
@@ -109,7 +116,7 @@ def inject(gnss: list[dict], kind: str, size: float, onset: float, rng) -> list[
             elif kind == "jump": f["x_m"] += size * u[0]; f["y_m"] += size * u[1]
             elif kind == "drift": f["x_m"] += size * age * u[0]; f["y_m"] += size * age * u[1]
             elif kind == "replay":
-                back = int(round(size / period)); src = gnss[j - back]
+                back = int(round(size / period)); src = gnss[max(j - back, 0)]   # never wraps to the end of the log
                 f["x_m"], f["y_m"] = src["x_m"], src["y_m"]
         out.append(f)
     return out

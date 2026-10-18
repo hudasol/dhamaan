@@ -44,3 +44,12 @@ is byte identical before and after them.
 - **D8. A helper was added to the replay harness after round 2 scoring.** `sim/r2/replay.py` gained
   `faulty_copy()`, used only by the pilot kit walk through to write a practice log with one injected fault. It
   calls the same `inject()` with a fixed seed and changes no round 2 result; the CI rerun of round 2 checks this.
+- **D9. The round 2 runner gained the evidence bundle step after scoring.** `sim/r2/run_r2.py` now also writes
+  the bundles EV-19 to EV-21 (commit 98b22ee). It reads the scored results and computes nothing new.
+- **D10. Harness defects found in review, fixed, and round 2 scoring rerun once more.** (a) The fix timeout was
+  checked only at rows marked `fix_ok = 0`, so a gap with no rows at all was never declared; it is now checked at
+  every odometry step, which also moves the loss declaration slightly earlier. (b) The navigation error at a
+  timeout alarm was not recorded, so AC-N2R2 was judged without the loss condition; it is now recorded.
+  (c) `inject()` could wrap a replay to the end of a log and failed on a one fix log; both are guarded. (d) Logs
+  with non finite or empty required values are rejected. No threshold, seed, prediction or design choice changed.
+  The results before this fix stay in the history; `sim/results_r2/code_sha256.txt` now records the code used.

@@ -5,9 +5,13 @@
 """
 from __future__ import annotations
 
-import json, os, sys
+import hashlib, json, os, sys
 
 from sim.r2 import base, du3_r2, evidence_r2, gl3_r2, heat, n4_r2, score_r2
+
+CODE = ["sim/common.py", "sim/score.py", "sim/acceptance.py", "sim/gl3_glare.py", "sim/du3_lidar.py", "sim/gnss_n2n4.py",
+        "sim/r2/base.py", "sim/r2/acceptance_r2.py", "sim/r2/predictions_r2.py", "sim/r2/score_r2.py", "sim/r2/gl3_r2.py",
+        "sim/r2/du3_r2.py", "sim/r2/heat.py", "sim/r2/replay.py", "sim/r2/n4_r2.py", "sim/r2/evidence_r2.py"]
 
 
 def design() -> int:
@@ -32,6 +36,10 @@ def score() -> int:
     os.makedirs(os.path.join(base.RESULTS, "standin_log"), exist_ok=True)
     for name, text in (("gnss.csv", g), ("odometry.csv", o)):
         with open(os.path.join(base.RESULTS, "standin_log", name), "w", encoding="utf-8", newline="\n") as f: f.write(text)
+    # the code that produced these results, so a later change to it is visible (tests/test_sim_results_r2.py)
+    with open(os.path.join(base.RESULTS, "code_sha256.txt"), "w", encoding="utf-8", newline="\n") as f:
+        f.write("# SHA-256 of the code used for the committed round 2 results. Regenerated only by `python -m sim.r2.run_r2 score`.\n")
+        for rel in CODE: f.write(f"{hashlib.sha256(open(os.path.join(base.common.ROOT, rel), 'rb').read()).hexdigest()}  {rel}\n")
     t = s["totals"]
     print(f"round 2: {t['hit']} hit, {t['miss']} miss of {t['predictions']}; acceptance held {t['acceptance_held']}, failed {t['acceptance_failed']}")
     return 0

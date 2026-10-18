@@ -79,3 +79,33 @@ def test_every_fault_kind_changes_the_fix_stream():
     for kind, size in [k for k in G.CONDITIONS if k[0] != "nominal"]:
         out = replay.inject(g, kind, size, 30.0, base.rng(base.DEV_SEED, "x", kind, 0))
         assert any(a != b for a, b in zip(out, g) if a["t_s"] >= 40.0), kind
+
+
+def test_gap_without_rows_is_a_timeout_and_has_an_error_value():
+    g, o = replay.standin(base.rng(base.DEV_SEED, "N4LOG", "t", 0))
+    gap = [f for f in g if not (30.0 <= f["t_s"] < 60.0)]          # rows missing, not marked fix_ok = 0
+    res = replay.score_log(gap, o)
+    assert res["reason"] == "timeout" and 32.0 < res["t_alarm"] <= 33.0 and res["error_at_alarm_m"] is not None
+    lost = replay.inject(g, "loss", 0.0, 30.0, base.rng(base.DEV_SEED, "x", "loss", 0))
+    assert replay.score_log(lost, o)["error_at_alarm_m"] is not None
+
+
+def test_logs_with_non_finite_or_empty_values_are_rejected():
+    with pytest.raises(replay.LogError): replay.read_csv("t_s,v_mps,yaw_rad\n0,nan,0\n", replay.ODO_COLUMNS)
+    with pytest.raises(replay.LogError): replay.read_csv("t_s,x_m,y_m,fix_ok\n0,,0,1\n", replay.GNSS_COLUMNS)
+
+
+def test_inject_edge_cases():
+    g, _ = replay.standin(base.rng(base.DEV_SEED, "N4LOG", "t", 0))
+    early = replay.inject(g, "replay", 10.0, 2.0, base.rng(base.DEV_SEED, "x", "r", 0))
+    assert early[2]["x_m"] == g[0]["x_m"]                          # clamps to the first fix, never wraps
+    assert len(replay.inject(g[:1], "jump", 5.0, 0.0, base.rng(base.DEV_SEED, "x", "j", 0))) == 1
+
+
+def test_design_never_draws_from_the_held_out_seed_set(monkeypatch):
+    real = base.rng
+    def guarded(seed_set, *a):
+        assert seed_set != base.HELDOUT_SEED, "design touched the held out seed set"
+        return real(seed_set, *a)
+    monkeypatch.setattr(base, "rng", guarded)
+    gl3_r2.design(seeds=1); du3_r2.design(seeds=1)
