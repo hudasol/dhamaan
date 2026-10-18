@@ -52,7 +52,7 @@ def test_synthetic_numbers_carry_the_label():
             assert "SYNTHETIC" in text, rel
 
 
-PUBLIC = ["README.md", "HANDOFF.md"] + [p for p in glob.glob(os.path.join(ROOT, "docs", "*.md"))] \
+PUBLIC = ["README.md", "HANDOFF.md", "CHANGELOG.md", "CONTRIBUTING.md", "CITATION.cff"] + glob.glob(os.path.join(ROOT, ".github", "ISSUE_TEMPLATE", "*.md")) + [p for p in glob.glob(os.path.join(ROOT, "docs", "*.md"))] \
     + glob.glob(os.path.join(ROOT, "docs", "adr", "*.md")) + ["sim/PREREGISTRATION.md", "sim/DEVIATIONS.md", "sim/PREREGISTRATION_R2.md"]     + glob.glob(os.path.join(ROOT, "assurance", "templates", "*.yaml")) + glob.glob(os.path.join(ROOT, "docs", "PILOT_KIT", "*.md")) + glob.glob(os.path.join(ROOT, "docs", "PROPOSAL", "*.md"))
 
 
