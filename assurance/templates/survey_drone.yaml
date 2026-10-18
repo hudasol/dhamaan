@@ -1,0 +1,78 @@
+# TEMPLATE (proposal): assurance case skeleton for a small survey drone.
+# Unnamed system, operator and site. Every evidence item is OPEN. No evidence is claimed to exist. Nothing here is a certification claim.
+# Rows refer to data/evidence_table.csv; a row motivates an item, it is not evidence that the drone meets anything.
+# Start a case from this file with: dhamaan new-case survey_drone --out my_case.yaml
+meta:
+  title: Small survey drone, assurance case template
+  version: "0.1"
+  status: template, all evidence open
+  evidence_table: data/evidence_table.csv
+  note: "Template. Replace the assumptions with the real aircraft, operation and area before use."
+
+assumptions:
+  - id: AS1
+    text: A small multirotor flies a planned survey route over a defined area, within visual line of sight unless an authorisation says otherwise.
+  - id: AS2
+    text: The operation takes place in the UAE, so the national drone instruments in the evidence table are the starting point for the regime.
+  - id: AS3
+    text: Heat, dust and GNSS interference may occur on the survey days; their severities are not fixed by any source found.
+
+contexts:
+  - id: C1
+    text: Concept of operations and operational volume, to be defined.
+    evidence: [EV-01]
+  - id: C2
+    text: Applicable drone regime and the authorisation route for this operation.
+    evidence: [EV-02]
+
+strategies:
+  - id: S1
+    text: Argue over ground and air risk, then over the operational safety objectives.
+    evidence: [EV-03]
+
+goals:
+  - id: G1
+    text: The survey operation is acceptably safe within the defined operational volume.
+    claim_about: hardware
+    context: [C1, C2]
+    assumptions: [AS1, AS2]
+    supported_by: [S1]
+  - id: G2
+    text: The aircraft stays inside its operational volume, with contingency and emergency procedures.
+    claim_about: hardware
+    context: [C1]
+    evidence: [EV-04]
+  - id: G3
+    text: Loss or degradation of GNSS is detected and handled by procedure.
+    claim_about: hardware
+    context: [C1]
+    assumptions: [AS3]
+    evidence: [EV-05]
+  - id: G4
+    text: Heat and dust on survey days do not invalidate the evidence for the aircraft.
+    claim_about: hardware
+    context: [C1]
+    assumptions: [AS3]
+    evidence: [EV-06]
+  - id: G5
+    text: The aircraft and operator meet the conformity and registration steps of the regime.
+    claim_about: process
+    context: [C2]
+    evidence: [EV-07]
+  - id: G6
+    text: Occurrences are reported and learned from.
+    claim_about: process
+    context: [C2]
+    evidence: [EV-08]
+strategy_links:
+  S1: [G2, G3, G4, G5, G6]
+
+evidence:
+  - {id: EV-01, title: "Concept of operations and operational volume", status: open, rows: [C17, C18, C37]}
+  - {id: EV-02, title: "Regime and authorisation route", status: open, decision_needed: true, rows: [C47, C48, C52], note: "Decision needed: which national authorisation applies to the operation."}
+  - {id: EV-03, title: "Ground and air risk assessment with assurance level", status: open, rows: [C15, C18, C21]}
+  - {id: EV-04, title: "Containment and contingency evidence", status: open, rows: [C22, C36, D37]}
+  - {id: EV-05, title: "GNSS degradation procedure and fault checks", status: open, rows: [D52, D57, D58, D59], note: "The repository's replay harness (dhamaan score-log) can score logged flights; simulated results do not close this item."}
+  - {id: EV-06, title: "Environmental qualification for heat and dust", status: open, decision_needed: true, rows: [D35, D38, D63], note: "Decision needed: the heat and dust envelope; nothing in the sources fixes it."}
+  - {id: EV-07, title: "Conformity, registration and test reports", status: open, rows: [C48, C49, C47]}
+  - {id: EV-08, title: "Occurrence reporting", status: open, rows: [D45, D46, D48]}
