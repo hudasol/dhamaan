@@ -196,3 +196,21 @@ def test_binding_rows_may_carry_an_obligation():
 
 def test_plain_claims_are_not_obligations():
     assert ("ERROR", "OVERSTATED_OBLIGATION", "G2") not in obligation_case("guidance", "Contact harm is controlled.")
+
+def test_obligation_word_list_and_negation():
+    for t in ("The robot has to stop.", "The operator needs to log faults.", "The site requires a permit.", "Testing is mandated."):
+        assert ("ERROR", "OVERSTATED_OBLIGATION", "G2") in obligation_case("guidance", t), t
+    assert ("ERROR", "OVERSTATED_OBLIGATION", "G2") not in obligation_case("guidance", "The source does not say the robot must stop.")
+
+def test_obligation_uses_the_goals_own_rows_and_covers_strategies():
+    c = case(); c["goals"][0]["text"] = "The robot must be acceptably safe in the ODD."    # G1 has no own items
+    rows = {"A01": {"access_level": "summary seen", "binding_status": "mandatory"}}
+    assert ("ERROR", "OVERSTATED_OBLIGATION", "G1") not in codes(c, rows)                  # support tree is binding
+    c = case(); c["strategies"][0]["text"] = "Argue that each hazard shall be removed."
+    rows = {"A01": {"access_level": "summary seen", "binding_status": "voluntary"}}
+    assert ("ERROR", "OVERSTATED_OBLIGATION", "S1") in codes(c, rows)
+
+def test_artefact_path_must_stay_inside_the_repository():
+    for bad in ("/etc/passwd", "../outside.json", "sim/../../x.json"):
+        c = case(); c["evidence"][0].update({"status": "partial", "kind": "simulated", "artefact": bad, "sha256": "0" * 64})
+        assert ("ERROR", "BAD_ARTEFACT_PATH", "EV-01") in codes(c), bad

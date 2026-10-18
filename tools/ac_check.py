@@ -16,7 +16,8 @@ import contracts
 
 STATUSES = set(contracts.EVIDENCE_STATUS)
 SAFE_WORDS = re.compile(r"\b(safe|safely|safer|safest)\b", re.I)
-OBLIGATION_WORDS = re.compile(r"\b(must|shall|is required|are required|required to|mandatory|obligatory|is obliged|are obliged)\b", re.I)
+OBLIGATION_WORDS = re.compile(r"\b(must|shall|has to|have to|needs? to|requires?|is required|are required|required to|mandatory|mandated|"
+                              r"obligatory|obliged|obligated)\b", re.I)
 BINDING_STATUSES = {"mandatory", "conditional"}   # statuses that can carry an obligation (conditional: under its condition)
 ABSOLUTE_WORDS = re.compile(r"\b(guarantee[sd]?|certified|compliant|proven|always|never|risk[- ]free|fully secure|zero risk)\b", re.I)
 
@@ -87,7 +88,9 @@ def check(case: dict, rows: dict, base_dir: str = ".") -> list[tuple[str, str, s
             if e.get("status") == "partial":
                 add("FLAG", "EVIDENCE_PARTIAL", i, f"evidence partial ({e.get('kind', 'kind not stated')}): {e.get('title','')}")
             if not e.get("kind"): add("ERROR", "MISSING_KIND", i, f"status {e['status']} without an evidence kind (simulated, bench, field)")
-            if not art: add("ERROR", "INVENTED_EVIDENCE", i, f"status {e['status']} without an artefact path")
+            if art and (os.path.isabs(art) or art.startswith(("/", "\\")) or re.match(r"^[A-Za-z]:", art) or ".." in art.replace("\\", "/").split("/")):
+                add("ERROR", "BAD_ARTEFACT_PATH", i, f"artefact path {art!r} must be relative to the repository and stay inside it"); art = None
+            elif not art: add("ERROR", "INVENTED_EVIDENCE", i, f"status {e['status']} without an artefact path")
             elif not os.path.isfile(os.path.join(base_dir, art)): add("ERROR", "INVENTED_EVIDENCE", i, f"artefact not found: {art}")
             elif not e.get("sha256"): add("ERROR", "MISSING_HASH", i, f"status {e['status']} without the artefact sha256")
             elif sha256_file(os.path.join(base_dir, art)) != e["sha256"]:
@@ -144,16 +147,27 @@ def check(case: dict, rows: dict, base_dir: str = ".") -> list[tuple[str, str, s
         m = ABSOLUTE_WORDS.search(e.get("title", "") + " " + e.get("note", ""))
         if m: add("ERROR", "UNSUPPORTED_WORD", e["id"], f"absolute or certification word {m.group(0)!r}")
 
-    # obligation strength: a goal worded as an obligation needs a cited row whose binding status is binding
-    for g in goals.values():
-        m = OBLIGATION_WORDS.search(g.get("text", ""))
-        if not m: continue
-        cited = [r for e in ev_of(g["id"]) if e in ev for r in ev[e].get("rows") or [] if r in rows]
-        strengths = {rows[r].get("binding_status", "") for r in cited}
-        if not strengths & BINDING_STATUSES:
-            add("ERROR", "OVERSTATED_OBLIGATION", g["id"],
-                f"worded as an obligation ({m.group(0)!r}) but its cited rows are only {sorted(strengths) or 'none'}")
+    # obligation strength: a goal or strategy worded as an obligation needs a binding row among the rows it cites
+    # itself (its own evidence items; for a goal without its own items, the rows of its support tree)
+    for kind, nodes in (("goal", goals), ("strategy", strategies)):
+        for n in nodes.values():
+            m = obligation(n.get("text", ""))
+            if not m: continue
+            own = n.get("evidence") or []
+            items = own if own or kind == "strategy" else sorted(ev_of(n["id"]))
+            cited = [r for e in items if e in ev for r in ev[e].get("rows") or [] if r in rows]
+            strengths = {rows[r].get("binding_status", "") for r in cited}
+            if not strengths & BINDING_STATUSES:
+                add("ERROR", "OVERSTATED_OBLIGATION", n["id"],
+                    f"worded as an obligation ({m!r}) but the rows it cites are only {sorted(strengths) or 'none'}")
     return out
+
+def obligation(text: str) -> str | None:
+    """The first obligation phrase in text that is not negated just before it (for example 'does not say ... must')."""
+    for m in OBLIGATION_WORDS.finditer(text):
+        before = text[max(0, m.start() - 40):m.start()].lower()
+        if not re.search(r"\b(not|no|never|without)\b[^.;]*$", before): return m.group(0)
+    return None
 
 def main(argv=None):
     ap = argparse.ArgumentParser()
