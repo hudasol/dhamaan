@@ -37,9 +37,9 @@ table{border-collapse:collapse;width:100%;font-size:.92rem}th,td{border-bottom:1
 th{background:var(--pink);position:sticky;top:0}
 .chip{display:inline-block;padding:0 8px;border-radius:999px;border:1px solid var(--line);background:var(--pink);font-size:.85rem}
 .filters{display:flex;flex-wrap:wrap;gap:12px;align-items:end;margin:12px 0}.filters label{display:flex;flex-direction:column;font-size:.9rem}
-select,input{font:inherit;padding:4px 6px;border:1px solid var(--line);border-radius:6px;background:var(--surface);color:var(--ink)}
+select,input{font:inherit;padding:4px 6px;border:1px solid var(--muted);border-radius:6px;background:var(--surface);color:var(--ink)}
 .svgbox{overflow:auto;border:1px solid var(--line);border-radius:8px;background:#ffffff;padding:8px}.svgbox svg{max-width:none;height:auto}
-.svgbox g.node{cursor:pointer}
+.svgbox g.node{cursor:pointer}.svgbox [tabindex]:focus{outline:3px solid #5b1a37;outline-offset:2px}
 #details{border:1px solid var(--line);border-radius:8px;background:var(--surface);padding:12px;margin:12px 0;min-height:3em}
 blockquote{border-inline-start:4px solid var(--accent);margin:12px 0;padding:4px 12px;background:var(--surface)}
 code{background:var(--pink);padding:0 4px;border-radius:4px}pre{overflow:auto;background:var(--surface);border:1px solid var(--line);padding:8px}
@@ -82,17 +82,17 @@ simulation. This site is generated from the repository data.</p>
 </tbody></table></div>
 <h2>State today</h2>
 <ul>
-<li>Evidence table: {f['N_ROWS']} rows; access level full text seen {f['ACC_FULL']}, summary seen {f['ACC_SUMMARY']}, title only {f['ACC_TITLE']}. Before correction, an independent check flagged a key column problem in {f['ROW_ERR_EITHER']} of rows; treat rows as leads to confirm.</li>
+<li>Evidence table: {f['N_ROWS']} rows; access level full text seen {f['ACC_FULL']}, summary seen {f['ACC_SUMMARY']}, title only {f['ACC_TITLE']}. Before correction, a separate blind check flagged a key column problem in {f['ROW_ERR_EITHER']} of rows, and after correction the final check still flagged {f['PASSC_CHANGED']} of changed rows; treat rows as leads to confirm.</li>
 <li>Assurance case: {f['N_EVIDENCE_ITEMS']} evidence items, {f['N_OPEN']} open and {f['N_PARTIAL']} partial with simulated evidence only. Hardware claims supported only by simulation stay open: {f['SIM_ONLY_GOALS']}.</li>
-<li>First round simulation: {f['PRED_HIT']} of {f['PRED_TOTAL']} predictions hit; failed acceptance criteria: {f['AC_FAILED_LIST']}.</li>
-<li>Second round simulation: {f['R2_PRED_HIT']} of {f['R2_PRED_TOTAL']} predictions hit; failed acceptance criteria: {f['R2_AC_FAILED_LIST']}.</li>
+<li>First round simulation (evidence kind simulated, SYNTHETIC; preregistration SHA-256 <code>{f['PREREG_SHA']}</code>): {f['PRED_HIT']} of {f['PRED_TOTAL']} predictions hit; {f['AC_FAILED']} of {f['AC_TOTAL']} acceptance criteria failed ({f['AC_FAILED_LIST']}).</li>
+<li>Second round simulation (evidence kind simulated, SYNTHETIC; preregistration SHA-256 <code>{f['R2_PREREG_SHA']}</code>): {f['R2_PRED_HIT']} of {f['R2_PRED_TOTAL']} predictions hit; {f['R2_AC_FAILED']} of {f['R2_AC_TOTAL']} acceptance criteria failed ({f['R2_AC_FAILED_LIST']}).</li>
 </ul>
 <h2>What this is not</h2>
 <ul><li>Not a safety case for any real robot; the robot and the building are assumed.</li>
 <li>Not evidence about hardware; simulated evidence never closes a hardware claim.</li>
 <li>Not a copy of any standard; no standard text or paywalled material is included.</li>
 <li>Not GNSS interference work; no RF signal is generated, simulated at signal level or described.</li>
-<li>Not endorsed, reviewed or requested by any authority, company or institution.</li></ul>"""
+<li>Not endorsed, reviewed or requested by any authority, company or institution, and no contact has been made.</li></ul>"""
     return page("index.html", "dhamaan evidence base", body)
 
 
@@ -147,7 +147,7 @@ def case_page(f: dict) -> str:
     body = f"""<p>Proposal: an assurance case skeleton for an assumed library service robot. Select a goal or an evidence circle in the
 diagram to see its status; the table below gives the same information without the diagram. {f['N_OPEN']} of {f['N_EVIDENCE_ITEMS']} items are open and
 {f['N_PARTIAL']} are partial with simulated evidence only.</p>
-<div class="svgbox" aria-label="Assurance case diagram">{svg}</div>
+<div class="svgbox" role="group" aria-label="Assurance case diagram">{svg}</div>
 <div id="details" role="status" aria-live="polite">Select a node to see its details.</div>
 <h2>Evidence items</h2><div class="table-wrap"><table><thead><tr><th>Item</th><th>Title</th><th>Status</th><th>Kind</th><th>Table rows</th></tr></thead><tbody>{trs}</tbody></table></div>"""
     script = ("const info=" + json.dumps(info, sort_keys=True, ensure_ascii=False) + ";" + """
@@ -173,10 +173,12 @@ def arabic_page(f: dict) -> str:
 وتسكت في الغالب عن الاستقلالية القائمة على التعلّم وعن ظروف الخليج: الحرارة والغبار والوهج وتدهور إشارات الملاحة بالأقمار الصناعية.</p>
 <h2>ما الذي يقدمه هذا المستودع</h2>
 <ul>
-<li>جدول أدلة من {f['N_ROWS']} صفاً، كل صف إعادة صياغة قصيرة لمصدر تم الاطلاع عليه مع رابطه ومستوى الاطلاع.</li>
-<li>حالة ضمان قابلة للفحص الآلي لروبوت خدمة افتراضي في مكتبة، فيها {f['N_EVIDENCE_ITEMS']} بند دليل: {f['N_OPEN']} مفتوح و{f['N_PARTIAL']} جزئي بأدلة محاكاة فقط.</li>
+<li>جدول أدلة يضم {f['N_ROWS']} صفاً. كل صف إعادة صياغة قصيرة لمصدر مع رابطه ومستوى الاطلاع الفعلي عليه: نص كامل ({f['ACC_FULL']})، أو ملخص ({f['ACC_SUMMARY']})، أو عنوان فقط ({f['ACC_TITLE']}).</li>
+<li>حالة ضمان قابلة للفحص الآلي لروبوت خدمة افتراضي في مكتبة. عدد بنود الأدلة: {f['N_EVIDENCE_ITEMS']}؛ عدد البنود المفتوحة: {f['N_OPEN']}؛ عدد البنود الجزئية بأدلة محاكاة فقط: {f['N_PARTIAL']}.</li>
 <li>بروتوكول اختبار لظروف الخليج، وهو مقترح وليس نتيجة.</li>
-<li>محاكاة مسجّلة مسبقاً ببذور ثابتة: في الجولة الأولى أصابت {f['PRED_HIT']} من {f['PRED_TOTAL']} توقعاً، وفي الجولة الثانية أصابت {f['R2_PRED_HIT']} من {f['R2_PRED_TOTAL']}. معايير القبول التي لم تتحقق مذكورة كما هي.</li>
+<li>جولتان من المحاكاة، سُجّلت خطة كل منهما وتوقعاتها قبل التشغيل. نوع الدليل: محاكى (اصطناعي)، ولا يثبت شيئاً عن روبوت حقيقي.
+الجولة الأولى: عدد التوقعات الصائبة {f['PRED_HIT']} من أصل {f['PRED_TOTAL']}؛ عدد معايير القبول التي لم تتحقق {f['AC_FAILED']} من أصل {f['AC_TOTAL']} ({f['AC_FAILED_LIST']}). بصمة الخطة SHA-256: <code>{f['PREREG_SHA']}</code>.
+الجولة الثانية: عدد التوقعات الصائبة {f['R2_PRED_HIT']} من أصل {f['R2_PRED_TOTAL']}؛ عدد معايير القبول التي لم تتحقق {f['R2_AC_FAILED']} من أصل {f['R2_AC_TOTAL']} ({f['R2_AC_FAILED_LIST']}). بصمة الخطة SHA-256: <code>{f['R2_PREREG_SHA']}</code>.</li>
 </ul>
 <h2>ما ليس هذا العمل</h2>
 <ul>
@@ -184,7 +186,7 @@ def arabic_page(f: dict) -> str:
 <li>أدلة المحاكاة لا تُغلق أي ادعاء يخص العتاد.</li>
 <li>لا يتضمن نصوص معايير ولا مواد مدفوعة.</li>
 <li>لا يولّد أي إشارات راديوية ولا يصفها.</li>
-<li>لم تراجعه أو تطلبه أو تؤيده أي جهة.</li>
+<li>لم تراجعه أو تطلبه أو تؤيده أي جهة، ولم يجرِ أي تواصل مع أي جهة.</li>
 </ul>"""
     return page("ar.html", "ملخص عربي", body, lang="ar", banner=banner)
 
