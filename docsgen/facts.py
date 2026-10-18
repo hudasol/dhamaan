@@ -335,6 +335,40 @@ def kit_facts() -> dict:
     return f
 
 
+def review_fix_facts() -> dict:
+    """Facts added after the phase 3 review: readings computed from data instead of typed as prose."""
+    import glob
+    H = _json("sim/results_r2/heat.json")["conditions"]; S2 = _json("sim/results_r2/scored_r2.json"); S1 = _json("sim/results/scored.json")
+    peaks = sorted({c["peak"] for c in H.values()})
+    sn = [c for c in H.values() if c["method"] == "M" and c["sun"] == "shade" and c["start"] == "normal"]
+    lo, hi = peaks[0], peaks[-1]
+    hi_m = H[f"M|peak={hi}|shade|normal"]
+    hp2 = next(p for p in S2["predictions"] if p["id"] == "H-P2")
+    failing = [m.split("/")[1] for c in hp2["checks"] for m in c["failing"]]
+    v = {p["id"]: p["verdict"] for p in S2["predictions"]}
+    def verdicts(S): return ", ".join(f'{p["id"]} {p["verdict"]}' for p in S["predictions"])
+    return {
+        "R2_HEAT_LOW_PEAK": num(lo, 0), "R2_HEAT_HIGH_PEAK": num(hi, 0),
+        "R2_HEAT_B1_LOW_SHADE_EXCEED": pct(H[f"B1|peak={lo}|shade|normal"]["exceed"]["rate"]),
+        "R2_HEAT_M_SHADE_NORMAL_OK": str(sum(c["exceed"]["k"] == 0 for c in sn)), "R2_HEAT_M_SHADE_NORMAL_N": str(len(sn)),
+        "R2_HEAT_M_HIGH_SHADE_SCALE": num(hi_m["productivity"]["mean"], 2), "R2_HEAT_M_HIGH_SHADE_NEVER": pct(hi_m["never_moved"]["rate"]),
+        "R2_HP2_FAIL_TOTAL": str(len(failing)), "R2_HP2_FAIL_SOAK": str(sum("|soak" in f for f in failing)),
+        "R2_HP2_FAIL_SUN_NORMAL": str(sum("|sun|normal" in f for f in failing)),
+        "R2_V_GL3R2_P1": v["GL3R2-P1"], "R2_V_DU3R2_P1": v["DU3R2-P1"],
+        "PRED_VERDICTS": f"- First round: {verdicts(S1)}.\n- Second round: {verdicts(S2)}.",
+        "PARTIAL_IDS": ", ".join(e.split(" ")[0] for e in F_partial_ids()),
+        "N_TEMPLATES": str(len(glob.glob(_p("assurance/templates/*.yaml")))),
+        "R2_HEAT_SAME_FACTOR": str(sum(H[f"B0|{k.split('|', 1)[1]}"]["stop_factor"]["max"] == c["stop_factor"]["max"]
+                                       for k, c in H.items() if c["method"] == "M")),
+        "R2_HEAT_CONDS": str(sum(c["method"] == "M" for c in H.values())),
+    }
+
+
+def F_partial_ids() -> list[str]:
+    case = ac_check.load(_p("assurance/library_robot_case.yaml"))
+    return [e["id"] for e in case["evidence"] if e["status"] == "partial"]
+
+
 def check_facts() -> dict:
     p = _p("docs/data/check_summary.json")
     if not os.path.exists(p): return {"TESTS_PASSED": "n/a", "CHECK_LINES": "not recorded"}
@@ -345,7 +379,7 @@ def check_facts() -> dict:
 
 def all_facts() -> dict:
     f = {}
-    for part in (evidence_table_facts(), case_facts(), context_facts(), warning_facts(), review_facts(), sim_facts(), r2_facts(), kit_facts(), check_facts()):
+    for part in (evidence_table_facts(), case_facts(), context_facts(), warning_facts(), review_facts(), sim_facts(), r2_facts(), kit_facts(), review_fix_facts(), check_facts()):
         assert not set(part) & set(f), set(part) & set(f)
         f.update(part)
     return f

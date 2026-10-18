@@ -52,15 +52,15 @@ Every number on this page is read from `sim/results_r2/*.json` by `docsgen/facts
 
 ## GL3: monitor with a margin
 
-The design rule tried 8 candidates on the development seeds; 3 met both conditions, and the rule chose a margin of 0.03 below S_G with 1 frame. On the held out seeds the first round monitor still broke AC-GL2 in 13 runs, while the chosen monitor broke it in 0 and raised no false slow down below the guard. Slowing down still does not rescue the low sun conditions: the chosen monitor misses P_G in 3 conditions, which stay recorded as restrictions. We predicted two frames; the rule chose one, so GL3R2-P1 is a miss.
+The design rule tried 8 candidates on the development seeds; 3 met both conditions, and the rule chose a margin of 0.03 below S_G with 1 frame. On the held out seeds the first round monitor still broke AC-GL2 in 13 runs, while the chosen monitor broke it in 0 and raised no false slow down below the guard. Slowing down still does not rescue the low sun conditions: the chosen monitor misses P_G in 3 conditions, which stay recorded as restrictions. We predicted two frames; the rule chose 1 (GL3R2-P1: MISS).
 
 ## DU3: threshold and bound together
 
-Of 96 combinations of threshold, scan count and bound, 0 met both criteria on the development seeds, as predicted. The fallback rule chose threshold 0.50, 5 scans and bound 0.4, with 3 violating development runs. On the held out seeds the first round pair, judged by the second round criteria, had 45 violating runs (45 of them stops below the bound); the chosen pair had 8 (4 below the bound and 4 above it). Both DU3 criteria therefore still fail. Reading: in this model the change in the valid return ratio between adjacent severity levels is too small, relative to its scan to scan spread, for any threshold to separate "never stop" from "always stop within one second".
+Of 96 combinations of threshold, scan count and bound, 0 met both criteria on the development seeds (DU3R2-P1: HIT). The fallback rule chose threshold 0.50, 5 scans and bound 0.4, with 3 violating development runs. On the held out seeds the first round pair, judged by the second round criteria, had 45 violating runs (45 of them stops below the bound); the chosen pair had 8 (4 below the bound and 4 above it). The held out outcome of both DU3 criteria is in the acceptance table above. Reading: in this model the change in the valid return ratio between adjacent severity levels is too small, relative to its scan to scan spread, for any threshold to separate "never stop" from "always stop within one second".
 
 ## Heat, H1 to H6
 
-All parameters are assumed, proposal values (`sim/r2/heat.py`); the only cited figure, a rated ambient of 45 degC for an example platform, comes from the dhill README and only places the hottest condition above a rating.
+All parameters are assumed, proposal values (`sim/r2/heat.py`); the one figure not chosen by us, a rated ambient of 45 degC for an example platform, is a secondary figure from the README of the author's related dhill repository, not a primary source; it is treated as assumed, proposal and only places the hottest condition above a rating.
 
 | Condition | B0 exceeds | B1 exceeds | B1 mean scale | M exceeds | M mean scale | M never moved |
 |---|---|---|---|---|---|---|
@@ -81,7 +81,7 @@ All parameters are assumed, proposal values (`sim/r2/heat.py`); the only cited f
 | peak 50, sun, normal | 100 percent | 100 percent | 0.00 | 100 percent | 0.00 | 100 percent |
 | peak 50, sun, soak | 100 percent | 100 percent | 0.00 | 100 percent | 0.00 | 100 percent |
 
-Reading. The full scale baseline exceeds a limit almost everywhere. The fixed rule avoids exceedances only in shade from a normal start, and only by parking the whole mission. The predictive controller keeps every limit from a normal start in shade, at a reduced scale. Two things it cannot fix in this model. First, in sun the sensor heats above its limit even when parked, because its power does not fall with the scale and parking in place gives no shade. Second, a start after a soak can begin above a limit; in 8 of 8 soak conditions the controller had an exceedance, mostly inherited from the starting temperature. We did not foresee the first effect at the lower peaks, so H-P2 is a miss. Both effects point to protocol items that need hardware: shade or cooling as a response, and a limit register with real component limits (H2).
+Reading. The full scale baseline exceeds a limit in most conditions. The fixed rule parks the whole mission from the rule temperature upwards; at 35 degC in shade from a normal start it runs and exceeds a limit in 33 percent of runs. The predictive controller had no exceedance in 4 of 4 shade conditions from a normal start, but at 50 degC it does so by parking: mean scale 0.00, and it never moved in 80 percent of runs. Two effects it cannot handle in this model. In sun, the sensor heats towards its limit even when parked, because its power does not fall with the scale and parking in place gives no shade. After a soak, components can start at or above a limit; 8 of 8 soak conditions had an exceedance with the controller. The model records the run maximum, so these results do not separate an exceedance present at the start from one caused during the run. H-P2 failed in 6 conditions: 4 after a soak and 2 in sun from a normal start. We had not foreseen either effect when writing that prediction. AC-H2 says less than its wording suggests: the sensor's power does not change with the scale, so its temperature, and the stopping factor computed from it, are the same with the controller as with full scale in 16 of 16 conditions. The criterion held because of the assumed drift coefficient, not because of the controller. Both point to protocol items that need hardware: shade or cooling as a response, and a limit register with real component limits (H2).
 
 ## N4: replay harness on stand in logs
 
@@ -95,7 +95,7 @@ Reading. The full scale baseline exceeds a limit almost everywhere. The fixed ru
 | jump=2 | 50 percent | 30 percent | 13.4 | 1.51 | 0 percent |
 | jump=20 | 100 percent | 100 percent | 0.0 | 0.56 | 0 percent |
 | jump=5 | 100 percent | 100 percent | 0.8 | 0.62 | 0 percent |
-| loss=0 | 100 percent | 100 percent | 3.0 | n/a | 0 percent |
+| loss=0 | 100 percent | 100 percent | 2.1 | 0.52 | 0 percent |
 | noise=10 | 100 percent | 100 percent | 4.3 | 0.75 | 0 percent |
 | noise=3 | 100 percent | 30 percent | 12.0 | 0.68 | 0 percent |
 | noise=5 | 100 percent | 93 percent | 7.3 | 0.72 | 0 percent |
