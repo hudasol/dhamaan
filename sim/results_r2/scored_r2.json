@@ -694,8 +694,8 @@
      "values": [
       {
        "metric": "n4r2:conditions/H|loss=0/error_at_alarm/max",
-       "pass": null,
-       "value": null
+       "pass": true,
+       "value": 0.522889
       },
       {
        "metric": "n4r2:conditions/H|noise=3/error_at_alarm/max",

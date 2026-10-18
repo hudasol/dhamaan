@@ -465,20 +465,23 @@
    },
    "detection_delay": {
     "ci95": [
-     3.0,
-     3.0
+     2.1,
+     2.1
     ],
-    "max": 3.0,
-    "mean": 3.0,
-    "median": 3.0,
+    "max": 2.1,
+    "mean": 2.1,
+    "median": 2.1,
     "n": 30
    },
    "error_at_alarm": {
-    "ci95": null,
-    "max": null,
-    "mean": null,
-    "median": null,
-    "n": 0
+    "ci95": [
+     0.242654,
+     0.335658
+    ],
+    "max": 0.522889,
+    "mean": 0.289156,
+    "median": 0.284735,
+    "n": 30
    },
    "false_alarm": {
     "ci95": [

@@ -66,3 +66,18 @@ def test_every_round2_prediction_metric_exists():
                     if node is None: break
                     assert k in node, m
                     node = node[k]
+
+
+def test_committed_results_came_from_the_current_code():
+    import hashlib
+    rec = {}
+    for line in open(os.path.join(base.RESULTS, "code_sha256.txt"), encoding="utf-8"):
+        if line.strip() and not line.startswith("#"):
+            h, p = line.split(None, 1); rec[p.strip()] = h
+    for p, h in rec.items():
+        assert hashlib.sha256(open(os.path.join(ROOT, p), "rb").read()).hexdigest() == h, f"{p} changed after scoring; rerun and log a deviation"
+
+
+def test_ac_n2r2_has_a_value_for_every_fault():
+    for c in RES["n4r2"]["conditions"].values():
+        if c["fault"] != "nominal" and c["detected"]["k"] > 0: assert c["error_at_alarm"]["max"] is not None, c["fault"]
