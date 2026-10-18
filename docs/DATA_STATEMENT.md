@@ -27,6 +27,7 @@ Access level in the table: full text seen 41, summary seen 167, title only 14. B
 | `sim/results/du3.json`, `gl3.json`, `gnss.json` | Outputs of seeded software models: 6930 runs, 30 seeds per condition, base seed 20261016 |
 | `sim/results/scored.json` | Predictions and acceptance criteria scored against those outputs |
 | `sim/results/EV-08.json`, `EV-12.json` | Evidence bundles cited by the assurance case |
+| `sim/results_r2/` | Second round: design records (development seeds), results (held out seeds), scored file, bundles `EV-19.json` to `EV-21.json`, the stand in log in `standin_log/`, and `code_sha256.txt`; preregistration SHA-256 `0d391addddbd7ff14eab2d828364a5339db8f1b4002c25cf18282f3d1d3fb925` |
 
 Every synthetic file carries the label above and `evidence_kind: simulated`. The data describe models written by the same authors as the methods; they contain no measurement.
 

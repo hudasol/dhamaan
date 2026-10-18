@@ -1,6 +1,6 @@
 # Pilot kit: replay and scoring walk through
 
-> {{SIM_LABEL}} The logs used on this page are synthetic stand in logs, not recordings.
+> {{SIM_LABEL}} The logs used on this page are synthetic stand in logs, not recordings; the scoring method is the one preregistered for the second round (SHA-256 `{{R2_PREREG_SHA}}`).
 
 This walk through runs on the stand in log committed in `sim/results_r2/standin_log/`. With a real log in the format of `docs/PILOT_KIT/LOGGING_SPEC.md`, the same commands apply. Every output shown here is produced by the code when the documents are built.
 

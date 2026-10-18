@@ -26,6 +26,7 @@ Access level in the table: full text seen {{ACC_FULL}}, summary seen {{ACC_SUMMA
 | `sim/results/du3.json`, `gl3.json`, `gnss.json` | Outputs of seeded software models: {{N_RUNS}} runs, {{SEEDS}} seeds per condition, base seed {{BASE_SEED}} |
 | `sim/results/scored.json` | Predictions and acceptance criteria scored against those outputs |
 | `sim/results/EV-08.json`, `EV-12.json` | Evidence bundles cited by the assurance case |
+| `sim/results_r2/` | Second round: design records (development seeds), results (held out seeds), scored file, bundles `EV-19.json` to `EV-21.json`, the stand in log in `standin_log/`, and `code_sha256.txt`; preregistration SHA-256 `{{R2_PREREG_SHA}}` |
 
 Every synthetic file carries the label above and `evidence_kind: simulated`. The data describe models written by the same authors as the methods; they contain no measurement.
 

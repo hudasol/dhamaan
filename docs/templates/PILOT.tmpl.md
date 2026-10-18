@@ -5,7 +5,7 @@
 ## What exists today
 
 - Simulated, labelled results for DU3, GL3 and N2 to N4 (`docs/EVALUATION.md`), preregistered and reproducible.
-- An assurance case in which EV-08 and EV-12 are partial with evidence kind `simulated`, and a checker that will not let that evidence close a hardware claim.
+- An assurance case in which {{PARTIAL_IDS}} are partial with evidence kind `simulated`, and a checker that will not let that evidence close a hardware claim.
 - A protocol (`docs/GULF_TEST_PROTOCOL.md`) that names the hardware items: H1 to H6, DU1, DU2, DU4, GL1, GL2, GL5 and a logged localisation stack for N2 to N4.
 
 ## Stage A: real data, no robot
@@ -26,7 +26,7 @@
 - Run GL2 along the glare risk routes at the times from GL1, and GL5 (slow down or stop when glare degrades sensing).
 - Record each result as an evidence item with kind `bench` or `field`, an artefact path and its SHA-256, so the checker can verify it.
 
-## What the pilot partner would provide
+## What a pilot would need from a partner
 
 A robot or sensor head to log, a building route that can be used at quiet times, and a named person who can confirm that the ODD in EV-01 matches the site. No funding, purchase or paid standard is assumed.
 

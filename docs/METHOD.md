@@ -53,6 +53,10 @@ No RF signal is generated or simulated. A robot drives a straight outdoor approa
 
 B_D 0.4, T_D 1.0 s; P_G 0.95, S_G 0.3, T_G 0.5 s; E_N jump 5 m, drift 0.2 m/s, noise 5 m, replay 5 s, any loss; T_N 10 s, Q_N 0.9, L_N 3.0 m. These name the open symbols of the protocol and are our proposal values, not values from any source.
 
+## Second round
+
+The second round (`sim/PREREGISTRATION_R2.md`, SHA-256 `0d391addddbd7ff14eab2d828364a5339db8f1b4002c25cf18282f3d1d3fb925`) chose the GL3 margin and the DU3 threshold and bound on a development seed set and scored on a held out seed set that no design step reads; it added a first order heat model with assumed, proposal parameters and a replay harness for logs in the pilot kit format. Details and results: `docs/EVALUATION_R2.md`.
+
 ## Documents
 
 Generated documents (this one included) are filled from data by `docsgen/build.py`. `tests/test_docs.py` fails when a generated document is stale, when a template contains a number typed by hand, when a document with simulation numbers lacks the SYNTHETIC label, and when public text breaks the voice rules.
