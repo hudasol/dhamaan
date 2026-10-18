@@ -38,6 +38,8 @@ jobs:
           git diff --exit-code -- sim/results
       - name: Round 2 rerun reproduces the committed results
         run: |
+          python -m sim.r2.run_r2 design
+          git diff --exit-code -- sim/results_r2
           python -m sim.r2.run_r2 score
           git diff --exit-code -- sim/results_r2
       - name: Render assurance case diagram
