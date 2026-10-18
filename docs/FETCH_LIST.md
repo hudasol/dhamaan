@@ -1,6 +1,6 @@
 # Fetch list
 
-Items that could not be retrieved with the fetch tools in this repository's sessions, with where to look and what to look for. Nothing here was worked around. The owner can fetch these by hand; texts of standards or paywalled material are never committed.
+Items that could not be retrieved by the automated retrieval used in this repository, with where to look and what to look for. Nothing here was worked around. The owner can fetch these by hand; texts of standards or paywalled material are never committed.
 
 | Item | Where to look | What to look for | Why it is needed |
 |---|---|---|---|
