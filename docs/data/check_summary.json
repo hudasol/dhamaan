@@ -10,7 +10,7 @@
   },
   {
    "name": "assurance case",
-   "summary": "0 errors, 44 flags; CLAIM_ALL_OPEN=6, CLAIM_SIM_ONLY=3, DECISION_NEEDED=7, EVIDENCE_OPEN=16, EVIDENCE_PARTIAL=2, UNDEVELOPED=1, WEAK_SOURCE=9"
+   "summary": "0 errors, 48 flags; CLAIM_ALL_OPEN=6, CLAIM_SIM_ONLY=3, DECISION_NEEDED=8, EVIDENCE_OPEN=16, EVIDENCE_PARTIAL=5, UNDEVELOPED=1, WEAK_SOURCE=9"
   },
   {
    "name": "secrets scan",
@@ -18,8 +18,8 @@
   },
   {
    "name": "tests",
-   "summary": "103 passed"
+   "summary": "168 passed"
   }
  ],
- "tests_passed": 103
+ "tests_passed": 168
 }
