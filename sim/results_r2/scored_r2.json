@@ -1,0 +1,1362 @@
+{
+ "acceptance": [
+  {
+   "checks": [
+    {
+     "failing": [],
+     "op": "all<=",
+     "value": 0,
+     "values": [
+      {
+       "metric": "gl3r2:summary/M2/ac_gl2_violating_runs",
+       "pass": true,
+       "value": 0
+      }
+     ]
+    }
+   ],
+   "expected_to_hold": true,
+   "held": true,
+   "id": "AC-GL2R2",
+   "text": "M2 commands the slow speed within T_G = 0.5 s of saturation exceeding S_G in every such held out run.",
+   "verdict": "HIT"
+  },
+  {
+   "checks": [
+    {
+     "failing": [],
+     "op": "all<=",
+     "value": 0,
+     "values": [
+      {
+       "metric": "gl3r2:summary/M2/false_slow_runs_below_guard",
+       "pass": true,
+       "value": 0
+      }
+     ]
+    }
+   ],
+   "expected_to_hold": true,
+   "held": true,
+   "id": "AC-GL4R2",
+   "text": "M2 issues no slow command where modelled saturation is below 0.2.",
+   "verdict": "HIT"
+  },
+  {
+   "checks": [
+    {
+     "failing": [
+      "gl3r2:summary/M2/conditions_below_p_g"
+     ],
+     "op": "all<=",
+     "value": 0,
+     "values": [
+      {
+       "metric": "gl3r2:summary/M2/conditions_below_p_g",
+       "pass": false,
+       "value": 3
+      }
+     ]
+    }
+   ],
+   "expected_to_hold": false,
+   "held": false,
+   "id": "AC-GL1R2",
+   "text": "M2 detects in time at rate at least P_G = 0.95 at every sun condition.",
+   "verdict": "HIT"
+  },
+  {
+   "checks": [
+    {
+     "failing": [
+      "du3r2:summary/M2/below"
+     ],
+     "op": "all<=",
+     "value": 0,
+     "values": [
+      {
+       "metric": "du3r2:summary/M2/below",
+       "pass": false,
+       "value": 4
+      }
+     ]
+    }
+   ],
+   "expected_to_hold": false,
+   "held": false,
+   "id": "AC-DU1R2",
+   "text": "Up to the chosen bound, the detector detects in time in every held out run and the chosen monitor never stops the robot.",
+   "verdict": "HIT"
+  },
+  {
+   "checks": [
+    {
+     "failing": [
+      "du3r2:summary/M2/above"
+     ],
+     "op": "all<=",
+     "value": 0,
+     "values": [
+      {
+       "metric": "du3r2:summary/M2/above",
+       "pass": false,
+       "value": 4
+      }
+     ]
+    }
+   ],
+   "expected_to_hold": false,
+   "held": false,
+   "id": "AC-DU2R2",
+   "text": "Beyond the chosen bound, the chosen monitor stops the robot within T_D = 1.0 s of onset in every held out run.",
+   "verdict": "HIT"
+  },
+  {
+   "checks": [
+    {
+     "failing": [
+      "heat:conditions/model|peak=35|shade|normal/within_t_h_compute/rate",
+      "heat:conditions/model|peak=35|shade|soak/within_t_h_compute/rate",
+      "heat:conditions/model|peak=35|shade|soak/within_t_h_battery/rate",
+      "heat:conditions/model|peak=35|shade|soak/within_t_h_lidar/rate",
+      "heat:conditions/model|peak=35|sun|normal/within_t_h_compute/rate",
+      "heat:conditions/model|peak=35|sun|normal/within_t_h_battery/rate",
+      "heat:conditions/model|peak=35|sun|normal/within_t_h_lidar/rate",
+      "heat:conditions/model|peak=35|sun|soak/within_t_h_compute/rate",
+      "heat:conditions/model|peak=35|sun|soak/within_t_h_battery/rate",
+      "heat:conditions/model|peak=35|sun|soak/within_t_h_lidar/rate",
+      "heat:conditions/model|peak=40|shade|normal/within_t_h_compute/rate",
+      "heat:conditions/model|peak=40|shade|normal/within_t_h_battery/rate",
+      "heat:conditions/model|peak=40|shade|soak/within_t_h_compute/rate",
+      "heat:conditions/model|peak=40|shade|soak/within_t_h_battery/rate",
+      "heat:conditions/model|peak=40|shade|soak/within_t_h_lidar/rate",
+      "heat:conditions/model|peak=40|sun|normal/within_t_h_compute/rate",
+      "heat:conditions/model|peak=40|sun|normal/within_t_h_battery/rate",
+      "heat:conditions/model|peak=40|sun|normal/within_t_h_lidar/rate",
+      "heat:conditions/model|peak=40|sun|soak/within_t_h_compute/rate",
+      "heat:conditions/model|peak=40|sun|soak/within_t_h_battery/rate",
+      "heat:conditions/model|peak=40|sun|soak/within_t_h_lidar/rate",
+      "heat:conditions/model|peak=45|shade|normal/within_t_h_compute/rate",
+      "heat:conditions/model|peak=45|shade|normal/within_t_h_battery/rate",
+      "heat:conditions/model|peak=45|shade|soak/within_t_h_compute/rate",
+      "heat:conditions/model|peak=45|shade|soak/within_t_h_battery/rate",
+      "heat:conditions/model|peak=45|shade|soak/within_t_h_lidar/rate",
+      "heat:conditions/model|peak=45|sun|normal/within_t_h_compute/rate",
+      "heat:conditions/model|peak=45|sun|normal/within_t_h_battery/rate",
+      "heat:conditions/model|peak=45|sun|normal/within_t_h_lidar/rate",
+      "heat:conditions/model|peak=45|sun|soak/within_t_h_compute/rate",
+      "heat:conditions/model|peak=45|sun|soak/within_t_h_battery/rate",
+      "heat:conditions/model|peak=45|sun|soak/within_t_h_lidar/rate",
+      "heat:conditions/model|peak=50|shade|normal/within_t_h_compute/rate",
+      "heat:conditions/model|peak=50|shade|normal/within_t_h_battery/rate",
+      "heat:conditions/model|peak=50|shade|soak/within_t_h_compute/rate",
+      "heat:conditions/model|peak=50|shade|soak/within_t_h_battery/rate",
+      "heat:conditions/model|peak=50|shade|soak/within_t_h_lidar/rate",
+      "heat:conditions/model|peak=50|sun|normal/within_t_h_compute/rate",
+      "heat:conditions/model|peak=50|sun|normal/within_t_h_battery/rate",
+      "heat:conditions/model|peak=50|sun|soak/within_t_h_compute/rate",
+      "heat:conditions/model|peak=50|sun|soak/within_t_h_battery/rate",
+      "heat:conditions/model|peak=50|sun|soak/within_t_h_lidar/rate"
+     ],
+     "op": "all>=",
+     "value": 0.9,
+     "values": [
+      {
+       "metric": "heat:conditions/model|peak=35|shade|normal/within_t_h_compute/rate",
+       "pass": false,
+       "value": 0.533333
+      },
+      {
+       "metric": "heat:conditions/model|peak=35|shade|normal/within_t_h_battery/rate",
+       "pass": true,
+       "value": 0.9
+      },
+      {
+       "metric": "heat:conditions/model|peak=35|shade|normal/within_t_h_lidar/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "heat:conditions/model|peak=35|shade|soak/within_t_h_compute/rate",
+       "pass": false,
+       "value": 0.633333
+      },
+      {
+       "metric": "heat:conditions/model|peak=35|shade|soak/within_t_h_battery/rate",
+       "pass": false,
+       "value": 0.833333
+      },
+      {
+       "metric": "heat:conditions/model|peak=35|shade|soak/within_t_h_lidar/rate",
+       "pass": false,
+       "value": 0.8
+      },
+      {
+       "metric": "heat:conditions/model|peak=35|sun|normal/within_t_h_compute/rate",
+       "pass": false,
+       "value": 0.5
+      },
+      {
+       "metric": "heat:conditions/model|peak=35|sun|normal/within_t_h_battery/rate",
+       "pass": false,
+       "value": 0.766667
+      },
+      {
+       "metric": "heat:conditions/model|peak=35|sun|normal/within_t_h_lidar/rate",
+       "pass": false,
+       "value": 0.7
+      },
+      {
+       "metric": "heat:conditions/model|peak=35|sun|soak/within_t_h_compute/rate",
+       "pass": false,
+       "value": 0.5
+      },
+      {
+       "metric": "heat:conditions/model|peak=35|sun|soak/within_t_h_battery/rate",
+       "pass": false,
+       "value": 0.733333
+      },
+      {
+       "metric": "heat:conditions/model|peak=35|sun|soak/within_t_h_lidar/rate",
+       "pass": false,
+       "value": 0.7
+      },
+      {
+       "metric": "heat:conditions/model|peak=40|shade|normal/within_t_h_compute/rate",
+       "pass": false,
+       "value": 0.633333
+      },
+      {
+       "metric": "heat:conditions/model|peak=40|shade|normal/within_t_h_battery/rate",
+       "pass": false,
+       "value": 0.8
+      },
+      {
+       "metric": "heat:conditions/model|peak=40|shade|normal/within_t_h_lidar/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "heat:conditions/model|peak=40|shade|soak/within_t_h_compute/rate",
+       "pass": false,
+       "value": 0.533333
+      },
+      {
+       "metric": "heat:conditions/model|peak=40|shade|soak/within_t_h_battery/rate",
+       "pass": false,
+       "value": 0.766667
+      },
+      {
+       "metric": "heat:conditions/model|peak=40|shade|soak/within_t_h_lidar/rate",
+       "pass": false,
+       "value": 0.866667
+      },
+      {
+       "metric": "heat:conditions/model|peak=40|sun|normal/within_t_h_compute/rate",
+       "pass": false,
+       "value": 0.833333
+      },
+      {
+       "metric": "heat:conditions/model|peak=40|sun|normal/within_t_h_battery/rate",
+       "pass": false,
+       "value": 0.866667
+      },
+      {
+       "metric": "heat:conditions/model|peak=40|sun|normal/within_t_h_lidar/rate",
+       "pass": false,
+       "value": 0.866667
+      },
+      {
+       "metric": "heat:conditions/model|peak=40|sun|soak/within_t_h_compute/rate",
+       "pass": false,
+       "value": 0.566667
+      },
+      {
+       "metric": "heat:conditions/model|peak=40|sun|soak/within_t_h_battery/rate",
+       "pass": false,
+       "value": 0.666667
+      },
+      {
+       "metric": "heat:conditions/model|peak=40|sun|soak/within_t_h_lidar/rate",
+       "pass": false,
+       "value": 0.733333
+      },
+      {
+       "metric": "heat:conditions/model|peak=45|shade|normal/within_t_h_compute/rate",
+       "pass": false,
+       "value": 0.4
+      },
+      {
+       "metric": "heat:conditions/model|peak=45|shade|normal/within_t_h_battery/rate",
+       "pass": false,
+       "value": 0.8
+      },
+      {
+       "metric": "heat:conditions/model|peak=45|shade|normal/within_t_h_lidar/rate",
+       "pass": true,
+       "value": 0.933333
+      },
+      {
+       "metric": "heat:conditions/model|peak=45|shade|soak/within_t_h_compute/rate",
+       "pass": false,
+       "value": 0.7
+      },
+      {
+       "metric": "heat:conditions/model|peak=45|shade|soak/within_t_h_battery/rate",
+       "pass": false,
+       "value": 0.866667
+      },
+      {
+       "metric": "heat:conditions/model|peak=45|shade|soak/within_t_h_lidar/rate",
+       "pass": false,
+       "value": 0.866667
+      },
+      {
+       "metric": "heat:conditions/model|peak=45|sun|normal/within_t_h_compute/rate",
+       "pass": false,
+       "value": 0.6
+      },
+      {
+       "metric": "heat:conditions/model|peak=45|sun|normal/within_t_h_battery/rate",
+       "pass": false,
+       "value": 0.733333
+      },
+      {
+       "metric": "heat:conditions/model|peak=45|sun|normal/within_t_h_lidar/rate",
+       "pass": false,
+       "value": 0.766667
+      },
+      {
+       "metric": "heat:conditions/model|peak=45|sun|soak/within_t_h_compute/rate",
+       "pass": false,
+       "value": 0.433333
+      },
+      {
+       "metric": "heat:conditions/model|peak=45|sun|soak/within_t_h_battery/rate",
+       "pass": false,
+       "value": 0.733333
+      },
+      {
+       "metric": "heat:conditions/model|peak=45|sun|soak/within_t_h_lidar/rate",
+       "pass": false,
+       "value": 0.8
+      },
+      {
+       "metric": "heat:conditions/model|peak=50|shade|normal/within_t_h_compute/rate",
+       "pass": false,
+       "value": 0.433333
+      },
+      {
+       "metric": "heat:conditions/model|peak=50|shade|normal/within_t_h_battery/rate",
+       "pass": false,
+       "value": 0.866667
+      },
+      {
+       "metric": "heat:conditions/model|peak=50|shade|normal/within_t_h_lidar/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "heat:conditions/model|peak=50|shade|soak/within_t_h_compute/rate",
+       "pass": false,
+       "value": 0.533333
+      },
+      {
+       "metric": "heat:conditions/model|peak=50|shade|soak/within_t_h_battery/rate",
+       "pass": false,
+       "value": 0.766667
+      },
+      {
+       "metric": "heat:conditions/model|peak=50|shade|soak/within_t_h_lidar/rate",
+       "pass": false,
+       "value": 0.766667
+      },
+      {
+       "metric": "heat:conditions/model|peak=50|sun|normal/within_t_h_compute/rate",
+       "pass": false,
+       "value": 0.433333
+      },
+      {
+       "metric": "heat:conditions/model|peak=50|sun|normal/within_t_h_battery/rate",
+       "pass": false,
+       "value": 0.6
+      },
+      {
+       "metric": "heat:conditions/model|peak=50|sun|normal/within_t_h_lidar/rate",
+       "pass": true,
+       "value": 0.9
+      },
+      {
+       "metric": "heat:conditions/model|peak=50|sun|soak/within_t_h_compute/rate",
+       "pass": false,
+       "value": 0.566667
+      },
+      {
+       "metric": "heat:conditions/model|peak=50|sun|soak/within_t_h_battery/rate",
+       "pass": false,
+       "value": 0.766667
+      },
+      {
+       "metric": "heat:conditions/model|peak=50|sun|soak/within_t_h_lidar/rate",
+       "pass": false,
+       "value": 0.866667
+      }
+     ]
+    }
+   ],
+   "expected_to_hold": false,
+   "held": false,
+   "id": "AC-H1",
+   "text": "The open loop model predicts each component's mission maximum within T_H = 5.0 K in at least 0.9 of runs, in every condition.",
+   "verdict": "HIT"
+  },
+  {
+   "checks": [
+    {
+     "failing": [],
+     "op": "all<=",
+     "value": 1.2,
+     "values": [
+      {
+       "metric": "heat:conditions/M|peak=35|shade|normal/stop_factor/max",
+       "pass": true,
+       "value": 1.067102
+      },
+      {
+       "metric": "heat:conditions/M|peak=35|shade|soak/stop_factor/max",
+       "pass": true,
+       "value": 1.127408
+      },
+      {
+       "metric": "heat:conditions/M|peak=35|sun|normal/stop_factor/max",
+       "pass": true,
+       "value": 1.119983
+      },
+      {
+       "metric": "heat:conditions/M|peak=35|sun|soak/stop_factor/max",
+       "pass": true,
+       "value": 1.140482
+      },
+      {
+       "metric": "heat:conditions/M|peak=40|shade|normal/stop_factor/max",
+       "pass": true,
+       "value": 1.07948
+      },
+      {
+       "metric": "heat:conditions/M|peak=40|shade|soak/stop_factor/max",
+       "pass": true,
+       "value": 1.137223
+      },
+      {
+       "metric": "heat:conditions/M|peak=40|sun|normal/stop_factor/max",
+       "pass": true,
+       "value": 1.120015
+      },
+      {
+       "metric": "heat:conditions/M|peak=40|sun|soak/stop_factor/max",
+       "pass": true,
+       "value": 1.143191
+      },
+      {
+       "metric": "heat:conditions/M|peak=45|shade|normal/stop_factor/max",
+       "pass": true,
+       "value": 1.100447
+      },
+      {
+       "metric": "heat:conditions/M|peak=45|shade|soak/stop_factor/max",
+       "pass": true,
+       "value": 1.145645
+      },
+      {
+       "metric": "heat:conditions/M|peak=45|sun|normal/stop_factor/max",
+       "pass": true,
+       "value": 1.150714
+      },
+      {
+       "metric": "heat:conditions/M|peak=45|sun|soak/stop_factor/max",
+       "pass": true,
+       "value": 1.153814
+      },
+      {
+       "metric": "heat:conditions/M|peak=50|shade|normal/stop_factor/max",
+       "pass": true,
+       "value": 1.103569
+      },
+      {
+       "metric": "heat:conditions/M|peak=50|shade|soak/stop_factor/max",
+       "pass": true,
+       "value": 1.172193
+      },
+      {
+       "metric": "heat:conditions/M|peak=50|sun|normal/stop_factor/max",
+       "pass": true,
+       "value": 1.147064
+      },
+      {
+       "metric": "heat:conditions/M|peak=50|sun|soak/stop_factor/max",
+       "pass": true,
+       "value": 1.172572
+      }
+     ]
+    }
+   ],
+   "expected_to_hold": true,
+   "held": true,
+   "id": "AC-H2",
+   "text": "With M, the required stopping distance at heat grows by a factor of at most F_H = 1.2 in every run.",
+   "verdict": "HIT"
+  },
+  {
+   "checks": [
+    {
+     "failing": [
+      "heat:conditions/M|peak=35|shade|soak/exceed/rate",
+      "heat:conditions/M|peak=35|sun|normal/exceed/rate",
+      "heat:conditions/M|peak=35|sun|soak/exceed/rate",
+      "heat:conditions/M|peak=40|shade|soak/exceed/rate",
+      "heat:conditions/M|peak=40|sun|normal/exceed/rate",
+      "heat:conditions/M|peak=40|sun|soak/exceed/rate",
+      "heat:conditions/M|peak=45|shade|soak/exceed/rate",
+      "heat:conditions/M|peak=45|sun|normal/exceed/rate",
+      "heat:conditions/M|peak=45|sun|soak/exceed/rate",
+      "heat:conditions/M|peak=50|shade|soak/exceed/rate",
+      "heat:conditions/M|peak=50|sun|normal/exceed/rate",
+      "heat:conditions/M|peak=50|sun|soak/exceed/rate"
+     ],
+     "op": "all<=",
+     "value": 0.0,
+     "values": [
+      {
+       "metric": "heat:conditions/M|peak=35|shade|normal/exceed/rate",
+       "pass": true,
+       "value": 0.0
+      },
+      {
+       "metric": "heat:conditions/M|peak=35|shade|soak/exceed/rate",
+       "pass": false,
+       "value": 0.466667
+      },
+      {
+       "metric": "heat:conditions/M|peak=35|sun|normal/exceed/rate",
+       "pass": false,
+       "value": 0.133333
+      },
+      {
+       "metric": "heat:conditions/M|peak=35|sun|soak/exceed/rate",
+       "pass": false,
+       "value": 0.666667
+      },
+      {
+       "metric": "heat:conditions/M|peak=40|shade|normal/exceed/rate",
+       "pass": true,
+       "value": 0.0
+      },
+      {
+       "metric": "heat:conditions/M|peak=40|shade|soak/exceed/rate",
+       "pass": false,
+       "value": 1.0
+      },
+      {
+       "metric": "heat:conditions/M|peak=40|sun|normal/exceed/rate",
+       "pass": false,
+       "value": 0.6
+      },
+      {
+       "metric": "heat:conditions/M|peak=40|sun|soak/exceed/rate",
+       "pass": false,
+       "value": 0.866667
+      },
+      {
+       "metric": "heat:conditions/M|peak=45|shade|normal/exceed/rate",
+       "pass": true,
+       "value": 0.0
+      },
+      {
+       "metric": "heat:conditions/M|peak=45|shade|soak/exceed/rate",
+       "pass": false,
+       "value": 1.0
+      },
+      {
+       "metric": "heat:conditions/M|peak=45|sun|normal/exceed/rate",
+       "pass": false,
+       "value": 1.0
+      },
+      {
+       "metric": "heat:conditions/M|peak=45|sun|soak/exceed/rate",
+       "pass": false,
+       "value": 1.0
+      },
+      {
+       "metric": "heat:conditions/M|peak=50|shade|normal/exceed/rate",
+       "pass": true,
+       "value": 0.0
+      },
+      {
+       "metric": "heat:conditions/M|peak=50|shade|soak/exceed/rate",
+       "pass": false,
+       "value": 1.0
+      },
+      {
+       "metric": "heat:conditions/M|peak=50|sun|normal/exceed/rate",
+       "pass": false,
+       "value": 1.0
+      },
+      {
+       "metric": "heat:conditions/M|peak=50|sun|soak/exceed/rate",
+       "pass": false,
+       "value": 1.0
+      }
+     ]
+    }
+   ],
+   "expected_to_hold": false,
+   "held": false,
+   "id": "AC-H3",
+   "text": "With M, no component exceeds its hard limit in any run.",
+   "verdict": "HIT"
+  },
+  {
+   "checks": [
+    {
+     "failing": [
+      "n4r2:conditions/H|noise=5/detected_within_t_n/rate",
+      "n4r2:conditions/H|noise=10/detected_within_t_n/rate",
+      "n4r2:conditions/H|drift=0.2/detected_within_t_n/rate"
+     ],
+     "op": "all>=",
+     "value": 0.9,
+     "values": [
+      {
+       "metric": "n4r2:conditions/H|loss=0/detected_within_t_n/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "n4r2:conditions/H|noise=5/detected_within_t_n/rate",
+       "pass": false,
+       "value": 0.0
+      },
+      {
+       "metric": "n4r2:conditions/H|noise=10/detected_within_t_n/rate",
+       "pass": false,
+       "value": 0.0
+      },
+      {
+       "metric": "n4r2:conditions/H|jump=5/detected_within_t_n/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "n4r2:conditions/H|jump=10/detected_within_t_n/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "n4r2:conditions/H|jump=20/detected_within_t_n/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "n4r2:conditions/H|drift=0.2/detected_within_t_n/rate",
+       "pass": false,
+       "value": 0.033333
+      },
+      {
+       "metric": "n4r2:conditions/H|drift=0.5/detected_within_t_n/rate",
+       "pass": true,
+       "value": 0.966667
+      },
+      {
+       "metric": "n4r2:conditions/H|replay=5/detected_within_t_n/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "n4r2:conditions/H|replay=10/detected_within_t_n/rate",
+       "pass": true,
+       "value": 1.0
+      }
+     ]
+    }
+   ],
+   "expected_to_hold": false,
+   "held": false,
+   "id": "AC-N1R2",
+   "text": "On stand in logs, faults at or above E_N are detected within T_N = 10.0 s in at least Q_N = 0.9 of logs.",
+   "verdict": "HIT"
+  },
+  {
+   "checks": [
+    {
+     "failing": [
+      "n4r2:conditions/H|drift=0.05/error_at_alarm/max"
+     ],
+     "op": "all<=",
+     "value": 3.0,
+     "values": [
+      {
+       "metric": "n4r2:conditions/H|loss=0/error_at_alarm/max",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "n4r2:conditions/H|noise=3/error_at_alarm/max",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "n4r2:conditions/H|noise=5/error_at_alarm/max",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "n4r2:conditions/H|noise=10/error_at_alarm/max",
+       "pass": null,
+       "value": null
+      },
+      {
+       "metric": "n4r2:conditions/H|jump=2/error_at_alarm/max",
+       "pass": true,
+       "value": 1.514443
+      },
+      {
+       "metric": "n4r2:conditions/H|jump=5/error_at_alarm/max",
+       "pass": true,
+       "value": 0.620888
+      },
+      {
+       "metric": "n4r2:conditions/H|jump=10/error_at_alarm/max",
+       "pass": true,
+       "value": 0.560429
+      },
+      {
+       "metric": "n4r2:conditions/H|jump=20/error_at_alarm/max",
+       "pass": true,
+       "value": 0.560429
+      },
+      {
+       "metric": "n4r2:conditions/H|drift=0.05/error_at_alarm/max",
+       "pass": false,
+       "value": 3.181547
+      },
+      {
+       "metric": "n4r2:conditions/H|drift=0.1/error_at_alarm/max",
+       "pass": true,
+       "value": 2.389264
+      },
+      {
+       "metric": "n4r2:conditions/H|drift=0.2/error_at_alarm/max",
+       "pass": true,
+       "value": 1.381745
+      },
+      {
+       "metric": "n4r2:conditions/H|drift=0.5/error_at_alarm/max",
+       "pass": true,
+       "value": 1.287203
+      },
+      {
+       "metric": "n4r2:conditions/H|replay=2/error_at_alarm/max",
+       "pass": true,
+       "value": 0.652569
+      },
+      {
+       "metric": "n4r2:conditions/H|replay=5/error_at_alarm/max",
+       "pass": true,
+       "value": 0.812047
+      },
+      {
+       "metric": "n4r2:conditions/H|replay=10/error_at_alarm/max",
+       "pass": true,
+       "value": 0.560429
+      }
+     ]
+    }
+   ],
+   "expected_to_hold": true,
+   "held": false,
+   "id": "AC-N2R2",
+   "text": "On stand in logs, the navigation error at the alarm is at most L_N = 3.0 m in every detected case.",
+   "verdict": "MISS"
+  }
+ ],
+ "evidence_kind": "simulated",
+ "label": "SYNTHETIC: produced by a seeded software model in sim/. Not measured on any robot, sensor or receiver. The model and the method under test share an author. Evidence kind: simulated.",
+ "predictions": [
+  {
+   "checks": [
+    {
+     "failing": [
+      "design_gl3:chosen/frames"
+     ],
+     "op": "between",
+     "value": [
+      2,
+      2
+     ],
+     "values": [
+      {
+       "metric": "design_gl3:chosen/frames",
+       "pass": false,
+       "value": 1
+      }
+     ]
+    },
+    {
+     "failing": [],
+     "op": "between",
+     "value": [
+      0.03,
+      0.05
+     ],
+     "values": [
+      {
+       "metric": "design_gl3:chosen/margin",
+       "pass": true,
+       "value": 0.03
+      }
+     ]
+    }
+   ],
+   "expected_to_hold": true,
+   "held": false,
+   "id": "GL3R2-P1",
+   "text": "The design rule picks two frames and a margin from 0.03 to 0.05.",
+   "verdict": "MISS"
+  },
+  {
+   "checks": [
+    {
+     "failing": [],
+     "op": "all<=",
+     "value": 0,
+     "values": [
+      {
+       "metric": "gl3r2:summary/M2/ac_gl2_violating_runs",
+       "pass": true,
+       "value": 0
+      }
+     ]
+    }
+   ],
+   "expected_to_hold": true,
+   "held": true,
+   "id": "GL3R2-P2",
+   "text": "On held out seeds the chosen monitor (M2) has no run that breaks AC-GL2.",
+   "verdict": "HIT"
+  },
+  {
+   "checks": [
+    {
+     "failing": [],
+     "op": "all>=",
+     "value": 1,
+     "values": [
+      {
+       "metric": "gl3r2:summary/M/ac_gl2_violating_runs",
+       "pass": true,
+       "value": 13
+      }
+     ]
+    }
+   ],
+   "expected_to_hold": true,
+   "held": true,
+   "id": "GL3R2-P3",
+   "text": "On held out seeds the round 1 monitor (M) still has at least one run that breaks AC-GL2.",
+   "verdict": "HIT"
+  },
+  {
+   "checks": [
+    {
+     "failing": [],
+     "op": "between",
+     "value": [
+      3,
+      3
+     ],
+     "values": [
+      {
+       "metric": "gl3r2:summary/M2/conditions_below_p_g",
+       "pass": true,
+       "value": 3
+      }
+     ]
+    }
+   ],
+   "expected_to_hold": true,
+   "held": true,
+   "id": "GL3R2-P4",
+   "text": "M2 misses P_G in exactly 3 sun conditions, the same low sun cases as round 1.",
+   "verdict": "HIT"
+  },
+  {
+   "checks": [
+    {
+     "failing": [],
+     "op": "all<=",
+     "value": 0,
+     "values": [
+      {
+       "metric": "gl3r2:summary/M2/false_slow_runs_below_guard",
+       "pass": true,
+       "value": 0
+      }
+     ]
+    }
+   ],
+   "expected_to_hold": true,
+   "held": true,
+   "id": "GL3R2-P5",
+   "text": "M2 issues no slow command where modelled saturation is below the guard.",
+   "verdict": "HIT"
+  },
+  {
+   "checks": [
+    {
+     "failing": [],
+     "op": "all<=",
+     "value": 0,
+     "values": [
+      {
+       "metric": "design_du3:feasible_count",
+       "pass": true,
+       "value": 0
+      }
+     ]
+    }
+   ],
+   "expected_to_hold": true,
+   "held": true,
+   "id": "DU3R2-P1",
+   "text": "No threshold, scan count and bound in the grid meets both DU3 criteria on the development seeds.",
+   "verdict": "HIT"
+  },
+  {
+   "checks": [
+    {
+     "failing": [],
+     "op": "between",
+     "value": [
+      0.3,
+      0.5
+     ],
+     "values": [
+      {
+       "metric": "design_du3:chosen/bound",
+       "pass": true,
+       "value": 0.4
+      }
+     ]
+    }
+   ],
+   "expected_to_hold": true,
+   "held": true,
+   "id": "DU3R2-P2",
+   "text": "The chosen bound lies from 0.3 to 0.5.",
+   "verdict": "HIT"
+  },
+  {
+   "checks": [
+    {
+     "failing": [],
+     "op": "all<=",
+     "value": 30,
+     "values": [
+      {
+       "metric": "du3r2:summary/M2/total",
+       "pass": true,
+       "value": 8
+      }
+     ]
+    }
+   ],
+   "expected_to_hold": true,
+   "held": true,
+   "id": "DU3R2-P3",
+   "text": "On held out seeds the chosen pair has at most 30 violating runs.",
+   "verdict": "HIT"
+  },
+  {
+   "checks": [
+    {
+     "failing": [],
+     "op": "all>=",
+     "value": 30,
+     "values": [
+      {
+       "metric": "du3r2:summary/M/total",
+       "pass": true,
+       "value": 45
+      }
+     ]
+    }
+   ],
+   "expected_to_hold": true,
+   "held": true,
+   "id": "DU3R2-P4",
+   "text": "On held out seeds the round 1 pair, judged by the round 2 criteria, has at least 30 violating runs.",
+   "verdict": "HIT"
+  },
+  {
+   "checks": [
+    {
+     "failing": [],
+     "op": "all>=",
+     "value": 0.9,
+     "values": [
+      {
+       "metric": "heat:conditions/B0|peak=35|sun|normal/exceed/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "heat:conditions/B0|peak=35|sun|soak/exceed/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "heat:conditions/B0|peak=40|sun|normal/exceed/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "heat:conditions/B0|peak=40|sun|soak/exceed/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "heat:conditions/B0|peak=45|shade|normal/exceed/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "heat:conditions/B0|peak=45|shade|soak/exceed/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "heat:conditions/B0|peak=45|sun|normal/exceed/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "heat:conditions/B0|peak=45|sun|soak/exceed/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "heat:conditions/B0|peak=50|shade|normal/exceed/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "heat:conditions/B0|peak=50|shade|soak/exceed/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "heat:conditions/B0|peak=50|sun|normal/exceed/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "heat:conditions/B0|peak=50|sun|soak/exceed/rate",
+       "pass": true,
+       "value": 1.0
+      }
+     ]
+    }
+   ],
+   "expected_to_hold": true,
+   "held": true,
+   "id": "H-P1",
+   "text": "Full scale (B0) exceeds a limit in at least 90 percent of runs in every sun condition and every shade condition from 45 degC.",
+   "verdict": "HIT"
+  },
+  {
+   "checks": [
+    {
+     "failing": [
+      "heat:conditions/M|peak=35|shade|soak/exceed/rate",
+      "heat:conditions/M|peak=35|sun|normal/exceed/rate",
+      "heat:conditions/M|peak=40|shade|soak/exceed/rate",
+      "heat:conditions/M|peak=40|sun|normal/exceed/rate",
+      "heat:conditions/M|peak=45|shade|soak/exceed/rate",
+      "heat:conditions/M|peak=50|shade|soak/exceed/rate"
+     ],
+     "op": "all<=",
+     "value": 0.0,
+     "values": [
+      {
+       "metric": "heat:conditions/M|peak=35|shade|normal/exceed/rate",
+       "pass": true,
+       "value": 0.0
+      },
+      {
+       "metric": "heat:conditions/M|peak=35|shade|soak/exceed/rate",
+       "pass": false,
+       "value": 0.466667
+      },
+      {
+       "metric": "heat:conditions/M|peak=35|sun|normal/exceed/rate",
+       "pass": false,
+       "value": 0.133333
+      },
+      {
+       "metric": "heat:conditions/M|peak=40|shade|normal/exceed/rate",
+       "pass": true,
+       "value": 0.0
+      },
+      {
+       "metric": "heat:conditions/M|peak=40|shade|soak/exceed/rate",
+       "pass": false,
+       "value": 1.0
+      },
+      {
+       "metric": "heat:conditions/M|peak=40|sun|normal/exceed/rate",
+       "pass": false,
+       "value": 0.6
+      },
+      {
+       "metric": "heat:conditions/M|peak=45|shade|normal/exceed/rate",
+       "pass": true,
+       "value": 0.0
+      },
+      {
+       "metric": "heat:conditions/M|peak=45|shade|soak/exceed/rate",
+       "pass": false,
+       "value": 1.0
+      },
+      {
+       "metric": "heat:conditions/M|peak=50|shade|normal/exceed/rate",
+       "pass": true,
+       "value": 0.0
+      },
+      {
+       "metric": "heat:conditions/M|peak=50|shade|soak/exceed/rate",
+       "pass": false,
+       "value": 1.0
+      }
+     ]
+    }
+   ],
+   "expected_to_hold": true,
+   "held": false,
+   "id": "H-P2",
+   "text": "The controller (M) never exceeds a limit in shade, nor in sun at 35 and 40 degC from a normal start.",
+   "verdict": "MISS"
+  },
+  {
+   "checks": [
+    {
+     "failing": [],
+     "op": "all>=",
+     "value": 0.5,
+     "values": [
+      {
+       "metric": "heat:conditions/M|peak=50|sun|normal/exceed/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "heat:conditions/M|peak=50|sun|soak/exceed/rate",
+       "pass": true,
+       "value": 1.0
+      }
+     ]
+    }
+   ],
+   "expected_to_hold": true,
+   "held": true,
+   "id": "H-P3",
+   "text": "M exceeds a limit in at least half the runs in sun at 50 degC, where parking in place cannot keep the battery below its limit.",
+   "verdict": "HIT"
+  },
+  {
+   "checks": [
+    {
+     "failing": [],
+     "op": "all>=",
+     "value": 0.9,
+     "values": [
+      {
+       "metric": "heat:conditions/M|peak=45|sun|soak/never_moved/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "heat:conditions/M|peak=50|sun|soak/never_moved/rate",
+       "pass": true,
+       "value": 1.0
+      }
+     ]
+    }
+   ],
+   "expected_to_hold": true,
+   "held": true,
+   "id": "H-P4",
+   "text": "After a sun soak at 45 degC or more, M never starts moving in at least 90 percent of runs.",
+   "verdict": "HIT"
+  },
+  {
+   "checks": [
+    {
+     "failing": [],
+     "op": "all>=",
+     "value": 0.2,
+     "values": [
+      {
+       "metric": "heat:conditions/M|peak=40|shade|normal/productivity/mean",
+       "pass": true,
+       "value": 0.751778
+      },
+      {
+       "metric": "heat:conditions/M|peak=45|shade|normal/productivity/mean",
+       "pass": true,
+       "value": 0.508056
+      }
+     ]
+    }
+   ],
+   "expected_to_hold": true,
+   "held": true,
+   "id": "H-P5",
+   "text": "In shade at 40 and 45 degC from a normal start, M keeps a mean scale of at least 0.2 while the fixed rule parks.",
+   "verdict": "HIT"
+  },
+  {
+   "checks": [
+    {
+     "failing": [],
+     "op": "all>=",
+     "value": 10.0,
+     "values": [
+      {
+       "metric": "heat:conditions/M|peak=45|shade|soak/first_move_min/mean",
+       "pass": true,
+       "value": 28.862069
+      }
+     ]
+    }
+   ],
+   "expected_to_hold": true,
+   "held": true,
+   "id": "H-P6",
+   "text": "After a soak in shade at 45 degC, M waits at least 10 minutes on average before moving.",
+   "verdict": "HIT"
+  },
+  {
+   "checks": [
+    {
+     "failing": [],
+     "op": "all<=",
+     "value": 0.033333,
+     "values": [
+      {
+       "metric": "n4r2:conditions/H|nominal=0/false_alarm/rate",
+       "pass": true,
+       "value": 0.0
+      }
+     ]
+    }
+   ],
+   "expected_to_hold": true,
+   "held": true,
+   "id": "N4-P1",
+   "text": "The harness raises at most 1 false alarm in 30 nominal stand in logs.",
+   "verdict": "HIT"
+  },
+  {
+   "checks": [
+    {
+     "failing": [],
+     "op": "all>=",
+     "value": 1.0,
+     "values": [
+      {
+       "metric": "n4r2:conditions/H|loss=0/detected_within_t_n/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "n4r2:conditions/H|jump=5/detected_within_t_n/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "n4r2:conditions/H|jump=10/detected_within_t_n/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "n4r2:conditions/H|jump=20/detected_within_t_n/rate",
+       "pass": true,
+       "value": 1.0
+      }
+     ]
+    }
+   ],
+   "expected_to_hold": true,
+   "held": true,
+   "id": "N4-P2",
+   "text": "The harness detects loss and jumps of 5 m or more within T_N in every stand in log.",
+   "verdict": "HIT"
+  },
+  {
+   "checks": [
+    {
+     "failing": [],
+     "op": "all<=",
+     "value": 0.5,
+     "values": [
+      {
+       "metric": "n4r2:conditions/H|drift=0.2/detected_within_t_n/rate",
+       "pass": true,
+       "value": 0.033333
+      }
+     ]
+    }
+   ],
+   "expected_to_hold": true,
+   "held": true,
+   "id": "N4-P3",
+   "text": "Drift of 0.2 m/s is detected within T_N in at most half the stand in logs.",
+   "verdict": "HIT"
+  },
+  {
+   "checks": [
+    {
+     "failing": [],
+     "op": "all>=",
+     "value": 0.9,
+     "values": [
+      {
+       "metric": "n4r2:conditions/H|replay=5/detected_within_t_n/rate",
+       "pass": true,
+       "value": 1.0
+      },
+      {
+       "metric": "n4r2:conditions/H|replay=10/detected_within_t_n/rate",
+       "pass": true,
+       "value": 1.0
+      }
+     ]
+    }
+   ],
+   "expected_to_hold": true,
+   "held": true,
+   "id": "N4-P4",
+   "text": "Replay with 5 s and 10 s delay is detected within T_N in at least 90 percent of stand in logs.",
+   "verdict": "HIT"
+  }
+ ],
+ "prereg_sha256": "0d391addddbd7ff14eab2d828364a5339db8f1b4002c25cf18282f3d1d3fb925",
+ "round": 2,
+ "totals": {
+  "acceptance_failed": 7,
+  "acceptance_held": 3,
+  "hit": 17,
+  "miss": 2,
+  "predictions": 19
+ }
+}

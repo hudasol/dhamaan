@@ -1,0 +1,1005 @@
+{
+ "conditions": {
+  "M2|k=0.0": {
+   "bound": 0.4,
+   "detector_in_time": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "k": 0.0,
+   "method": "M2",
+   "monitor_stop": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "scans": 5,
+   "stop_time_after_onset": {
+    "ci95": null,
+    "max": null,
+    "mean": null,
+    "median": null,
+    "n": 0
+   },
+   "stop_within_t_d": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "threshold": 0.5
+  },
+  "M2|k=0.1": {
+   "bound": 0.4,
+   "detector_in_time": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "k": 0.1,
+   "method": "M2",
+   "monitor_stop": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "scans": 5,
+   "stop_time_after_onset": {
+    "ci95": null,
+    "max": null,
+    "mean": null,
+    "median": null,
+    "n": 0
+   },
+   "stop_within_t_d": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "threshold": 0.5
+  },
+  "M2|k=0.2": {
+   "bound": 0.4,
+   "detector_in_time": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "k": 0.2,
+   "method": "M2",
+   "monitor_stop": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "scans": 5,
+   "stop_time_after_onset": {
+    "ci95": null,
+    "max": null,
+    "mean": null,
+    "median": null,
+    "n": 0
+   },
+   "stop_within_t_d": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "threshold": 0.5
+  },
+  "M2|k=0.3": {
+   "bound": 0.4,
+   "detector_in_time": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "k": 0.3,
+   "method": "M2",
+   "monitor_stop": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "scans": 5,
+   "stop_time_after_onset": {
+    "ci95": null,
+    "max": null,
+    "mean": null,
+    "median": null,
+    "n": 0
+   },
+   "stop_within_t_d": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "threshold": 0.5
+  },
+  "M2|k=0.4": {
+   "bound": 0.4,
+   "detector_in_time": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "k": 0.4,
+   "method": "M2",
+   "monitor_stop": {
+    "ci95": [
+     0.053097,
+     0.296813
+    ],
+    "k": 4,
+    "n": 30,
+    "rate": 0.133333
+   },
+   "scans": 5,
+   "stop_time_after_onset": {
+    "ci95": [
+     1.751545,
+     6.548455
+    ],
+    "max": 6.5,
+    "mean": 4.15,
+    "median": 4.55,
+    "n": 4
+   },
+   "stop_within_t_d": {
+    "ci95": [
+     0.005909,
+     0.166704
+    ],
+    "k": 1,
+    "n": 30,
+    "rate": 0.033333
+   },
+   "threshold": 0.5
+  },
+  "M2|k=0.5": {
+   "bound": 0.4,
+   "detector_in_time": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "k": 0.5,
+   "method": "M2",
+   "monitor_stop": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "scans": 5,
+   "stop_time_after_onset": {
+    "ci95": [
+     0.482473,
+     0.764194
+    ],
+    "max": 2.2,
+    "mean": 0.623333,
+    "median": 0.4,
+    "n": 30
+   },
+   "stop_within_t_d": {
+    "ci95": [
+     0.703187,
+     0.946903
+    ],
+    "k": 26,
+    "n": 30,
+    "rate": 0.866667
+   },
+   "threshold": 0.5
+  },
+  "M2|k=0.6": {
+   "bound": 0.4,
+   "detector_in_time": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "k": 0.6,
+   "method": "M2",
+   "monitor_stop": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "scans": 5,
+   "stop_time_after_onset": {
+    "ci95": [
+     0.4,
+     0.4
+    ],
+    "max": 0.4,
+    "mean": 0.4,
+    "median": 0.4,
+    "n": 30
+   },
+   "stop_within_t_d": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "threshold": 0.5
+  },
+  "M2|k=0.7": {
+   "bound": 0.4,
+   "detector_in_time": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "k": 0.7,
+   "method": "M2",
+   "monitor_stop": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "scans": 5,
+   "stop_time_after_onset": {
+    "ci95": [
+     0.4,
+     0.4
+    ],
+    "max": 0.4,
+    "mean": 0.4,
+    "median": 0.4,
+    "n": 30
+   },
+   "stop_within_t_d": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "threshold": 0.5
+  },
+  "M2|k=0.8": {
+   "bound": 0.4,
+   "detector_in_time": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "k": 0.8,
+   "method": "M2",
+   "monitor_stop": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "scans": 5,
+   "stop_time_after_onset": {
+    "ci95": [
+     0.4,
+     0.4
+    ],
+    "max": 0.4,
+    "mean": 0.4,
+    "median": 0.4,
+    "n": 30
+   },
+   "stop_within_t_d": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "threshold": 0.5
+  },
+  "M2|k=0.9": {
+   "bound": 0.4,
+   "detector_in_time": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "k": 0.9,
+   "method": "M2",
+   "monitor_stop": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "scans": 5,
+   "stop_time_after_onset": {
+    "ci95": [
+     0.4,
+     0.4
+    ],
+    "max": 0.4,
+    "mean": 0.4,
+    "median": 0.4,
+    "n": 30
+   },
+   "stop_within_t_d": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "threshold": 0.5
+  },
+  "M2|k=1.0": {
+   "bound": 0.4,
+   "detector_in_time": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "k": 1.0,
+   "method": "M2",
+   "monitor_stop": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "scans": 5,
+   "stop_time_after_onset": {
+    "ci95": [
+     0.4,
+     0.4
+    ],
+    "max": 0.4,
+    "mean": 0.4,
+    "median": 0.4,
+    "n": 30
+   },
+   "stop_within_t_d": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "threshold": 0.5
+  },
+  "M|k=0.0": {
+   "bound": 0.4,
+   "detector_in_time": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "k": 0.0,
+   "method": "M",
+   "monitor_stop": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "scans": 3,
+   "stop_time_after_onset": {
+    "ci95": null,
+    "max": null,
+    "mean": null,
+    "median": null,
+    "n": 0
+   },
+   "stop_within_t_d": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "threshold": 0.6
+  },
+  "M|k=0.1": {
+   "bound": 0.4,
+   "detector_in_time": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "k": 0.1,
+   "method": "M",
+   "monitor_stop": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "scans": 3,
+   "stop_time_after_onset": {
+    "ci95": null,
+    "max": null,
+    "mean": null,
+    "median": null,
+    "n": 0
+   },
+   "stop_within_t_d": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "threshold": 0.6
+  },
+  "M|k=0.2": {
+   "bound": 0.4,
+   "detector_in_time": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "k": 0.2,
+   "method": "M",
+   "monitor_stop": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "scans": 3,
+   "stop_time_after_onset": {
+    "ci95": null,
+    "max": null,
+    "mean": null,
+    "median": null,
+    "n": 0
+   },
+   "stop_within_t_d": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "threshold": 0.6
+  },
+  "M|k=0.3": {
+   "bound": 0.4,
+   "detector_in_time": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "k": 0.3,
+   "method": "M",
+   "monitor_stop": {
+    "ci95": [
+     0.331541,
+     0.668459
+    ],
+    "k": 15,
+    "n": 30,
+    "rate": 0.5
+   },
+   "scans": 3,
+   "stop_time_after_onset": {
+    "ci95": [
+     1.74517,
+     3.33483
+    ],
+    "max": 5.3,
+    "mean": 2.54,
+    "median": 2.6,
+    "n": 15
+   },
+   "stop_within_t_d": {
+    "ci95": [
+     0.0346,
+     0.256211
+    ],
+    "k": 3,
+    "n": 30,
+    "rate": 0.1
+   },
+   "threshold": 0.6
+  },
+  "M|k=0.4": {
+   "bound": 0.4,
+   "detector_in_time": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "k": 0.4,
+   "method": "M",
+   "monitor_stop": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "scans": 3,
+   "stop_time_after_onset": {
+    "ci95": [
+     0.223667,
+     0.323
+    ],
+    "max": 0.7,
+    "mean": 0.273333,
+    "median": 0.2,
+    "n": 30
+   },
+   "stop_within_t_d": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "threshold": 0.6
+  },
+  "M|k=0.5": {
+   "bound": 0.4,
+   "detector_in_time": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "k": 0.5,
+   "method": "M",
+   "monitor_stop": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "scans": 3,
+   "stop_time_after_onset": {
+    "ci95": [
+     0.2,
+     0.2
+    ],
+    "max": 0.2,
+    "mean": 0.2,
+    "median": 0.2,
+    "n": 30
+   },
+   "stop_within_t_d": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "threshold": 0.6
+  },
+  "M|k=0.6": {
+   "bound": 0.4,
+   "detector_in_time": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "k": 0.6,
+   "method": "M",
+   "monitor_stop": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "scans": 3,
+   "stop_time_after_onset": {
+    "ci95": [
+     0.2,
+     0.2
+    ],
+    "max": 0.2,
+    "mean": 0.2,
+    "median": 0.2,
+    "n": 30
+   },
+   "stop_within_t_d": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "threshold": 0.6
+  },
+  "M|k=0.7": {
+   "bound": 0.4,
+   "detector_in_time": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "k": 0.7,
+   "method": "M",
+   "monitor_stop": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "scans": 3,
+   "stop_time_after_onset": {
+    "ci95": [
+     0.2,
+     0.2
+    ],
+    "max": 0.2,
+    "mean": 0.2,
+    "median": 0.2,
+    "n": 30
+   },
+   "stop_within_t_d": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "threshold": 0.6
+  },
+  "M|k=0.8": {
+   "bound": 0.4,
+   "detector_in_time": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "k": 0.8,
+   "method": "M",
+   "monitor_stop": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "scans": 3,
+   "stop_time_after_onset": {
+    "ci95": [
+     0.2,
+     0.2
+    ],
+    "max": 0.2,
+    "mean": 0.2,
+    "median": 0.2,
+    "n": 30
+   },
+   "stop_within_t_d": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "threshold": 0.6
+  },
+  "M|k=0.9": {
+   "bound": 0.4,
+   "detector_in_time": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "k": 0.9,
+   "method": "M",
+   "monitor_stop": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "scans": 3,
+   "stop_time_after_onset": {
+    "ci95": [
+     0.2,
+     0.2
+    ],
+    "max": 0.2,
+    "mean": 0.2,
+    "median": 0.2,
+    "n": 30
+   },
+   "stop_within_t_d": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "threshold": 0.6
+  },
+  "M|k=1.0": {
+   "bound": 0.4,
+   "detector_in_time": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "k": 1.0,
+   "method": "M",
+   "monitor_stop": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "scans": 3,
+   "stop_time_after_onset": {
+    "ci95": [
+     0.2,
+     0.2
+    ],
+    "max": 0.2,
+    "mean": 0.2,
+    "median": 0.2,
+    "n": 30
+   },
+   "stop_within_t_d": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "threshold": 0.6
+  }
+ },
+ "config": {
+  "chosen": {
+   "bound": 0.4,
+   "dev_violations": 3,
+   "feasible": false,
+   "scans": 5,
+   "threshold": 0.5
+  },
+  "confirm_scans": 2,
+  "drop": 0.6,
+  "dt": 0.1,
+  "footprint": 0.4,
+  "fov_deg": 30.0,
+  "half_width": 1.2,
+  "lateral_offset": 0.2,
+  "min_points": 2,
+  "noise_gain": 0.08,
+  "obstacle_radius": 0.15,
+  "r0": 10.0,
+  "range_loss": 0.95,
+  "sigma0": 0.01,
+  "start_distance": 12.0,
+  "step_deg": 1.0,
+  "t_d": 1.0,
+  "t_onset": 0.5,
+  "v_nominal": 0.8,
+  "v_slow": 0.4,
+  "vrr_scans": 3,
+  "vrr_threshold": 0.6
+ },
+ "evidence_kind": "simulated",
+ "experiment": "DU3R2",
+ "label": "SYNTHETIC: produced by a seeded software model in sim/. Not measured on any robot, sensor or receiver. The model and the method under test share an author. Evidence kind: simulated.",
+ "prereg_sha256": "0d391addddbd7ff14eab2d828364a5339db8f1b4002c25cf18282f3d1d3fb925",
+ "protocol_items": [
+  "DU3",
+  "DU5 (software monitor only)"
+ ],
+ "round": 2,
+ "seed_base": 20261018,
+ "seed_set": "held out",
+ "seeds_per_condition": 30,
+ "summary": {
+  "M": {
+   "above": 0,
+   "below": 45,
+   "total": 45
+  },
+  "M2": {
+   "above": 4,
+   "below": 4,
+   "total": 8
+  }
+ }
+}

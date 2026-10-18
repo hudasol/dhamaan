@@ -1,0 +1,995 @@
+{
+ "conditions": {
+  "H|drift=0.05": {
+   "detected": {
+    "ci95": [
+     0.743789,
+     0.9654
+    ],
+    "k": 27,
+    "n": 30,
+    "rate": 0.9
+   },
+   "detected_within_t_n": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "detection_delay": {
+    "ci95": [
+     55.858877,
+     67.474456
+    ],
+    "max": 89.0,
+    "mean": 61.666667,
+    "median": 59.0,
+    "n": 27
+   },
+   "error_at_alarm": {
+    "ci95": [
+     1.382112,
+     1.998158
+    ],
+    "max": 3.181547,
+    "mean": 1.690135,
+    "median": 1.632829,
+    "n": 27
+   },
+   "false_alarm": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "fault": "drift",
+   "method": "H",
+   "missed_seeds": [
+    15,
+    22,
+    27
+   ],
+   "size": 0.05
+  },
+  "H|drift=0.1": {
+   "detected": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "detected_within_t_n": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "detection_delay": {
+    "ci95": [
+     28.392744,
+     32.873923
+    ],
+    "max": 43.0,
+    "mean": 30.633333,
+    "median": 30.5,
+    "n": 30
+   },
+   "error_at_alarm": {
+    "ci95": [
+     1.039116,
+     1.384951
+    ],
+    "max": 2.389264,
+    "mean": 1.212034,
+    "median": 1.193326,
+    "n": 30
+   },
+   "false_alarm": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "fault": "drift",
+   "method": "H",
+   "missed_seeds": [],
+   "size": 0.1
+  },
+  "H|drift=0.2": {
+   "detected": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "detected_within_t_n": {
+    "ci95": [
+     0.005909,
+     0.166704
+    ],
+    "k": 1,
+    "n": 30,
+    "rate": 0.033333
+   },
+   "detection_delay": {
+    "ci95": [
+     14.648131,
+     16.551869
+    ],
+    "max": 19.0,
+    "mean": 15.6,
+    "median": 16.0,
+    "n": 30
+   },
+   "error_at_alarm": {
+    "ci95": [
+     0.639455,
+     0.865245
+    ],
+    "max": 1.381745,
+    "mean": 0.75235,
+    "median": 0.739886,
+    "n": 30
+   },
+   "false_alarm": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "fault": "drift",
+   "method": "H",
+   "missed_seeds": [],
+   "size": 0.2
+  },
+  "H|drift=0.5": {
+   "detected": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "detected_within_t_n": {
+    "ci95": [
+     0.833296,
+     0.994091
+    ],
+    "k": 29,
+    "n": 30,
+    "rate": 0.966667
+   },
+   "detection_delay": {
+    "ci95": [
+     7.148923,
+     7.917743
+    ],
+    "max": 11.0,
+    "mean": 7.533333,
+    "median": 7.0,
+    "n": 30
+   },
+   "error_at_alarm": {
+    "ci95": [
+     0.439793,
+     0.629528
+    ],
+    "max": 1.287203,
+    "mean": 0.53466,
+    "median": 0.507123,
+    "n": 30
+   },
+   "false_alarm": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "fault": "drift",
+   "method": "H",
+   "missed_seeds": [],
+   "size": 0.5
+  },
+  "H|jump=10": {
+   "detected": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "detected_within_t_n": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "detection_delay": {
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "max": 0.0,
+    "mean": 0.0,
+    "median": 0.0,
+    "n": 30
+   },
+   "error_at_alarm": {
+    "ci95": [
+     0.248105,
+     0.346223
+    ],
+    "max": 0.560429,
+    "mean": 0.297164,
+    "median": 0.270724,
+    "n": 30
+   },
+   "false_alarm": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "fault": "jump",
+   "method": "H",
+   "missed_seeds": [],
+   "size": 10.0
+  },
+  "H|jump=2": {
+   "detected": {
+    "ci95": [
+     0.331541,
+     0.668459
+    ],
+    "k": 15,
+    "n": 30,
+    "rate": 0.5
+   },
+   "detected_within_t_n": {
+    "ci95": [
+     0.166647,
+     0.478758
+    ],
+    "k": 9,
+    "n": 30,
+    "rate": 0.3
+   },
+   "detection_delay": {
+    "ci95": [
+     7.155592,
+     19.644408
+    ],
+    "max": 47.0,
+    "mean": 13.4,
+    "median": 8.0,
+    "n": 15
+   },
+   "error_at_alarm": {
+    "ci95": [
+     0.4564,
+     0.876026
+    ],
+    "max": 1.514443,
+    "mean": 0.666213,
+    "median": 0.501685,
+    "n": 15
+   },
+   "false_alarm": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "fault": "jump",
+   "method": "H",
+   "missed_seeds": [
+    1,
+    5,
+    6,
+    8,
+    9,
+    11,
+    12,
+    14,
+    16,
+    18,
+    19,
+    20,
+    26,
+    27,
+    29
+   ],
+   "size": 2.0
+  },
+  "H|jump=20": {
+   "detected": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "detected_within_t_n": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "detection_delay": {
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "max": 0.0,
+    "mean": 0.0,
+    "median": 0.0,
+    "n": 30
+   },
+   "error_at_alarm": {
+    "ci95": [
+     0.248105,
+     0.346223
+    ],
+    "max": 0.560429,
+    "mean": 0.297164,
+    "median": 0.270724,
+    "n": 30
+   },
+   "false_alarm": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "fault": "jump",
+   "method": "H",
+   "missed_seeds": [],
+   "size": 20.0
+  },
+  "H|jump=5": {
+   "detected": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "detected_within_t_n": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "detection_delay": {
+    "ci95": [
+     0.563299,
+     0.970034
+    ],
+    "max": 2.0,
+    "mean": 0.766667,
+    "median": 1.0,
+    "n": 30
+   },
+   "error_at_alarm": {
+    "ci95": [
+     0.247305,
+     0.355112
+    ],
+    "max": 0.620888,
+    "mean": 0.301209,
+    "median": 0.271939,
+    "n": 30
+   },
+   "false_alarm": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "fault": "jump",
+   "method": "H",
+   "missed_seeds": [],
+   "size": 5.0
+  },
+  "H|loss=0": {
+   "detected": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "detected_within_t_n": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "detection_delay": {
+    "ci95": [
+     3.0,
+     3.0
+    ],
+    "max": 3.0,
+    "mean": 3.0,
+    "median": 3.0,
+    "n": 30
+   },
+   "error_at_alarm": {
+    "ci95": null,
+    "max": null,
+    "mean": null,
+    "median": null,
+    "n": 0
+   },
+   "false_alarm": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "fault": "loss",
+   "method": "H",
+   "missed_seeds": [],
+   "size": 0.0
+  },
+  "H|noise=10": {
+   "detected": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "detected_within_t_n": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "detection_delay": {
+    "ci95": null,
+    "max": null,
+    "mean": null,
+    "median": null,
+    "n": 0
+   },
+   "error_at_alarm": {
+    "ci95": null,
+    "max": null,
+    "mean": null,
+    "median": null,
+    "n": 0
+   },
+   "false_alarm": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "fault": "noise",
+   "method": "H",
+   "missed_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29
+   ],
+   "size": 10.0
+  },
+  "H|noise=3": {
+   "detected": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "detected_within_t_n": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "detection_delay": {
+    "ci95": null,
+    "max": null,
+    "mean": null,
+    "median": null,
+    "n": 0
+   },
+   "error_at_alarm": {
+    "ci95": null,
+    "max": null,
+    "mean": null,
+    "median": null,
+    "n": 0
+   },
+   "false_alarm": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "fault": "noise",
+   "method": "H",
+   "missed_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29
+   ],
+   "size": 3.0
+  },
+  "H|noise=5": {
+   "detected": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "detected_within_t_n": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "detection_delay": {
+    "ci95": null,
+    "max": null,
+    "mean": null,
+    "median": null,
+    "n": 0
+   },
+   "error_at_alarm": {
+    "ci95": null,
+    "max": null,
+    "mean": null,
+    "median": null,
+    "n": 0
+   },
+   "false_alarm": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "fault": "noise",
+   "method": "H",
+   "missed_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29
+   ],
+   "size": 5.0
+  },
+  "H|nominal=0": {
+   "detected": null,
+   "detected_within_t_n": null,
+   "detection_delay": {
+    "ci95": null,
+    "max": null,
+    "mean": null,
+    "median": null,
+    "n": 0
+   },
+   "error_at_alarm": {
+    "ci95": null,
+    "max": null,
+    "mean": null,
+    "median": null,
+    "n": 0
+   },
+   "false_alarm": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "fault": "nominal",
+   "method": "H",
+   "missed_seeds": [],
+   "size": 0.0
+  },
+  "H|replay=10": {
+   "detected": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "detected_within_t_n": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "detection_delay": {
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "max": 0.0,
+    "mean": 0.0,
+    "median": 0.0,
+    "n": 30
+   },
+   "error_at_alarm": {
+    "ci95": [
+     0.248105,
+     0.346223
+    ],
+    "max": 0.560429,
+    "mean": 0.297164,
+    "median": 0.270724,
+    "n": 30
+   },
+   "false_alarm": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "fault": "replay",
+   "method": "H",
+   "missed_seeds": [],
+   "size": 10.0
+  },
+  "H|replay=2": {
+   "detected": {
+    "ci95": [
+     0.095051,
+     0.373057
+    ],
+    "k": 6,
+    "n": 30,
+    "rate": 0.2
+   },
+   "detected_within_t_n": {
+    "ci95": [
+     0.095051,
+     0.373057
+    ],
+    "k": 6,
+    "n": 30,
+    "rate": 0.2
+   },
+   "detection_delay": {
+    "ci95": [
+     3.206273,
+     7.460393
+    ],
+    "max": 9.0,
+    "mean": 5.333333,
+    "median": 4.5,
+    "n": 6
+   },
+   "error_at_alarm": {
+    "ci95": [
+     0.22529,
+     0.58935
+    ],
+    "max": 0.652569,
+    "mean": 0.40732,
+    "median": 0.429402,
+    "n": 6
+   },
+   "false_alarm": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "fault": "replay",
+   "method": "H",
+   "missed_seeds": [
+    0,
+    2,
+    3,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    25,
+    26,
+    27,
+    29
+   ],
+   "size": 2.0
+  },
+  "H|replay=5": {
+   "detected": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "detected_within_t_n": {
+    "ci95": [
+     0.886487,
+     1.0
+    ],
+    "k": 30,
+    "n": 30,
+    "rate": 1.0
+   },
+   "detection_delay": {
+    "ci95": [
+     0.955939,
+     1.577394
+    ],
+    "max": 4.0,
+    "mean": 1.266667,
+    "median": 1.0,
+    "n": 30
+   },
+   "error_at_alarm": {
+    "ci95": [
+     0.305094,
+     0.449904
+    ],
+    "max": 0.812047,
+    "mean": 0.377499,
+    "median": 0.334062,
+    "n": 30
+   },
+   "false_alarm": {
+    "ci95": [
+     0.0,
+     0.113513
+    ],
+    "k": 0,
+    "n": 30,
+    "rate": 0.0
+   },
+   "fault": "replay",
+   "method": "H",
+   "missed_seeds": [],
+   "size": 5.0
+  }
+ },
+ "config": {
+  "cusum_bias": 3.0,
+  "cusum_limit": 25.0,
+  "decel": 1.0,
+  "dt": 0.1,
+  "duration": 120.0,
+  "fix_period_steps": 10,
+  "gate": 13.82,
+  "heading_rw": 0.001,
+  "log_format": {
+   "gnss": [
+    "t_s",
+    "x_m",
+    "y_m",
+    "fix_ok",
+    "x_ref_m",
+    "y_ref_m"
+   ],
+   "odometry": [
+    "t_s",
+    "v_mps",
+    "yaw_rad"
+   ]
+  },
+  "noise_ramp": 20.0,
+  "odo_scale_sd": 0.01,
+  "odo_speed_sd": 0.02,
+  "q_step": 0.01,
+  "reject_run": 3,
+  "sigma_gnss": 1.0,
+  "speed": 0.8,
+  "t_onset": 30.0,
+  "timeout": 3.0
+ },
+ "evidence_kind": "simulated",
+ "experiment": "N4R2",
+ "label": "SYNTHETIC: produced by a seeded software model in sim/. Not measured on any robot, sensor or receiver. The model and the method under test share an author. Evidence kind: simulated.",
+ "prereg_sha256": "0d391addddbd7ff14eab2d828364a5339db8f1b4002c25cf18282f3d1d3fb925",
+ "protocol_items": [
+  "N4 (synthetic stand in logs only)"
+ ],
+ "round": 2,
+ "seed_base": 20261018,
+ "seed_set": "held out",
+ "seeds_per_condition": 30,
+ "summary": {
+  "logs": 30
+ }
+}
