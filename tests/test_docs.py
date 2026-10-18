@@ -53,7 +53,7 @@ def test_synthetic_numbers_carry_the_label():
 
 
 PUBLIC = ["README.md", "HANDOFF.md"] + [p for p in glob.glob(os.path.join(ROOT, "docs", "*.md"))] \
-    + glob.glob(os.path.join(ROOT, "docs", "adr", "*.md")) + ["sim/PREREGISTRATION.md", "sim/DEVIATIONS.md"]
+    + glob.glob(os.path.join(ROOT, "docs", "adr", "*.md")) + ["sim/PREREGISTRATION.md", "sim/DEVIATIONS.md", "sim/PREREGISTRATION_R2.md"]     + glob.glob(os.path.join(ROOT, "assurance", "templates", "*.yaml"))
 
 
 def public_texts():
