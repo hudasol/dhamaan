@@ -10,7 +10,8 @@ This repository holds research data, a checker and a software simulation. It run
 - `detect-secrets` in CI, ignoring only exact SHA-256 digests, which the case records on purpose.
 - `tools/check_repo.py`: no PDFs, archives, web pages, raw download folders, standard copyright notices, preview watermarks or long quotations.
 - `tests/test_import_contract.py`: no network client and no LLM client in any layer.
-- The CI workflow has read only repository permissions.
+- The checks workflow has read only repository permissions. The pages workflow runs only when started by hand and can write only to Pages.
+- The `dhamaan` command reads local files only; it opens no network connection and sends nothing anywhere.
 
 ## GNSS safety boundary
 
