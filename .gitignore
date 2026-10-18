@@ -9,3 +9,5 @@ raw/
 downloads/
 cache/
 .secrets.baseline.local
+*.egg-info/
+build/

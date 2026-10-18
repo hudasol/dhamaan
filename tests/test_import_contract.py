@@ -5,14 +5,15 @@ Layers, lowest first (see docs/ARCHITECTURE.md):
   1 tools     tools/*.py                      validate, check, build, render
   2 sim       sim/*.py                        seeded synthetic simulation
   3 docsgen   docsgen/*.py                    fills documents from data and results
+  4 command   dhamaan/*.py                    the dhamaan command line (decision P3-05)
 Each layer may import the standard library, its allowed third party packages, and lower layers.
 No layer may import an LLM client: no model sits in any decision path.
 """
 import ast, os, sys
 
 ROOT = os.path.normpath(os.path.join(os.path.dirname(__file__), ".."))
-LAYERS = {"tools": 1, "sim": 2, "docsgen": 3}
-THIRD_PARTY = {"tools": {"yaml"}, "sim": {"numpy"}, "docsgen": {"yaml"}}
+LAYERS = {"tools": 1, "sim": 2, "docsgen": 3, "dhamaan": 4}
+THIRD_PARTY = {"tools": {"yaml"}, "sim": {"numpy"}, "docsgen": {"yaml"}, "dhamaan": {"yaml", "numpy"}}
 FORBIDDEN = {"openai", "anthropic", "transformers", "langchain", "llama_cpp", "google", "cohere", "mistralai",
              "ollama", "litellm", "requests", "urllib3", "httpx",
              # standard library network modules
