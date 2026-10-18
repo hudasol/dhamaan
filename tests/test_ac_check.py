@@ -90,7 +90,8 @@ def test_duplicate_id():
     assert ("ERROR", "DUPLICATE_ID", "G1") in codes(c)
 
 # The only items allowed out of "open": simulated, partial, with an artefact produced by sim/.
-NON_OPEN = {"EV-08": "sim/results/EV-08.json", "EV-12": "sim/results/EV-12.json"}
+NON_OPEN = {"EV-08": "sim/results/EV-08.json", "EV-12": "sim/results/EV-12.json", "EV-19": "sim/results_r2/EV-19.json",
+            "EV-20": "sim/results_r2/EV-20.json", "EV-21": "sim/results_r2/EV-21.json"}
 
 def test_real_case_has_no_errors_and_only_simulated_partials():
     case_ = ac.load(os.path.join(ROOT, "assurance", "library_robot_case.yaml"))

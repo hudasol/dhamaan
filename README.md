@@ -10,7 +10,7 @@ Robot and drone standards and regulations ask a developer for safety evidence be
 ## What this repository does
 
 - **Evidence table** (`data/evidence_table.csv`): 222 source traced rows across 24 instrument families, each with a paraphrase, binding status, access level and source URL. Access level: full text seen 41, summary seen 167, title only 14.
-- **Machine checkable assurance case** (`assurance/library_robot_case.yaml`) for an assumed library service robot: 10 goals and 18 evidence items, checked by `tools/ac_check.py`. Today 16 items are open and 2 are partial with simulated evidence only: EV-08 (simulated, `sim/results/EV-08.json`), EV-12 (simulated, `sim/results/EV-12.json`).
+- **Machine checkable assurance case** (`assurance/library_robot_case.yaml`) for an assumed library service robot: 10 goals and 21 evidence items, checked by `tools/ac_check.py`. Today 16 items are open and 5 are partial with simulated evidence only: EV-08 (simulated, `sim/results/EV-08.json`), EV-12 (simulated, `sim/results/EV-12.json`), EV-19 (simulated, `sim/results_r2/EV-19.json`), EV-20 (simulated, `sim/results_r2/EV-20.json`), EV-21 (simulated, `sim/results_r2/EV-21.json`).
 - **Gulf conditions test protocol** (`docs/GULF_TEST_PROTOCOL.md`): a proposal for heat, dust, glare and GNSS degradation evidence.
 - **Preregistered simulation harness** (`sim/`): seeded synthetic models for protocol items DU3 (dust degradation sweep), GL3 (sun sweep) and N2 to N4 (measurement level GNSS fault injection, software only). 30 seeds per condition, 6930 runs in total. Of 23 preregistered predictions, 21 hit and 2 missed (N-P4, N-P8). Acceptance criteria held: AC-DU1, AC-DU2, AC-N2; failed: AC-GL1, AC-GL2, AC-N1. Details in `docs/EVALUATION.md`.
 

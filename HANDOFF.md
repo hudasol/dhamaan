@@ -40,7 +40,7 @@ Tests passed: 103. CI runs the same checks plus `detect-secrets` and renders the
 
 ## State of the assurance case
 
-18 evidence items: 16 open, 2 partial (EV-08 (simulated, `sim/results/EV-08.json`), EV-12 (simulated, `sim/results/EV-12.json`)), 0 provided. Checker: 0 errors, 44 flags. Hardware claims supported only by simulation, and therefore still open: G1, G4, G6.
+21 evidence items: 16 open, 5 partial (EV-08 (simulated, `sim/results/EV-08.json`), EV-12 (simulated, `sim/results/EV-12.json`), EV-19 (simulated, `sim/results_r2/EV-19.json`), EV-20 (simulated, `sim/results_r2/EV-20.json`), EV-21 (simulated, `sim/results_r2/EV-21.json`)), 0 provided. Checker: 0 errors, 48 flags. Hardware claims supported only by simulation, and therefore still open: G1, G4, G6.
 
 ## What the owner must do
 

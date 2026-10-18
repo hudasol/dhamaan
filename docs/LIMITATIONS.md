@@ -18,7 +18,7 @@ We list what the work does not show, where it would break on real data, and find
 ## Assurance case
 
 - The robot, the library and the ODD are assumed. The case is a structure to fill, not a safety case.
-- 16 of 18 evidence items are open; 2 are partial with simulated evidence only, and the checker keeps their hardware claims open.
+- 16 of 21 evidence items are open; 5 are partial with simulated evidence only, and the checker keeps their hardware claims open.
 - The checker tests structure, traceability, wording and evidence integrity. It cannot judge whether an argument is sound.
 
 ## Evidence table

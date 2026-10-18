@@ -2,7 +2,7 @@ digraph GSN {
   rankdir=TB; nodesep=0.25; ranksep=0.55; bgcolor="white";
   node [fontname="Helvetica", fontsize=10, style="filled", color="#c2547a", fontcolor="#4a2433", margin="0.10,0.06"];
   edge [color="#c2547a"];
-  label="Illustrative skeleton. Dashed evidence is open. Partial: EV-08 (simulated), EV-12 (simulated). Simulated evidence supports no hardware claim."; labelloc=t; fontname="Helvetica"; fontsize=11;
+  label="Illustrative skeleton. Dashed evidence is open. Partial: EV-08 (simulated), EV-12 (simulated), EV-19 (simulated), EV-20 (simulated), EV-21 (simulated). Simulated evidence supports no hardware claim."; labelloc=t; fontname="Helvetica"; fontsize=11;
   G1 [shape=box, style="filled", fillcolor="#fde8ef", label="G1\nThe library service robot is\nacceptably safe to operate in the\ndefined library ODD."];
   G2 [shape=box, style="filled", fillcolor="#fde8ef", label="G2\nCollision and contact harm to\npeople is controlled."];
   G3 [shape=box, style="filled", fillcolor="#fde8ef", label="G3\nLearning based perception is\nadequate within the ODD."];
@@ -63,6 +63,9 @@ digraph GSN {
   SN_EV16 [shape=circle, style="filled,dashed", fixedsize=true, width=0.8, fontsize=9, fillcolor="#ffffff", label="EV-16\nopen"];
   SN_EV17 [shape=circle, style="filled,dashed", fixedsize=true, width=0.8, fontsize=9, fillcolor="#ffffff", label="EV-17\nopen"];
   SN_EV18 [shape=circle, style="filled,dashed", fixedsize=true, width=0.8, fontsize=9, fillcolor="#ffffff", label="EV-18\nopen"];
+  SN_EV19 [shape=circle, style="filled", fixedsize=true, width=0.8, fontsize=9, fillcolor="#fbe3ec", label="EV-19\npartial\nsimulated"];
+  SN_EV20 [shape=circle, style="filled", fixedsize=true, width=0.8, fontsize=9, fillcolor="#fbe3ec", label="EV-20\npartial\nsimulated"];
+  SN_EV21 [shape=circle, style="filled", fixedsize=true, width=0.8, fontsize=9, fillcolor="#fbe3ec", label="EV-21\npartial\nsimulated"];
   G2 -> SN_EV04 [style=dashed];
   G2 -> SN_EV05 [style=dashed];
   G2 -> SN_EV06 [style=dashed];
@@ -70,9 +73,12 @@ digraph GSN {
   G3 -> SN_EV09 [style=dashed];
   G4 -> SN_EV08 [style=dashed];
   G4 -> SN_EV09 [style=dashed];
+  G4 -> SN_EV21 [style=dashed];
   G5 -> SN_EV10 [style=dashed];
   G5 -> SN_EV13 [style=dashed];
   G6 -> SN_EV12 [style=dashed];
+  G6 -> SN_EV19 [style=dashed];
+  G6 -> SN_EV20 [style=dashed];
   G7 -> SN_EV11 [style=dashed];
   G7 -> SN_EV18 [style=dashed];
   G8 -> SN_EV14 [style=dashed];
