@@ -57,6 +57,44 @@ Before sending, confirm the correct recipient and channel from the authority's o
 > [YOUR NAME] | [ROLE] | [CONTACT DETAILS]
 
 
+## 4a. Enquiry C: to the civil aviation authority, about environmental conditions and simulation (draft)
+
+Purpose: the research question asks what regulation leaves to the developer for environmental and GNSS interference conditions, and whether simulated evidence is accepted. A reply, or a pointer to a public document, is primary information for that audit.
+
+> **Subject:** Environmental conditions and simulation evidence in drone operator approvals (information request)
+>
+> Dear Sir or Madam,
+>
+> I am [YOUR NAME], [ROLE] at [ORGANISATION]. I am studying how safety evidence is specified for autonomous machines operating in Gulf conditions, and would be grateful for general guidance on three points. I am not asking for approval of any operation.
+>
+> 1. For operator authorisations under the unmanned aircraft rules, are the environmental conditions an operator must show safe operation under (for example high temperature, dust, strong sun, GNSS interference) specified by the Authority, or defined by the operator in its application?
+> 2. Where an operator supports an environmental objective with simulation, does the Authority state conditions under which simulation is accepted, for example in guidance or in the operational risk assessment method it uses?
+> 3. Is there published guidance on handling GNSS jamming or spoofing in operations, and where can it be found?
+>
+> A short reply or a pointer to the public document is enough. I will cite any answer as general information.
+>
+> [YOUR NAME] | [ROLE] | [CONTACT DETAILS]
+
+Channel: the drone enquiries address printed on the Authority's own registration page (`data/uae_channels.csv`, row for the Authority's drone registration and requirements page). Confirm it on the page before use.
+
+## 4b. Enquiry D: to the national standards body, about environmental severities (draft)
+
+> **Subject:** Environmental test severities for equipment used outdoors in the UAE (information request)
+>
+> Dear Sir or Madam,
+>
+> I am [YOUR NAME], [ROLE] at [ORGANISATION]. For a study of safety evidence for outdoor robots I would like to ask in general terms:
+>
+> 1. Does the UAE, or the GCC standardisation organisation, publish a standard or technical regulation that sets environmental severities (temperature range, dust or particle exposure, solar radiation) for equipment used outdoors, for example a national climatic class or a reference to an international climatic standard?
+> 2. If so, which document, and is it mandatory for any product category?
+> 3. If not, which body would normally be asked?
+>
+> A pointer to the public document is enough.
+>
+> [YOUR NAME] | [ROLE] | [CONTACT DETAILS]
+
+Channel: the contact form on the Ministry's contact page, or the address the standards body is listed with on the international standards organisation's member page (`data/uae_channels.csv`). The second address was printed on a third party page; confirm it on the Ministry's own site.
+
 ## 5. Tracking sheet
 
 `data/uae_enquiry_tracking.csv`. One row per recipient, filled by hand. Columns: recipient type, recipient name to confirm, basis, channel (to confirm), date sent, reference number, response date, summary of the response, regime or instrument cited, follow up, status.
