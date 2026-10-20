@@ -28,6 +28,7 @@ OUTPUTS = {
     "docs/PILOT_KIT/WALKTHROUGH.md": "PILOT_KIT_WALKTHROUGH.tmpl.md",
     "docs/PROPOSAL/LIMITS_NOTE.md": "PROPOSAL_LIMITS.tmpl.md",
     "HANDOFF.md": "HANDOFF.tmpl.md",
+    "docs/paper/manuscript.md": "MANUSCRIPT.tmpl.md",
 }
 BRIEF_TEMPLATE = "PROPOSAL_BRIEF.tmpl.md"   # rendered once per audience in data/proposal_pack.yaml
 PLACEHOLDER = re.compile(r"\{\{([A-Z0-9_]+)\}\}")
