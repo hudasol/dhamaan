@@ -1,0 +1,22 @@
+{
+  "title": "dhamaan: source traced safety evidence, a checkable assurance case and preregistered simulation for robots and drones in Gulf conditions",
+  "upload_type": "software",
+  "description": "A source traced evidence table of robot and drone safety instruments, a machine checkable assurance case with a credit ledger, preregistered seeded simulations whose outputs are labelled synthetic, a local command line tool and a pilot kit. Student proposal seed. Not certification and not endorsed by any body.",
+  "creators": [
+    {
+      "name": "Mueen, Huda"
+    }
+  ],
+  "license": "cc-by-4.0",
+  "keywords": [
+    "assurance case",
+    "safety case",
+    "robotics",
+    "drones",
+    "GNSS",
+    "preregistration",
+    "simulation credibility"
+  ],
+  "access_right": "open",
+  "notes": "The licence is proposed until the owner confirms it (LICENSES.md)."
+}
