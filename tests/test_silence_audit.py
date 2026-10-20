@@ -45,3 +45,27 @@ def test_agreement_perfect_and_partial():
 
 def test_kappa_chance_level():
     assert abs(sa.kappa(["a", "a", "b", "b"], ["a", "b", "a", "b"])) < 1e-9
+
+
+def test_summarise_counts_only_in_scope_rows_and_keeps_the_limit():
+    rows = [{"id": "X1", "access_level": "full text seen", **c} for c in (
+        {"hazard": "heat", "asks_evidence": "yes", "test_method_fixed": "yes", "severity_fixed": "yes", "severity_gulf_applicable": "no", "delegated_to_developer": "yes"},
+        {"hazard": "heat", "asks_evidence": "yes", "test_method_fixed": "no", "severity_fixed": "unclear", "severity_gulf_applicable": "unclear", "delegated_to_developer": "no"},
+        {"hazard": "gnss", "asks_evidence": "no", "test_method_fixed": "na", "severity_fixed": "na", "severity_gulf_applicable": "na", "delegated_to_developer": "na"},
+        {"hazard": "out_of_scope", "asks_evidence": "yes", "test_method_fixed": "yes", "severity_fixed": "yes", "severity_gulf_applicable": "yes", "delegated_to_developer": "yes"})]
+    s = sa.summarise(rows)
+    assert s["candidates"] == 4 and s["out_of_scope"] == 1
+    b = s["in_scope"]
+    assert b["rows"] == 3 and b["ask_for_evidence"] == 2 and b["of_those_fix_a_test_method"] == 1
+    assert b["of_those_fix_a_severity_that_applies_to_a_gulf_site"] == 0 and b["of_those_with_severity_unclear"] == 1
+    assert s["by_hazard"]["heat"]["ask_for_evidence"] == 2 and "retrieved text only" in s["limit"]
+
+
+def test_committed_resolved_coding_is_complete_and_uses_allowed_values():
+    rows = sa.read_csv(os.path.join(sa.OUT, "resolved.csv"))
+    ids = [r["id"] for r in sa.read_csv(os.path.join(sa.OUT, "candidates.csv"))]
+    assert [r["id"] for r in rows] == ids
+    for r in rows:
+        for field, ok in sa.CHOICES.items():
+            assert r[field] in ok, (r["id"], field)
+        if r["resolution"] != "agreed": assert r["resolution_reason"]

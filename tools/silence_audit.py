@@ -5,6 +5,7 @@ Layer: tools. Standard library only.
 
     python tools/silence_audit.py draw       writes data/silence_audit/candidates.csv and coder_template.csv
     python tools/silence_audit.py agreement coder_A.csv coder_B.csv    reports Cohen's kappa per coded field
+    python tools/silence_audit.py summarise resolved.csv               H1 counts from the resolved coding
 
 Candidate rows are chosen by a fixed keyword rule (recorded in data/silence_audit/CODEBOOK.md) before any row is coded.
 The rule is deliberately wide; coders mark rows that are not about an environmental or interference hazard as `out_of_scope`.
@@ -80,6 +81,24 @@ def agreement(rows_a: list[dict], rows_b: list[dict]) -> dict:
     return res
 
 
+def summarise(rows: list[dict]) -> dict:
+    """H1 counts from the resolved coding. Rows seen as summary or title only are counted apart, because they cannot show silence."""
+    inscope = [r for r in rows if r["hazard"] != "out_of_scope"]
+    def block(rs):
+        asking = [r for r in rs if r["asks_evidence"] == "yes"]
+        return {"rows": len(rs), "ask_for_evidence": len(asking),
+                "of_those_fix_a_test_method": sum(r["test_method_fixed"] == "yes" for r in asking),
+                "of_those_fix_a_severity": sum(r["severity_fixed"] == "yes" for r in asking),
+                "of_those_fix_a_severity_that_applies_to_a_gulf_site": sum(r["severity_gulf_applicable"] == "yes" for r in asking),
+                "of_those_leave_conditions_to_the_developer": sum(r["delegated_to_developer"] == "yes" for r in asking),
+                "of_those_with_severity_unclear": sum(r["severity_fixed"] == "unclear" for r in asking),
+                "do_not_ask": sum(r["asks_evidence"] == "no" for r in rs), "unclear_whether_they_ask": sum(r["asks_evidence"] == "unclear" for r in rs)}
+    return {"candidates": len(rows), "out_of_scope": len(rows) - len(inscope), "in_scope": block(inscope),
+            "in_scope_full_text_only": block([r for r in inscope if r["access_level"] == "full text seen"]),
+            "by_hazard": {h: block([r for r in inscope if r["hazard"] == h]) for h in sorted({r["hazard"] for r in inscope})},
+            "limit": "Applies to retrieved text only. Two automated coders of one model family; agreement does not remove shared error. Rows seen as summary or title only cannot show that an instrument is silent."}
+
+
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     sub = ap.add_subparsers(dest="cmd", required=True)
@@ -87,6 +106,8 @@ def main(argv: list[str] | None = None) -> int:
     g = sub.add_parser("agreement")
     g.add_argument("coder_a")
     g.add_argument("coder_b")
+    m = sub.add_parser("summarise")
+    m.add_argument("resolved")
     args = ap.parse_args(argv)
     if args.cmd == "draw":
         rows = candidates(read_csv(TABLE))
@@ -103,6 +124,9 @@ def main(argv: list[str] | None = None) -> int:
         print(f"{len(rows)} candidate rows written to data/silence_audit/")
         return 0
     import json
+    if args.cmd == "summarise":
+        print(json.dumps(summarise(read_csv(args.resolved)), indent=1, sort_keys=True))
+        return 0
     print(json.dumps(agreement(read_csv(args.coder_a), read_csv(args.coder_b)), indent=1))
     return 0
 
