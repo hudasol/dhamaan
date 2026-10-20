@@ -55,7 +55,7 @@ Reading. Loss, large jumps, long delay replay and strong noise growth were found
 
 - Anything about a real robot, sensor, receiver or building. The models and the methods were written by the same authors, and nothing here was checked against measurement.
 - That the thresholds are right. They were fixed before the runs and not tuned; the misses above show where they are weak.
-- Heat: no heat item was simulated.
+- Heat: no heat item was simulated in this first round. The second round simulated heat with assumed parameters (`docs/EVALUATION_R2.md`).
 - RF level GNSS behaviour: faults are injected into the position stream only.
 
 See `docs/LIMITATIONS.md` for the full list and `docs/PILOT.md` for the steps that would test these models on hardware.
