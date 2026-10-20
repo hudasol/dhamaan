@@ -76,3 +76,28 @@ def test_failed_mutants_are_reported_not_hidden():
     a = report.analyse(specs, outs, items)
     assert a["summary"]["mutants_failed"] == ["M2|a.x|x0.5"]
     assert a["sensitivity"] == []
+
+
+def test_independent_comparison_reproduces_round_2_when_given_our_own_generator():
+    """Harness check on SYNTHETIC logs: our own generator, rebuilt as generate(kind, size, seed), must give the committed n4r2 conditions."""
+    import json, os
+    from sim import common, gnss_n2n4 as G
+    from sim.r2 import base, replay
+    from sim.r3 import indep
+    cfg = G.Config()
+    def ours(kind, size, seed):
+        g, o = replay.standin(base.rng(base.HELDOUT_SEED, "N4LOG", "standin", seed), cfg)
+        g = replay.read_csv(replay.to_csv(g, replay.GNSS_COLUMNS + replay.REF_COLUMNS), replay.GNSS_COLUMNS)
+        gi = replay.inject(g, kind, size, cfg.t_onset, base.rng(base.HELDOUT_SEED, "N4R2", f"{kind}={size:g}", seed))
+        return gi, o
+    res = indep.results_for(ours)
+    stored = json.load(open(os.path.join(common.ROOT, "sim", "results_r2", "n4r2.json"), encoding="utf-8"))
+    for k, v in stored["conditions"].items():
+        for field in ("false_alarm", "detected", "detected_within_t_n"):
+            assert common.dump(res["conditions"][k][field]) == common.dump(v[field]), (k, field)
+        for field in ("detection_delay", "error_at_alarm"):               # the log is written to CSV once more here, so allow rounding
+            for stat in ("mean", "median", "max"):
+                a, b = res["conditions"][k][field][stat], v[field][stat]
+                assert (a is None and b is None) or abs(a - b) < 2e-3, (k, field, stat)
+    cmp = indep.compare(res, res)
+    assert cmp["different"] == [] and len(cmp["conditions"]) == 16 and len(cmp["verdicts"]) >= 6
