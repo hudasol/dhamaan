@@ -14,7 +14,12 @@ keywords:
   - drones
   - GNSS
   - preregistration
+  - simulation credibility
+  - mutation testing
+  - silence audit
 abstract: >-
-  A source traced evidence table of robot and drone safety instruments, a machine checkable assurance case with
-  templates, a Gulf conditions test protocol, preregistered seeded simulations whose outputs are labelled synthetic,
-  a local command line tool, a static site and a pilot kit. Licences are proposed until the owner confirms them.
+  A source traced evidence table of robot and drone safety instruments, an audit of what those instruments leave to the
+  developer for Gulf conditions, a machine checkable assurance case whose checker applies published simulation
+  credibility conditions and keeps hardware claims open, preregistered seeded simulations labelled synthetic with a
+  mutation audit of their predictions, a harness for a recorded data comparison that has not yet been run, a generated
+  manuscript, a local command line tool, a static site and a pilot kit. Licences are proposed until the owner confirms them.
