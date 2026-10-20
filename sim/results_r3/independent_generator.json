@@ -1,0 +1,225 @@
+{
+ "author_of_generator": "a separate automated agent of the same model family, from docs/INDEPENDENT_GENERATOR_SPEC.md alone",
+ "conditions": [
+  {
+   "condition": "drift=0.05",
+   "ours_detected_within_t_n": 0.0,
+   "ours_false_alarm": 0.0,
+   "ours_max_error_at_alarm_m": 3.181547,
+   "ours_mean_delay_s": 61.666667,
+   "theirs_detected_within_t_n": 0.0,
+   "theirs_false_alarm": 0.0,
+   "theirs_max_error_at_alarm_m": 3.57202,
+   "theirs_mean_delay_s": 60.148148
+  },
+  {
+   "condition": "drift=0.1",
+   "ours_detected_within_t_n": 0.0,
+   "ours_false_alarm": 0.0,
+   "ours_max_error_at_alarm_m": 2.389264,
+   "ours_mean_delay_s": 30.633333,
+   "theirs_detected_within_t_n": 0.0,
+   "theirs_false_alarm": 0.0,
+   "theirs_max_error_at_alarm_m": 2.290436,
+   "theirs_mean_delay_s": 30.766667
+  },
+  {
+   "condition": "drift=0.2",
+   "ours_detected_within_t_n": 0.033333,
+   "ours_false_alarm": 0.0,
+   "ours_max_error_at_alarm_m": 1.381745,
+   "ours_mean_delay_s": 15.6,
+   "theirs_detected_within_t_n": 0.0,
+   "theirs_false_alarm": 0.0,
+   "theirs_max_error_at_alarm_m": 1.422822,
+   "theirs_mean_delay_s": 16.5
+  },
+  {
+   "condition": "drift=0.5",
+   "ours_detected_within_t_n": 0.966667,
+   "ours_false_alarm": 0.0,
+   "ours_max_error_at_alarm_m": 1.287203,
+   "ours_mean_delay_s": 7.533333,
+   "theirs_detected_within_t_n": 0.966667,
+   "theirs_false_alarm": 0.0,
+   "theirs_max_error_at_alarm_m": 1.278411,
+   "theirs_mean_delay_s": 7.333333
+  },
+  {
+   "condition": "jump=10",
+   "ours_detected_within_t_n": 1.0,
+   "ours_false_alarm": 0.0,
+   "ours_max_error_at_alarm_m": 0.560429,
+   "ours_mean_delay_s": 0.0,
+   "theirs_detected_within_t_n": 1.0,
+   "theirs_false_alarm": 0.0,
+   "theirs_max_error_at_alarm_m": 0.880803,
+   "theirs_mean_delay_s": 0.0
+  },
+  {
+   "condition": "jump=2",
+   "ours_detected_within_t_n": 0.3,
+   "ours_false_alarm": 0.0,
+   "ours_max_error_at_alarm_m": 1.514443,
+   "ours_mean_delay_s": 13.4,
+   "theirs_detected_within_t_n": 0.4,
+   "theirs_false_alarm": 0.0,
+   "theirs_max_error_at_alarm_m": 1.824353,
+   "theirs_mean_delay_s": 8.2
+  },
+  {
+   "condition": "jump=20",
+   "ours_detected_within_t_n": 1.0,
+   "ours_false_alarm": 0.0,
+   "ours_max_error_at_alarm_m": 0.560429,
+   "ours_mean_delay_s": 0.0,
+   "theirs_detected_within_t_n": 1.0,
+   "theirs_false_alarm": 0.0,
+   "theirs_max_error_at_alarm_m": 0.880803,
+   "theirs_mean_delay_s": 0.0
+  },
+  {
+   "condition": "jump=5",
+   "ours_detected_within_t_n": 1.0,
+   "ours_false_alarm": 0.0,
+   "ours_max_error_at_alarm_m": 0.620888,
+   "ours_mean_delay_s": 0.766667,
+   "theirs_detected_within_t_n": 1.0,
+   "theirs_false_alarm": 0.0,
+   "theirs_max_error_at_alarm_m": 0.90418,
+   "theirs_mean_delay_s": 0.9
+  },
+  {
+   "condition": "loss=0",
+   "ours_detected_within_t_n": 1.0,
+   "ours_false_alarm": 0.0,
+   "ours_max_error_at_alarm_m": 0.522889,
+   "ours_mean_delay_s": 2.1,
+   "theirs_detected_within_t_n": 1.0,
+   "theirs_false_alarm": 0.0,
+   "theirs_max_error_at_alarm_m": 3.283568,
+   "theirs_mean_delay_s": 2.1
+  },
+  {
+   "condition": "noise=10",
+   "ours_detected_within_t_n": 1.0,
+   "ours_false_alarm": 0.0,
+   "ours_max_error_at_alarm_m": 0.746645,
+   "ours_mean_delay_s": 4.333333,
+   "theirs_detected_within_t_n": 1.0,
+   "theirs_false_alarm": 0.0,
+   "theirs_max_error_at_alarm_m": 0.921869,
+   "theirs_mean_delay_s": 4.4
+  },
+  {
+   "condition": "noise=3",
+   "ours_detected_within_t_n": 0.3,
+   "ours_false_alarm": 0.0,
+   "ours_max_error_at_alarm_m": 0.684128,
+   "ours_mean_delay_s": 11.966667,
+   "theirs_detected_within_t_n": 0.4,
+   "theirs_false_alarm": 0.0,
+   "theirs_max_error_at_alarm_m": 0.688289,
+   "theirs_mean_delay_s": 11.766667
+  },
+  {
+   "condition": "noise=5",
+   "ours_detected_within_t_n": 0.933333,
+   "ours_false_alarm": 0.0,
+   "ours_max_error_at_alarm_m": 0.716978,
+   "ours_mean_delay_s": 7.3,
+   "theirs_detected_within_t_n": 0.9,
+   "theirs_false_alarm": 0.0,
+   "theirs_max_error_at_alarm_m": 0.764541,
+   "theirs_mean_delay_s": 7.433333
+  },
+  {
+   "condition": "nominal=0",
+   "ours_detected_within_t_n": null,
+   "ours_false_alarm": 0.0,
+   "ours_max_error_at_alarm_m": null,
+   "ours_mean_delay_s": null,
+   "theirs_detected_within_t_n": null,
+   "theirs_false_alarm": 0.0,
+   "theirs_max_error_at_alarm_m": null,
+   "theirs_mean_delay_s": null
+  },
+  {
+   "condition": "replay=10",
+   "ours_detected_within_t_n": 1.0,
+   "ours_false_alarm": 0.0,
+   "ours_max_error_at_alarm_m": 0.560429,
+   "ours_mean_delay_s": 0.0,
+   "theirs_detected_within_t_n": 1.0,
+   "theirs_false_alarm": 0.0,
+   "theirs_max_error_at_alarm_m": 0.880803,
+   "theirs_mean_delay_s": 0.0
+  },
+  {
+   "condition": "replay=2",
+   "ours_detected_within_t_n": 0.2,
+   "ours_false_alarm": 0.0,
+   "ours_max_error_at_alarm_m": 0.652569,
+   "ours_mean_delay_s": 5.333333,
+   "theirs_detected_within_t_n": 0.2,
+   "theirs_false_alarm": 0.0,
+   "theirs_max_error_at_alarm_m": 0.720193,
+   "theirs_mean_delay_s": 7.142857
+  },
+  {
+   "condition": "replay=5",
+   "ours_detected_within_t_n": 1.0,
+   "ours_false_alarm": 0.0,
+   "ours_max_error_at_alarm_m": 0.812047,
+   "ours_mean_delay_s": 1.266667,
+   "theirs_detected_within_t_n": 1.0,
+   "theirs_false_alarm": 0.0,
+   "theirs_max_error_at_alarm_m": 0.802495,
+   "theirs_mean_delay_s": 1.566667
+  }
+ ],
+ "different": [],
+ "evidence_kind": "simulated",
+ "label": "SYNTHETIC: produced by a seeded software model in sim/. Not measured on any robot, sensor or receiver. The model and the method under test share an author. Evidence kind: simulated.",
+ "limit": "Same model family as the first author, so errors can repeat. The spec fixes the central error values, so this tests the implementation and its reading of the fault classes, not the choice of those values.",
+ "part": "D",
+ "round": 3,
+ "verdicts": [
+  {
+   "id": "N4-P1",
+   "ours_held": true,
+   "same": true,
+   "theirs_held": true
+  },
+  {
+   "id": "N4-P2",
+   "ours_held": true,
+   "same": true,
+   "theirs_held": true
+  },
+  {
+   "id": "N4-P3",
+   "ours_held": true,
+   "same": true,
+   "theirs_held": true
+  },
+  {
+   "id": "N4-P4",
+   "ours_held": true,
+   "same": true,
+   "theirs_held": true
+  },
+  {
+   "id": "AC-N1R2",
+   "ours_held": false,
+   "same": true,
+   "theirs_held": false
+  },
+  {
+   "id": "AC-N2R2",
+   "ours_held": false,
+   "same": true,
+   "theirs_held": false
+  }
+ ]
+}
