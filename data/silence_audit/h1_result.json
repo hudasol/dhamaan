@@ -1,0 +1,84 @@
+{
+ "by_hazard": {
+  "dust": {
+   "ask_for_evidence": 0,
+   "do_not_ask": 1,
+   "of_those_fix_a_severity": 0,
+   "of_those_fix_a_severity_that_applies_to_a_gulf_site": 0,
+   "of_those_fix_a_test_method": 0,
+   "of_those_leave_conditions_to_the_developer": 0,
+   "of_those_with_severity_unclear": 0,
+   "rows": 2,
+   "unclear_whether_they_ask": 1
+  },
+  "environment_general": {
+   "ask_for_evidence": 8,
+   "do_not_ask": 4,
+   "of_those_fix_a_severity": 0,
+   "of_those_fix_a_severity_that_applies_to_a_gulf_site": 0,
+   "of_those_fix_a_test_method": 0,
+   "of_those_leave_conditions_to_the_developer": 4,
+   "of_those_with_severity_unclear": 0,
+   "rows": 18,
+   "unclear_whether_they_ask": 6
+  },
+  "glare": {
+   "ask_for_evidence": 1,
+   "do_not_ask": 0,
+   "of_those_fix_a_severity": 0,
+   "of_those_fix_a_severity_that_applies_to_a_gulf_site": 0,
+   "of_those_fix_a_test_method": 0,
+   "of_those_leave_conditions_to_the_developer": 0,
+   "of_those_with_severity_unclear": 1,
+   "rows": 1,
+   "unclear_whether_they_ask": 0
+  },
+  "gnss": {
+   "ask_for_evidence": 2,
+   "do_not_ask": 11,
+   "of_those_fix_a_severity": 0,
+   "of_those_fix_a_severity_that_applies_to_a_gulf_site": 0,
+   "of_those_fix_a_test_method": 0,
+   "of_those_leave_conditions_to_the_developer": 2,
+   "of_those_with_severity_unclear": 0,
+   "rows": 15,
+   "unclear_whether_they_ask": 2
+  },
+  "heat": {
+   "ask_for_evidence": 1,
+   "do_not_ask": 0,
+   "of_those_fix_a_severity": 0,
+   "of_those_fix_a_severity_that_applies_to_a_gulf_site": 0,
+   "of_those_fix_a_test_method": 1,
+   "of_those_leave_conditions_to_the_developer": 0,
+   "of_those_with_severity_unclear": 1,
+   "rows": 2,
+   "unclear_whether_they_ask": 1
+  }
+ },
+ "candidates": 54,
+ "in_scope": {
+  "ask_for_evidence": 12,
+  "do_not_ask": 16,
+  "of_those_fix_a_severity": 0,
+  "of_those_fix_a_severity_that_applies_to_a_gulf_site": 0,
+  "of_those_fix_a_test_method": 1,
+  "of_those_leave_conditions_to_the_developer": 6,
+  "of_those_with_severity_unclear": 2,
+  "rows": 38,
+  "unclear_whether_they_ask": 10
+ },
+ "in_scope_full_text_only": {
+  "ask_for_evidence": 3,
+  "do_not_ask": 5,
+  "of_those_fix_a_severity": 0,
+  "of_those_fix_a_severity_that_applies_to_a_gulf_site": 0,
+  "of_those_fix_a_test_method": 0,
+  "of_those_leave_conditions_to_the_developer": 1,
+  "of_those_with_severity_unclear": 0,
+  "rows": 9,
+  "unclear_whether_they_ask": 1
+ },
+ "limit": "Applies to retrieved text only. Two automated coders of one model family; agreement does not remove shared error. Rows seen as summary or title only cannot show that an instrument is silent.",
+ "out_of_scope": 16
+}
