@@ -13,6 +13,7 @@ from __future__ import annotations
 import argparse, csv, hashlib, os, re, sys
 import yaml
 import contracts
+import credit_ledger as credit
 
 STATUSES = set(contracts.EVIDENCE_STATUS)
 SAFE_WORDS = re.compile(r"\b(safe|safely|safer|safest)\b", re.I)
@@ -95,6 +96,12 @@ def check(case: dict, rows: dict, base_dir: str = ".") -> list[tuple[str, str, s
             elif not e.get("sha256"): add("ERROR", "MISSING_HASH", i, f"status {e['status']} without the artefact sha256")
             elif sha256_file(os.path.join(base_dir, art)) != e["sha256"]:
                 add("ERROR", "HASH_MISMATCH", i, f"artefact {art} does not match the recorded sha256")
+        if e.get("status") != "open":
+            met, problems = credit.conditions(e, contexts, base_dir)
+            for pr in problems: add("ERROR", "CREDIT_REFERENCE", i, pr)
+            lvl = credit.ceiling(e, met)
+            unmet = [credit.LABEL[c] for c in credit.CONDITIONS if not met[c]]
+            add("FLAG", "CREDIT_CEILING", i, f"ceiling on the claim it can support: {lvl}" + (f"; not met: {', '.join(unmet)}" if unmet else ""))
         rs = e.get("rows") or []
         if not rs: add("ERROR", "UNTRACED", i, "evidence item has no evidence table rows")
         for r in rs:
@@ -124,6 +131,16 @@ def check(case: dict, rows: dict, base_dir: str = ".") -> list[tuple[str, str, s
             for x in done:
                 if x.get("kind") == "simulated" and x.get("status") == "provided":
                     add("ERROR", "SIM_CLOSES_HARDWARE", x["id"], f"simulated evidence marked provided supports hardware claim {g['id']}")
+        need = credit.required_level(g)
+        for x in done:
+            if x.get("status") == "provided":
+                lv = credit.ceiling(x, credit.conditions(x, contexts, base_dir)[0])
+                if not credit.meets(lv, need):
+                    add("ERROR", "CREDIT_BELOW_CLAIM", x["id"], f"marked provided for {g['id']} ({g.get('claim_about')} claim needs {need}) but its ceiling is {lv}")
+        if done and need != "none":
+            best = max((credit.ceiling(x, credit.conditions(x, contexts, base_dir)[0]) for x in done), key=credit.LEVELS.index)
+            if not credit.meets(best, need):
+                add("FLAG", "CLAIM_CEILING", g["id"], f"best evidence ceiling is {best}; a {g.get('claim_about')} claim needs {need}")
         if g.get("undeveloped"):
             add("FLAG", "UNDEVELOPED", g["id"], g.get("undeveloped_reason", "goal marked undeveloped"))
             continue

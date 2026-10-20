@@ -16,7 +16,7 @@ from dataclasses import dataclass, field
 from typing import Any
 
 __all__ = ["Column", "Field", "NodeKind", "EVIDENCE_TABLE", "CASE", "CASE_TOP_LEVEL",
-           "BINDING", "ACCESS", "BINDING_CHECKED", "VERIFICATION_STATUS", "EVIDENCE_STATUS", "EVIDENCE_KIND", "CLAIM_ABOUT",
+           "BINDING", "ACCESS", "BINDING_CHECKED", "VERIFICATION_STATUS", "EVIDENCE_STATUS", "EVIDENCE_KIND", "CLAIM_ABOUT", "CREDIT_LEVELS",
            "case_conformance"]
 
 # ---- evidence table -------------------------------------------------------------------------
@@ -72,6 +72,8 @@ EVIDENCE_STATUS: tuple[str, ...] = ("open", "partial", "provided")
 EVIDENCE_KIND: tuple[str, ...] = ("simulated", "bench", "field")
 # What a claim is about. A hardware claim is about the physical robot in its building.
 CLAIM_ABOUT: tuple[str, ...] = ("hardware", "software", "process", "argument")
+# Credit ladder for evidence that is not open (tools/credit_ledger.py). Computed from references, never typed in.
+CREDIT_LEVELS: tuple[str, ...] = ("none", "demonstration", "indicative", "supporting")
 
 
 @dataclass(frozen=True)
@@ -124,7 +126,11 @@ CASE: tuple[NodeKind, ...] = (
         Field("note", "string", "Free note."),
         Field("kind", "string", "How the evidence was produced; required unless open.", enum=EVIDENCE_KIND),
         Field("artefact", "string", "Path of the artefact, relative to the repository root; required unless open."),
-        Field("sha256", "string", "SHA-256 of the artefact file; required unless open.", pattern=r"^[0-9a-f]{64}$"))),
+        Field("sha256", "string", "SHA-256 of the artefact file; required unless open.", pattern=r"^[0-9a-f]{64}$"),
+        Field("credibility_context", "ids", "Context ids that state the context of use of this evidence (credit condition 1)."),
+        Field("credibility_physical_data", "string", "Repository path of measured data the evidence was compared with (credit condition 2)."),
+        Field("credibility_uncertainty", "string", "Repository path of the uncertainty or sensitivity result for this evidence (credit condition 3)."),
+        Field("credibility_verifier_record", "string", "Repository path of the record of a verifier who is not the developer (credit condition 4)."))),
 )
 CASE_TOP_LEVEL: tuple[str, ...] = ("meta", "strategy_links") + tuple(k.key for k in CASE)
 META_FIELDS: tuple[str, ...] = ("title", "version", "status", "evidence_table", "note")

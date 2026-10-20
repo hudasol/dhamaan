@@ -56,6 +56,25 @@
           "description": "Path of the artefact, relative to the repository root; required unless open.",
           "type": "string"
         },
+        "credibility_context": {
+          "description": "Context ids that state the context of use of this evidence (credit condition 1).",
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "credibility_physical_data": {
+          "description": "Repository path of measured data the evidence was compared with (credit condition 2).",
+          "type": "string"
+        },
+        "credibility_uncertainty": {
+          "description": "Repository path of the uncertainty or sensitivity result for this evidence (credit condition 3).",
+          "type": "string"
+        },
+        "credibility_verifier_record": {
+          "description": "Repository path of the record of a verifier who is not the developer (credit condition 4).",
+          "type": "string"
+        },
         "decision_needed": {
           "description": "A decision by the owner is needed first.",
           "type": "boolean"

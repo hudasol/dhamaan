@@ -214,3 +214,74 @@ def test_artefact_path_must_stay_inside_the_repository():
     for bad in ("/etc/passwd", "../outside.json", "sim/../../x.json"):
         c = case(); c["evidence"][0].update({"status": "partial", "kind": "simulated", "artefact": bad, "sha256": "0" * 64})
         assert ("ERROR", "BAD_ARTEFACT_PATH", "EV-01") in codes(c), bad
+
+
+# ---- credit ledger (four external conditions, decided by files the checker can open) ----
+
+def credit_case(tmp_path, **ev_extra):
+    (tmp_path / "data").mkdir(exist_ok=True); (tmp_path / "data" / "measured.csv").write_text("t,x\n0,1\n")
+    (tmp_path / "data" / "sens.csv").write_text("a,b\n1,2\n"); (tmp_path / "data" / "review.md").write_text("review\n")
+    c = case(); c["contexts"].append({"id": "C2", "text": "context of use of the simulated evidence"})
+    c["evidence"] = [{"id": "EV-01", "title": "ODD", "status": "open", "rows": ["A01"]},
+                     {"id": "EV-02", "title": "sim", "status": "partial", "kind": "simulated", "artefact": "data/measured.csv",
+                      "sha256": ac.sha256_file(str(tmp_path / "data" / "measured.csv")), "rows": ["A01"]} | ev_extra]
+    c["goals"][1]["evidence"] = ["EV-02"]
+    return c
+
+
+def ceiling_of(c, tmp_path):
+    return [m for s, code, i, m in ac.check(c, ROWS, str(tmp_path)) if code == "CREDIT_CEILING"][0]
+
+
+def test_credit_none_without_context_of_use(tmp_path):
+    assert "ceiling on the claim it can support: none" in ceiling_of(credit_case(tmp_path), tmp_path)
+
+
+def test_credit_demonstration_with_context_only(tmp_path):
+    m = ceiling_of(credit_case(tmp_path, credibility_context=["C2"]), tmp_path)
+    assert "demonstration" in m and "validated against measured data" in m
+
+
+def test_credit_indicative_needs_measured_data(tmp_path):
+    m = ceiling_of(credit_case(tmp_path, credibility_context=["C2"], credibility_physical_data="data/measured.csv"), tmp_path)
+    assert ": indicative" in m and "independent" in m
+
+
+def test_credit_supporting_needs_all_four(tmp_path):
+    full = dict(credibility_context=["C2"], credibility_physical_data="data/measured.csv", credibility_uncertainty="data/sens.csv",
+                credibility_verifier_record="data/review.md")
+    assert ": supporting" in ceiling_of(credit_case(tmp_path, **full), tmp_path)
+    for drop in ("credibility_physical_data", "credibility_uncertainty", "credibility_verifier_record"):
+        part = {k: v for k, v in full.items() if k != drop}
+        assert ": supporting" not in ceiling_of(credit_case(tmp_path, **part), tmp_path), drop
+
+
+def test_credit_reference_to_a_missing_file_is_an_error(tmp_path):
+    c = credit_case(tmp_path, credibility_context=["C2"], credibility_physical_data="data/nothing.csv")
+    assert ("ERROR", "CREDIT_REFERENCE", "EV-02") in {(s, code, i) for s, code, i, m in ac.check(c, ROWS, str(tmp_path))}
+    c = credit_case(tmp_path, credibility_context=["C9"])
+    assert ("ERROR", "CREDIT_REFERENCE", "EV-02") in {(s, code, i) for s, code, i, m in ac.check(c, ROWS, str(tmp_path))}
+
+
+def test_credit_path_may_not_leave_the_repository(tmp_path):
+    c = credit_case(tmp_path, credibility_context=["C2"], credibility_uncertainty="../outside.csv")
+    assert ("ERROR", "CREDIT_REFERENCE", "EV-02") in {(s, code, i) for s, code, i, m in ac.check(c, ROWS, str(tmp_path))}
+
+
+def test_provided_simulated_evidence_cannot_carry_a_software_claim_without_validation(tmp_path):
+    c = credit_case(tmp_path, credibility_context=["C2"]); c["evidence"][1]["status"] = "provided"; c["goals"][1]["claim_about"] = "software"
+    assert ("ERROR", "CREDIT_BELOW_CLAIM", "EV-02") in {(s, code, i) for s, code, i, m in ac.check(c, ROWS, str(tmp_path))}
+
+
+def test_partial_evidence_is_flagged_not_rejected_and_hardware_stays_open(tmp_path):
+    c = credit_case(tmp_path, credibility_context=["C2"])
+    k = {(s, code, i) for s, code, i, m in ac.check(c, ROWS, str(tmp_path))}
+    assert ("FLAG", "CLAIM_CEILING", "G2") in k and ("FLAG", "CLAIM_SIM_ONLY", "G2") in k
+    assert not [x for x in k if x[0] == "ERROR"]
+
+
+def test_even_fully_credited_simulation_does_not_close_a_hardware_claim(tmp_path):
+    full = dict(credibility_context=["C2"], credibility_physical_data="data/measured.csv", credibility_uncertainty="data/sens.csv",
+                credibility_verifier_record="data/review.md")
+    c = credit_case(tmp_path, **full); c["evidence"][1]["status"] = "provided"
+    assert ("ERROR", "SIM_CLOSES_HARDWARE", "EV-02") in {(s, code, i) for s, code, i, m in ac.check(c, ROWS, str(tmp_path))}
