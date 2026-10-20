@@ -31,6 +31,8 @@ contexts:
   - id: C3
     text: Applicable regime for this deployment (UAE federal, emirate, host organisation policy, insurer). Not yet determined.
     evidence: [EV-03]
+  - id: C4
+    text: Context of use of the simulated evidence. SYNTHETIC software models in sim/ with assumed, proposal parameters, used to show that the case can take evidence and to test monitor logic. They are not a model of a real robot, sensor or building.
 
 strategies:
   - id: S1
