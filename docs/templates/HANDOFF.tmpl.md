@@ -39,22 +39,21 @@ Failed acceptance criteria: first round {{AC_FAILED_LIST}}; second round {{R2_AC
 
 ## What the owner must do
 
-These steps need a person and cannot be done from inside the repository. Nothing has been sent to anyone.
+These steps need a person and cannot be done from inside the repository. Nothing has been sent to anyone, no account was created and nothing was registered. Each item is open until the owner records it as done here.
 
-- **Fetch documents.** Everything in `docs/FETCH_LIST.md`: a public GNSS log with a clear licence for N4, the official items in `docs/REPORT.md` Appendix C, and the locators in `docs/VALIDATOR_WARNINGS.md`. Fetch by hand; never commit standard text.
-- **Confirm licences.** The proposed licences in `LICENSES.md` (MIT for code, CC BY 4.0 for documents and data), the unconfirmed tool and data licences in `data/free_tools_licences.csv`, and the licence of any public log before it enters `data/third_party_manifest.csv`. dhill has no licence selected; nothing is copied from it.
-- **Create the release.** No GitHub release was created. Suggested release from tag v1.8.0, titled "dhamaan v1.8.0, third phase":
+1. **Human check of sixty rows.** Read `data/human_check/INSTRUCTIONS.md`, fill `data/human_check/worksheet.csv` from the printed sources, then run the scorer. Until then the error rates come from automated passes of one model family. Status: open.
+2. **Hand fetch of official texts.** Read the items in `docs/FETCH_LIST_R3.md` from the printed Official Journal and the GCAA pages; automated extraction did not confirm them. Never commit standard text. Status: open.
+3. **Send enquiries A to D.** Drafts are in `docs/UAE_ENQUIRY_PACK.md`. Review each, choose the sender and send. Status: open, nothing sent.
+4. **Register the design on OSF.** Use `docs/OSF_REGISTRATION.md` (it carries the hash of the design file). Enter the registration identifier in that file and in `docs/PREREG_R3_DRAFT.md`, and record the AC-N4 limit as written there. The recorded arm may not run before this. Status: open.
+5. **Find an outside reader.** One person who did not write the work reads the manuscript and the case, and signs a verifier record if they are willing. Status: open.
+6. **Confirm licences.** The proposed licences in `LICENSES.md`, the tool and data licences in `data/free_tools_licences.csv`, and the licence of any recording before it enters `data/third_party_manifest.csv`; see `data/gnss_data_options.csv`. Status: open.
+7. **Release, Pages and archive.** Create the GitHub release from the tag, set About text and topics, turn on Pages (source GitHub Actions, then start the pages workflow), and enable the Zenodo link so `.zenodo.json` produces a DOI. Add the DOI to `CITATION.cff` afterwards. Status: open.
+8. **Review the Arabic summary.** The page `ar.html` (function `arabic_page` in `docsgen/site.py`) is a draft; correct it before sharing the site. Status: open.
+9. **Download real GNSS logs.** Choose a log with a clear licence from `data/gnss_data_options.csv`, place it outside the clone, and run the recorded harness (`sim/r3/run_recorded.py`) only after item four. Status: open.
 
-  > Student proposal seed. This release adds a second preregistered simulation round ({{R2_PRED_HIT}} of {{R2_PRED_TOTAL}} predictions hit; failed criteria {{R2_AC_FAILED_LIST}}), the dhamaan command, three case templates, a static site, a pilot kit and a proposal pack. Simulated results are SYNTHETIC and close no hardware claim. Not certification and not endorsed by any body. Licences are proposed until confirmed.
+Suggested About text, as one line: student proposal seed, source traced safety evidence for robots and drones in Gulf conditions, a checkable assurance case, preregistered simulations, a local command and a pilot kit; not certification. Suggested topics: assurance-case, safety-case, robotics, drones, gnss, simulation, preregistration, evidence, gulf.
 
-- **Set About and topics.** Suggested About text:
-
-  > Student proposal seed: source traced safety evidence for robots and drones in Gulf conditions, a checkable assurance case, preregistered simulations, a local command and a pilot kit. Not certification.
-
-  Suggested topics: assurance-case, safety-case, robotics, drones, gnss, simulation, preregistration, evidence, gulf.
-- **Turn on Pages.** In the repository settings, under Pages, set the source to GitHub Actions, then start the "pages" workflow from the Actions tab. Until then nothing is published.
-- **Review the Arabic summary.** The page `ar.html` (source in `docsgen/site.py`, function `arabic_page`) is a draft for owner review; correct it before sharing the site.
-- **Decide on milestone pull requests.** This phase committed to main (`docs/adr/0010-git-workflow.md`, decision `P3-02`).
+Decision taken earlier: work is committed to main (`docs/adr/0010-git-workflow.md`, decision `P3-02`).
 
 ## Open items
 
