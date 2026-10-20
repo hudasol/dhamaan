@@ -44,7 +44,7 @@ Prediction (written now): at least one criterion that held in rounds 1 or 2 flip
 
 ### Data
 
-[Source, licence, format and recording identifiers, chosen from the options found in `data/gnss_data_options.csv`. Only recordings with a stated licence that allows reuse are used. The licence text and URL are entered in `data/third_party_manifest.csv` before any replay.] Recordings made outside the Gulf are used as such and no Gulf claim is drawn from them.
+[Source, licence, format and recording identifiers, chosen from the options in `data/gnss_data_options.csv` (20 options, retrieved 20 October 2026). At that date no option was clean for replay: no licensed fix level log under real interference was found, and no Gulf data set was found. Candidates are the ADS B track archives under the Open Database Licence (interference inferred from reported accuracy fields, not labelled), and the Andoya jammer test (real interference, raw samples only, licence to be confirmed by reading the data page). Only recordings with a stated licence that allows reuse are used. The licence text and URL are entered in `data/third_party_manifest.csv` before any replay.] Recordings made outside the Gulf are used as such and no Gulf claim is drawn from them.
 
 ### Split
 
