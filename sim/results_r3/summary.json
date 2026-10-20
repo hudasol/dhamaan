@@ -1,0 +1,27 @@
+{
+ "evidence_kind": "simulated",
+ "factors": [
+  0.5,
+  1.5
+ ],
+ "hit": 38,
+ "informative": 39,
+ "informative_hit": 36,
+ "informative_model_changes_only": 38,
+ "informative_model_changes_only_hit": 35,
+ "label": "SYNTHETIC: produced by a seeded software model in sim/. Not measured on any robot, sensor or receiver. The model and the method under test share an author. Evidence kind: simulated.",
+ "mutants": 178,
+ "mutants_failed": [],
+ "mutants_run": 177,
+ "mutants_skipped_no_change": [],
+ "parameters": 87,
+ "part": "A and B",
+ "predictions": 42,
+ "round": 3,
+ "uninformative": 3,
+ "uninformative_ids": [
+  "H-P2",
+  "H-P3",
+  "N-P11"
+ ]
+}

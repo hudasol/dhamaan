@@ -12,6 +12,7 @@ Start with the first four. The rest is reference. Generated files carry a header
 ## Method and results
 
 - `METHOD.md`, `PROTOCOL.md`: how rows were collected and checked.
+- `INFORMATIVENESS.md`: mutation audit and parameter sensitivity of the predictions (SYNTHETIC).
 - `EVALUATION.md`, `EVALUATION_R2.md`: preregistered simulation rounds one and two (SYNTHETIC).
 - `PREREG_R3_DRAFT.md`, `OSF_REGISTRATION.md`, `INDEPENDENT_GENERATOR_SPEC.md`: round three design, registration text and the second generator spec.
 - `RELATED_WORK.md`, `paper/OUTLINE.md`: literature positioning and the outline the manuscript follows.

@@ -5,7 +5,7 @@ Status: generated draft. Simulation numbers are SYNTHETIC. Every number is fille
 
 ## Abstract
 
-Where no instrument fixes the conditions a service robot must be shown safe under, the developer's own simulation becomes the evidence. We build a source traced table of 222 rows over 24 instrument families and measure its extraction error (either pass, 32.0 percent, interval 26.2 to 38.4 percent). We audit 38 in scope rows for what they leave to the developer: of 12 that ask for environmental or interference evidence, 0 fix a severity and 0 fix one that applies to a Gulf site. We encode published simulation credibility conditions in a checker for a machine readable assurance case, so that 21 evidence items each carry a ceiling on the claim they can support. Two preregistered synthetic rounds hit 21 of 23 and 17 of 19 predictions; a mutation audit of the predictions found n/a uninformative (round three state: not yet run). All simulated evidence is synthetic, written by the authors of the monitors it tests, and supports no claim about a real robot.
+Where no instrument fixes the conditions a service robot must be shown safe under, the developer's own simulation becomes the evidence. We build a source traced table of 222 rows over 24 instrument families and measure its extraction error (either pass, 32.0 percent, interval 26.2 to 38.4 percent). We audit 38 in scope rows for what they leave to the developer: of 12 that ask for environmental or interference evidence, 0 fix a severity and 0 fix one that applies to a Gulf site. We encode published simulation credibility conditions in a checker for a machine readable assurance case, so that 21 evidence items each carry a ceiling on the claim they can support. Two preregistered synthetic rounds hit 21 of 23 and 17 of 19 predictions; a mutation audit of the predictions found 3 uninformative (round three state: complete). All simulated evidence is synthetic, written by the authors of the monitors it tests, and supports no claim about a real robot.
 
 ## Introduction
 
@@ -45,7 +45,7 @@ Round one (preregistration SHA-256 `f1e6fb576949358faf5dfe3d8233f1c4da2b2e4103d5
 
 ## Round three
 
-Informativeness audit (state: not yet run). A prediction is informative if its verdict changes under any of four classes of mutant: a monitor that never alarms, one that alarms at once, each assumed parameter scaled by one half and by one and a half, and a shifted fault onset. Across n/a mutant runs, n/a of n/a predictions were informative, and n/a of those hit, against n/a hits overall. Uninformative predictions: n/a.
+Informativeness audit (state: complete). A prediction is informative if its verdict changes under any of four classes of mutant: a monitor that never alarms, one that alarms at once, each assumed parameter scaled by one half and by one and a half, and a shifted fault onset. Across 177 mutant runs, 39 of 42 predictions were informative, and 36 of those hit, against 38 hits overall. Uninformative predictions: H-P2, H-P3, N-P11.
 
 Second author generator. A second generator was written in a fresh context from a written specification (`docs/INDEPENDENT_GENERATOR_SPEC.md`). Across 6 compared verdicts, 0 differ. Limit: Same model family as the first author, so errors can repeat. The spec fixes the central error values, so this tests the implementation and its reading of the fault classes, not the choice of those values.
 

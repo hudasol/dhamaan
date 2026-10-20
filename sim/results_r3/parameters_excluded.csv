@@ -1,0 +1,18 @@
+id,reason
+acc2.DU_BOUNDS,grid searched by the design rule
+acc2.DU_SCANS,grid searched by the design rule
+acc2.DU_THRESHOLDS,grid searched by the design rule
+du3.dt,"scan period, structural"
+du3.step_deg,"beam spacing, structural"
+du3.t_onset,shifted by mutant M3
+gl3.dt,"frame period, structural"
+gl3.s_g,"same value as acc.S_G, which is the parameter listed"
+gnss.dt,"odometry step, structural"
+gnss.duration,"run length, structural"
+gnss.fix_period_steps,"fix rate, structural"
+gnss.t_onset,shifted by mutant M3
+heat.DECIDE,"decision period, structural"
+heat.DT,"time step, structural"
+heat.HORIZON,"controller look ahead, structural"
+heat.MISSION,"mission length, structural"
+heat.RATED_AMBIENT_EXAMPLE,"cited figure, not assumed"

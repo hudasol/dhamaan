@@ -410,9 +410,29 @@ def manuscript_facts() -> dict:
     return f
 
 
+def r3_facts() -> dict:
+    sp = _p("sim/results_r3/summary.json")
+    if not os.path.exists(sp):
+        return {k: "not yet run" for k in ("R3_SUMMARY", "R3_INFO_TABLE", "R3_SENS_TABLE", "R3_LABEL")}
+    S = json.load(open(sp, encoding="utf-8"))
+    info = _csv("sim/results_r3/informativeness.csv"); sens = _csv("sim/results_r3/sensitivity.csv")
+    preds = [r for r in info if r["kind"] == "prediction"]
+    unin = [r for r in preds if r["informative"] != "True"]
+    summ = (f"{S['informative']} of {S['predictions']} predictions are informative (their verdict changes under at least one mutant); "
+            f"{S['informative_hit']} of those {S['informative']} hit, against {S['hit']} of {S['predictions']} overall. "
+            f"Uninformative: {', '.join(S['uninformative_ids']) or 'none'}. {S['mutants_run']} mutants were run over {S['parameters']} assumed parameters at the factors {', '.join(str(x) for x in S['factors'])}.")
+    it = table(["Round", "Prediction", "Verdict", "Mutants changing it", "M0", "M1", "M3", "Informative"],
+               [[r["round"], r["id"], r["original"], r["changed_under"], r["M0"], r["M1"], r["M3"], r["informative"]] for r in preds])
+    held = collections.defaultdict(list)
+    for r in sens: held[(r["round"], r["criterion"], r["original_held"], r["mutated_held"])].append(f'{r["parameter"]} x{r["factor"]}')
+    st = table(["Round", "Criterion", "Held in original", "Held after change", "Flips", "Parameters (first five)"],
+               [[k[0], k[1], k[2], k[3], len(v), "; ".join(v[:5])] for k, v in sorted(held.items())])
+    return {"R3_SUMMARY": summ, "R3_INFO_TABLE": it, "R3_SENS_TABLE": st, "R3_LABEL": S["label"]}
+
+
 def all_facts() -> dict:
     f = {}
-    for part in (evidence_table_facts(), case_facts(), context_facts(), warning_facts(), review_facts(), sim_facts(), r2_facts(), kit_facts(), review_fix_facts(), check_facts(), manuscript_facts()):
+    for part in (evidence_table_facts(), case_facts(), context_facts(), warning_facts(), review_facts(), sim_facts(), r2_facts(), kit_facts(), review_fix_facts(), check_facts(), manuscript_facts(), r3_facts()):
         assert not set(part) & set(f), set(part) & set(f)
         f.update(part)
     return f
