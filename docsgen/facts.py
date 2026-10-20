@@ -377,9 +377,42 @@ def check_facts() -> dict:
             "CHECK_LINES": "\n".join(f"- {s['name']}: {s['summary']}" for s in d["steps"])}
 
 
+def manuscript_facts() -> dict:
+    """Numbers for docs/paper/manuscript.md. Missing round 3 results are stated as not yet run, never filled in."""
+    h = _json("data/silence_audit/h1_result.json"); ag = _json("data/silence_audit/agreement.json")
+    ins = h["in_scope"]; full = h["in_scope_full_text_only"]
+    kappas = [v["kappa"] for k, v in ag.items() if isinstance(v, dict) and "kappa" in v]
+    ind = _json("sim/results_r3/independent_generator.json")
+    n_diff = len(ind["different"]); n_ind = len(ind["verdicts"])
+    off = _csv("data/official_r3_status.csv")
+    n_off_open = sum(r["status_after"] != "confirmed" for r in off)
+    f = {
+        "MS_SILENCE_CAND": str(h["candidates"]), "MS_SILENCE_SCOPE": str(ins["rows"]), "MS_SILENCE_OUT": str(h["out_of_scope"]),
+        "MS_SILENCE_ASK": str(ins["ask_for_evidence"]), "MS_SILENCE_NOASK": str(ins["do_not_ask"]), "MS_SILENCE_UNCLEAR": str(ins["unclear_whether_they_ask"]),
+        "MS_SILENCE_DELEG": str(ins["of_those_leave_conditions_to_the_developer"]), "MS_SILENCE_SEV": str(ins["of_those_fix_a_severity"]),
+        "MS_SILENCE_SEV_GULF": str(ins["of_those_fix_a_severity_that_applies_to_a_gulf_site"]), "MS_SILENCE_METHOD": str(ins["of_those_fix_a_test_method"]),
+        "MS_SILENCE_FULL_ROWS": str(full["rows"]), "MS_SILENCE_FULL_DELEG": str(full["of_those_leave_conditions_to_the_developer"]),
+        "MS_SILENCE_LIMIT": h["limit"],
+        "MS_KAPPA_MIN": num(min(kappas), 2), "MS_KAPPA_MAX": num(max(kappas), 2), "MS_CODED_ROWS": str(ag["n_rows"]),
+        "MS_IND_N": str(n_ind), "MS_IND_DIFF": str(n_diff), "MS_IND_LIMIT": ind["limit"],
+        "MS_OFFICIAL_N": str(len(off)), "MS_OFFICIAL_OPEN": str(n_off_open),
+    }
+    sp = _p("sim/results_r3/summary.json")
+    if os.path.exists(sp):
+        s = json.load(open(sp, encoding="utf-8")); s = s.get("summary", s)
+        f.update({"MS_R3_STATE": "complete", "MS_R3_PREDS": str(s["predictions"]), "MS_R3_HIT": str(s["hit"]),
+                  "MS_R3_INF": str(s["informative"]), "MS_R3_INF_HIT": str(s["informative_hit"]),
+                  "MS_R3_UNINF": str(s["uninformative"]), "MS_R3_UNINF_IDS": ", ".join(s["uninformative_ids"]) or "none",
+                  "MS_R3_MUTANTS": str(s["mutants_run"])})
+    else:
+        f.update({"MS_R3_STATE": "not yet run", "MS_R3_PREDS": "n/a", "MS_R3_HIT": "n/a", "MS_R3_INF": "n/a", "MS_R3_INF_HIT": "n/a",
+                  "MS_R3_UNINF": "n/a", "MS_R3_UNINF_IDS": "n/a", "MS_R3_MUTANTS": "n/a"})
+    return f
+
+
 def all_facts() -> dict:
     f = {}
-    for part in (evidence_table_facts(), case_facts(), context_facts(), warning_facts(), review_facts(), sim_facts(), r2_facts(), kit_facts(), review_fix_facts(), check_facts()):
+    for part in (evidence_table_facts(), case_facts(), context_facts(), warning_facts(), review_facts(), sim_facts(), r2_facts(), kit_facts(), review_fix_facts(), check_facts(), manuscript_facts()):
         assert not set(part) & set(f), set(part) & set(f)
         f.update(part)
     return f
