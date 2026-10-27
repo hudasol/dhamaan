@@ -1,0 +1,18 @@
+{
+ "label": "RECORDED: receiver output of the Jammertest 2024 campaign (Andoya, Norway), controlled jamming, spoofing and meaconing. One u-blox receiver. Not from the Gulf and not from a robot. Evidence kind: recorded. Session level labels only.",
+ "notes": {
+  "R3-P9": "detectors satisfying both: none"
+ },
+ "plan_sha256": "b075af5c50900837a54cfd28d857bb676fc1ea1cb89b5dbb18c7e336022ca6df",
+ "predictions": {
+  "R3-P1": true,
+  "R3-P2": true,
+  "R3-P3": false,
+  "R3-P4": false,
+  "R3-P5": false,
+  "R3-P6": true,
+  "R3-P7": true,
+  "R3-P8": true,
+  "R3-P9": true
+ }
+}

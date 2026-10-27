@@ -1,0 +1,3587 @@
+{
+ "R_all": {
+  "D-JAM": {
+   "alarms_per_session_mean": 1.125,
+   "chance_alarms_per_session": 0.0,
+   "chance_note": "alarms expected in the session if the nominal false alarm rate held",
+   "detector": "D-JAM",
+   "false_alarms": {
+    "alarms": 0,
+    "ci95_per_hour": [
+     0.0,
+     3.928752
+    ],
+    "exposure_hours": 0.938944,
+    "per_hour": 0.0,
+    "recordings_with_nominal": 12
+   },
+   "first_alarm_delay_s": {
+    "median": 1236.6,
+    "n": 5
+   },
+   "loss_of_fix_events": {
+    "ci95": [
+     0.0,
+     0.087622
+    ],
+    "k": 0,
+    "n": 40,
+    "rate": 0.0
+   },
+   "session_detection": {
+    "all": {
+     "ci95": [
+      0.092448,
+      0.404705
+     ],
+     "k": 5,
+     "n": 24,
+     "rate": 0.208333
+    },
+    "combined": {
+     "ci95": [
+      0.0,
+      0.489891
+     ],
+     "k": 0,
+     "n": 4,
+     "rate": 0.0
+    },
+    "jamming": {
+     "ci95": [
+      0.02568,
+      0.513128
+     ],
+     "k": 1,
+     "n": 7,
+     "rate": 0.142857
+    },
+    "meaconing": {
+     "ci95": [
+      0.036224,
+      0.624465
+     ],
+     "k": 1,
+     "n": 5,
+     "rate": 0.2
+    },
+    "spoofing": {
+     "ci95": [
+      0.136844,
+      0.694258
+     ],
+     "k": 3,
+     "n": 8,
+     "rate": 0.375
+    }
+   },
+   "sessions": 24,
+   "sessions_without_loss_event": {
+    "ci95": [
+     0.037361,
+     0.37882
+    ],
+    "k": 2,
+    "n": 15,
+    "rate": 0.133333
+   },
+   "verdicts": {
+    "AC-N1r": false,
+    "AC-N2r": "not evaluable: no reference trajectory",
+    "AC-N4": true
+   }
+  },
+  "D-JUMP": {
+   "alarms_per_session_mean": 2.041667,
+   "chance_alarms_per_session": 2.702288,
+   "chance_note": "alarms expected in the session if the nominal false alarm rate held",
+   "detector": "D-JUMP",
+   "false_alarms": {
+    "alarms": 4,
+    "ci95_per_hour": [
+     1.203458,
+     11.309036
+    ],
+    "exposure_hours": 0.905611,
+    "per_hour": 4.416907,
+    "recordings_with_nominal": 12
+   },
+   "first_alarm_delay_s": {
+    "median": 440.0,
+    "n": 10
+   },
+   "loss_of_fix_events": {
+    "ci95": [
+     0.329355,
+     0.625026
+    ],
+    "k": 19,
+    "n": 40,
+    "rate": 0.475
+   },
+   "session_detection": {
+    "all": {
+     "ci95": [
+      0.244676,
+      0.611653
+     ],
+     "k": 10,
+     "n": 24,
+     "rate": 0.416667
+    },
+    "combined": {
+     "ci95": [
+      0.0,
+      0.489891
+     ],
+     "k": 0,
+     "n": 4,
+     "rate": 0.0
+    },
+    "jamming": {
+     "ci95": [
+      0.250458,
+      0.84178
+     ],
+     "k": 4,
+     "n": 7,
+     "rate": 0.571429
+    },
+    "meaconing": {
+     "ci95": [
+      0.036224,
+      0.624465
+     ],
+     "k": 1,
+     "n": 5,
+     "rate": 0.2
+    },
+    "spoofing": {
+     "ci95": [
+      0.305742,
+      0.863156
+     ],
+     "k": 5,
+     "n": 8,
+     "rate": 0.625
+    }
+   },
+   "sessions": 24,
+   "sessions_without_loss_event": {
+    "ci95": [
+     0.037361,
+     0.37882
+    ],
+    "k": 2,
+    "n": 15,
+    "rate": 0.133333
+   },
+   "verdicts": {
+    "AC-N1r": false,
+    "AC-N2r": "not evaluable: no reference trajectory",
+    "AC-N4": false
+   }
+  },
+  "D-NIS": {
+   "alarms_per_session_mean": 2.583333,
+   "chance_alarms_per_session": 2.702288,
+   "chance_note": "alarms expected in the session if the nominal false alarm rate held",
+   "detector": "D-NIS",
+   "false_alarms": {
+    "alarms": 4,
+    "ci95_per_hour": [
+     1.203458,
+     11.309036
+    ],
+    "exposure_hours": 0.905611,
+    "per_hour": 4.416907,
+    "recordings_with_nominal": 12
+   },
+   "first_alarm_delay_s": {
+    "median": 441.5,
+    "n": 12
+   },
+   "loss_of_fix_events": {
+    "ci95": [
+     0.285094,
+     0.578049
+    ],
+    "k": 17,
+    "n": 40,
+    "rate": 0.425
+   },
+   "session_detection": {
+    "all": {
+     "ci95": [
+      0.314274,
+      0.685726
+     ],
+     "k": 12,
+     "n": 24,
+     "rate": 0.5
+    },
+    "combined": {
+     "ci95": [
+      0.045587,
+      0.699358
+     ],
+     "k": 1,
+     "n": 4,
+     "rate": 0.25
+    },
+    "jamming": {
+     "ci95": [
+      0.250458,
+      0.84178
+     ],
+     "k": 4,
+     "n": 7,
+     "rate": 0.571429
+    },
+    "meaconing": {
+     "ci95": [
+      0.117621,
+      0.769276
+     ],
+     "k": 2,
+     "n": 5,
+     "rate": 0.4
+    },
+    "spoofing": {
+     "ci95": [
+      0.305742,
+      0.863156
+     ],
+     "k": 5,
+     "n": 8,
+     "rate": 0.625
+    }
+   },
+   "sessions": 24,
+   "sessions_without_loss_event": {
+    "ci95": [
+     0.151763,
+     0.582865
+    ],
+    "k": 5,
+    "n": 15,
+    "rate": 0.333333
+   },
+   "verdicts": {
+    "AC-N1r": false,
+    "AC-N2r": "not evaluable: no reference trajectory",
+    "AC-N4": false
+   }
+  },
+  "D-RX": {
+   "alarms_per_session_mean": 4.375,
+   "chance_alarms_per_session": 2.008237,
+   "chance_note": "alarms expected in the session if the nominal false alarm rate held",
+   "detector": "D-RX",
+   "false_alarms": {
+    "alarms": 3,
+    "ci95_per_hour": [
+     0.676925,
+     9.592786
+    ],
+    "exposure_hours": 0.913944,
+    "per_hour": 3.282475,
+    "recordings_with_nominal": 12
+   },
+   "first_alarm_delay_s": {
+    "median": 755.5,
+    "n": 12
+   },
+   "loss_of_fix_events": {
+    "ci95": [
+     0.912378,
+     1.0
+    ],
+    "k": 40,
+    "n": 40,
+    "rate": 1.0
+   },
+   "session_detection": {
+    "all": {
+     "ci95": [
+      0.314274,
+      0.685726
+     ],
+     "k": 12,
+     "n": 24,
+     "rate": 0.5
+    },
+    "combined": {
+     "ci95": [
+      0.0,
+      0.489891
+     ],
+     "k": 0,
+     "n": 4,
+     "rate": 0.0
+    },
+    "jamming": {
+     "ci95": [
+      0.250458,
+      0.84178
+     ],
+     "k": 4,
+     "n": 7,
+     "rate": 0.571429
+    },
+    "meaconing": {
+     "ci95": [
+      0.036224,
+      0.624465
+     ],
+     "k": 1,
+     "n": 5,
+     "rate": 0.2
+    },
+    "spoofing": {
+     "ci95": [
+      0.529112,
+      0.977583
+     ],
+     "k": 7,
+     "n": 8,
+     "rate": 0.875
+    }
+   },
+   "sessions": 24,
+   "sessions_without_loss_event": {
+    "ci95": [
+     0.070475,
+     0.451854
+    ],
+    "k": 3,
+    "n": 15,
+    "rate": 0.2
+   },
+   "verdicts": {
+    "AC-N1r": false,
+    "AC-N2r": "not evaluable: no reference trajectory",
+    "AC-N4": false
+   }
+  },
+  "M": {
+   "alarms_per_session_mean": 9.333333,
+   "chance_alarms_per_session": 29.12156,
+   "chance_note": "alarms expected in the session if the nominal false alarm rate held",
+   "detector": "M",
+   "false_alarms": {
+    "alarms": 32,
+    "ci95_per_hour": [
+     32.557935,
+     67.196111
+    ],
+    "exposure_hours": 0.672278,
+    "per_hour": 47.599372,
+    "recordings_with_nominal": 12
+   },
+   "first_alarm_delay_s": {
+    "median": 349.2,
+    "n": 19
+   },
+   "loss_of_fix_events": {
+    "ci95": [
+     0.871186,
+     0.995573
+    ],
+    "k": 39,
+    "n": 40,
+    "rate": 0.975
+   },
+   "session_detection": {
+    "all": {
+     "ci95": [
+      0.595295,
+      0.907552
+     ],
+     "k": 19,
+     "n": 24,
+     "rate": 0.791667
+    },
+    "combined": {
+     "ci95": [
+      0.300642,
+      0.954413
+     ],
+     "k": 3,
+     "n": 4,
+     "rate": 0.75
+    },
+    "jamming": {
+     "ci95": [
+      0.486872,
+      0.97432
+     ],
+     "k": 6,
+     "n": 7,
+     "rate": 0.857143
+    },
+    "meaconing": {
+     "ci95": [
+      0.230724,
+      0.882379
+     ],
+     "k": 3,
+     "n": 5,
+     "rate": 0.6
+    },
+    "spoofing": {
+     "ci95": [
+      0.529112,
+      0.977583
+     ],
+     "k": 7,
+     "n": 8,
+     "rate": 0.875
+    }
+   },
+   "sessions": 24,
+   "sessions_without_loss_event": {
+    "ci95": [
+     0.417135,
+     0.848237
+    ],
+    "k": 10,
+    "n": 15,
+    "rate": 0.666667
+   },
+   "verdicts": {
+    "AC-N1r": false,
+    "AC-N2r": "not evaluable: no reference trajectory",
+    "AC-N4": false
+   }
+  }
+ },
+ "R_cal": {
+  "D-JAM": {
+   "alarms_per_session_mean": 0.583333,
+   "chance_alarms_per_session": 0.0,
+   "chance_note": "alarms expected in the session if the nominal false alarm rate held",
+   "detector": "D-JAM",
+   "false_alarms": {
+    "alarms": 0,
+    "ci95_per_hour": [
+     0.0,
+     6.380305
+    ],
+    "exposure_hours": 0.578167,
+    "per_hour": 0.0,
+    "recordings_with_nominal": 5
+   },
+   "first_alarm_delay_s": {
+    "median": 1056.8,
+    "n": 3
+   },
+   "loss_of_fix_events": {
+    "ci95": [
+     0.0,
+     0.09181
+    ],
+    "k": 0,
+    "n": 38,
+    "rate": 0.0
+   },
+   "session_detection": {
+    "all": {
+     "ci95": [
+      0.088942,
+      0.532305
+     ],
+     "k": 3,
+     "n": 12,
+     "rate": 0.25
+    },
+    "combined": {
+     "ci95": [
+      0.0,
+      0.65762
+     ],
+     "k": 0,
+     "n": 2,
+     "rate": 0.0
+    },
+    "jamming": {
+     "ci95": [
+      0.0,
+      0.65762
+     ],
+     "k": 0,
+     "n": 2,
+     "rate": 0.0
+    },
+    "meaconing": {
+     "ci95": [
+      0.094531,
+      0.905469
+     ],
+     "k": 1,
+     "n": 2,
+     "rate": 0.5
+    },
+    "spoofing": {
+     "ci95": [
+      0.096771,
+      0.700007
+     ],
+     "k": 2,
+     "n": 6,
+     "rate": 0.333333
+    }
+   },
+   "sessions": 12,
+   "sessions_without_loss_event": {
+    "ci95": [
+     0.036224,
+     0.624465
+    ],
+    "k": 1,
+    "n": 5,
+    "rate": 0.2
+   },
+   "verdicts": {
+    "AC-N1r": false,
+    "AC-N2r": "not evaluable: no reference trajectory",
+    "AC-N4": true
+   }
+  },
+  "D-JUMP": {
+   "alarms_per_session_mean": 3.166667,
+   "chance_alarms_per_session": 3.665749,
+   "chance_note": "alarms expected in the session if the nominal false alarm rate held",
+   "detector": "D-JUMP",
+   "false_alarms": {
+    "alarms": 4,
+    "ci95_per_hour": [
+     2.000365,
+     18.797654
+    ],
+    "exposure_hours": 0.544833,
+    "per_hour": 7.341695,
+    "recordings_with_nominal": 5
+   },
+   "first_alarm_delay_s": {
+    "median": 349.2,
+    "n": 7
+   },
+   "loss_of_fix_events": {
+    "ci95": [
+     0.32479,
+     0.62741
+    ],
+    "k": 18,
+    "n": 38,
+    "rate": 0.473684
+   },
+   "session_detection": {
+    "all": {
+     "ci95": [
+      0.319511,
+      0.80674
+     ],
+     "k": 7,
+     "n": 12,
+     "rate": 0.583333
+    },
+    "combined": {
+     "ci95": [
+      0.0,
+      0.65762
+     ],
+     "k": 0,
+     "n": 2,
+     "rate": 0.0
+    },
+    "jamming": {
+     "ci95": [
+      0.34238,
+      1.0
+     ],
+     "k": 2,
+     "n": 2,
+     "rate": 1.0
+    },
+    "meaconing": {
+     "ci95": [
+      0.0,
+      0.65762
+     ],
+     "k": 0,
+     "n": 2,
+     "rate": 0.0
+    },
+    "spoofing": {
+     "ci95": [
+      0.436497,
+      0.969947
+     ],
+     "k": 5,
+     "n": 6,
+     "rate": 0.833333
+    }
+   },
+   "sessions": 12,
+   "sessions_without_loss_event": {
+    "ci95": [
+     0.0,
+     0.434482
+    ],
+    "k": 0,
+    "n": 5,
+    "rate": 0.0
+   },
+   "verdicts": {
+    "AC-N1r": false,
+    "AC-N2r": "not evaluable: no reference trajectory",
+    "AC-N4": false
+   }
+  },
+  "D-NIS": {
+   "alarms_per_session_mean": 3.833333,
+   "chance_alarms_per_session": 3.665749,
+   "chance_note": "alarms expected in the session if the nominal false alarm rate held",
+   "detector": "D-NIS",
+   "false_alarms": {
+    "alarms": 4,
+    "ci95_per_hour": [
+     2.000365,
+     18.797654
+    ],
+    "exposure_hours": 0.544833,
+    "per_hour": 7.341695,
+    "recordings_with_nominal": 5
+   },
+   "first_alarm_delay_s": {
+    "median": 351.2,
+    "n": 7
+   },
+   "loss_of_fix_events": {
+    "ci95": [
+     0.278525,
+     0.578077
+    ],
+    "k": 16,
+    "n": 38,
+    "rate": 0.421053
+   },
+   "session_detection": {
+    "all": {
+     "ci95": [
+      0.319511,
+      0.80674
+     ],
+     "k": 7,
+     "n": 12,
+     "rate": 0.583333
+    },
+    "combined": {
+     "ci95": [
+      0.0,
+      0.65762
+     ],
+     "k": 0,
+     "n": 2,
+     "rate": 0.0
+    },
+    "jamming": {
+     "ci95": [
+      0.34238,
+      1.0
+     ],
+     "k": 2,
+     "n": 2,
+     "rate": 1.0
+    },
+    "meaconing": {
+     "ci95": [
+      0.0,
+      0.65762
+     ],
+     "k": 0,
+     "n": 2,
+     "rate": 0.0
+    },
+    "spoofing": {
+     "ci95": [
+      0.436497,
+      0.969947
+     ],
+     "k": 5,
+     "n": 6,
+     "rate": 0.833333
+    }
+   },
+   "sessions": 12,
+   "sessions_without_loss_event": {
+    "ci95": [
+     0.036224,
+     0.624465
+    ],
+    "k": 1,
+    "n": 5,
+    "rate": 0.2
+   },
+   "verdicts": {
+    "AC-N1r": false,
+    "AC-N2r": "not evaluable: no reference trajectory",
+    "AC-N4": false
+   }
+  },
+  "D-RX": {
+   "alarms_per_session_mean": 5.166667,
+   "chance_alarms_per_session": 2.707894,
+   "chance_note": "alarms expected in the session if the nominal false alarm rate held",
+   "detector": "D-RX",
+   "false_alarms": {
+    "alarms": 3,
+    "ci95_per_hour": [
+     1.118419,
+     15.849243
+    ],
+    "exposure_hours": 0.553167,
+    "per_hour": 5.42332,
+    "recordings_with_nominal": 5
+   },
+   "first_alarm_delay_s": {
+    "median": 359.9,
+    "n": 8
+   },
+   "loss_of_fix_events": {
+    "ci95": [
+     0.90819,
+     1.0
+    ],
+    "k": 38,
+    "n": 38,
+    "rate": 1.0
+   },
+   "session_detection": {
+    "all": {
+     "ci95": [
+      0.390622,
+      0.86188
+     ],
+     "k": 8,
+     "n": 12,
+     "rate": 0.666667
+    },
+    "combined": {
+     "ci95": [
+      0.0,
+      0.65762
+     ],
+     "k": 0,
+     "n": 2,
+     "rate": 0.0
+    },
+    "jamming": {
+     "ci95": [
+      0.34238,
+      1.0
+     ],
+     "k": 2,
+     "n": 2,
+     "rate": 1.0
+    },
+    "meaconing": {
+     "ci95": [
+      0.0,
+      0.65762
+     ],
+     "k": 0,
+     "n": 2,
+     "rate": 0.0
+    },
+    "spoofing": {
+     "ci95": [
+      0.609666,
+      1.0
+     ],
+     "k": 6,
+     "n": 6,
+     "rate": 1.0
+    }
+   },
+   "sessions": 12,
+   "sessions_without_loss_event": {
+    "ci95": [
+     0.036224,
+     0.624465
+    ],
+    "k": 1,
+    "n": 5,
+    "rate": 0.2
+   },
+   "verdicts": {
+    "AC-N1r": false,
+    "AC-N2r": "not evaluable: no reference trajectory",
+    "AC-N4": false
+   }
+  },
+  "M": {
+   "alarms_per_session_mean": 10.666667,
+   "chance_alarms_per_session": 33.752065,
+   "chance_note": "alarms expected in the session if the nominal false alarm rate held",
+   "detector": "M",
+   "false_alarms": {
+    "alarms": 25,
+    "ci95_per_hour": [
+     43.745873,
+     99.788008
+    ],
+    "exposure_hours": 0.369833,
+    "per_hour": 67.598017,
+    "recordings_with_nominal": 5
+   },
+   "first_alarm_delay_s": {
+    "median": 272.6,
+    "n": 11
+   },
+   "loss_of_fix_events": {
+    "ci95": [
+     0.865051,
+     0.995339
+    ],
+    "k": 37,
+    "n": 38,
+    "rate": 0.973684
+   },
+   "session_detection": {
+    "all": {
+     "ci95": [
+      0.64612,
+      0.985135
+     ],
+     "k": 11,
+     "n": 12,
+     "rate": 0.916667
+    },
+    "combined": {
+     "ci95": [
+      0.34238,
+      1.0
+     ],
+     "k": 2,
+     "n": 2,
+     "rate": 1.0
+    },
+    "jamming": {
+     "ci95": [
+      0.34238,
+      1.0
+     ],
+     "k": 2,
+     "n": 2,
+     "rate": 1.0
+    },
+    "meaconing": {
+     "ci95": [
+      0.094531,
+      0.905469
+     ],
+     "k": 1,
+     "n": 2,
+     "rate": 0.5
+    },
+    "spoofing": {
+     "ci95": [
+      0.609666,
+      1.0
+     ],
+     "k": 6,
+     "n": 6,
+     "rate": 1.0
+    }
+   },
+   "sessions": 12,
+   "sessions_without_loss_event": {
+    "ci95": [
+     0.375535,
+     0.963776
+    ],
+    "k": 4,
+    "n": 5,
+    "rate": 0.8
+   },
+   "verdicts": {
+    "AC-N1r": false,
+    "AC-N2r": "not evaluable: no reference trajectory",
+    "AC-N4": false
+   }
+  }
+ },
+ "R_held": {
+  "D-JAM": {
+   "alarms_per_session_mean": 1.666667,
+   "chance_alarms_per_session": 0.0,
+   "chance_note": "alarms expected in the session if the nominal false alarm rate held",
+   "detector": "D-JAM",
+   "false_alarms": {
+    "alarms": 0,
+    "ci95_per_hour": [
+     0.0,
+     10.224797
+    ],
+    "exposure_hours": 0.360778,
+    "per_hour": 0.0,
+    "recordings_with_nominal": 7
+   },
+   "first_alarm_delay_s": {
+    "median": 1694.4,
+    "n": 2
+   },
+   "loss_of_fix_events": {
+    "ci95": [
+     0.0,
+     0.65762
+    ],
+    "k": 0,
+    "n": 2,
+    "rate": 0.0
+   },
+   "session_detection": {
+    "all": {
+     "ci95": [
+      0.046965,
+      0.448031
+     ],
+     "k": 2,
+     "n": 12,
+     "rate": 0.166667
+    },
+    "combined": {
+     "ci95": [
+      0.0,
+      0.65762
+     ],
+     "k": 0,
+     "n": 2,
+     "rate": 0.0
+    },
+    "jamming": {
+     "ci95": [
+      0.036224,
+      0.624465
+     ],
+     "k": 1,
+     "n": 5,
+     "rate": 0.2
+    },
+    "meaconing": {
+     "ci95": [
+      0.0,
+      0.561497
+     ],
+     "k": 0,
+     "n": 3,
+     "rate": 0.0
+    },
+    "spoofing": {
+     "ci95": [
+      0.094531,
+      0.905469
+     ],
+     "k": 1,
+     "n": 2,
+     "rate": 0.5
+    }
+   },
+   "sessions": 12,
+   "sessions_without_loss_event": {
+    "ci95": [
+     0.017876,
+     0.40415
+    ],
+    "k": 1,
+    "n": 10,
+    "rate": 0.1
+   },
+   "verdicts": {
+    "AC-N1r": false,
+    "AC-N2r": "not evaluable: no reference trajectory",
+    "AC-N4": true
+   }
+  },
+  "D-JUMP": {
+   "alarms_per_session_mean": 0.916667,
+   "chance_alarms_per_session": 0.0,
+   "chance_note": "alarms expected in the session if the nominal false alarm rate held",
+   "detector": "D-JUMP",
+   "false_alarms": {
+    "alarms": 0,
+    "ci95_per_hour": [
+     0.0,
+     10.224797
+    ],
+    "exposure_hours": 0.360778,
+    "per_hour": 0.0,
+    "recordings_with_nominal": 7
+   },
+   "first_alarm_delay_s": {
+    "median": 946.2,
+    "n": 3
+   },
+   "loss_of_fix_events": {
+    "ci95": [
+     0.094531,
+     0.905469
+    ],
+    "k": 1,
+    "n": 2,
+    "rate": 0.5
+   },
+   "session_detection": {
+    "all": {
+     "ci95": [
+      0.088942,
+      0.532305
+     ],
+     "k": 3,
+     "n": 12,
+     "rate": 0.25
+    },
+    "combined": {
+     "ci95": [
+      0.0,
+      0.65762
+     ],
+     "k": 0,
+     "n": 2,
+     "rate": 0.0
+    },
+    "jamming": {
+     "ci95": [
+      0.117621,
+      0.769276
+     ],
+     "k": 2,
+     "n": 5,
+     "rate": 0.4
+    },
+    "meaconing": {
+     "ci95": [
+      0.061492,
+      0.79234
+     ],
+     "k": 1,
+     "n": 3,
+     "rate": 0.333333
+    },
+    "spoofing": {
+     "ci95": [
+      0.0,
+      0.65762
+     ],
+     "k": 0,
+     "n": 2,
+     "rate": 0.0
+    }
+   },
+   "sessions": 12,
+   "sessions_without_loss_event": {
+    "ci95": [
+     0.056682,
+     0.509838
+    ],
+    "k": 2,
+    "n": 10,
+    "rate": 0.2
+   },
+   "verdicts": {
+    "AC-N1r": false,
+    "AC-N2r": "not evaluable: no reference trajectory",
+    "AC-N4": true
+   }
+  },
+  "D-NIS": {
+   "alarms_per_session_mean": 1.333333,
+   "chance_alarms_per_session": 0.0,
+   "chance_note": "alarms expected in the session if the nominal false alarm rate held",
+   "detector": "D-NIS",
+   "false_alarms": {
+    "alarms": 0,
+    "ci95_per_hour": [
+     0.0,
+     10.224797
+    ],
+    "exposure_hours": 0.360778,
+    "per_hour": 0.0,
+    "recordings_with_nominal": 7
+   },
+   "first_alarm_delay_s": {
+    "median": 806.0,
+    "n": 5
+   },
+   "loss_of_fix_events": {
+    "ci95": [
+     0.094531,
+     0.905469
+    ],
+    "k": 1,
+    "n": 2,
+    "rate": 0.5
+   },
+   "session_detection": {
+    "all": {
+     "ci95": [
+      0.19326,
+      0.680489
+     ],
+     "k": 5,
+     "n": 12,
+     "rate": 0.416667
+    },
+    "combined": {
+     "ci95": [
+      0.094531,
+      0.905469
+     ],
+     "k": 1,
+     "n": 2,
+     "rate": 0.5
+    },
+    "jamming": {
+     "ci95": [
+      0.117621,
+      0.769276
+     ],
+     "k": 2,
+     "n": 5,
+     "rate": 0.4
+    },
+    "meaconing": {
+     "ci95": [
+      0.20766,
+      0.938508
+     ],
+     "k": 2,
+     "n": 3,
+     "rate": 0.666667
+    },
+    "spoofing": {
+     "ci95": [
+      0.0,
+      0.65762
+     ],
+     "k": 0,
+     "n": 2,
+     "rate": 0.0
+    }
+   },
+   "sessions": 12,
+   "sessions_without_loss_event": {
+    "ci95": [
+     0.16818,
+     0.687326
+    ],
+    "k": 4,
+    "n": 10,
+    "rate": 0.4
+   },
+   "verdicts": {
+    "AC-N1r": false,
+    "AC-N2r": "not evaluable: no reference trajectory",
+    "AC-N4": true
+   }
+  },
+  "D-RX": {
+   "alarms_per_session_mean": 3.583333,
+   "chance_alarms_per_session": 0.0,
+   "chance_note": "alarms expected in the session if the nominal false alarm rate held",
+   "detector": "D-RX",
+   "false_alarms": {
+    "alarms": 0,
+    "ci95_per_hour": [
+     0.0,
+     10.224797
+    ],
+    "exposure_hours": 0.360778,
+    "per_hour": 0.0,
+    "recordings_with_nominal": 7
+   },
+   "first_alarm_delay_s": {
+    "median": 1655.6,
+    "n": 4
+   },
+   "loss_of_fix_events": {
+    "ci95": [
+     0.34238,
+     1.0
+    ],
+    "k": 2,
+    "n": 2,
+    "rate": 1.0
+   },
+   "session_detection": {
+    "all": {
+     "ci95": [
+      0.13812,
+      0.609378
+     ],
+     "k": 4,
+     "n": 12,
+     "rate": 0.333333
+    },
+    "combined": {
+     "ci95": [
+      0.0,
+      0.65762
+     ],
+     "k": 0,
+     "n": 2,
+     "rate": 0.0
+    },
+    "jamming": {
+     "ci95": [
+      0.117621,
+      0.769276
+     ],
+     "k": 2,
+     "n": 5,
+     "rate": 0.4
+    },
+    "meaconing": {
+     "ci95": [
+      0.061492,
+      0.79234
+     ],
+     "k": 1,
+     "n": 3,
+     "rate": 0.333333
+    },
+    "spoofing": {
+     "ci95": [
+      0.094531,
+      0.905469
+     ],
+     "k": 1,
+     "n": 2,
+     "rate": 0.5
+    }
+   },
+   "sessions": 12,
+   "sessions_without_loss_event": {
+    "ci95": [
+     0.056682,
+     0.509838
+    ],
+    "k": 2,
+    "n": 10,
+    "rate": 0.2
+   },
+   "verdicts": {
+    "AC-N1r": false,
+    "AC-N2r": "not evaluable: no reference trajectory",
+    "AC-N4": true
+   }
+  },
+  "M": {
+   "alarms_per_session_mean": 8.0,
+   "chance_alarms_per_session": 16.763868,
+   "chance_note": "alarms expected in the session if the nominal false alarm rate held",
+   "detector": "M",
+   "false_alarms": {
+    "alarms": 7,
+    "ci95_per_hour": [
+     9.305388,
+     47.687024
+    ],
+    "exposure_hours": 0.302444,
+    "per_hour": 23.144747,
+    "recordings_with_nominal": 7
+   },
+   "first_alarm_delay_s": {
+    "median": 879.9,
+    "n": 8
+   },
+   "loss_of_fix_events": {
+    "ci95": [
+     0.34238,
+     1.0
+    ],
+    "k": 2,
+    "n": 2,
+    "rate": 1.0
+   },
+   "session_detection": {
+    "all": {
+     "ci95": [
+      0.390622,
+      0.86188
+     ],
+     "k": 8,
+     "n": 12,
+     "rate": 0.666667
+    },
+    "combined": {
+     "ci95": [
+      0.094531,
+      0.905469
+     ],
+     "k": 1,
+     "n": 2,
+     "rate": 0.5
+    },
+    "jamming": {
+     "ci95": [
+      0.375535,
+      0.963776
+     ],
+     "k": 4,
+     "n": 5,
+     "rate": 0.8
+    },
+    "meaconing": {
+     "ci95": [
+      0.20766,
+      0.938508
+     ],
+     "k": 2,
+     "n": 3,
+     "rate": 0.666667
+    },
+    "spoofing": {
+     "ci95": [
+      0.094531,
+      0.905469
+     ],
+     "k": 1,
+     "n": 2,
+     "rate": 0.5
+    }
+   },
+   "sessions": 12,
+   "sessions_without_loss_event": {
+    "ci95": [
+     0.312674,
+     0.83182
+    ],
+    "k": 6,
+    "n": 10,
+    "rate": 0.6
+   },
+   "verdicts": {
+    "AC-N1r": false,
+    "AC-N2r": "not evaluable: no reference trajectory",
+    "AC-N4": false
+   }
+  }
+ },
+ "calibration": [
+  "Jamming+Spoofing/dynamic/Low Power (_100mW)/Bands_L1/2.6.2",
+  "Jamming+Spoofing/dynamic/Low Power (_100mW)/Bands_L1/2.6.4",
+  "Jamming/dynamic/High Power (_10W)/Bands_E1_E5_E5a_E5b_E6_L1_L2_L3_L5/1.10.4",
+  "Jamming/dynamic/High Power (_10W)/Bands_E1_E5_E5a_E5b_E6_L1_L2_L3_L5/1.11.7",
+  "Meaconing/stationary/High Power (_10W)/Bands_E1_L1_L2/3.1.1,3.1.2",
+  "Meaconing/stationary/Very High Power (≥10W)/Bands_E1_L1_L2/3.2.8",
+  "Spoofing/dynamic/Medium Power (_1W)/Bands_E1_E5_L1_L2_L5/2.2.3,2.3.3",
+  "Spoofing/dynamic/Medium Power (_1W)/Bands_E1_E5_L1_L2_L5/2.3.13,2.3.15",
+  "Spoofing/dynamic/Medium Power (_1W)/Bands_E1_E5_L1_L2_L5/2.3.2",
+  "Spoofing/stationary/Medium Power (_1W)/Bands_E1_E5_L1_L2_L5/2.3.10,2.3.11",
+  "Spoofing/stationary/Medium Power (_1W)/Bands_E1_E5_L1_L2_L5/2.3.15,2.3.12",
+  "Spoofing/stationary/Medium Power (_1W)/Bands_E1_E5_L1_L2_L5/2.3.5,2.3.8"
+ ],
+ "code_sha256": {
+  "sim/acceptance.py": "0354f2ce71d09b60e3675b2752a041b315b34e086aac391b4016554c08e0bc18",
+  "sim/common.py": "d4dd36d2a682a1a1555e2a6c6d9772ba585cc003e9e52d0b57960171627dfca2",
+  "sim/gnss_n2n4.py": "a850148e691ee14f312b1631605cc027b85b6c0cb60d16318b37a2e055462f7b",
+  "sim/r2/replay.py": "a3fa785d18210196de6850c3c7cfa2f521a4e2d6d2f55502c9cff6d050cc6dfa",
+  "sim/r3/detectors.py": "7d5a2ced55a13c9c99a0baca80e539f8c8a04460d5fc21c49e194186f43f46a3",
+  "sim/r3/jammertest.py": "ed5dadfc19ac545532e747849d46513393fccf791f932bef70c106dd835fd20a",
+  "sim/r3/real_score.py": "089e26a811c9c0b2c45cd6a43bc9f0be6823c9f41565c4372249e248c24cfe16",
+  "sim/r3/recorded.py": "b04dc238296042f4f35131688acc786ded34170e95bfeff528c9e9b55a7af74c",
+  "sim/r3/run_real.py": "582b023daa284bb24cd9e5e2b21f5fd4e2c8166757ca1a8ee1775c33df8e842e"
+ },
+ "dataset": {
+  "archive": "GNSS_DATASET_JAMMING_SPOOFING.tar.gz",
+  "licence_stated": "GPL-3.0-or-later (as stated on the record page)",
+  "md5": "c7b00c63bb1ee5db80c7692a2b06e169",
+  "site": "Andoya, Norway, September 2024",
+  "zenodo_record": "15911589"
+ },
+ "evidence_kind": "recorded",
+ "excluded": [],
+ "git_head": "802c325983fb01a5fe21e38b2d0032ca9ac91f93",
+ "held_out": [
+  "Jamming+Spoofing/stationary/Low Power (_100mW)/Bands_L1/2.6.1",
+  "Jamming+Spoofing/stationary/Low Power (_100mW)/Bands_L1/2.6.3",
+  "Jamming/dynamic/High Power (_10W)/Bands_E1_E5_E5a_E5b_E6_L1_L2_L3_L5/1.10.6",
+  "Jamming/dynamic/High Power (_10W)/Bands_E1_E5_E5a_E5b_E6_L1_L2_L3_L5/custom 1",
+  "Jamming/dynamic/High Power (_10W)/Bands_E1_E5_E5a_E5b_E6_L1_L2_L3_L5/custom 2",
+  "Jamming/dynamic/High Power (_10W)/Bands_E1_E5_E5b_E6_L1_L2_L3_L5/1.11.8",
+  "Jamming/stationary/Very High Power (≥10W)/Bands_L1_L2_L5/1.6.4",
+  "Meaconing/dynamic/Very High Power (≥10W)/Bands_E1_L1_L2/3.1.3,3.1.4",
+  "Meaconing/dynamic/Very High Power (≥10W)/Bands_E1_L1_L2/3.2.8",
+  "Meaconing/stationary/Very High Power (≥10W)/Bands_E1_L1_L2/3.2.7",
+  "Spoofing/stationary/Medium Power (_1W)/Bands_E1_L1/2.1.3,2.1.2,2.1.4",
+  "Spoofing/stationary/Medium Power (_1W)/Bands_L1_L2_L5/2.1.1"
+ ],
+ "jam_threshold": 45.0,
+ "label": "RECORDED: receiver output of the Jammertest 2024 campaign (Andoya, Norway), controlled jamming, spoofing and meaconing. One u-blox receiver. Not from the Gulf and not from a robot. Evidence kind: recorded. Session level labels only.",
+ "nav_sha256": {
+  "Jamming+Spoofing/dynamic/Low Power (_100mW)/Bands_L1/2.6.2": "9101dec295546fd7b8fb2e88f4c74eb36dfea519c565dc660474522e3ef7ca6e",
+  "Jamming+Spoofing/dynamic/Low Power (_100mW)/Bands_L1/2.6.4": "8f64cbee85fbb1b99147b1bb2c6d3765df70dce75430e3d81ef68baa15070054",
+  "Jamming+Spoofing/stationary/Low Power (_100mW)/Bands_L1/2.6.1": "7c933fd17c6c459a3e0deccb8f12ea9fb215334835dd14de9dc900897e05d68b",
+  "Jamming+Spoofing/stationary/Low Power (_100mW)/Bands_L1/2.6.3": "7e987560420ef52f59a65548e970180f335caec97aea9a05a6f60a5f1f4f94f4",
+  "Jamming/dynamic/High Power (_10W)/Bands_E1_E5_E5a_E5b_E6_L1_L2_L3_L5/1.10.4": "5b06139c4197e10d52d03e8186b02138b44b34af4f3ed74c018b3a7b6f71e2da",
+  "Jamming/dynamic/High Power (_10W)/Bands_E1_E5_E5a_E5b_E6_L1_L2_L3_L5/1.10.6": "61504179fd50eb2a102d316b48c46c7aa123f33dcc8526b5f52eaa1aba51c915",
+  "Jamming/dynamic/High Power (_10W)/Bands_E1_E5_E5a_E5b_E6_L1_L2_L3_L5/1.11.7": "9d33db43b2030387339586a246ee4965c814fded22dc6b48f7daeaecf3f48297",
+  "Jamming/dynamic/High Power (_10W)/Bands_E1_E5_E5a_E5b_E6_L1_L2_L3_L5/custom 1": "c7f0cae72bea01ced378849b10378e09fa70d3a7d7994aea07e08214d9d5fd39",
+  "Jamming/dynamic/High Power (_10W)/Bands_E1_E5_E5a_E5b_E6_L1_L2_L3_L5/custom 2": "99ba8f287e99049fb7bfb2b5521815836136315014335c8676d16437b34f8fee",
+  "Jamming/dynamic/High Power (_10W)/Bands_E1_E5_E5b_E6_L1_L2_L3_L5/1.11.8": "f9729a419ed56a306fe08cd2ba837fc1d92a270dcf7928372cea7693617689fb",
+  "Jamming/stationary/Very High Power (≥10W)/Bands_L1_L2_L5/1.6.4": "074e6f3d3a0d0976bc461cb66532fca70dfc1ddf8d8b55221d543ae818de9087",
+  "Meaconing/dynamic/Very High Power (≥10W)/Bands_E1_L1_L2/3.1.3,3.1.4": "719e9534ca58cef94ffe8ae126935436977e249b5089f7cc3784d56c16f7c205",
+  "Meaconing/dynamic/Very High Power (≥10W)/Bands_E1_L1_L2/3.2.8": "e12fdfcb4111a271a9ecb5fe7515f2b66d59fc3f39e90e3f3376eec002eb673a",
+  "Meaconing/stationary/High Power (_10W)/Bands_E1_L1_L2/3.1.1,3.1.2": "3be24d1fab27b106a49798efcde3100e68ce31894c700f97683e69ddb9fd1c74",
+  "Meaconing/stationary/Very High Power (≥10W)/Bands_E1_L1_L2/3.2.7": "8b5457d043bdfd2ec3e9ec6bef01a9ff4bf5c96afe34fc9f47eae48d497daeee",
+  "Meaconing/stationary/Very High Power (≥10W)/Bands_E1_L1_L2/3.2.8": "374d5f5f5c89debcaf09be3ed43ffda1470f38379a96dad9f15d06ec54461eeb",
+  "Spoofing/dynamic/Medium Power (_1W)/Bands_E1_E5_L1_L2_L5/2.2.3,2.3.3": "f4c4cf7cfe2560619a462db2b6f97fa55f4e859263792675b9702f3398850970",
+  "Spoofing/dynamic/Medium Power (_1W)/Bands_E1_E5_L1_L2_L5/2.3.13,2.3.15": "261f2780bf51daa9d37805bfd2a78db722aa015407057053897a80ed5a9dbfa0",
+  "Spoofing/dynamic/Medium Power (_1W)/Bands_E1_E5_L1_L2_L5/2.3.2": "74b1fe7a0fd0c780d3c8427e329065e428d2ba08be251561e89e635fff872ddb",
+  "Spoofing/stationary/Medium Power (_1W)/Bands_E1_E5_L1_L2_L5/2.3.10,2.3.11": "c9497445228be17cebb39b2e8d0a6d732dc9e11dab896d65eff0a4d814d81e24",
+  "Spoofing/stationary/Medium Power (_1W)/Bands_E1_E5_L1_L2_L5/2.3.15,2.3.12": "6251ee58c664097df42c0d802cd0a902f7821e514cbc3445d423826c99700c18",
+  "Spoofing/stationary/Medium Power (_1W)/Bands_E1_E5_L1_L2_L5/2.3.5,2.3.8": "4e9466c04d41ec44c408ab03010f9911e8a830c0e63f0652d95a6080ed4af2b9",
+  "Spoofing/stationary/Medium Power (_1W)/Bands_E1_L1/2.1.3,2.1.2,2.1.4": "fdfa1ec670844a23f111e292b0b653a21d9baeb240afef48ea2d2a184228a815",
+  "Spoofing/stationary/Medium Power (_1W)/Bands_L1_L2_L5/2.1.1": "c6c3ab57dd06a04ce0a0f837b4f764e6a8276d6d66e056d9addcf46167cb3f1e"
+ },
+ "nominal_error_calibration": {
+  "excess_kurtosis": 2.092963,
+  "fixes_used": 316,
+  "lag1_correlation": 0.99,
+  "segments": 2,
+  "sigma_m": 0.093445
+ },
+ "nominal_error_held_out": {
+  "excess_kurtosis": 11.158268,
+  "fixes_used": 498,
+  "lag1_correlation": 0.99,
+  "segments": 3,
+  "sigma_m": 6.813182
+ },
+ "per_recording": [
+  {
+   "attack_type": "combined",
+   "denial_events": [],
+   "detectors": {
+    "D-JAM": {
+     "first_alarm_delay_s": null,
+     "loss_events": [],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 126.0,
+     "session_alarms": 0,
+     "session_seconds": 1230.0
+    },
+    "D-JUMP": {
+     "first_alarm_delay_s": null,
+     "loss_events": [],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 126.0,
+     "session_alarms": 0,
+     "session_seconds": 1230.0
+    },
+    "D-NIS": {
+     "first_alarm_delay_s": null,
+     "loss_events": [],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 126.0,
+     "session_alarms": 0,
+     "session_seconds": 1230.0
+    },
+    "D-RX": {
+     "first_alarm_delay_s": null,
+     "loss_events": [],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 126.0,
+     "session_alarms": 0,
+     "session_seconds": 1230.0
+    },
+    "M": {
+     "first_alarm_delay_s": 719.0,
+     "loss_events": [],
+     "nominal_alarms": 1,
+     "nominal_exposure_s": 96.0,
+     "session_alarms": 5,
+     "session_seconds": 1230.0
+    }
+   },
+   "id": "Jamming+Spoofing/dynamic/Low Power (_100mW)/Bands_L1/2.6.2",
+   "session": [
+    178.0,
+    1408.0
+   ]
+  },
+  {
+   "attack_type": "combined",
+   "denial_events": [],
+   "detectors": {
+    "D-JAM": {
+     "first_alarm_delay_s": null,
+     "loss_events": [],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 641.0,
+     "session_alarms": 0,
+     "session_seconds": 1200.0
+    },
+    "D-JUMP": {
+     "first_alarm_delay_s": null,
+     "loss_events": [],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 641.0,
+     "session_alarms": 0,
+     "session_seconds": 1200.0
+    },
+    "D-NIS": {
+     "first_alarm_delay_s": null,
+     "loss_events": [],
+     "nominal_alarms": 1,
+     "nominal_exposure_s": 611.0,
+     "session_alarms": 0,
+     "session_seconds": 1200.0
+    },
+    "D-RX": {
+     "first_alarm_delay_s": null,
+     "loss_events": [],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 641.0,
+     "session_alarms": 0,
+     "session_seconds": 1200.0
+    },
+    "M": {
+     "first_alarm_delay_s": 666.0,
+     "loss_events": [],
+     "nominal_alarms": 8,
+     "nominal_exposure_s": 401.0,
+     "session_alarms": 4,
+     "session_seconds": 1200.0
+    }
+   },
+   "id": "Jamming+Spoofing/dynamic/Low Power (_100mW)/Bands_L1/2.6.4",
+   "session": [
+    378.0,
+    1578.0
+   ]
+  },
+  {
+   "attack_type": "combined",
+   "denial_events": [],
+   "detectors": {
+    "D-JAM": {
+     "first_alarm_delay_s": null,
+     "loss_events": [],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 182.2,
+     "session_alarms": 0,
+     "session_seconds": 1260.0
+    },
+    "D-JUMP": {
+     "first_alarm_delay_s": null,
+     "loss_events": [],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 182.2,
+     "session_alarms": 0,
+     "session_seconds": 1260.0
+    },
+    "D-NIS": {
+     "first_alarm_delay_s": null,
+     "loss_events": [],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 182.2,
+     "session_alarms": 0,
+     "session_seconds": 1260.0
+    },
+    "D-RX": {
+     "first_alarm_delay_s": null,
+     "loss_events": [],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 182.2,
+     "session_alarms": 0,
+     "session_seconds": 1260.0
+    },
+    "M": {
+     "first_alarm_delay_s": null,
+     "loss_events": [],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 182.2,
+     "session_alarms": 0,
+     "session_seconds": 1260.0
+    }
+   },
+   "id": "Jamming+Spoofing/stationary/Low Power (_100mW)/Bands_L1/2.6.1",
+   "session": [
+    302.2,
+    1562.2
+   ]
+  },
+  {
+   "attack_type": "combined",
+   "denial_events": [],
+   "detectors": {
+    "D-JAM": {
+     "first_alarm_delay_s": null,
+     "loss_events": [],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 258.0,
+     "session_alarms": 0,
+     "session_seconds": 1200.0
+    },
+    "D-JUMP": {
+     "first_alarm_delay_s": null,
+     "loss_events": [],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 258.0,
+     "session_alarms": 0,
+     "session_seconds": 1200.0
+    },
+    "D-NIS": {
+     "first_alarm_delay_s": 806.0,
+     "loss_events": [],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 258.0,
+     "session_alarms": 1,
+     "session_seconds": 1200.0
+    },
+    "D-RX": {
+     "first_alarm_delay_s": null,
+     "loss_events": [],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 258.0,
+     "session_alarms": 0,
+     "session_seconds": 1200.0
+    },
+    "M": {
+     "first_alarm_delay_s": 101.0,
+     "loss_events": [],
+     "nominal_alarms": 2,
+     "nominal_exposure_s": 198.0,
+     "session_alarms": 4,
+     "session_seconds": 1200.0
+    }
+   },
+   "id": "Jamming+Spoofing/stationary/Low Power (_100mW)/Bands_L1/2.6.3",
+   "session": [
+    213.0,
+    1413.0
+   ]
+  },
+  {
+   "attack_type": "jamming",
+   "denial_events": [
+    688.0,
+    889.0,
+    1072.0,
+    1214.0
+   ],
+   "detectors": {
+    "D-JAM": {
+     "first_alarm_delay_s": null,
+     "loss_events": [
+      {
+       "detected": false,
+       "onset": 688.0
+      },
+      {
+       "detected": false,
+       "onset": 889.0
+      },
+      {
+       "detected": false,
+       "onset": 1072.0
+      },
+      {
+       "detected": false,
+       "onset": 1214.0
+      }
+     ],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 0,
+     "session_alarms": 0,
+     "session_seconds": 2400.0
+    },
+    "D-JUMP": {
+     "first_alarm_delay_s": 377.6,
+     "loss_events": [
+      {
+       "detected": true,
+       "onset": 688.0
+      },
+      {
+       "detected": false,
+       "onset": 889.0
+      },
+      {
+       "detected": true,
+       "onset": 1072.0
+      },
+      {
+       "detected": false,
+       "onset": 1214.0
+      }
+     ],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 0,
+     "session_alarms": 8,
+     "session_seconds": 2400.0
+    },
+    "D-NIS": {
+     "first_alarm_delay_s": 379.6,
+     "loss_events": [
+      {
+       "detected": false,
+       "onset": 688.0
+      },
+      {
+       "detected": false,
+       "onset": 889.0
+      },
+      {
+       "detected": true,
+       "onset": 1072.0
+      },
+      {
+       "detected": false,
+       "onset": 1214.0
+      }
+     ],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 0,
+     "session_alarms": 9,
+     "session_seconds": 2400.0
+    },
+    "D-RX": {
+     "first_alarm_delay_s": 370.6,
+     "loss_events": [
+      {
+       "detected": true,
+       "onset": 688.0
+      },
+      {
+       "detected": true,
+       "onset": 889.0
+      },
+      {
+       "detected": true,
+       "onset": 1072.0
+      },
+      {
+       "detected": true,
+       "onset": 1214.0
+      }
+     ],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 0,
+     "session_alarms": 9,
+     "session_seconds": 2400.0
+    },
+    "M": {
+     "first_alarm_delay_s": 371.6,
+     "loss_events": [
+      {
+       "detected": true,
+       "onset": 688.0
+      },
+      {
+       "detected": true,
+       "onset": 889.0
+      },
+      {
+       "detected": true,
+       "onset": 1072.0
+      },
+      {
+       "detected": true,
+       "onset": 1214.0
+      }
+     ],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 0,
+     "session_alarms": 22,
+     "session_seconds": 2400.0
+    }
+   },
+   "id": "Jamming/dynamic/High Power (_10W)/Bands_E1_E5_E5a_E5b_E6_L1_L2_L3_L5/1.10.4",
+   "session": [
+    126.4,
+    2526.4
+   ]
+  },
+  {
+   "attack_type": "jamming",
+   "denial_events": [],
+   "detectors": {
+    "D-JAM": {
+     "first_alarm_delay_s": null,
+     "loss_events": [],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 213.8,
+     "session_alarms": 0,
+     "session_seconds": 3600.0
+    },
+    "D-JUMP": {
+     "first_alarm_delay_s": 788.4,
+     "loss_events": [],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 213.8,
+     "session_alarms": 1,
+     "session_seconds": 3600.0
+    },
+    "D-NIS": {
+     "first_alarm_delay_s": 792.4,
+     "loss_events": [],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 213.8,
+     "session_alarms": 2,
+     "session_seconds": 3600.0
+    },
+    "D-RX": {
+     "first_alarm_delay_s": null,
+     "loss_events": [],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 213.8,
+     "session_alarms": 0,
+     "session_seconds": 3600.0
+    },
+    "M": {
+     "first_alarm_delay_s": 582.2,
+     "loss_events": [],
+     "nominal_alarms": 3,
+     "nominal_exposure_s": 123.8,
+     "session_alarms": 24,
+     "session_seconds": 3600.0
+    }
+   },
+   "id": "Jamming/dynamic/High Power (_10W)/Bands_E1_E5_E5a_E5b_E6_L1_L2_L3_L5/1.10.6",
+   "session": [
+    333.8,
+    3933.8
+   ]
+  },
+  {
+   "attack_type": "jamming",
+   "denial_events": [
+    279.0,
+    294.0
+   ],
+   "detectors": {
+    "D-JAM": {
+     "first_alarm_delay_s": null,
+     "loss_events": [
+      {
+       "detected": false,
+       "onset": 279.0
+      },
+      {
+       "detected": false,
+       "onset": 294.0
+      }
+     ],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 999.0,
+     "session_alarms": 0,
+     "session_seconds": 4500.0
+    },
+    "D-JUMP": {
+     "first_alarm_delay_s": 4339.0,
+     "loss_events": [
+      {
+       "detected": false,
+       "onset": 279.0
+      },
+      {
+       "detected": true,
+       "onset": 294.0
+      }
+     ],
+     "nominal_alarms": 4,
+     "nominal_exposure_s": 879.0,
+     "session_alarms": 4,
+     "session_seconds": 4500.0
+    },
+    "D-NIS": {
+     "first_alarm_delay_s": 4339.0,
+     "loss_events": [
+      {
+       "detected": false,
+       "onset": 279.0
+      },
+      {
+       "detected": true,
+       "onset": 294.0
+      }
+     ],
+     "nominal_alarms": 3,
+     "nominal_exposure_s": 909.0,
+     "session_alarms": 3,
+     "session_seconds": 4500.0
+    },
+    "D-RX": {
+     "first_alarm_delay_s": 4312.0,
+     "loss_events": [
+      {
+       "detected": true,
+       "onset": 279.0
+      },
+      {
+       "detected": true,
+       "onset": 294.0
+      }
+     ],
+     "nominal_alarms": 3,
+     "nominal_exposure_s": 909.0,
+     "session_alarms": 4,
+     "session_seconds": 4500.0
+    },
+    "M": {
+     "first_alarm_delay_s": 4317.1,
+     "loss_events": [
+      {
+       "detected": true,
+       "onset": 279.0
+      },
+      {
+       "detected": true,
+       "onset": 294.0
+      }
+     ],
+     "nominal_alarms": 16,
+     "nominal_exposure_s": 519.0,
+     "session_alarms": 6,
+     "session_seconds": 4500.0
+    }
+   },
+   "id": "Jamming/dynamic/High Power (_10W)/Bands_E1_E5_E5a_E5b_E6_L1_L2_L3_L5/1.11.7",
+   "session": [
+    -4036.0,
+    464.0
+   ]
+  },
+  {
+   "attack_type": "jamming",
+   "denial_events": [],
+   "detectors": {
+    "D-JAM": {
+     "first_alarm_delay_s": null,
+     "loss_events": [],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 0,
+     "session_alarms": 0,
+     "session_seconds": 7200.0
+    },
+    "D-JUMP": {
+     "first_alarm_delay_s": null,
+     "loss_events": [],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 0,
+     "session_alarms": 0,
+     "session_seconds": 7200.0
+    },
+    "D-NIS": {
+     "first_alarm_delay_s": null,
+     "loss_events": [],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 0,
+     "session_alarms": 0,
+     "session_seconds": 7200.0
+    },
+    "D-RX": {
+     "first_alarm_delay_s": null,
+     "loss_events": [],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 0,
+     "session_alarms": 0,
+     "session_seconds": 7200.0
+    },
+    "M": {
+     "first_alarm_delay_s": 3037.6,
+     "loss_events": [],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 0,
+     "session_alarms": 12,
+     "session_seconds": 7200.0
+    }
+   },
+   "id": "Jamming/dynamic/High Power (_10W)/Bands_E1_E5_E5a_E5b_E6_L1_L2_L3_L5/custom 1",
+   "session": [
+    -2455.6,
+    4744.4
+   ]
+  },
+  {
+   "attack_type": "jamming",
+   "denial_events": [
+    879.0
+   ],
+   "detectors": {
+    "D-JAM": {
+     "first_alarm_delay_s": null,
+     "loss_events": [
+      {
+       "detected": false,
+       "onset": 879.0
+      }
+     ],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 0,
+     "session_alarms": 0,
+     "session_seconds": 3600.0
+    },
+    "D-JUMP": {
+     "first_alarm_delay_s": 1288.6,
+     "loss_events": [
+      {
+       "detected": true,
+       "onset": 879.0
+      }
+     ],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 0,
+     "session_alarms": 4,
+     "session_seconds": 3600.0
+    },
+    "D-NIS": {
+     "first_alarm_delay_s": 1288.6,
+     "loss_events": [
+      {
+       "detected": true,
+       "onset": 879.0
+      }
+     ],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 0,
+     "session_alarms": 4,
+     "session_seconds": 3600.0
+    },
+    "D-RX": {
+     "first_alarm_delay_s": 1287.6,
+     "loss_events": [
+      {
+       "detected": true,
+       "onset": 879.0
+      }
+     ],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 0,
+     "session_alarms": 4,
+     "session_seconds": 3600.0
+    },
+    "M": {
+     "first_alarm_delay_s": 1177.6,
+     "loss_events": [
+      {
+       "detected": true,
+       "onset": 879.0
+      }
+     ],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 0,
+     "session_alarms": 12,
+     "session_seconds": 3600.0
+    }
+   },
+   "id": "Jamming/dynamic/High Power (_10W)/Bands_E1_E5_E5a_E5b_E6_L1_L2_L3_L5/custom 2",
+   "session": [
+    -1051.6,
+    2548.4
+   ]
+  },
+  {
+   "attack_type": "jamming",
+   "denial_events": [
+    798.0
+   ],
+   "detectors": {
+    "D-JAM": {
+     "first_alarm_delay_s": 2152.2,
+     "loss_events": [
+      {
+       "detected": false,
+       "onset": 798.0
+      }
+     ],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 0,
+     "session_alarms": 3,
+     "session_seconds": 4500.0
+    },
+    "D-JUMP": {
+     "first_alarm_delay_s": null,
+     "loss_events": [
+      {
+       "detected": false,
+       "onset": 798.0
+      }
+     ],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 0,
+     "session_alarms": 0,
+     "session_seconds": 4500.0
+    },
+    "D-NIS": {
+     "first_alarm_delay_s": null,
+     "loss_events": [
+      {
+       "detected": false,
+       "onset": 798.0
+      }
+     ],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 0,
+     "session_alarms": 0,
+     "session_seconds": 4500.0
+    },
+    "D-RX": {
+     "first_alarm_delay_s": 2888.2,
+     "loss_events": [
+      {
+       "detected": true,
+       "onset": 798.0
+      }
+     ],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 0,
+     "session_alarms": 35,
+     "session_seconds": 4500.0
+    },
+    "M": {
+     "first_alarm_delay_s": 2891.3,
+     "loss_events": [
+      {
+       "detected": true,
+       "onset": 798.0
+      }
+     ],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 0,
+     "session_alarms": 1,
+     "session_seconds": 4500.0
+    }
+   },
+   "id": "Jamming/dynamic/High Power (_10W)/Bands_E1_E5_E5b_E6_L1_L2_L3_L5/1.11.8",
+   "session": [
+    -2091.2,
+    2408.8
+   ]
+  },
+  {
+   "attack_type": "jamming",
+   "denial_events": [],
+   "detectors": {
+    "D-JAM": {
+     "first_alarm_delay_s": null,
+     "loss_events": [],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 194.0,
+     "session_alarms": 0,
+     "session_seconds": 840.0
+    },
+    "D-JUMP": {
+     "first_alarm_delay_s": null,
+     "loss_events": [],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 194.0,
+     "session_alarms": 0,
+     "session_seconds": 840.0
+    },
+    "D-NIS": {
+     "first_alarm_delay_s": null,
+     "loss_events": [],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 194.0,
+     "session_alarms": 0,
+     "session_seconds": 840.0
+    },
+    "D-RX": {
+     "first_alarm_delay_s": null,
+     "loss_events": [],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 194.0,
+     "session_alarms": 0,
+     "session_seconds": 840.0
+    },
+    "M": {
+     "first_alarm_delay_s": null,
+     "loss_events": [],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 194.0,
+     "session_alarms": 0,
+     "session_seconds": 840.0
+    }
+   },
+   "id": "Jamming/stationary/Very High Power (≥10W)/Bands_L1_L2_L5/1.6.4",
+   "session": [
+    314.0,
+    1154.0
+   ]
+  },
+  {
+   "attack_type": "meaconing",
+   "denial_events": [],
+   "detectors": {
+    "D-JAM": {
+     "first_alarm_delay_s": null,
+     "loss_events": [],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 186.8,
+     "session_alarms": 0,
+     "session_seconds": 1560.0
+    },
+    "D-JUMP": {
+     "first_alarm_delay_s": 946.2,
+     "loss_events": [],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 186.8,
+     "session_alarms": 6,
+     "session_seconds": 1560.0
+    },
+    "D-NIS": {
+     "first_alarm_delay_s": 951.2,
+     "loss_events": [],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 186.8,
+     "session_alarms": 7,
+     "session_seconds": 1560.0
+    },
+    "D-RX": {
+     "first_alarm_delay_s": 1096.2,
+     "loss_events": [],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 186.8,
+     "session_alarms": 3,
+     "session_seconds": 1560.0
+    },
+    "M": {
+     "first_alarm_delay_s": 128.2,
+     "loss_events": [],
+     "nominal_alarms": 2,
+     "nominal_exposure_s": 126.8,
+     "session_alarms": 19,
+     "session_seconds": 1560.0
+    }
+   },
+   "id": "Meaconing/dynamic/Very High Power (≥10W)/Bands_E1_L1_L2/3.1.3,3.1.4",
+   "session": [
+    306.8,
+    1866.8
+   ]
+  },
+  {
+   "attack_type": "meaconing",
+   "denial_events": [],
+   "detectors": {
+    "D-JAM": {
+     "first_alarm_delay_s": null,
+     "loss_events": [],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 0,
+     "session_alarms": 0,
+     "session_seconds": 1020.0
+    },
+    "D-JUMP": {
+     "first_alarm_delay_s": null,
+     "loss_events": [],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 0,
+     "session_alarms": 0,
+     "session_seconds": 1020.0
+    },
+    "D-NIS": {
+     "first_alarm_delay_s": 166.6,
+     "loss_events": [],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 0,
+     "session_alarms": 2,
+     "session_seconds": 1020.0
+    },
+    "D-RX": {
+     "first_alarm_delay_s": null,
+     "loss_events": [],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 0,
+     "session_alarms": 0,
+     "session_seconds": 1020.0
+    },
+    "M": {
+     "first_alarm_delay_s": 19.6,
+     "loss_events": [],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 0,
+     "session_alarms": 15,
+     "session_seconds": 1020.0
+    }
+   },
+   "id": "Meaconing/dynamic/Very High Power (≥10W)/Bands_E1_L1_L2/3.2.8",
+   "session": [
+    167.4,
+    1187.4
+   ]
+  },
+  {
+   "attack_type": "meaconing",
+   "denial_events": [],
+   "detectors": {
+    "D-JAM": {
+     "first_alarm_delay_s": 397.2,
+     "loss_events": [],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 0,
+     "session_alarms": 2,
+     "session_seconds": 1500.0
+    },
+    "D-JUMP": {
+     "first_alarm_delay_s": null,
+     "loss_events": [],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 0,
+     "session_alarms": 0,
+     "session_seconds": 1500.0
+    },
+    "D-NIS": {
+     "first_alarm_delay_s": null,
+     "loss_events": [],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 0,
+     "session_alarms": 0,
+     "session_seconds": 1500.0
+    },
+    "D-RX": {
+     "first_alarm_delay_s": null,
+     "loss_events": [],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 0,
+     "session_alarms": 0,
+     "session_seconds": 1500.0
+    },
+    "M": {
+     "first_alarm_delay_s": null,
+     "loss_events": [],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 0,
+     "session_alarms": 0,
+     "session_seconds": 1500.0
+    }
+   },
+   "id": "Meaconing/stationary/High Power (_10W)/Bands_E1_L1_L2/3.1.1,3.1.2",
+   "session": [
+    9.8,
+    1509.8
+   ]
+  },
+  {
+   "attack_type": "meaconing",
+   "denial_events": [],
+   "detectors": {
+    "D-JAM": {
+     "first_alarm_delay_s": null,
+     "loss_events": [],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 120.4,
+     "session_alarms": 0,
+     "session_seconds": 900.0
+    },
+    "D-JUMP": {
+     "first_alarm_delay_s": null,
+     "loss_events": [],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 120.4,
+     "session_alarms": 0,
+     "session_seconds": 900.0
+    },
+    "D-NIS": {
+     "first_alarm_delay_s": null,
+     "loss_events": [],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 120.4,
+     "session_alarms": 0,
+     "session_seconds": 900.0
+    },
+    "D-RX": {
+     "first_alarm_delay_s": null,
+     "loss_events": [],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 120.4,
+     "session_alarms": 0,
+     "session_seconds": 900.0
+    },
+    "M": {
+     "first_alarm_delay_s": null,
+     "loss_events": [],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 120.4,
+     "session_alarms": 0,
+     "session_seconds": 900.0
+    }
+   },
+   "id": "Meaconing/stationary/Very High Power (≥10W)/Bands_E1_L1_L2/3.2.7",
+   "session": [
+    240.4,
+    1140.4
+   ]
+  },
+  {
+   "attack_type": "meaconing",
+   "denial_events": [],
+   "detectors": {
+    "D-JAM": {
+     "first_alarm_delay_s": null,
+     "loss_events": [],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 0,
+     "session_alarms": 0,
+     "session_seconds": 1260.0
+    },
+    "D-JUMP": {
+     "first_alarm_delay_s": null,
+     "loss_events": [],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 0,
+     "session_alarms": 0,
+     "session_seconds": 1260.0
+    },
+    "D-NIS": {
+     "first_alarm_delay_s": null,
+     "loss_events": [],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 0,
+     "session_alarms": 0,
+     "session_seconds": 1260.0
+    },
+    "D-RX": {
+     "first_alarm_delay_s": null,
+     "loss_events": [],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 0,
+     "session_alarms": 0,
+     "session_seconds": 1260.0
+    },
+    "M": {
+     "first_alarm_delay_s": 272.6,
+     "loss_events": [],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 0,
+     "session_alarms": 4,
+     "session_seconds": 1260.0
+    }
+   },
+   "id": "Meaconing/stationary/Very High Power (≥10W)/Bands_E1_L1_L2/3.2.8",
+   "session": [
+    119.4,
+    1379.4
+   ]
+  },
+  {
+   "attack_type": "spoofing",
+   "denial_events": [],
+   "detectors": {
+    "D-JAM": {
+     "first_alarm_delay_s": null,
+     "loss_events": [],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 184.6,
+     "session_alarms": 0,
+     "session_seconds": 1830.0
+    },
+    "D-JUMP": {
+     "first_alarm_delay_s": null,
+     "loss_events": [],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 184.6,
+     "session_alarms": 0,
+     "session_seconds": 1830.0
+    },
+    "D-NIS": {
+     "first_alarm_delay_s": 197.4,
+     "loss_events": [],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 184.6,
+     "session_alarms": 1,
+     "session_seconds": 1830.0
+    },
+    "D-RX": {
+     "first_alarm_delay_s": 1008.6,
+     "loss_events": [],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 184.6,
+     "session_alarms": 1,
+     "session_seconds": 1830.0
+    },
+    "M": {
+     "first_alarm_delay_s": 108.4,
+     "loss_events": [],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 184.6,
+     "session_alarms": 20,
+     "session_seconds": 1830.0
+    }
+   },
+   "id": "Spoofing/dynamic/Medium Power (_1W)/Bands_E1_E5_L1_L2_L5/2.2.3,2.3.3",
+   "session": [
+    304.6,
+    2134.6
+   ]
+  },
+  {
+   "attack_type": "spoofing",
+   "denial_events": [
+    279.6,
+    513.2,
+    1312.8
+   ],
+   "detectors": {
+    "D-JAM": {
+     "first_alarm_delay_s": null,
+     "loss_events": [
+      {
+       "detected": false,
+       "onset": 279.6
+      },
+      {
+       "detected": false,
+       "onset": 513.2
+      },
+      {
+       "detected": false,
+       "onset": 1312.8
+      }
+     ],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 0,
+     "session_alarms": 0,
+     "session_seconds": 1830.0
+    },
+    "D-JUMP": {
+     "first_alarm_delay_s": 502.4,
+     "loss_events": [
+      {
+       "detected": true,
+       "onset": 279.6
+      },
+      {
+       "detected": false,
+       "onset": 513.2
+      },
+      {
+       "detected": true,
+       "onset": 1312.8
+      }
+     ],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 0,
+     "session_alarms": 4,
+     "session_seconds": 1830.0
+    },
+    "D-NIS": {
+     "first_alarm_delay_s": 503.4,
+     "loss_events": [
+      {
+       "detected": true,
+       "onset": 279.6
+      },
+      {
+       "detected": false,
+       "onset": 513.2
+      },
+      {
+       "detected": true,
+       "onset": 1312.8
+      }
+     ],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 0,
+     "session_alarms": 9,
+     "session_seconds": 1830.0
+    },
+    "D-RX": {
+     "first_alarm_delay_s": 502.4,
+     "loss_events": [
+      {
+       "detected": true,
+       "onset": 279.6
+      },
+      {
+       "detected": true,
+       "onset": 513.2
+      },
+      {
+       "detected": true,
+       "onset": 1312.8
+      }
+     ],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 0,
+     "session_alarms": 5,
+     "session_seconds": 1830.0
+    },
+    "M": {
+     "first_alarm_delay_s": 349.2,
+     "loss_events": [
+      {
+       "detected": true,
+       "onset": 279.6
+      },
+      {
+       "detected": true,
+       "onset": 513.2
+      },
+      {
+       "detected": true,
+       "onset": 1312.8
+      }
+     ],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 0,
+     "session_alarms": 19,
+     "session_seconds": 1830.0
+    }
+   },
+   "id": "Spoofing/dynamic/Medium Power (_1W)/Bands_E1_E5_L1_L2_L5/2.3.13,2.3.15",
+   "session": [
+    -227.8,
+    1602.2
+   ]
+  },
+  {
+   "attack_type": "spoofing",
+   "denial_events": [
+    200.8,
+    217.2,
+    251.38,
+    396.6
+   ],
+   "detectors": {
+    "D-JAM": {
+     "first_alarm_delay_s": null,
+     "loss_events": [
+      {
+       "detected": false,
+       "onset": 200.8
+      },
+      {
+       "detected": false,
+       "onset": 217.2
+      },
+      {
+       "detected": false,
+       "onset": 251.38
+      },
+      {
+       "detected": false,
+       "onset": 396.6
+      }
+     ],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 0,
+     "session_alarms": 0,
+     "session_seconds": 900.0
+    },
+    "D-JUMP": {
+     "first_alarm_delay_s": 54.0,
+     "loss_events": [
+      {
+       "detected": true,
+       "onset": 200.8
+      },
+      {
+       "detected": true,
+       "onset": 217.2
+      },
+      {
+       "detected": true,
+       "onset": 251.38
+      },
+      {
+       "detected": true,
+       "onset": 396.6
+      }
+     ],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 0,
+     "session_alarms": 8,
+     "session_seconds": 900.0
+    },
+    "D-NIS": {
+     "first_alarm_delay_s": 55.2,
+     "loss_events": [
+      {
+       "detected": true,
+       "onset": 200.8
+      },
+      {
+       "detected": false,
+       "onset": 217.2
+      },
+      {
+       "detected": true,
+       "onset": 251.38
+      },
+      {
+       "detected": true,
+       "onset": 396.6
+      }
+     ],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 0,
+     "session_alarms": 7,
+     "session_seconds": 900.0
+    },
+    "D-RX": {
+     "first_alarm_delay_s": 57.2,
+     "loss_events": [
+      {
+       "detected": true,
+       "onset": 200.8
+      },
+      {
+       "detected": true,
+       "onset": 217.2
+      },
+      {
+       "detected": true,
+       "onset": 251.38
+      },
+      {
+       "detected": true,
+       "onset": 396.6
+      }
+     ],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 0,
+     "session_alarms": 11,
+     "session_seconds": 900.0
+    },
+    "M": {
+     "first_alarm_delay_s": 53.0,
+     "loss_events": [
+      {
+       "detected": true,
+       "onset": 200.8
+      },
+      {
+       "detected": true,
+       "onset": 217.2
+      },
+      {
+       "detected": true,
+       "onset": 251.38
+      },
+      {
+       "detected": true,
+       "onset": 396.6
+      }
+     ],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 0,
+     "session_alarms": 12,
+     "session_seconds": 900.0
+    }
+   },
+   "id": "Spoofing/dynamic/Medium Power (_1W)/Bands_E1_E5_L1_L2_L5/2.3.2",
+   "session": [
+    -2.0,
+    898.0
+   ]
+  },
+  {
+   "attack_type": "spoofing",
+   "denial_events": [
+    1046.8,
+    1150.6,
+    1195.4,
+    1230.0,
+    1244.2,
+    1253.6,
+    1266.8,
+    1298.8,
+    1305.0,
+    1315.6,
+    1347.6,
+    1379.8,
+    1797.4,
+    1834.6,
+    1906.4
+   ],
+   "detectors": {
+    "D-JAM": {
+     "first_alarm_delay_s": null,
+     "loss_events": [
+      {
+       "detected": false,
+       "onset": 1046.8
+      },
+      {
+       "detected": false,
+       "onset": 1150.6
+      },
+      {
+       "detected": false,
+       "onset": 1195.4
+      },
+      {
+       "detected": false,
+       "onset": 1230.0
+      },
+      {
+       "detected": false,
+       "onset": 1244.2
+      },
+      {
+       "detected": false,
+       "onset": 1253.6
+      },
+      {
+       "detected": false,
+       "onset": 1266.8
+      },
+      {
+       "detected": false,
+       "onset": 1298.8
+      },
+      {
+       "detected": false,
+       "onset": 1305.0
+      },
+      {
+       "detected": false,
+       "onset": 1315.6
+      },
+      {
+       "detected": false,
+       "onset": 1347.6
+      },
+      {
+       "detected": false,
+       "onset": 1379.8
+      },
+      {
+       "detected": false,
+       "onset": 1797.4
+      },
+      {
+       "detected": false,
+       "onset": 1834.6
+      },
+      {
+       "detected": false,
+       "onset": 1906.4
+      }
+     ],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 0,
+     "session_alarms": 0,
+     "session_seconds": 1860.0
+    },
+    "D-JUMP": {
+     "first_alarm_delay_s": 178.0,
+     "loss_events": [
+      {
+       "detected": true,
+       "onset": 1046.8
+      },
+      {
+       "detected": true,
+       "onset": 1150.6
+      },
+      {
+       "detected": false,
+       "onset": 1195.4
+      },
+      {
+       "detected": true,
+       "onset": 1230.0
+      },
+      {
+       "detected": true,
+       "onset": 1244.2
+      },
+      {
+       "detected": true,
+       "onset": 1253.6
+      },
+      {
+       "detected": true,
+       "onset": 1266.8
+      },
+      {
+       "detected": false,
+       "onset": 1298.8
+      },
+      {
+       "detected": false,
+       "onset": 1305.0
+      },
+      {
+       "detected": false,
+       "onset": 1315.6
+      },
+      {
+       "detected": false,
+       "onset": 1347.6
+      },
+      {
+       "detected": false,
+       "onset": 1379.8
+      },
+      {
+       "detected": false,
+       "onset": 1797.4
+      },
+      {
+       "detected": false,
+       "onset": 1834.6
+      },
+      {
+       "detected": true,
+       "onset": 1906.4
+      }
+     ],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 0,
+     "session_alarms": 10,
+     "session_seconds": 1860.0
+    },
+    "D-NIS": {
+     "first_alarm_delay_s": 180.0,
+     "loss_events": [
+      {
+       "detected": true,
+       "onset": 1046.8
+      },
+      {
+       "detected": true,
+       "onset": 1150.6
+      },
+      {
+       "detected": false,
+       "onset": 1195.4
+      },
+      {
+       "detected": false,
+       "onset": 1230.0
+      },
+      {
+       "detected": true,
+       "onset": 1244.2
+      },
+      {
+       "detected": true,
+       "onset": 1253.6
+      },
+      {
+       "detected": true,
+       "onset": 1266.8
+      },
+      {
+       "detected": false,
+       "onset": 1298.8
+      },
+      {
+       "detected": true,
+       "onset": 1305.0
+      },
+      {
+       "detected": true,
+       "onset": 1315.6
+      },
+      {
+       "detected": false,
+       "onset": 1347.6
+      },
+      {
+       "detected": false,
+       "onset": 1379.8
+      },
+      {
+       "detected": false,
+       "onset": 1797.4
+      },
+      {
+       "detected": true,
+       "onset": 1834.6
+      },
+      {
+       "detected": true,
+       "onset": 1906.4
+      }
+     ],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 0,
+     "session_alarms": 15,
+     "session_seconds": 1860.0
+    },
+    "D-RX": {
+     "first_alarm_delay_s": 170.0,
+     "loss_events": [
+      {
+       "detected": true,
+       "onset": 1046.8
+      },
+      {
+       "detected": true,
+       "onset": 1150.6
+      },
+      {
+       "detected": true,
+       "onset": 1195.4
+      },
+      {
+       "detected": true,
+       "onset": 1230.0
+      },
+      {
+       "detected": true,
+       "onset": 1244.2
+      },
+      {
+       "detected": true,
+       "onset": 1253.6
+      },
+      {
+       "detected": true,
+       "onset": 1266.8
+      },
+      {
+       "detected": true,
+       "onset": 1298.8
+      },
+      {
+       "detected": true,
+       "onset": 1305.0
+      },
+      {
+       "detected": true,
+       "onset": 1315.6
+      },
+      {
+       "detected": true,
+       "onset": 1347.6
+      },
+      {
+       "detected": true,
+       "onset": 1379.8
+      },
+      {
+       "detected": true,
+       "onset": 1797.4
+      },
+      {
+       "detected": true,
+       "onset": 1834.6
+      },
+      {
+       "detected": true,
+       "onset": 1906.4
+      }
+     ],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 0,
+     "session_alarms": 18,
+     "session_seconds": 1860.0
+    },
+    "M": {
+     "first_alarm_delay_s": 84.0,
+     "loss_events": [
+      {
+       "detected": true,
+       "onset": 1046.8
+      },
+      {
+       "detected": true,
+       "onset": 1150.6
+      },
+      {
+       "detected": true,
+       "onset": 1195.4
+      },
+      {
+       "detected": true,
+       "onset": 1230.0
+      },
+      {
+       "detected": true,
+       "onset": 1244.2
+      },
+      {
+       "detected": true,
+       "onset": 1253.6
+      },
+      {
+       "detected": true,
+       "onset": 1266.8
+      },
+      {
+       "detected": true,
+       "onset": 1298.8
+      },
+      {
+       "detected": true,
+       "onset": 1305.0
+      },
+      {
+       "detected": true,
+       "onset": 1315.6
+      },
+      {
+       "detected": true,
+       "onset": 1347.6
+      },
+      {
+       "detected": false,
+       "onset": 1379.8
+      },
+      {
+       "detected": true,
+       "onset": 1797.4
+      },
+      {
+       "detected": true,
+       "onset": 1834.6
+      },
+      {
+       "detected": true,
+       "onset": 1906.4
+      }
+     ],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 0,
+     "session_alarms": 24,
+     "session_seconds": 1860.0
+    }
+   },
+   "id": "Spoofing/stationary/Medium Power (_1W)/Bands_E1_E5_L1_L2_L5/2.3.10,2.3.11",
+   "session": [
+    61.2,
+    1921.2
+   ]
+  },
+  {
+   "attack_type": "spoofing",
+   "denial_events": [
+    633.0,
+    774.6
+   ],
+   "detectors": {
+    "D-JAM": {
+     "first_alarm_delay_s": 1410.6,
+     "loss_events": [
+      {
+       "detected": false,
+       "onset": 633.0
+      },
+      {
+       "detected": false,
+       "onset": 774.6
+      }
+     ],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 130.8,
+     "session_alarms": 1,
+     "session_seconds": 1530.0
+    },
+    "D-JUMP": {
+     "first_alarm_delay_s": 349.2,
+     "loss_events": [
+      {
+       "detected": false,
+       "onset": 633.0
+      },
+      {
+       "detected": false,
+       "onset": 774.6
+      }
+     ],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 130.8,
+     "session_alarms": 3,
+     "session_seconds": 1530.0
+    },
+    "D-NIS": {
+     "first_alarm_delay_s": 351.2,
+     "loss_events": [
+      {
+       "detected": false,
+       "onset": 633.0
+      },
+      {
+       "detected": false,
+       "onset": 774.6
+      }
+     ],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 130.8,
+     "session_alarms": 2,
+     "session_seconds": 1530.0
+    },
+    "D-RX": {
+     "first_alarm_delay_s": 349.2,
+     "loss_events": [
+      {
+       "detected": true,
+       "onset": 633.0
+      },
+      {
+       "detected": true,
+       "onset": 774.6
+      }
+     ],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 130.8,
+     "session_alarms": 6,
+     "session_seconds": 1530.0
+    },
+    "M": {
+     "first_alarm_delay_s": 80.2,
+     "loss_events": [
+      {
+       "detected": true,
+       "onset": 633.0
+      },
+      {
+       "detected": true,
+       "onset": 774.6
+      }
+     ],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 130.8,
+     "session_alarms": 6,
+     "session_seconds": 1530.0
+    }
+   },
+   "id": "Spoofing/stationary/Medium Power (_1W)/Bands_E1_E5_L1_L2_L5/2.3.15,2.3.12",
+   "session": [
+    250.8,
+    1780.8
+   ]
+  },
+  {
+   "attack_type": "spoofing",
+   "denial_events": [
+    318.2,
+    335.0,
+    386.2,
+    405.4,
+    454.0,
+    474.4,
+    505.4,
+    514.8
+   ],
+   "detectors": {
+    "D-JAM": {
+     "first_alarm_delay_s": 1056.8,
+     "loss_events": [
+      {
+       "detected": false,
+       "onset": 318.2
+      },
+      {
+       "detected": false,
+       "onset": 335.0
+      },
+      {
+       "detected": false,
+       "onset": 386.2
+      },
+      {
+       "detected": false,
+       "onset": 405.4
+      },
+      {
+       "detected": false,
+       "onset": 454.0
+      },
+      {
+       "detected": false,
+       "onset": 474.4
+      },
+      {
+       "detected": false,
+       "onset": 505.4
+      },
+      {
+       "detected": false,
+       "onset": 514.8
+      }
+     ],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 0,
+     "session_alarms": 4,
+     "session_seconds": 1530.0
+    },
+    "D-JUMP": {
+     "first_alarm_delay_s": 256.0,
+     "loss_events": [
+      {
+       "detected": true,
+       "onset": 318.2
+      },
+      {
+       "detected": true,
+       "onset": 335.0
+      },
+      {
+       "detected": false,
+       "onset": 386.2
+      },
+      {
+       "detected": false,
+       "onset": 405.4
+      },
+      {
+       "detected": false,
+       "onset": 454.0
+      },
+      {
+       "detected": false,
+       "onset": 474.4
+      },
+      {
+       "detected": false,
+       "onset": 505.4
+      },
+      {
+       "detected": false,
+       "onset": 514.8
+      }
+     ],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 0,
+     "session_alarms": 1,
+     "session_seconds": 1530.0
+    },
+    "D-NIS": {
+     "first_alarm_delay_s": null,
+     "loss_events": [
+      {
+       "detected": false,
+       "onset": 318.2
+      },
+      {
+       "detected": false,
+       "onset": 335.0
+      },
+      {
+       "detected": false,
+       "onset": 386.2
+      },
+      {
+       "detected": false,
+       "onset": 405.4
+      },
+      {
+       "detected": false,
+       "onset": 454.0
+      },
+      {
+       "detected": false,
+       "onset": 474.4
+      },
+      {
+       "detected": false,
+       "onset": 505.4
+      },
+      {
+       "detected": false,
+       "onset": 514.8
+      }
+     ],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 0,
+     "session_alarms": 0,
+     "session_seconds": 1530.0
+    },
+    "D-RX": {
+     "first_alarm_delay_s": 256.0,
+     "loss_events": [
+      {
+       "detected": true,
+       "onset": 318.2
+      },
+      {
+       "detected": true,
+       "onset": 335.0
+      },
+      {
+       "detected": true,
+       "onset": 386.2
+      },
+      {
+       "detected": true,
+       "onset": 405.4
+      },
+      {
+       "detected": true,
+       "onset": 454.0
+      },
+      {
+       "detected": true,
+       "onset": 474.4
+      },
+      {
+       "detected": true,
+       "onset": 505.4
+      },
+      {
+       "detected": true,
+       "onset": 514.8
+      }
+     ],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 0,
+     "session_alarms": 8,
+     "session_seconds": 1530.0
+    },
+    "M": {
+     "first_alarm_delay_s": 256.0,
+     "loss_events": [
+      {
+       "detected": true,
+       "onset": 318.2
+      },
+      {
+       "detected": true,
+       "onset": 335.0
+      },
+      {
+       "detected": true,
+       "onset": 386.2
+      },
+      {
+       "detected": true,
+       "onset": 405.4
+      },
+      {
+       "detected": true,
+       "onset": 454.0
+      },
+      {
+       "detected": true,
+       "onset": 474.4
+      },
+      {
+       "detected": true,
+       "onset": 505.4
+      },
+      {
+       "detected": true,
+       "onset": 514.8
+      }
+     ],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 0,
+     "session_alarms": 6,
+     "session_seconds": 1530.0
+    }
+   },
+   "id": "Spoofing/stationary/Medium Power (_1W)/Bands_E1_E5_L1_L2_L5/2.3.5,2.3.8",
+   "session": [
+    61.0,
+    1591.0
+   ]
+  },
+  {
+   "attack_type": "spoofing",
+   "denial_events": [],
+   "detectors": {
+    "D-JAM": {
+     "first_alarm_delay_s": 1236.6,
+     "loss_events": [],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 143.6,
+     "session_alarms": 17,
+     "session_seconds": 3330.0
+    },
+    "D-JUMP": {
+     "first_alarm_delay_s": null,
+     "loss_events": [],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 143.6,
+     "session_alarms": 0,
+     "session_seconds": 3330.0
+    },
+    "D-NIS": {
+     "first_alarm_delay_s": null,
+     "loss_events": [],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 143.6,
+     "session_alarms": 0,
+     "session_seconds": 3330.0
+    },
+    "D-RX": {
+     "first_alarm_delay_s": null,
+     "loss_events": [],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 143.6,
+     "session_alarms": 0,
+     "session_seconds": 3330.0
+    },
+    "M": {
+     "first_alarm_delay_s": null,
+     "loss_events": [],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 143.6,
+     "session_alarms": 0,
+     "session_seconds": 3330.0
+    }
+   },
+   "id": "Spoofing/stationary/Medium Power (_1W)/Bands_E1_L1/2.1.3,2.1.2,2.1.4",
+   "session": [
+    76.4,
+    3406.4
+   ]
+  },
+  {
+   "attack_type": "spoofing",
+   "denial_events": [],
+   "detectors": {
+    "D-JAM": {
+     "first_alarm_delay_s": null,
+     "loss_events": [],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 0,
+     "session_alarms": 0,
+     "session_seconds": 2280.0
+    },
+    "D-JUMP": {
+     "first_alarm_delay_s": null,
+     "loss_events": [],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 0,
+     "session_alarms": 0,
+     "session_seconds": 2280.0
+    },
+    "D-NIS": {
+     "first_alarm_delay_s": null,
+     "loss_events": [],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 0,
+     "session_alarms": 0,
+     "session_seconds": 2280.0
+    },
+    "D-RX": {
+     "first_alarm_delay_s": 2023.6,
+     "loss_events": [],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 0,
+     "session_alarms": 1,
+     "session_seconds": 2280.0
+    },
+    "M": {
+     "first_alarm_delay_s": 1729.6,
+     "loss_events": [],
+     "nominal_alarms": 0,
+     "nominal_exposure_s": 0,
+     "session_alarms": 9,
+     "session_seconds": 2280.0
+    }
+   },
+   "id": "Spoofing/stationary/Medium Power (_1W)/Bands_L1_L2_L5/2.1.1",
+   "session": [
+    157.4,
+    2437.4
+   ]
+  }
+ ],
+ "plan_sha256": "b075af5c50900837a54cfd28d857bb676fc1ea1cb89b5dbb18c7e336022ca6df",
+ "recordings": 24,
+ "split_seed": 20261028
+}

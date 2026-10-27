@@ -1,0 +1,329 @@
+{
+ "S0": {
+  "conditions": {
+   "drift=0.2": {
+    "detected_within_t_n": {
+     "ci95": [
+      0.041093,
+      0.149981
+     ],
+     "k": 8,
+     "n": 100,
+     "rate": 0.08
+    },
+    "error_at_alarm_max_m": 1.596307,
+    "mean_delay_s": 15.51,
+    "n": 100
+   },
+   "drift=0.5": {
+    "detected_within_t_n": {
+     "ci95": [
+      0.945514,
+      0.998233
+     ],
+     "k": 99,
+     "n": 100,
+     "rate": 0.99
+    },
+    "error_at_alarm_max_m": 1.106947,
+    "mean_delay_s": 7.7,
+    "n": 100
+   },
+   "jump=10": {
+    "detected_within_t_n": {
+     "ci95": [
+      0.963007,
+      1.0
+     ],
+     "k": 100,
+     "n": 100,
+     "rate": 1.0
+    },
+    "error_at_alarm_max_m": 0.618616,
+    "mean_delay_s": 0.0,
+    "n": 100
+   },
+   "jump=20": {
+    "detected_within_t_n": {
+     "ci95": [
+      0.963007,
+      1.0
+     ],
+     "k": 100,
+     "n": 100,
+     "rate": 1.0
+    },
+    "error_at_alarm_max_m": 0.618616,
+    "mean_delay_s": 0.0,
+    "n": 100
+   },
+   "jump=5": {
+    "detected_within_t_n": {
+     "ci95": [
+      0.963007,
+      1.0
+     ],
+     "k": 100,
+     "n": 100,
+     "rate": 1.0
+    },
+    "error_at_alarm_max_m": 0.63914,
+    "mean_delay_s": 0.63,
+    "n": 100
+   },
+   "loss=0": {
+    "detected_within_t_n": {
+     "ci95": [
+      0.963007,
+      1.0
+     ],
+     "k": 100,
+     "n": 100,
+     "rate": 1.0
+    },
+    "error_at_alarm_max_m": 0.699651,
+    "mean_delay_s": 2.1,
+    "n": 100
+   },
+   "noise=10": {
+    "detected_within_t_n": {
+     "ci95": [
+      0.963007,
+      1.0
+     ],
+     "k": 100,
+     "n": 100,
+     "rate": 1.0
+    },
+    "error_at_alarm_max_m": 0.785541,
+    "mean_delay_s": 4.85,
+    "n": 100
+   },
+   "noise=5": {
+    "detected_within_t_n": {
+     "ci95": [
+      0.837738,
+      0.951927
+     ],
+     "k": 91,
+     "n": 100,
+     "rate": 0.91
+    },
+    "error_at_alarm_max_m": 0.798374,
+    "mean_delay_s": 7.37,
+    "n": 100
+   },
+   "nominal=0": {
+    "detected_within_t_n": null,
+    "error_at_alarm_max_m": 0.438315,
+    "exposure_hours": 3.314722,
+    "false_alarms": 1,
+    "false_alarms_per_hour": 0.301684,
+    "mean_delay_s": 23.0,
+    "n": 100
+   },
+   "replay=10": {
+    "detected_within_t_n": {
+     "ci95": [
+      0.963007,
+      1.0
+     ],
+     "k": 100,
+     "n": 100,
+     "rate": 1.0
+    },
+    "error_at_alarm_max_m": 0.618616,
+    "mean_delay_s": 0.0,
+    "n": 100
+   },
+   "replay=5": {
+    "detected_within_t_n": {
+     "ci95": [
+      0.963007,
+      1.0
+     ],
+     "k": 100,
+     "n": 100,
+     "rate": 1.0
+    },
+    "error_at_alarm_max_m": 0.916785,
+    "mean_delay_s": 1.18,
+    "n": 100
+   }
+  },
+  "false_alarms_per_hour": 0.301684,
+  "logs": 100,
+  "verdicts": {
+   "AC-N1": false,
+   "AC-N4": true
+  }
+ },
+ "S1": {
+  "conditions": {
+   "drift=0.2": {
+    "detected_within_t_n": {
+     "ci95": [
+      0.0,
+      0.036993
+     ],
+     "k": 0,
+     "n": 100,
+     "rate": 0.0
+    },
+    "error_at_alarm_max_m": 1.846141,
+    "mean_delay_s": 20.22,
+    "n": 100
+   },
+   "drift=0.5": {
+    "detected_within_t_n": {
+     "ci95": [
+      0.963007,
+      1.0
+     ],
+     "k": 100,
+     "n": 100,
+     "rate": 1.0
+    },
+    "error_at_alarm_max_m": 1.064353,
+    "mean_delay_s": 8.85,
+    "n": 100
+   },
+   "jump=10": {
+    "detected_within_t_n": {
+     "ci95": [
+      0.963007,
+      1.0
+     ],
+     "k": 100,
+     "n": 100,
+     "rate": 1.0
+    },
+    "error_at_alarm_max_m": 0.352463,
+    "mean_delay_s": 0.0,
+    "n": 100
+   },
+   "jump=20": {
+    "detected_within_t_n": {
+     "ci95": [
+      0.963007,
+      1.0
+     ],
+     "k": 100,
+     "n": 100,
+     "rate": 1.0
+    },
+    "error_at_alarm_max_m": 0.352463,
+    "mean_delay_s": 0.0,
+    "n": 100
+   },
+   "jump=5": {
+    "detected_within_t_n": {
+     "ci95": [
+      0.963007,
+      1.0
+     ],
+     "k": 100,
+     "n": 100,
+     "rate": 1.0
+    },
+    "error_at_alarm_max_m": 0.363022,
+    "mean_delay_s": 1.0,
+    "n": 100
+   },
+   "loss=0": {
+    "detected_within_t_n": {
+     "ci95": [
+      0.963007,
+      1.0
+     ],
+     "k": 100,
+     "n": 100,
+     "rate": 1.0
+    },
+    "error_at_alarm_max_m": 0.463579,
+    "mean_delay_s": 2.1,
+    "n": 100
+   },
+   "noise=10": {
+    "detected_within_t_n": {
+     "ci95": [
+      0.963007,
+      1.0
+     ],
+     "k": 100,
+     "n": 100,
+     "rate": 1.0
+    },
+    "error_at_alarm_max_m": 0.676934,
+    "mean_delay_s": 5.42,
+    "n": 100
+   },
+   "noise=5": {
+    "detected_within_t_n": {
+     "ci95": [
+      0.678456,
+      0.841567
+     ],
+     "k": 77,
+     "n": 100,
+     "rate": 0.77
+    },
+    "error_at_alarm_max_m": 0.768619,
+    "mean_delay_s": 8.9,
+    "n": 100
+   },
+   "nominal=0": {
+    "detected_within_t_n": null,
+    "error_at_alarm_max_m": null,
+    "exposure_hours": 3.333333,
+    "false_alarms": 0,
+    "false_alarms_per_hour": 0.0,
+    "mean_delay_s": null,
+    "n": 100
+   },
+   "replay=10": {
+    "detected_within_t_n": {
+     "ci95": [
+      0.963007,
+      1.0
+     ],
+     "k": 100,
+     "n": 100,
+     "rate": 1.0
+    },
+    "error_at_alarm_max_m": 0.352463,
+    "mean_delay_s": 0.0,
+    "n": 100
+   },
+   "replay=5": {
+    "detected_within_t_n": {
+     "ci95": [
+      0.963007,
+      1.0
+     ],
+     "k": 100,
+     "n": 100,
+     "rate": 1.0
+    },
+    "error_at_alarm_max_m": 0.778297,
+    "mean_delay_s": 1.53,
+    "n": 100
+   }
+  },
+  "false_alarms_per_hour": 0.0,
+  "logs": 100,
+  "verdicts": {
+   "AC-N1": false,
+   "AC-N4": true
+  }
+ },
+ "calibration_used_for_S1": {
+  "excess_kurtosis": 2.092963,
+  "fixes_used": 316,
+  "lag1_correlation": 0.99,
+  "segments": 2,
+  "sigma_m": 0.093445
+ },
+ "evidence_kind": "simulated",
+ "label": "SYNTHETIC: produced by a seeded software model in sim/. Not measured on any robot, sensor or receiver. The model and the method under test share an author. Evidence kind: simulated."
+}

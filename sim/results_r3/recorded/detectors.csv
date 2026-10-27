@@ -1,0 +1,16 @@
+set,detector,sessions,false_alarms,exposure_hours,false_alarms_per_hour,session_detected,session_n,loss_events_detected,loss_events,AC-N1r,AC-N4
+all,M,24,32,0.6723,47.5994,19,24,39,40,False,False
+all,D-RX,24,3,0.9139,3.2825,12,24,40,40,False,False
+all,D-JAM,24,0,0.9389,0.0,5,24,0,40,False,True
+all,D-JUMP,24,4,0.9056,4.4169,10,24,19,40,False,False
+all,D-NIS,24,4,0.9056,4.4169,12,24,17,40,False,False
+held_out,M,12,7,0.3024,23.1447,8,12,2,2,False,False
+held_out,D-RX,12,0,0.3608,0.0,4,12,2,2,False,True
+held_out,D-JAM,12,0,0.3608,0.0,2,12,0,2,False,True
+held_out,D-JUMP,12,0,0.3608,0.0,3,12,1,2,False,True
+held_out,D-NIS,12,0,0.3608,0.0,5,12,1,2,False,True
+calibration,M,12,25,0.3698,67.598,11,12,37,38,False,False
+calibration,D-RX,12,3,0.5532,5.4233,8,12,38,38,False,False
+calibration,D-JAM,12,0,0.5782,0.0,3,12,0,38,False,True
+calibration,D-JUMP,12,4,0.5448,7.3417,7,12,18,38,False,False
+calibration,D-NIS,12,4,0.5448,7.3417,7,12,16,38,False,False
