@@ -15,6 +15,7 @@ Start with the first four. The rest is reference. Generated files carry a header
 - `INFORMATIVENESS.md`: mutation audit and parameter sensitivity of the predictions (SYNTHETIC).
 - `EVALUATION.md`, `EVALUATION_R2.md`: preregistered simulation rounds one and two (SYNTHETIC).
 - `GAP_PLAN.md`: what the work lacks and how each gap is closed (current).
+- `ANALYSIS_PLAN_R3_RECORDED.md`: the frozen plan for the recorded comparison on the Jammertest 2024 data (current).
 - `PREREG_R3_DRAFT.md`, `OSF_REGISTRATION.md`, `INDEPENDENT_GENERATOR_SPEC.md`: round three design, registration text and the second generator spec.
 - `RELATED_WORK.md`, `paper/OUTLINE.md`: literature positioning and the outline the manuscript follows.
 - `ARCHITECTURE.md`, `CONTEXT.md`, `DATA_STATEMENT.md`, `SECURITY.md`, `VALIDATOR_WARNINGS.md`: reference.

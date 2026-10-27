@@ -18,8 +18,8 @@
   },
   {
    "name": "tests",
-   "summary": "219 passed"
+   "summary": "235 passed, 1 skipped"
   }
  ],
- "tests_passed": 219
+ "tests_passed": 235
 }

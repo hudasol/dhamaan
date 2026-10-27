@@ -190,7 +190,7 @@ def test_prediction_scoring_by_script_on_synthetic_arms():
 
 def test_runner_refuses_until_registration_and_licensed_data_exist(tmp_path):
     from sim.r3 import run_recorded
-    assert len(run_recorded.preconditions()) == 3                            # the repository today: nothing registered, no data
+    assert len(run_recorded.preconditions()) == 2                            # the repository today: nothing registered; the licensed recording is listed in the manifest
     reg = tmp_path / "reg.md"; man = tmp_path / "m.csv"
     reg.write_text("Registration identifier: [to be entered]\nAC-N4 limit per hour: [to be entered]\n"); man.write_text("path,licence,source_url,note\n")
     assert len(run_recorded.preconditions(str(reg), str(man))) == 3

@@ -2,7 +2,8 @@
 
     python -m sim.r3.run_recorded
 
-Preconditions, checked here: (1) docs/OSF_REGISTRATION.md carries a registration identifier, (2) data/third_party_manifest.csv lists at
+Superseded for the Jammertest 2024 data by sim/r3/run_real.py, which is guarded by the git frozen plan (data/r3_recorded/PLAN_FREEZE.json).
+This older runner keeps its stricter guard for any later registered run. Preconditions, checked here: (1) docs/OSF_REGISTRATION.md carries a registration identifier, (2) data/third_party_manifest.csv lists at
 least one licensed recording, (3) the AC-N4 limit is entered in the preregistration. No recording has been replayed to date.
 """
 from __future__ import annotations
