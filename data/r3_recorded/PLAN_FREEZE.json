@@ -1,0 +1,27 @@
+{
+ "code_sha256": {
+  "sim/acceptance.py": "0354f2ce71d09b60e3675b2752a041b315b34e086aac391b4016554c08e0bc18",
+  "sim/common.py": "d4dd36d2a682a1a1555e2a6c6d9772ba585cc003e9e52d0b57960171627dfca2",
+  "sim/gnss_n2n4.py": "a850148e691ee14f312b1631605cc027b85b6c0cb60d16318b37a2e055462f7b",
+  "sim/r2/replay.py": "a3fa785d18210196de6850c3c7cfa2f521a4e2d6d2f55502c9cff6d050cc6dfa",
+  "sim/r3/detectors.py": "7d5a2ced55a13c9c99a0baca80e539f8c8a04460d5fc21c49e194186f43f46a3",
+  "sim/r3/jammertest.py": "ed5dadfc19ac545532e747849d46513393fccf791f932bef70c106dd835fd20a",
+  "sim/r3/real_score.py": "089e26a811c9c0b2c45cd6a43bc9f0be6823c9f41565c4372249e248c24cfe16",
+  "sim/r3/recorded.py": "b04dc238296042f4f35131688acc786ded34170e95bfeff528c9e9b55a7af74c",
+  "sim/r3/run_real.py": "582b023daa284bb24cd9e5e2b21f5fd4e2c8166757ca1a8ee1775c33df8e842e"
+ },
+ "dataset": {
+  "archive": "GNSS_DATASET_JAMMING_SPOOFING.tar.gz",
+  "licence_stated": "GPL-3.0-or-later (as stated on the record page)",
+  "md5": "c7b00c63bb1ee5db80c7692a2b06e169",
+  "site": "Andoya, Norway, September 2024",
+  "zenodo_record": "15911589"
+ },
+ "fa_limit_per_hour": 1.0,
+ "frozen_utc": "2026-10-27T22:04:05Z",
+ "git_head_at_freeze": "693626a473ebf3c58a63632eb1ee32a32542faf6",
+ "n_calibration": 12,
+ "plan": "docs/ANALYSIS_PLAN_R3_RECORDED.md",
+ "plan_sha256": "b075af5c50900837a54cfd28d857bb676fc1ea1cb89b5dbb18c7e336022ca6df",
+ "split_seed": 20261028
+}

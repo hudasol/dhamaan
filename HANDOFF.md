@@ -28,9 +28,9 @@ Recorded by `python tools/fast_check.py --record` into `docs/data/check_summary.
 - evidence table: 0 errors, 0 warnings, 26 reviewed warnings
 - assurance case: 0 errors, 56 flags; CLAIM_ALL_OPEN=6, CLAIM_CEILING=3, CLAIM_SIM_ONLY=3, CREDIT_CEILING=5, DECISION_NEEDED=8, EVIDENCE_OPEN=16, EVIDENCE_PARTIAL=5, UNDEVELOPED=1, WEAK_SOURCE=9
 - secrets scan: 0 hits
-- tests: 235 passed, 1 skipped
+- tests: 236 passed
 
-Tests passed: 235. CI also reruns both simulation rounds and fails on any changed byte, installs and runs the `dhamaan` command, runs `detect-secrets` and renders the diagram.
+Tests passed: 236. CI also reruns both simulation rounds and fails on any changed byte, installs and runs the `dhamaan` command, runs `detect-secrets` and renders the diagram.
 
 ## Predictions
 
