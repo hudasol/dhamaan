@@ -5,7 +5,7 @@ Status: generated draft. Simulation numbers are SYNTHETIC. Every number is fille
 
 ## Abstract
 
-Where no instrument fixes the conditions a service robot must be shown safe under, the developer's own simulation becomes the evidence. We build a source traced table of 222 rows over 24 instrument families and measure its extraction error (either pass, 32.0 percent, interval 26.2 to 38.4 percent). We audit 38 in scope rows for what they leave to the developer: of 12 that ask for environmental or interference evidence, 0 fix a severity and 0 fix one that applies to a Gulf site. We encode published simulation credibility conditions in a checker for a machine readable assurance case, so that 21 evidence items each carry a ceiling on the claim they can support. Two preregistered synthetic rounds hit 21 of 23 and 17 of 19 predictions; a mutation audit of the predictions found 3 uninformative (round three state: complete). On 24 recorded sessions from a public campaign, the monitor raised 47.60 false alarms per nominal hour against 0.30 in the synthetic arm, and failed the false alarm criterion that the synthetic arm had passed. All simulated evidence is synthetic, written by the authors of the monitors it tests, and supports no claim about a real robot.
+Where no instrument fixes the conditions a service robot must be shown safe under, the developer's own simulation becomes the evidence. We build a source traced table of 222 rows over 24 instrument families and measure its extraction error (either pass, 32.0 percent, interval 26.2 to 38.4 percent). We audit 38 in scope rows for what they leave to the developer: of 12 that ask for environmental or interference evidence, 0 fix a severity and 0 fix one that applies to a Gulf site. We encode published simulation credibility conditions in a checker for a machine readable assurance case, so that 21 evidence items each carry a ceiling on the claim they can support. Two preregistered synthetic rounds hit 21 of 23 and 17 of 19 predictions; a mutation audit of the predictions found 3 uninformative (round three state: complete). On 24 recordings from a public campaign, the monitor raised 47.60 false alarms per nominal hour against 0.30 in the synthetic arm. A post hoc review shows that this figure mixes real interference inside a mislabelled segment with a speed regime (a vehicle, not a slow robot) that the monitor's settings do not fit, and that on still receivers it raised no alarm; the nominal exposure is under one hour. All simulated evidence is synthetic, written by the authors of the monitors it tests, and supports no claim about a real robot.
 
 ## Introduction
 
@@ -69,11 +69,37 @@ Data: the Jammertest 2024 navigation recordings (Zenodo record, 24 recordings, 1
 
 On 3 held out still nominal segments (498 fixes), sigma 6.81 m, lag one correlation 0.99, excess kurtosis 11.16.
 
-Predictions hit: 6 of 9 scored. The detail, held out results and the limits are in `docs/RECORDED_RESULTS.md`.
+Predictions hit: 6 of 9 scored (all recordings; see the post hoc section for the held out reading).
+
+Post hoc (POST HOC and not preregistered. Computed after the frozen recorded run and an independent review, on the same recorded data (Jammertest campaign, Andoya, Norway). Does not replace the frozen results.)
+
+| Set | Detector | Recordings | Nominal alarms | Per nominal hour | 95 percent interval, resampling recordings |
+|---|---|---|---|---|---|
+| All nominal segments (as in the frozen run) | M | 12 | 32 in 0.67 h | 47.60 | 13.76 to 74.77 |
+| All nominal segments (as in the frozen run) | M-q1 | 12 | 3 in 0.91 h | 3.28 | 0.00 to 7.47 |
+| All nominal segments (as in the frozen run) | D-RX | 12 | 3 in 0.91 h | 3.28 | 0.00 to 7.58 |
+| All nominal segments (as in the frozen run) | D-JUMP | 12 | 4 in 0.91 h | 4.42 | 0.00 to 10.39 |
+| All nominal segments (as in the frozen run) | D-NIS | 12 | 4 in 0.91 h | 4.42 | 0.00 to 7.83 |
+| Without the contaminated trailing segment | M | 11 | 16 in 0.53 h | 30.30 | 8.57 to 51.36 |
+| Without the contaminated trailing segment | M-q1 | 11 | 0 in 0.66 h | 0.00 | 0.00 to 0.00 |
+| Without the contaminated trailing segment | D-RX | 11 | 0 in 0.66 h | 0.00 | 0.00 to 0.00 |
+| Without the contaminated trailing segment | D-JUMP | 11 | 0 in 0.66 h | 0.00 | 0.00 to 0.00 |
+| Without the contaminated trailing segment | D-NIS | 11 | 1 in 0.65 h | 1.53 | 0.00 to 3.45 |
+| Moving receiver only | M | 5 | 16 in 0.26 h | 60.91 | 41.12 to 74.45 |
+| Moving receiver only | M-q1 | 5 | 0 in 0.40 h | 0.00 | 0.00 to 0.00 |
+| Moving receiver only | D-RX | 5 | 0 in 0.40 h | 0.00 | 0.00 to 0.00 |
+| Moving receiver only | D-JUMP | 5 | 0 in 0.40 h | 0.00 | 0.00 to 0.00 |
+| Moving receiver only | D-NIS | 5 | 1 in 0.39 h | 2.58 | 0.00 to 4.87 |
+| Still receiver only | M | 6 | 0 in 0.27 h | 0.00 | 0.00 to 0.00 |
+| Still receiver only | M-q1 | 6 | 0 in 0.27 h | 0.00 | 0.00 to 0.00 |
+| Still receiver only | D-RX | 6 | 0 in 0.27 h | 0.00 | 0.00 to 0.00 |
+| Still receiver only | D-JUMP | 6 | 0 in 0.27 h | 0.00 | 0.00 to 0.00 |
+| Still receiver only | D-NIS | 6 | 0 in 0.27 h | 0.00 | 0.00 to 0.00 |
+ The detail, held out results and the limits are in `docs/RECORDED_RESULTS.md`.
 
 ## Discussion
 
-What can be said is narrow. The checker keeps hardware claims open for every item whose evidence is simulated, and the mutation audit shows how much of the earlier hit rate could not have failed. On recorded interference the monitor's false alarm rate was far above the developer's synthetic value, so the synthetic verdict on AC-N4 did not carry over; of the baselines, D-JAM had the lowest false alarm rate. This holds for one campaign and for a receiver velocity standing in for wheel odometry, and it is not a claim about a robot or about the Gulf.
+What can be said is narrow. The checker keeps hardware claims open for every item whose evidence is simulated, and the mutation audit shows how much of the earlier hit rate could not have failed. On recorded interference the monitor's false alarm rate was far above the developer's synthetic value, but the post hoc analysis attributes it to a mislabelled segment and to vehicle speed, not to the synthetic error model alone. This holds for one campaign, with under one hour of nominal exposure, and for a receiver velocity standing in for wheel odometry, and it is not a claim about a robot or about the Gulf.
 
 ## Threats to validity
 

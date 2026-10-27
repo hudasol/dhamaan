@@ -4,7 +4,7 @@ Status: generated draft. Simulation numbers are SYNTHETIC. Every number is fille
 
 ## Abstract
 
-Where no instrument fixes the conditions a service robot must be shown safe under, the developer's own simulation becomes the evidence. We build a source traced table of {{N_ROWS}} rows over {{N_FAMILIES}} instrument families and measure its extraction error (either pass, {{ROW_ERR_EITHER}}, interval {{ROW_ERR_CI}}). We audit {{MS_SILENCE_SCOPE}} in scope rows for what they leave to the developer: of {{MS_SILENCE_ASK}} that ask for environmental or interference evidence, {{MS_SILENCE_SEV}} fix a severity and {{MS_SILENCE_SEV_GULF}} fix one that applies to a Gulf site. We encode published simulation credibility conditions in a checker for a machine readable assurance case, so that {{N_EVIDENCE_ITEMS}} evidence items each carry a ceiling on the claim they can support. Two preregistered synthetic rounds hit {{PRED_HIT}} of {{PRED_TOTAL}} and {{R2_PRED_HIT}} of {{R2_PRED_TOTAL}} predictions; a mutation audit of the predictions found {{MS_R3_UNINF}} uninformative (round three state: {{MS_R3_STATE}}). On {{REC_N}} recorded sessions from a public campaign, the monitor raised {{REC_M_FA}} false alarms per nominal hour against {{REC_M_SYN_FA}} in the synthetic arm, and failed the false alarm criterion that the synthetic arm had passed. All simulated evidence is synthetic, written by the authors of the monitors it tests, and supports no claim about a real robot.
+Where no instrument fixes the conditions a service robot must be shown safe under, the developer's own simulation becomes the evidence. We build a source traced table of {{N_ROWS}} rows over {{N_FAMILIES}} instrument families and measure its extraction error (either pass, {{ROW_ERR_EITHER}}, interval {{ROW_ERR_CI}}). We audit {{MS_SILENCE_SCOPE}} in scope rows for what they leave to the developer: of {{MS_SILENCE_ASK}} that ask for environmental or interference evidence, {{MS_SILENCE_SEV}} fix a severity and {{MS_SILENCE_SEV_GULF}} fix one that applies to a Gulf site. We encode published simulation credibility conditions in a checker for a machine readable assurance case, so that {{N_EVIDENCE_ITEMS}} evidence items each carry a ceiling on the claim they can support. Two preregistered synthetic rounds hit {{PRED_HIT}} of {{PRED_TOTAL}} and {{R2_PRED_HIT}} of {{R2_PRED_TOTAL}} predictions; a mutation audit of the predictions found {{MS_R3_UNINF}} uninformative (round three state: {{MS_R3_STATE}}). On {{REC_N}} recordings from a public campaign, the monitor raised {{REC_M_FA}} false alarms per nominal hour against {{REC_M_SYN_FA}} in the synthetic arm. A post hoc review shows that this figure mixes real interference inside a mislabelled segment with a speed regime (a vehicle, not a slow robot) that the monitor's settings do not fit, and that on still receivers it raised no alarm; the nominal exposure is under one hour. All simulated evidence is synthetic, written by the authors of the monitors it tests, and supports no claim about a real robot.
 
 ## Introduction
 
@@ -48,11 +48,16 @@ Data: the {{REC_DATASET}} navigation recordings (Zenodo record, {{REC_N}} record
 
 {{REC_NOMINAL}}
 
-Predictions hit: {{REC_P_HIT}} of {{REC_P_TOTAL}} scored. The detail, held out results and the limits are in `docs/RECORDED_RESULTS.md`.
+Predictions hit: {{REC_P_HIT}} of {{REC_P_TOTAL}} scored (all recordings; see the post hoc section for the held out reading).
+
+Post hoc ({{REC_POST_LABEL}})
+
+{{REC_POST_TABLE}}
+ The detail, held out results and the limits are in `docs/RECORDED_RESULTS.md`.
 
 ## Discussion
 
-What can be said is narrow. The checker keeps hardware claims open for every item whose evidence is simulated, and the mutation audit shows how much of the earlier hit rate could not have failed. On recorded interference the monitor's false alarm rate was far above the developer's synthetic value, so the synthetic verdict on AC-N4 did not carry over; of the baselines, {{REC_BEST_BASELINE}} had the lowest false alarm rate. This holds for one campaign and for a receiver velocity standing in for wheel odometry, and it is not a claim about a robot or about the Gulf.
+What can be said is narrow. The checker keeps hardware claims open for every item whose evidence is simulated, and the mutation audit shows how much of the earlier hit rate could not have failed. On recorded interference the monitor's false alarm rate was far above the developer's synthetic value, but the post hoc analysis attributes it to a mislabelled segment and to vehicle speed, not to the synthetic error model alone. This holds for one campaign, with under one hour of nominal exposure, and for a receiver velocity standing in for wheel odometry, and it is not a claim about a robot or about the Gulf.
 
 ## Threats to validity
 

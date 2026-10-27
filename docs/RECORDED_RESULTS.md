@@ -65,8 +65,49 @@ On 3 held out still nominal segments (498 fixes), sigma 6.81 m, lag one correlat
 | R3-P8 | D-JAM alarms in fewer meaconing sessions than M | hit |
 | R3-P9 | No detector satisfies both AC-N1r and AC-N4 on all recordings | hit |
 
+## Post hoc analysis after review
+
+> POST HOC and not preregistered. Computed after the frozen recorded run and an independent review, on the same recorded data (Jammertest campaign, Andoya, Norway). Does not replace the frozen results.
+
+An independent review of the frozen run found that the headline false alarm rate of M is not a clean property of the monitor. The frozen tables above stand unchanged. The table below separates the causes. The detector M-q1 is M with the filter process noise raised to one metre; it is a sensitivity probe to show that the result depends on that setting, and it is not a new monitor.
+
+| Set | Detector | Recordings | Nominal alarms | Per nominal hour | 95 percent interval, resampling recordings |
+|---|---|---|---|---|---|
+| All nominal segments (as in the frozen run) | M | 12 | 32 in 0.67 h | 47.60 | 13.76 to 74.77 |
+| All nominal segments (as in the frozen run) | M-q1 | 12 | 3 in 0.91 h | 3.28 | 0.00 to 7.47 |
+| All nominal segments (as in the frozen run) | D-RX | 12 | 3 in 0.91 h | 3.28 | 0.00 to 7.58 |
+| All nominal segments (as in the frozen run) | D-JUMP | 12 | 4 in 0.91 h | 4.42 | 0.00 to 10.39 |
+| All nominal segments (as in the frozen run) | D-NIS | 12 | 4 in 0.91 h | 4.42 | 0.00 to 7.83 |
+| Without the contaminated trailing segment | M | 11 | 16 in 0.53 h | 30.30 | 8.57 to 51.36 |
+| Without the contaminated trailing segment | M-q1 | 11 | 0 in 0.66 h | 0.00 | 0.00 to 0.00 |
+| Without the contaminated trailing segment | D-RX | 11 | 0 in 0.66 h | 0.00 | 0.00 to 0.00 |
+| Without the contaminated trailing segment | D-JUMP | 11 | 0 in 0.66 h | 0.00 | 0.00 to 0.00 |
+| Without the contaminated trailing segment | D-NIS | 11 | 1 in 0.65 h | 1.53 | 0.00 to 3.45 |
+| Moving receiver only | M | 5 | 16 in 0.26 h | 60.91 | 41.12 to 74.45 |
+| Moving receiver only | M-q1 | 5 | 0 in 0.40 h | 0.00 | 0.00 to 0.00 |
+| Moving receiver only | D-RX | 5 | 0 in 0.40 h | 0.00 | 0.00 to 0.00 |
+| Moving receiver only | D-JUMP | 5 | 0 in 0.40 h | 0.00 | 0.00 to 0.00 |
+| Moving receiver only | D-NIS | 5 | 1 in 0.39 h | 2.58 | 0.00 to 4.87 |
+| Still receiver only | M | 6 | 0 in 0.27 h | 0.00 | 0.00 to 0.00 |
+| Still receiver only | M-q1 | 6 | 0 in 0.27 h | 0.00 | 0.00 to 0.00 |
+| Still receiver only | D-RX | 6 | 0 in 0.27 h | 0.00 | 0.00 to 0.00 |
+| Still receiver only | D-JUMP | 6 | 0 in 0.27 h | 0.00 | 0.00 to 0.00 |
+| Still receiver only | D-NIS | 6 | 0 in 0.27 h | 0.00 | 0.00 to 0.00 |
+
+What the review found, in words:
+
+- **One mislabelled recording.** In one recording the trailing nominal segment overlaps real jamming: the receiver loses satellites, the jamming indicator rises and position residuals reach hundreds of metres, while the attack log says the jamming had ended. Session spans in the labels are loose and the plan treats everything outside them as clean. That segment supplies about half of the false alarms of M and all of the false alarms of D-RX and D-JUMP.
+- **Receiver motion.** On still receivers M raised no alarm. All its remaining alarms occur while the receiver travels in a vehicle at several metres per second, far above the walking pace its settings were chosen for, with a velocity held between one hertz epochs standing in for wheel odometry. The synthetic arm (a slow robot) and the recorded arm (a fast vehicle) therefore differ in speed as well as in realism, and the false alarm verdict cannot be assigned to the synthetic error model alone.
+- **Session detection by M is largely the same mechanism.** With larger process noise M alarms in very few sessions that have no loss of fix event, so the high share of sessions alarmed in the frozen run mostly reflects its false alarm behaviour and is weak evidence of detecting spoofing or meaconing.
+- **Loss of fix events.** An alarm up to the re-arm time before the onset counts as a detection, as frozen; events cluster in a few recordings, so the intervals that treat them as independent are too narrow. D-RX alarms on an invalid fix, so its score on events defined by invalid fixes holds by construction.
+- **Low nominal exposure.** Only half of the recordings contribute any nominal data, and a rate of zero alarms in this exposure cannot show a rate below the limit with confidence. The AC-N4 verdicts marked True for the baselines are point estimates only.
+- **Prediction R3-P6** rests on held out segments where the antenna was moved during the segment; the heavy tail and autocorrelation describe a relocation and not receiver noise. S1 is recalibrated on two still segments with noise far below the monitor's assumed value.
+- **Prediction scoring set.** R3-P3, R3-P7, R3-P8 and R3-P9 were scored on all recordings; the plan names the held out set only for some predictions. On the held out set R3-P3 changes outcome.
+- **Time base.** The receiver time stamp is GPS time, not UTC; the offset is far below the rounding of the attack log.
+- **Freeze evidence.** The freeze is a hash file and a git history written by one author; it is self attested.
+
 ## Reading
 
-M raised 47.60 false alarms per nominal hour on the recordings (interval 32.56 to 67.20), against 0.30 on the synthetic arm built from the developer's parameters. It alarmed in 19 of 24 sessions and for 39 of 40 loss of fix events. At its own nominal rate, M would be expected to alarm 29.12 times per session by chance, so session detection alone is weak evidence for M. Of the baselines, D-JAM had the lowest false alarm rate.
+M raised 47.60 false alarms per nominal hour on the recordings (interval 32.56 to 67.20), against 0.30 on the synthetic arm built from the developer's parameters. It alarmed in 19 of 24 sessions and for 39 of 40 loss of fix events. At its own nominal rate, M would be expected to alarm 29.12 times per session by chance, so session detection alone is weak evidence for M. The lowest false alarm rate in the frozen run belongs to D-JAM, a detector that rarely alarms at all, so the comparison says little.
 
-Limits. One campaign in Norway, one receiver type, no Gulf data and no robot. Labels are session spans, so a missed session may be a session in which the attack had no effect on the receiver. The odometry substitute is derived from the same receiver, so the monitor never sees an independent motion estimate, which is the situation it was designed for; the false alarm result therefore shows how M behaves with this substitute and does not show how it would behave on a robot with wheel odometry. Dust, glare and heat have no recorded counterpart and remain synthetic.
+Limits. One campaign in Norway, one receiver type, no Gulf data and no robot. Labels are session spans, so a missed session may be a session in which the attack had no effect on the receiver. The vehicle speed regime, the loose labels and the post hoc findings above apply. The odometry substitute is derived from the same receiver, so the monitor never sees an independent motion estimate, which is the situation it was designed for; the false alarm result therefore shows how M behaves with this substitute and does not show how it would behave on a robot with wheel odometry. Dust, glare and heat have no recorded counterpart and remain synthetic.

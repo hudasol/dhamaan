@@ -433,7 +433,7 @@ def r3_facts() -> dict:
 def rec_facts() -> dict:
     keys = ("REC_LABEL", "REC_STATE", "REC_N", "REC_CAL", "REC_HELD", "REC_THRESHOLD", "REC_DET_TABLE", "REC_HELD_TABLE", "REC_TYPE_TABLE",
             "REC_PRED_TABLE", "REC_SYN_TABLE", "REC_NOMINAL", "REC_M_FA", "REC_M_FA_CI", "REC_M_SYN_FA", "REC_M_SESS", "REC_M_LOSS", "REC_M_CHANCE",
-            "REC_DATASET", "REC_HOURS", "REC_BEST_BASELINE", "REC_P_HIT", "REC_P_TOTAL")
+            "REC_DATASET", "REC_POST_TABLE", "REC_POST_LABEL", "REC_HOURS", "REC_BEST_BASELINE", "REC_P_HIT", "REC_P_TOTAL")
     rp = _p("sim/results_r3/recorded/recorded_results.json")
     if not os.path.exists(rp):
         return {k: "not yet run" for k in keys}
@@ -476,6 +476,19 @@ def rec_facts() -> dict:
             "REC_M_LOSS": f'{M["loss_of_fix_events"]["k"]} of {M["loss_of_fix_events"]["n"]}', "REC_M_CHANCE": f3(M["chance_alarms_per_session"]),
             "REC_HOURS": f3(M["false_alarms"]["exposure_hours"]), "REC_BEST_BASELINE": best, "REC_P_HIT": hit, "REC_P_TOTAL": tot}
     out["REC_DATASET"] = "Jammertest 2024"
+    pp = _p("sim/results_r3/recorded/post_hoc.json")
+    if os.path.exists(pp):
+        H = json.load(open(pp, encoding="utf-8")); rows = []
+        lab = {"all_segments": "All nominal segments (as in the frozen run)", "excluding_contaminated_segment": "Without the contaminated trailing segment",
+               "still_only": "Still receiver only", "moving_only": "Moving receiver only"}
+        for k, v in H["sets"].items():
+            for n in ("M", "M-q1", "D-RX", "D-JUMP", "D-NIS"):
+                g = v[n]; ci = g["ci95_recording_bootstrap"]
+                rows.append([lab[k], n, g["recordings"], f'{g["alarms"]} in {g["exposure_hours"]:.2f} h', f3(g["per_hour"]), f'{f3(ci[0])} to {f3(ci[1])}'])
+        out["REC_POST_TABLE"] = table(["Set", "Detector", "Recordings", "Nominal alarms", "Per nominal hour", "95 percent interval, resampling recordings"], rows)
+        out["REC_POST_LABEL"] = H["label"]
+    else:
+        out["REC_POST_TABLE"] = out["REC_POST_LABEL"] = "not yet run"
     return {k: str(v) for k, v in out.items()}
 
 

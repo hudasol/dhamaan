@@ -53,3 +53,7 @@ is byte identical before and after them.
   (c) `inject()` could wrap a replay to the end of a log and failed on a one fix log; both are guarded. (d) Logs
   with non finite or empty required values are rejected. No threshold, seed, prediction or design choice changed.
   The results before this fix stay in the history; `sim/results_r2/code_sha256.txt` now records the code used.
+
+## 2026-10-28, after the recorded run and an independent review
+
+- **D6. Post hoc analysis of the recorded arm.** The frozen run stands unchanged (`sim/results_r3/recorded/recorded_results.json`). A review found a mislabelled trailing segment in one recording, a dependence of the false alarm rate of M on receiver speed, and several wording and scoring issues. `sim/r3/post_hoc.py` reports the rate by motion regime, without the contaminated segment and with a recording level bootstrap, and a variant M with larger process noise as a sensitivity probe. These results are post hoc and are labelled so; none of them replaces a frozen result or changes a criterion.
