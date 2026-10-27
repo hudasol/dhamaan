@@ -1,10 +1,10 @@
 # Whose verdict counts? Synthetic and recorded GNSS interference for a robot integrity monitor
 
-Status: generated draft. Simulation numbers are SYNTHETIC. Every number is filled by `docsgen/facts.py` from the data files; text edits go in `docs/templates/MANUSCRIPT.tmpl.md`. The recorded arm has not been run (see the section on round three), so this draft answers the first half of the research question only. Single author, no human check of the evidence table yet, no outside reader yet.
+Status: generated draft. Simulation numbers are SYNTHETIC. Every number is filled by `docsgen/facts.py` from the data files; text edits go in `docs/templates/MANUSCRIPT.tmpl.md`. The recorded arm was run once on a public jamming and spoofing campaign (see the section on the recorded comparison); it is one campaign, one receiver and not the Gulf. Single author, no human check of the evidence table yet, no outside reader yet.
 
 ## Abstract
 
-Where no instrument fixes the conditions a service robot must be shown safe under, the developer's own simulation becomes the evidence. We build a source traced table of {{N_ROWS}} rows over {{N_FAMILIES}} instrument families and measure its extraction error (either pass, {{ROW_ERR_EITHER}}, interval {{ROW_ERR_CI}}). We audit {{MS_SILENCE_SCOPE}} in scope rows for what they leave to the developer: of {{MS_SILENCE_ASK}} that ask for environmental or interference evidence, {{MS_SILENCE_SEV}} fix a severity and {{MS_SILENCE_SEV_GULF}} fix one that applies to a Gulf site. We encode published simulation credibility conditions in a checker for a machine readable assurance case, so that {{N_EVIDENCE_ITEMS}} evidence items each carry a ceiling on the claim they can support. Two preregistered synthetic rounds hit {{PRED_HIT}} of {{PRED_TOTAL}} and {{R2_PRED_HIT}} of {{R2_PRED_TOTAL}} predictions; a mutation audit of the predictions found {{MS_R3_UNINF}} uninformative (round three state: {{MS_R3_STATE}}). All simulated evidence is synthetic, written by the authors of the monitors it tests, and supports no claim about a real robot.
+Where no instrument fixes the conditions a service robot must be shown safe under, the developer's own simulation becomes the evidence. We build a source traced table of {{N_ROWS}} rows over {{N_FAMILIES}} instrument families and measure its extraction error (either pass, {{ROW_ERR_EITHER}}, interval {{ROW_ERR_CI}}). We audit {{MS_SILENCE_SCOPE}} in scope rows for what they leave to the developer: of {{MS_SILENCE_ASK}} that ask for environmental or interference evidence, {{MS_SILENCE_SEV}} fix a severity and {{MS_SILENCE_SEV_GULF}} fix one that applies to a Gulf site. We encode published simulation credibility conditions in a checker for a machine readable assurance case, so that {{N_EVIDENCE_ITEMS}} evidence items each carry a ceiling on the claim they can support. Two preregistered synthetic rounds hit {{PRED_HIT}} of {{PRED_TOTAL}} and {{R2_PRED_HIT}} of {{R2_PRED_TOTAL}} predictions; a mutation audit of the predictions found {{MS_R3_UNINF}} uninformative (round three state: {{MS_R3_STATE}}). On {{REC_N}} recorded sessions from a public campaign, the monitor raised {{REC_M_FA}} false alarms per nominal hour against {{REC_M_SYN_FA}} in the synthetic arm, and failed the false alarm criterion that the synthetic arm had passed. All simulated evidence is synthetic, written by the authors of the monitors it tests, and supports no claim about a real robot.
 
 ## Introduction
 
@@ -38,15 +38,25 @@ Informativeness audit (state: {{MS_R3_STATE}}). A prediction is informative if i
 
 Second author generator. A second generator was written in a fresh context from a written specification (`docs/INDEPENDENT_GENERATOR_SPEC.md`). Across {{MS_IND_N}} compared verdicts, {{MS_IND_DIFF}} differ. Limit: {{MS_IND_LIMIT}}
 
-Recorded arm. Not run. It requires registration of the design and a licence entry for the data; the harness and its tests exist on synthetic fixtures only (`sim/r3/recorded.py`).
+## Recorded comparison
+
+Data: the {{REC_DATASET}} navigation recordings (Zenodo record, {{REC_N}} recordings, {{REC_CAL}} for calibration and {{REC_HELD}} held out). The plan was frozen by hash before the one scoring run (`docs/ANALYSIS_PLAN_R3_RECORDED.md`). Five detectors were scored: the monitor M, receiver flags (D-RX), the jamming indicator (D-JAM), position jump (D-JUMP) and a Kalman gate (D-NIS).
+
+{{REC_DET_TABLE}}
+
+{{REC_SYN_TABLE}}
+
+{{REC_NOMINAL}}
+
+Predictions hit: {{REC_P_HIT}} of {{REC_P_TOTAL}} scored. The detail, held out results and the limits are in `docs/RECORDED_RESULTS.md`.
 
 ## Discussion
 
-What can be said now is narrow. The checker keeps hardware claims open for every item whose evidence is simulated, and the mutation audit shows how much of the earlier hit rate could not have failed. Whether a developer written generator and recorded interference give the same verdict is not answered here, because the recorded arm has not been run.
+What can be said is narrow. The checker keeps hardware claims open for every item whose evidence is simulated, and the mutation audit shows how much of the earlier hit rate could not have failed. On recorded interference the monitor's false alarm rate was far above the developer's synthetic value, so the synthetic verdict on AC-N4 did not carry over; of the baselines, {{REC_BEST_BASELINE}} had the lowest false alarm rate. This holds for one campaign and for a receiver velocity standing in for wheel odometry, and it is not a claim about a robot or about the Gulf.
 
 ## Threats to validity
 
-Single author. Checkers and coders share a model family with the author, so errors can repeat. Parameters are assumed, not measured. Standards were read at summary level where only summaries were available. Recordings, when used, may not come from the Gulf. See `docs/LIMITATIONS.md`. Official items: {{MS_OFFICIAL_N}} checked against official texts by an automated service, of which {{MS_OFFICIAL_OPEN}} are not confirmed and need hand reading (`docs/FETCH_LIST_R3.md`).
+Single author. Checkers and coders share a model family with the author, so errors can repeat. Parameters are assumed, not measured. Standards were read at summary level where only summaries were available. The recordings come from Norway and a single receiver type, not from the Gulf or a robot. See `docs/LIMITATIONS.md`. Official items: {{MS_OFFICIAL_N}} checked against official texts by an automated service, of which {{MS_OFFICIAL_OPEN}} are not confirmed and need hand reading (`docs/FETCH_LIST_R3.md`).
 
 ## Data and code availability
 

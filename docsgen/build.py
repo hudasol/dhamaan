@@ -30,6 +30,7 @@ OUTPUTS = {
     "HANDOFF.md": "HANDOFF.tmpl.md",
     "docs/INFORMATIVENESS.md": "INFORMATIVENESS.tmpl.md",
     "docs/paper/manuscript.md": "MANUSCRIPT.tmpl.md",
+    "docs/RECORDED_RESULTS.md": "RECORDED_RESULTS.tmpl.md",
 }
 BRIEF_TEMPLATE = "PROPOSAL_BRIEF.tmpl.md"   # rendered once per audience in data/proposal_pack.yaml
 PLACEHOLDER = re.compile(r"\{\{([A-Z0-9_]+)\}\}")

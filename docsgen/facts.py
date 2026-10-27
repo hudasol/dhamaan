@@ -430,9 +430,58 @@ def r3_facts() -> dict:
     return {"R3_SUMMARY": summ, "R3_INFO_TABLE": it, "R3_SENS_TABLE": st, "R3_LABEL": S["label"]}
 
 
+def rec_facts() -> dict:
+    keys = ("REC_LABEL", "REC_STATE", "REC_N", "REC_CAL", "REC_HELD", "REC_THRESHOLD", "REC_DET_TABLE", "REC_HELD_TABLE", "REC_TYPE_TABLE",
+            "REC_PRED_TABLE", "REC_SYN_TABLE", "REC_NOMINAL", "REC_M_FA", "REC_M_FA_CI", "REC_M_SYN_FA", "REC_M_SESS", "REC_M_LOSS", "REC_M_CHANCE",
+            "REC_DATASET", "REC_HOURS", "REC_BEST_BASELINE", "REC_P_HIT", "REC_P_TOTAL")
+    rp = _p("sim/results_r3/recorded/recorded_results.json")
+    if not os.path.exists(rp):
+        return {k: "not yet run" for k in keys}
+    R = json.load(open(rp, encoding="utf-8")); P = json.load(open(_p("sim/results_r3/recorded/predictions.json"), encoding="utf-8"))
+    Y = json.load(open(_p("sim/results_r3/recorded/synthetic_arms.json"), encoding="utf-8"))
+    names = list(R["R_all"]); f3 = lambda x: "n/a" if x is None else f"{x:.2f}"
+    def det_rows(tab):
+        out = []
+        for n in names:
+            g = tab[n]; fa = g["false_alarms"]; sd = g["session_detection"]["all"]; le = g["loss_of_fix_events"]
+            out.append([n, g["sessions"], f'{fa["alarms"]} in {fa["exposure_hours"]:.2f} h', f3(fa["per_hour"]),
+                        f'{f3(fa["ci95_per_hour"][0])} to {f3(fa["ci95_per_hour"][1])}', f'{sd["k"]} of {sd["n"]}', f'{le["k"]} of {le["n"]}',
+                        g["verdicts"]["AC-N1r"], g["verdicts"]["AC-N4"]])
+        return out
+    hdr = ["Detector", "Recordings", "Nominal alarms", "Per nominal hour", "95 percent interval", "Sessions alarmed", "Loss of fix events alarmed", "AC-N1r", "AC-N4"]
+    types = sorted(t for t in R["R_all"]["M"]["session_detection"] if t != "all")
+    tt = table(["Detector"] + [f"{t} sessions" for t in types],
+               [[n] + [f'{R["R_all"][n]["session_detection"][t]["k"]} of {R["R_all"][n]["session_detection"][t]["n"]}' for t in types] for n in names])
+    desc = {"R3-P1": "Verdicts of AC-N1 or AC-N4 differ between S0 and R", "R3-P2": "False alarm rate of M is higher on R than on S0",
+            "R3-P3": "Spoofing sessions are alarmed less often than jamming sessions", "R3-P4": "S1 is closer to R than S0 on false alarms",
+            "R3-P5": "S1 reproduces the verdicts of R", "R3-P6": "Held out nominal fix error is heavy tailed and autocorrelated",
+            "R3-P7": "D-RX alarms in fewer spoofing and meaconing sessions than M", "R3-P8": "D-JAM alarms in fewer meaconing sessions than M",
+            "R3-P9": "No detector satisfies both AC-N1r and AC-N4 on all recordings"}
+    pr = P["predictions"]
+    pt = table(["Prediction", "Statement", "Outcome"], [[k, desc[k], "not scored" if v is None else ("hit" if v else "miss")] for k, v in sorted(pr.items())])
+    st = table(["Arm", "Nominal false alarms per hour", "AC-N1", "AC-N4"],
+               [["S0 (synthetic, developer parameters)", f3(Y["S0"]["false_alarms_per_hour"]), Y["S0"]["verdicts"]["AC-N1"], Y["S0"]["verdicts"]["AC-N4"]],
+                ["S1 (synthetic, recalibrated on recordings)", f3(Y["S1"]["false_alarms_per_hour"]) if Y["S1"] else "n/a", Y["S1"]["verdicts"]["AC-N1"] if Y["S1"] else "n/a", Y["S1"]["verdicts"]["AC-N4"] if Y["S1"] else "n/a"],
+                ["R (recorded, all recordings)", f3(R["R_all"]["M"]["false_alarms"]["per_hour"]), R["R_all"]["M"]["verdicts"]["AC-N1r"], R["R_all"]["M"]["verdicts"]["AC-N4"]]])
+    ne = R["nominal_error_held_out"] or {}
+    nom = (f'On {ne["segments"]} held out still nominal segments ({ne["fixes_used"]} fixes), sigma {f3(ne["sigma_m"])} m, lag one correlation {f3(ne["lag1_correlation"])}, excess kurtosis {f3(ne["excess_kurtosis"])}.' if ne else "No held out still nominal segment.")
+    M = R["R_all"]["M"]; others = [n for n in names if n != "M"]
+    best = min(others, key=lambda n: (R["R_all"][n]["false_alarms"]["per_hour"] if R["R_all"][n]["false_alarms"]["per_hour"] is not None else 1e9))
+    hit = sum(1 for v in pr.values() if v is True); tot = sum(1 for v in pr.values() if v is not None)
+    out = {"REC_LABEL": R["label"], "REC_STATE": "run once", "REC_N": R["recordings"], "REC_CAL": len(R["calibration"]), "REC_HELD": len(R["held_out"]),
+            "REC_THRESHOLD": f3(R["jam_threshold"]), "REC_DET_TABLE": table(hdr, det_rows(R["R_all"])), "REC_HELD_TABLE": table(hdr, det_rows(R["R_held"])),
+            "REC_TYPE_TABLE": tt, "REC_PRED_TABLE": pt, "REC_SYN_TABLE": st, "REC_NOMINAL": nom,
+            "REC_M_FA": f3(M["false_alarms"]["per_hour"]), "REC_M_FA_CI": f'{f3(M["false_alarms"]["ci95_per_hour"][0])} to {f3(M["false_alarms"]["ci95_per_hour"][1])}',
+            "REC_M_SYN_FA": f3(Y["S0"]["false_alarms_per_hour"]), "REC_M_SESS": f'{M["session_detection"]["all"]["k"]} of {M["session_detection"]["all"]["n"]}',
+            "REC_M_LOSS": f'{M["loss_of_fix_events"]["k"]} of {M["loss_of_fix_events"]["n"]}', "REC_M_CHANCE": f3(M["chance_alarms_per_session"]),
+            "REC_HOURS": f3(M["false_alarms"]["exposure_hours"]), "REC_BEST_BASELINE": best, "REC_P_HIT": hit, "REC_P_TOTAL": tot}
+    out["REC_DATASET"] = "Jammertest 2024"
+    return {k: str(v) for k, v in out.items()}
+
+
 def all_facts() -> dict:
     f = {}
-    for part in (evidence_table_facts(), case_facts(), context_facts(), warning_facts(), review_facts(), sim_facts(), r2_facts(), kit_facts(), review_fix_facts(), check_facts(), manuscript_facts(), r3_facts()):
+    for part in (evidence_table_facts(), case_facts(), context_facts(), warning_facts(), review_facts(), sim_facts(), r2_facts(), kit_facts(), review_fix_facts(), check_facts(), manuscript_facts(), r3_facts(), rec_facts()):
         assert not set(part) & set(f), set(part) & set(f)
         f.update(part)
     return f

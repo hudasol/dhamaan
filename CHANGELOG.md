@@ -2,6 +2,10 @@
 
 All notable changes, newest first. Tags mark finished stages. Results and counts are in the generated documents, not here.
 
+## Phase 4 (2026-10-28)
+
+- Mutation audit, sensitivity results, gap plan, analysis plan for the recorded arm frozen by hash, five detectors, one scoring run on the Jammertest 2024 recordings, recorded results document and a manuscript draft built from them.
+
 ## Phase 3 (2026-10-18)
 
 - **v1.8.0** Release hygiene: changelog, citation file, contributing guide, issue templates, security policy update, regenerated README and handoff.
